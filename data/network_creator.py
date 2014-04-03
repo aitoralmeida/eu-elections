@@ -55,8 +55,29 @@ def create_party_group_geo():
 
 def build_party_group_geo():
     groups = json.load(open('group_parties.json', 'r'))
+    G = nx.Graph()
+    for i, group in enumerate(groups):
+        parties = groups[group]
+        party_list = []
+        for party in parties:
+            name = party['party']
+            party_list.append(name)
+            G.add_node(name, group_id = i, group = group, group_name = party['data']['group_name'], city = party['data']['city'], lat = float(party['data']['lat']), lon = float(party['data']['lon']))
+        
+        for i in range(0, len(party_list)):
+            for j in range(i+1, len(party_list)):
+                G.add_edge(party_list[i], party_list[j])
+                
+    print 'Nodes:', len(G.nodes())
+    print 'Edges:', len(G.edges())
+    
+    nx.write_gexf(G, './sna/party_group_geo.gexf')
+    
+            
+            
                     
-create_party_group_geo()             
+build_party_group_geo()   
+          
                 
                 
                 
