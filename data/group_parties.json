@@ -1,0 +1,2020 @@
+{
+    "Greens": [
+        {
+            "party": "Die Gr\u00fcnen", 
+            "data": {
+                "city": "Vienna", 
+                "group": "Greens", 
+                "country": " Austria\n", 
+                "lon": "16.3738189\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "48.2081743"
+            }
+        }, 
+        {
+            "party": "Ecolo", 
+            "data": {
+                "city": "Namur", 
+                "group": "Greens", 
+                "country": " Belgium\n", 
+                "lon": "4.8719854\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "50.4673883"
+            }
+        }, 
+        {
+            "party": "Groen", 
+            "data": {
+                "city": "Anderlecht", 
+                "group": "Greens", 
+                "country": " Belgium\n", 
+                "lon": "4.308187\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "50.8365808"
+            }
+        }, 
+        {
+            "party": "NVA", 
+            "data": {
+                "city": "Brussels", 
+                "group": "Greens", 
+                "country": " Belgium\n", 
+                "lon": "4.3517103\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "50.8503396"
+            }
+        }, 
+        {
+            "party": "SF", 
+            "data": {
+                "city": "Copenhagen", 
+                "group": "Greens", 
+                "country": " Denmark\n", 
+                "lon": "12.5683371\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "55.6760968"
+            }
+        }, 
+        {
+            "party": "De Gr\u00f6na", 
+            "data": {
+                "city": "Helsinki", 
+                "group": "Greens", 
+                "country": " Finland\n", 
+                "lon": "24.9410248\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "60.17332440000001"
+            }
+        }, 
+        {
+            "party": "PNC", 
+            "data": {
+                "city": "Bastia", 
+                "group": "Greens", 
+                "country": " France\n", 
+                "lon": "9.450880999999999\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "42.697283"
+            }
+        }, 
+        {
+            "party": "Die Gr\u00fcnen", 
+            "data": {
+                "city": "Berlin", 
+                "group": "Greens", 
+                "country": " Germany\n", 
+                "lon": "13.404954\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "52.52000659999999"
+            }
+        }, 
+        {
+            "party": "Oikologoi prasinoi", 
+            "data": {
+                "city": "Athens", 
+                "group": "Greens", 
+                "country": " Greece\n", 
+                "lon": "23.7293097\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "37.9837155"
+            }
+        }, 
+        {
+            "party": "Federazione dei Verdi", 
+            "data": {
+                "city": "Rome", 
+                "group": "Greens", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Dei gr\u00e9ng", 
+            "data": {
+                "city": "Luxembourg", 
+                "group": "Greens", 
+                "country": " Luxembourg\n", 
+                "lon": "6.1319346\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "49.61162100000001"
+            }
+        }, 
+        {
+            "party": "Equo", 
+            "data": {
+                "city": "Madrid", 
+                "group": "Greens", 
+                "country": " Spain\n", 
+                "lon": "-3.7037902\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "40.4167754"
+            }
+        }, 
+        {
+            "party": "ERC", 
+            "data": {
+                "city": "Barcelona", 
+                "group": "Greens", 
+                "country": " Spain\n", 
+                "lon": "2.1734035\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "41.3850639"
+            }
+        }, 
+        {
+            "party": "ICV", 
+            "data": {
+                "city": "Barcelona", 
+                "group": "Greens", 
+                "country": " Spain\n", 
+                "lon": "2.1734035\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "41.3850639"
+            }
+        }, 
+        {
+            "party": "Eusko Alkartasuna", 
+            "data": {
+                "city": "San Sebastian", 
+                "group": "Greens", 
+                "country": " Spain\n", 
+                "lon": "-1.9812313\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "43.318334"
+            }
+        }, 
+        {
+            "party": "BNG", 
+            "data": {
+                "city": "Santiago de Compostela", 
+                "group": "Greens", 
+                "country": " Spain\n", 
+                "lon": "-8.5448445\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "42.8782132"
+            }
+        }, 
+        {
+            "party": "Milj\u00f6partiet de Gr\u00f6na", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "Greens", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "59.32893000000001"
+            }
+        }, 
+        {
+            "party": "Piratpartiet", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "Greens", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "59.32893000000001"
+            }
+        }, 
+        {
+            "party": "Green party of England and Wales", 
+            "data": {
+                "city": "London", 
+                "group": "Greens", 
+                "country": " UK\n", 
+                "lon": "-0.1254872\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "51.508515"
+            }
+        }, 
+        {
+            "party": "Scottish National Party", 
+            "data": {
+                "city": "Edinburgh", 
+                "group": "Greens", 
+                "country": " Scotland\n", 
+                "lon": "-3.188267\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "55.953252"
+            }
+        }, 
+        {
+            "party": "Plaid Cymru", 
+            "data": {
+                "city": "Cardiff", 
+                "group": "Greens", 
+                "country": " Wales\n", 
+                "lon": "-3.17909\n", 
+                "group_name": "The Greens / European Free Alliance", 
+                "lat": "51.48158100000001"
+            }
+        }
+    ], 
+    "GUE/NGL": [
+        {
+            "party": "AKEL", 
+            "data": {
+                "city": "Nicosia", 
+                "group": "GUE/NGL", 
+                "country": " Cyprus\n", 
+                "lon": "33.3666667\n", 
+                "group_name": "European Left", 
+                "lat": "35.1666667"
+            }
+        }, 
+        {
+            "party": "Bloco de esquerda", 
+            "data": {
+                "city": "Lisbon", 
+                "group": "GUE/NGL", 
+                "country": " Portugal\n", 
+                "lon": "-9.1393366\n", 
+                "group_name": "European Left", 
+                "lat": "38.7222524"
+            }
+        }, 
+        {
+            "party": "Die Linke", 
+            "data": {
+                "city": "Berlin", 
+                "group": "GUE/NGL", 
+                "country": " Germany\n", 
+                "lon": "13.404954\n", 
+                "group_name": "European Left", 
+                "lat": "52.52000659999999"
+            }
+        }, 
+        {
+            "party": "Folvevebaesen", 
+            "data": {
+                "city": "Copenhagen", 
+                "group": "GUE/NGL", 
+                "country": " Denmark\n", 
+                "lon": "12.5683371\n", 
+                "group_name": "European Left", 
+                "lat": "55.6760968"
+            }
+        }, 
+        {
+            "party": "Front de gauche", 
+            "data": {
+                "city": "Paris", 
+                "group": "GUE/NGL", 
+                "country": " France\n", 
+                "lon": "2.3522219\n", 
+                "group_name": "European Left", 
+                "lat": "48.856614"
+            }
+        }, 
+        {
+            "party": "Saskanas centrs\u00b4", 
+            "data": {
+                "city": "Riga", 
+                "group": "GUE/NGL", 
+                "country": " Latvia\n", 
+                "lon": "24.1051864\n", 
+                "group_name": "European Left", 
+                "lat": "56.9496487"
+            }
+        }, 
+        {
+            "party": "Hrvatski laburisti", 
+            "data": {
+                "city": "Zagreb", 
+                "group": "GUE/NGL", 
+                "country": " Croatia\n", 
+                "lon": "15.9778949\n", 
+                "group_name": "European Left", 
+                "lat": "45.8130293"
+            }
+        }, 
+        {
+            "party": "Izquierda Unida", 
+            "data": {
+                "city": "Madrid", 
+                "group": "GUE/NGL", 
+                "country": " Spain\n", 
+                "lon": "-3.7037902\n", 
+                "group_name": "European Left", 
+                "lat": "40.4167754"
+            }
+        }, 
+        {
+            "party": "KKE", 
+            "data": {
+                "city": "Athens", 
+                "group": "GUE/NGL", 
+                "country": " Greece\n", 
+                "lon": "23.7293097\n", 
+                "group_name": "European Left", 
+                "lat": "37.9837155"
+            }
+        }, 
+        {
+            "party": "KSCM", 
+            "data": {
+                "city": "Prague", 
+                "group": "GUE/NGL", 
+                "country": " Czech Republic\n", 
+                "lon": "14.4378005\n", 
+                "group_name": "European Left", 
+                "lat": "50.0755381"
+            }
+        }, 
+        {
+            "party": "PCP", 
+            "data": {
+                "city": "Lisbon", 
+                "group": "GUE/NGL", 
+                "country": " Portugal\n", 
+                "lon": "-9.1393366\n", 
+                "group_name": "European Left", 
+                "lat": "38.7222524"
+            }
+        }, 
+        {
+            "party": "Sinn F\u00e9in", 
+            "data": {
+                "city": "Dublin", 
+                "group": "GUE/NGL", 
+                "country": " Ireland\n", 
+                "lon": "-6.2603097\n", 
+                "group_name": "European Left", 
+                "lat": "53.3498053"
+            }
+        }, 
+        {
+            "party": "Socialist party", 
+            "data": {
+                "city": "Dublin", 
+                "group": "GUE/NGL", 
+                "country": " Ireland\n", 
+                "lon": "-6.2603097\n", 
+                "group_name": "European Left", 
+                "lat": "53.3498053"
+            }
+        }, 
+        {
+            "party": "Socialistiche Partij", 
+            "data": {
+                "city": "Amersfoort", 
+                "group": "GUE/NGL", 
+                "country": " Netherlands\n", 
+                "lon": "5.387826599999999\n", 
+                "group_name": "European Left", 
+                "lat": "52.1561113"
+            }
+        }, 
+        {
+            "party": "Syriza", 
+            "data": {
+                "city": "Athens", 
+                "group": "GUE/NGL", 
+                "country": " Greece\n", 
+                "lon": "23.7293097\n", 
+                "group_name": "European Left", 
+                "lat": "37.9837155"
+            }
+        }, 
+        {
+            "party": "V\u00e4nsterpartiet", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "GUE/NGL", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "European Left", 
+                "lat": "59.32893000000001"
+            }
+        }
+    ], 
+    "EPP": [
+        {
+            "party": "\u00d6VP", 
+            "data": {
+                "city": "Vienna", 
+                "group": "EPP", 
+                "country": " Austria\n", 
+                "lon": "16.3738189\n", 
+                "group_name": "European People's Party", 
+                "lat": "48.2081743"
+            }
+        }, 
+        {
+            "party": "", 
+            "data": {
+                "city": "Brussels", 
+                "group": "EPP", 
+                "country": " Belgium\n", 
+                "lon": "4.3517103\n", 
+                "group_name": "European People's Party", 
+                "lat": "50.8503396"
+            }
+        }, 
+        {
+            "party": "CDH", 
+            "data": {
+                "city": "Brussels", 
+                "group": "EPP", 
+                "country": " Belgium\n", 
+                "lon": "4.3517103\n", 
+                "group_name": "European People's Party", 
+                "lat": "50.8503396"
+            }
+        }, 
+        {
+            "party": "CSP", 
+            "data": {
+                "city": "Eupen", 
+                "group": "EPP", 
+                "country": " Belgium\n", 
+                "lon": "6.0337111\n", 
+                "group_name": "European People's Party", 
+                "lat": "50.6292029"
+            }
+        }, 
+        {
+            "party": "GERB", 
+            "data": {
+                "city": "Sofia", 
+                "group": "EPP", 
+                "country": " Bulgaria\n", 
+                "lon": "23.3216697\n", 
+                "group_name": "European People's Party", 
+                "lat": "42.6978388"
+            }
+        }, 
+        {
+            "party": "UDF", 
+            "data": {
+                "city": "Sofia", 
+                "group": "EPP", 
+                "country": " Bulgaria\n", 
+                "lon": "23.3216697\n", 
+                "group_name": "European People's Party", 
+                "lat": "42.6978388"
+            }
+        }, 
+        {
+            "party": "DSB", 
+            "data": {
+                "city": "Sofia", 
+                "group": "EPP", 
+                "country": " Bulgaria\n", 
+                "lon": "23.3216697\n", 
+                "group_name": "European People's Party", 
+                "lat": "42.6978388"
+            }
+        }, 
+        {
+            "party": "HDZ", 
+            "data": {
+                "city": "Zagreb", 
+                "group": "EPP", 
+                "country": " Croatia\n", 
+                "lon": "15.9778949\n", 
+                "group_name": "European People's Party", 
+                "lat": "45.8130293"
+            }
+        }, 
+        {
+            "party": "DISY", 
+            "data": {
+                "city": "Nicosia", 
+                "group": "EPP", 
+                "country": " Cyprus\n", 
+                "lon": "33.3666667\n", 
+                "group_name": "European People's Party", 
+                "lat": "35.1666667"
+            }
+        }, 
+        {
+            "party": "KDU-CSL", 
+            "data": {
+                "city": "Prague", 
+                "group": "EPP", 
+                "country": " Czech Republic\n", 
+                "lon": "14.4378005\n", 
+                "group_name": "European People's Party", 
+                "lat": "50.0755381"
+            }
+        }, 
+        {
+            "party": "TOP 09", 
+            "data": {
+                "city": "Prague", 
+                "group": "EPP", 
+                "country": " Czech Republic\n", 
+                "lon": "14.4378005\n", 
+                "group_name": "European People's Party", 
+                "lat": "50.0755381"
+            }
+        }, 
+        {
+            "party": "Konservative", 
+            "data": {
+                "city": "Copenhagen", 
+                "group": "EPP", 
+                "country": " Denmark\n", 
+                "lon": "12.5683371\n", 
+                "group_name": "European People's Party", 
+                "lat": "55.6760968"
+            }
+        }, 
+        {
+            "party": "Isamaa ja res publica liit", 
+            "data": {
+                "city": "Tallinn", 
+                "group": "EPP", 
+                "country": " Estonia\n", 
+                "lon": "24.7535746\n", 
+                "group_name": "European People's Party", 
+                "lat": "59.43696079999999"
+            }
+        }, 
+        {
+            "party": "Kokoomus", 
+            "data": {
+                "city": "Helsinki", 
+                "group": "EPP", 
+                "country": " Finland\n", 
+                "lon": "24.9410248\n", 
+                "group_name": "European People's Party", 
+                "lat": "60.17332440000001"
+            }
+        }, 
+        {
+            "party": "Kristillisdemokraatit", 
+            "data": {
+                "city": "Helsinki", 
+                "group": "EPP", 
+                "country": " Finland\n", 
+                "lon": "24.9410248\n", 
+                "group_name": "European People's Party", 
+                "lat": "60.17332440000001"
+            }
+        }, 
+        {
+            "party": "Union pour un Mouvement Populaire", 
+            "data": {
+                "city": "Paris", 
+                "group": "EPP", 
+                "country": " France\n", 
+                "lon": "2.3522219\n", 
+                "group_name": "European People's Party", 
+                "lat": "48.856614"
+            }
+        }, 
+        {
+            "party": "UDI", 
+            "data": {
+                "city": "Paris", 
+                "group": "EPP", 
+                "country": " France\n", 
+                "lon": "2.3522219\n", 
+                "group_name": "European People's Party", 
+                "lat": "48.856614"
+            }
+        }, 
+        {
+            "party": "CDU", 
+            "data": {
+                "city": "Berlin", 
+                "group": "EPP", 
+                "country": " Germany\n", 
+                "lon": "13.404954\n", 
+                "group_name": "European People's Party", 
+                "lat": "52.52000659999999"
+            }
+        }, 
+        {
+            "party": "CSU", 
+            "data": {
+                "city": "Munich", 
+                "group": "EPP", 
+                "country": " Germany\n", 
+                "lon": "11.5819806\n", 
+                "group_name": "European People's Party", 
+                "lat": "48.1351253"
+            }
+        }, 
+        {
+            "party": "N\u00e9a Dimokratia", 
+            "data": {
+                "city": "Athens", 
+                "group": "EPP", 
+                "country": " Greece\n", 
+                "lon": "23.7293097\n", 
+                "group_name": "European People's Party", 
+                "lat": "37.9837155"
+            }
+        }, 
+        {
+            "party": "Fidesz", 
+            "data": {
+                "city": "Budapest", 
+                "group": "EPP", 
+                "country": " Hungary\n", 
+                "lon": "19.040235\n", 
+                "group_name": "European People's Party", 
+                "lat": "47.497912"
+            }
+        }, 
+        {
+            "party": "KDNP", 
+            "data": {
+                "city": "Budapest", 
+                "group": "EPP", 
+                "country": " Hungary\n", 
+                "lon": "19.040235\n", 
+                "group_name": "European People's Party", 
+                "lat": "47.497912"
+            }
+        }, 
+        {
+            "party": "Forza Italia", 
+            "data": {
+                "city": "Rome", 
+                "group": "EPP", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "European People's Party", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Nuovo centro destra", 
+            "data": {
+                "city": "Rome", 
+                "group": "EPP", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "European People's Party", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Casini-UDC", 
+            "data": {
+                "city": "Rome", 
+                "group": "EPP", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "European People's Party", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Fratelli d\u00b4Italia", 
+            "data": {
+                "city": "Rome", 
+                "group": "EPP", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "European People's Party", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "UDEUR popolari", 
+            "data": {
+                "city": "Rome", 
+                "group": "EPP", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "European People's Party", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "S\u00fcdtiroler Volkspartei", 
+            "data": {
+                "city": "Bolzano", 
+                "group": "EPP", 
+                "country": " Italy\n", 
+                "lon": "11.3547582\n", 
+                "group_name": "European People's Party", 
+                "lat": "46.4982953"
+            }
+        }, 
+        {
+            "party": "Futuro e Libert\u00e0", 
+            "data": {
+                "city": "Rome", 
+                "group": "EPP", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "European People's Party", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Popolari per l'Italia", 
+            "data": {
+                "city": "Rome", 
+                "group": "EPP", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "European People's Party", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Vienot\u00edba", 
+            "data": {
+                "city": "Riga", 
+                "group": "EPP", 
+                "country": " Latvia\n", 
+                "lon": "24.1051864\n", 
+                "group_name": "European People's Party", 
+                "lat": "56.9496487"
+            }
+        }, 
+        {
+            "party": "TS", 
+            "data": {
+                "city": "Vilnius", 
+                "group": "EPP", 
+                "country": " Lithuania\n", 
+                "lon": "25.2796514\n", 
+                "group_name": "European People's Party", 
+                "lat": "54.6871555"
+            }
+        }, 
+        {
+            "party": "CSV", 
+            "data": {
+                "city": "Luxembourg", 
+                "group": "EPP", 
+                "country": " Luxembourg\n", 
+                "lon": "6.1319346\n", 
+                "group_name": "European People's Party", 
+                "lat": "49.61162100000001"
+            }
+        }, 
+        {
+            "party": "Nationalist party", 
+            "data": {
+                "city": "Valletta", 
+                "group": "EPP", 
+                "country": " Malta\n", 
+                "lon": "14.514106\n", 
+                "group_name": "European People's Party", 
+                "lat": "35.89779"
+            }
+        }, 
+        {
+            "party": "CDA", 
+            "data": {
+                "city": "The Hague", 
+                "group": "EPP", 
+                "country": " Netherlands\n", 
+                "lon": "4.3006999\n", 
+                "group_name": "European People's Party", 
+                "lat": "52.0704978"
+            }
+        }, 
+        {
+            "party": "Platforma Obywatelska", 
+            "data": {
+                "city": "Warsaw", 
+                "group": "EPP", 
+                "country": " Poland\n", 
+                "lon": "21.0122287\n", 
+                "group_name": "European People's Party", 
+                "lat": "52.2296756"
+            }
+        }, 
+        {
+            "party": "PSL", 
+            "data": {
+                "city": "Warsaw", 
+                "group": "EPP", 
+                "country": " Poland\n", 
+                "lon": "21.0122287\n", 
+                "group_name": "European People's Party", 
+                "lat": "52.2296756"
+            }
+        }, 
+        {
+            "party": "PSD", 
+            "data": {
+                "city": "Lisbon", 
+                "group": "EPP", 
+                "country": " Portugal\n", 
+                "lon": "-9.1393366\n", 
+                "group_name": "European People's Party", 
+                "lat": "38.7222524"
+            }
+        }, 
+        {
+            "party": "CDS", 
+            "data": {
+                "city": "Lisbon", 
+                "group": "EPP", 
+                "country": " Portugal\n", 
+                "lon": "-9.1393366\n", 
+                "group_name": "European People's Party", 
+                "lat": "38.7222524"
+            }
+        }, 
+        {
+            "party": "Partidul Democrat-Liberal", 
+            "data": {
+                "city": "Bucharest", 
+                "group": "EPP", 
+                "country": " Romania\n", 
+                "lon": "26.1038889\n", 
+                "group_name": "European People's Party", 
+                "lat": "44.4325"
+            }
+        }, 
+        {
+            "party": "RMDSz", 
+            "data": {
+                "city": "Bucharest", 
+                "group": "EPP", 
+                "country": " Romania\n", 
+                "lon": "26.1038889\n", 
+                "group_name": "European People's Party", 
+                "lat": "44.4325"
+            }
+        }, 
+        {
+            "party": "SDK\u00da", 
+            "data": {
+                "city": "Bratislava", 
+                "group": "EPP", 
+                "country": " Slovak Republic\n", 
+                "lon": "17.1071373\n", 
+                "group_name": "European People's Party", 
+                "lat": "48.1458923"
+            }
+        }, 
+        {
+            "party": "KDH", 
+            "data": {
+                "city": "Bratislava", 
+                "group": "EPP", 
+                "country": " Slovak Republic\n", 
+                "lon": "17.1071373\n", 
+                "group_name": "European People's Party", 
+                "lat": "48.1458923"
+            }
+        }, 
+        {
+            "party": "MK", 
+            "data": {
+                "city": "Bratislava", 
+                "group": "EPP", 
+                "country": " Slovak Republic\n", 
+                "lon": "17.1071373\n", 
+                "group_name": "European People's Party", 
+                "lat": "48.1458923"
+            }
+        }, 
+        {
+            "party": "SDS", 
+            "data": {
+                "city": "Ljubljana", 
+                "group": "EPP", 
+                "country": " Slovenia\n", 
+                "lon": "14.5080702\n", 
+                "group_name": "European People's Party", 
+                "lat": "46.05645089999999"
+            }
+        }, 
+        {
+            "party": "Nsi", 
+            "data": {
+                "city": "Ljubljana", 
+                "group": "EPP", 
+                "country": " Slovenia\n", 
+                "lon": "14.5080702\n", 
+                "group_name": "European People's Party", 
+                "lat": "46.05645089999999"
+            }
+        }, 
+        {
+            "party": "Partido Popular", 
+            "data": {
+                "city": "Madrid", 
+                "group": "EPP", 
+                "country": " Spain\n", 
+                "lon": "-3.7037902\n", 
+                "group_name": "European People's Party", 
+                "lat": "40.4167754"
+            }
+        }, 
+        {
+            "party": "Uni\u00f3 democr\u00e0tica de Catalunya", 
+            "data": {
+                "city": "Barcelona", 
+                "group": "EPP", 
+                "country": " Spain\n", 
+                "lon": "2.1734035\n", 
+                "group_name": "European People's Party", 
+                "lat": "41.3850639"
+            }
+        }, 
+        {
+            "party": "Moderata", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "EPP", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "European People's Party", 
+                "lat": "59.32893000000001"
+            }
+        }, 
+        {
+            "party": "kristdemokraterna", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "EPP", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "European People's Party", 
+                "lat": "59.32893000000001"
+            }
+        }
+    ], 
+    "EAF": [
+        {
+            "party": "FPO", 
+            "data": {
+                "city": "Vienna", 
+                "group": "EAF", 
+                "country": " Austria\n", 
+                "lon": "16.3738189\n", 
+                "group_name": "European Alliance for Freedom", 
+                "lat": "48.2081743"
+            }
+        }, 
+        {
+            "party": "Vlaams Belang", 
+            "data": {
+                "city": "Brussels", 
+                "group": "EAF", 
+                "country": " Belgium\n", 
+                "lon": "4.3517103\n", 
+                "group_name": "European Alliance for Freedom", 
+                "lat": "50.8503396"
+            }
+        }, 
+        {
+            "party": "Front National", 
+            "data": {
+                "city": "Paris", 
+                "group": "EAF", 
+                "country": " France\n", 
+                "lon": "2.3522219\n", 
+                "group_name": "European Alliance for Freedom", 
+                "lat": "48.856614"
+            }
+        }, 
+        {
+            "party": "B\u00fcrger in wut", 
+            "data": {
+                "city": "Berlin", 
+                "group": "EAF", 
+                "country": " Germany\n", 
+                "lon": "13.404954\n", 
+                "group_name": "European Alliance for Freedom", 
+                "lat": "52.52000659999999"
+            }
+        }, 
+        {
+            "party": "Sverigedemokraterna", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "EAF", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "European Alliance for Freedom", 
+                "lat": "59.32893000000001"
+            }
+        }
+    ], 
+    "ECR": [
+        {
+            "party": "LDD", 
+            "data": {
+                "city": "Gent", 
+                "group": "ECR", 
+                "country": " Belgium\n", 
+                "lon": "3.7174243\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "51.0543422"
+            }
+        }, 
+        {
+            "party": "HSP", 
+            "data": {
+                "city": "Zagreb", 
+                "group": "ECR", 
+                "country": " Croatia\n", 
+                "lon": "15.9778949\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "45.8130293"
+            }
+        }, 
+        {
+            "party": "ODS", 
+            "data": {
+                "city": "Prague", 
+                "group": "ECR", 
+                "country": " Czech Republic\n", 
+                "lon": "14.4378005\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "50.0755381"
+            }
+        }, 
+        {
+            "party": "MoMa", 
+            "data": {
+                "city": "Budapest", 
+                "group": "ECR", 
+                "country": " Hungary\n", 
+                "lon": "19.040235\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "47.497912"
+            }
+        }, 
+        {
+            "party": "Conservatori e Social Riformatori", 
+            "data": {
+                "city": "Milan", 
+                "group": "ECR", 
+                "country": " Italy\n", 
+                "lon": "9.186516\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "45.4654542"
+            }
+        }, 
+        {
+            "party": "TB/LNNK", 
+            "data": {
+                "city": "Riga", 
+                "group": "ECR", 
+                "country": " Latvia\n", 
+                "lon": "24.1051864\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "56.9496487"
+            }
+        }, 
+        {
+            "party": "LLRA", 
+            "data": {
+                "city": "Vilnius", 
+                "group": "ECR", 
+                "country": " Lithuania\n", 
+                "lon": "25.2796514\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "54.6871555"
+            }
+        }, 
+        {
+            "party": "ChristenUnie", 
+            "data": {
+                "city": "Amersfoort", 
+                "group": "ECR", 
+                "country": " Netherlands\n", 
+                "lon": "5.387826599999999\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "52.1561113"
+            }
+        }, 
+        {
+            "party": "PiS", 
+            "data": {
+                "city": "Warsaw", 
+                "group": "ECR", 
+                "country": " Poland\n", 
+                "lon": "21.0122287\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "52.2296756"
+            }
+        }, 
+        {
+            "party": "Polska Razem", 
+            "data": {
+                "city": "Warsaw", 
+                "group": "ECR", 
+                "country": " Poland\n", 
+                "lon": "21.0122287\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "52.2296756"
+            }
+        }, 
+        {
+            "party": "Conservative Party", 
+            "data": {
+                "city": "London", 
+                "group": "ECR", 
+                "country": " UK\n", 
+                "lon": "-0.1254872\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "51.508515"
+            }
+        }, 
+        {
+            "party": "UUP", 
+            "data": {
+                "city": "Belfast", 
+                "group": "ECR", 
+                "country": " Northern Ireland\n", 
+                "lon": "-5.93012\n", 
+                "group_name": "European Conservatives and Reformists", 
+                "lat": "54.59728500000001"
+            }
+        }
+    ], 
+    "S&D": [
+        {
+            "party": "SP\u00d6", 
+            "data": {
+                "city": "Vienna", 
+                "group": "S&D", 
+                "country": " Austria\n", 
+                "lon": "16.3738189\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "48.2081743"
+            }
+        }, 
+        {
+            "party": "Parti Socialiste", 
+            "data": {
+                "city": "Brussels", 
+                "group": "S&D", 
+                "country": " Belgium\n", 
+                "lon": "4.3517103\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "50.8503396"
+            }
+        }, 
+        {
+            "party": "Spa", 
+            "data": {
+                "city": "Brussels", 
+                "group": "S&D", 
+                "country": " Belgium\n", 
+                "lon": "4.3517103\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "50.8503396"
+            }
+        }, 
+        {
+            "party": "Bulgarian socialist party", 
+            "data": {
+                "city": "Sofia", 
+                "group": "S&D", 
+                "country": " Bulgaria\n", 
+                "lon": "23.3216697\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "42.6978388"
+            }
+        }, 
+        {
+            "party": "Socijaldemokratska partija Hrvatske", 
+            "data": {
+                "city": "Zagreb", 
+                "group": "S&D", 
+                "country": " Croatia\n", 
+                "lon": "15.9778949\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "45.8130293"
+            }
+        }, 
+        {
+            "party": "EDEK", 
+            "data": {
+                "city": "Nicosia", 
+                "group": "S&D", 
+                "country": " Cyprus\n", 
+                "lon": "33.3666667\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "35.1666667"
+            }
+        }, 
+        {
+            "party": "Dimokratik\u00f3 K\u00f3mma", 
+            "data": {
+                "city": "Nicosia", 
+                "group": "S&D", 
+                "country": " Cyprus\n", 
+                "lon": "33.3666667\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "35.1666667"
+            }
+        }, 
+        {
+            "party": "CSSD", 
+            "data": {
+                "city": "Prague", 
+                "group": "S&D", 
+                "country": " Czech Republic\n", 
+                "lon": "14.4378005\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "50.0755381"
+            }
+        }, 
+        {
+            "party": "Socialdemokraterne", 
+            "data": {
+                "city": "Frederiksberg", 
+                "group": "S&D", 
+                "country": " Denmark\n", 
+                "lon": "12.513321\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "55.677069"
+            }
+        }, 
+        {
+            "party": "SDE", 
+            "data": {
+                "city": "Tallinn", 
+                "group": "S&D", 
+                "country": " Estonia\n", 
+                "lon": "24.7535746\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "59.43696079999999"
+            }
+        }, 
+        {
+            "party": "SDP", 
+            "data": {
+                "city": "Helsinki", 
+                "group": "S&D", 
+                "country": " Finland\n", 
+                "lon": "24.9410248\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "60.17332440000001"
+            }
+        }, 
+        {
+            "party": "Parti Socialiste", 
+            "data": {
+                "city": "Paris", 
+                "group": "S&D", 
+                "country": " France\n", 
+                "lon": "2.3522219\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "48.856614"
+            }
+        }, 
+        {
+            "party": "SPD", 
+            "data": {
+                "city": "Berlin", 
+                "group": "S&D", 
+                "country": " Germany\n", 
+                "lon": "13.404954\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "52.52000659999999"
+            }
+        }, 
+        {
+            "party": "PASOK", 
+            "data": {
+                "city": "Athens", 
+                "group": "S&D", 
+                "country": " Greece\n", 
+                "lon": "23.7293097\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "37.9837155"
+            }
+        }, 
+        {
+            "party": "DIMAR", 
+            "data": {
+                "city": "Athens", 
+                "group": "S&D", 
+                "country": " Greece\n", 
+                "lon": "23.7293097\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "37.9837155"
+            }
+        }, 
+        {
+            "party": "MSZP", 
+            "data": {
+                "city": "Budapest", 
+                "group": "S&D", 
+                "country": " Hungary\n", 
+                "lon": "19.040235\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "47.497912"
+            }
+        }, 
+        {
+            "party": "Labour", 
+            "data": {
+                "city": "Dublin", 
+                "group": "S&D", 
+                "country": " Ireland\n", 
+                "lon": "-6.2603097\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "53.3498053"
+            }
+        }, 
+        {
+            "party": "Partito democratico", 
+            "data": {
+                "city": "Rome", 
+                "group": "S&D", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Sinistra democratica", 
+            "data": {
+                "city": "Rome", 
+                "group": "S&D", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Partito socialista italiano", 
+            "data": {
+                "city": "Rome", 
+                "group": "S&D", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "LSDP", 
+            "data": {
+                "city": "Vilnius", 
+                "group": "S&D", 
+                "country": " Lithuania\n", 
+                "lon": "25.2796514\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "54.6871555"
+            }
+        }, 
+        {
+            "party": "LSAP", 
+            "data": {
+                "city": "Luxembourg", 
+                "group": "S&D", 
+                "country": " Luxembourg\n", 
+                "lon": "6.1319346\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "49.61162100000001"
+            }
+        }, 
+        {
+            "party": "Labour party", 
+            "data": {
+                "city": "Hamrun", 
+                "group": "S&D", 
+                "country": " Malta\n", 
+                "lon": "14.488662\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "35.887693"
+            }
+        }, 
+        {
+            "party": "Partij van de Arbeid", 
+            "data": {
+                "city": "Amsterdam", 
+                "group": "S&D", 
+                "country": " Netherlands\n", 
+                "lon": "4.895167900000001\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "52.3702157"
+            }
+        }, 
+        {
+            "party": "Socjaldemokracja Polska", 
+            "data": {
+                "city": "Warsaw", 
+                "group": "S&D", 
+                "country": " Poland\n", 
+                "lon": "21.0122287\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "52.2296756"
+            }
+        }, 
+        {
+            "party": "Partido Socialista", 
+            "data": {
+                "city": "Lisbon", 
+                "group": "S&D", 
+                "country": " Portugal\n", 
+                "lon": "-9.1393366\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "38.7222524"
+            }
+        }, 
+        {
+            "party": "PSD", 
+            "data": {
+                "city": "Bucharest", 
+                "group": "S&D", 
+                "country": " Romania\n", 
+                "lon": "26.1038889\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "44.4325"
+            }
+        }, 
+        {
+            "party": "Smer", 
+            "data": {
+                "city": "Bratislava", 
+                "group": "S&D", 
+                "country": " Slovak Republic\n", 
+                "lon": "17.1071373\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "48.1458923"
+            }
+        }, 
+        {
+            "party": "SD", 
+            "data": {
+                "city": "Ljubljana", 
+                "group": "S&D", 
+                "country": " Slovenia\n", 
+                "lon": "14.5080702\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "46.05645089999999"
+            }
+        }, 
+        {
+            "party": "PSOE", 
+            "data": {
+                "city": "Madrid", 
+                "group": "S&D", 
+                "country": " Spain\n", 
+                "lon": "-3.7037902\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "40.4167754"
+            }
+        }, 
+        {
+            "party": "SSA", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "S&D", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "59.32893000000001"
+            }
+        }, 
+        {
+            "party": "Labour party", 
+            "data": {
+                "city": "London", 
+                "group": "S&D", 
+                "country": " UK\n", 
+                "lon": "-0.1254872\n", 
+                "group_name": "Socialists & Democrats", 
+                "lat": "51.508515"
+            }
+        }
+    ], 
+    "EFD": [
+        {
+            "party": "Dansk Folkeparti", 
+            "data": {
+                "city": "Copenhagen", 
+                "group": "EFD", 
+                "country": " Denmark\n", 
+                "lon": "12.5683371\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "55.6760968"
+            }
+        }, 
+        {
+            "party": "Peruss", 
+            "data": {
+                "city": "Helsinki", 
+                "group": "EFD", 
+                "country": " Finland\n", 
+                "lon": "24.9410248\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "60.17332440000001"
+            }
+        }, 
+        {
+            "party": "Mouvement pour France", 
+            "data": {
+                "city": "Paris", 
+                "group": "EFD", 
+                "country": " France\n", 
+                "lon": "2.3522219\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "48.856614"
+            }
+        }, 
+        {
+            "party": "LAOS", 
+            "data": {
+                "city": "Athens", 
+                "group": "EFD", 
+                "country": " Greece\n", 
+                "lon": "23.7293097\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "37.9837155"
+            }
+        }, 
+        {
+            "party": "Lega Nord", 
+            "data": {
+                "city": "Milan", 
+                "group": "EFD", 
+                "country": " Italy\n", 
+                "lon": "9.186516\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "45.4654542"
+            }
+        }, 
+        {
+            "party": "Io amo l'Italia", 
+            "data": {
+                "city": "Rome", 
+                "group": "EFD", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Tvarka ir teisingumas", 
+            "data": {
+                "city": "Vilnius", 
+                "group": "EFD", 
+                "country": " Lithuania\n", 
+                "lon": "25.2796514\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "54.6871555"
+            }
+        }, 
+        {
+            "party": "SGP", 
+            "data": {
+                "city": "Gouda", 
+                "group": "EFD", 
+                "country": " Netherlands\n", 
+                "lon": "4.7104633\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "52.0115205"
+            }
+        }, 
+        {
+            "party": "Solidarna Polska", 
+            "data": {
+                "city": "Warsaw", 
+                "group": "EFD", 
+                "country": " Poland\n", 
+                "lon": "21.0122287\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "52.2296756"
+            }
+        }, 
+        {
+            "party": "SNR", 
+            "data": {
+                "city": "Bratislava", 
+                "group": "EFD", 
+                "country": " Slovak Republic\n", 
+                "lon": "17.1071373\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "48.1458923"
+            }
+        }, 
+        {
+            "party": "UKIP", 
+            "data": {
+                "city": "Devon", 
+                "group": "EFD", 
+                "country": " England\n", 
+                "lon": "-3.999461\n", 
+                "group_name": "Europe for Freedom and Democracy", 
+                "lat": "50.77721349999999"
+            }
+        }
+    ], 
+    "ALDE": [
+        {
+            "party": "NEOS", 
+            "data": {
+                "city": "Vienna", 
+                "group": "ALDE", 
+                "country": " Austria\n", 
+                "lon": "16.3738189\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "48.2081743"
+            }
+        }, 
+        {
+            "party": "Open VLD", 
+            "data": {
+                "city": "Brussels", 
+                "group": "ALDE", 
+                "country": " Belgium\n", 
+                "lon": "4.3517103\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "50.8503396"
+            }
+        }, 
+        {
+            "party": "Mouvement R\u00e9formateur", 
+            "data": {
+                "city": "Brussels", 
+                "group": "ALDE", 
+                "country": " Belgium\n", 
+                "lon": "4.3517103\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "50.8503396"
+            }
+        }, 
+        {
+            "party": "Nacionalno dvi\u017eenie za stabilnost i v\u0103zhod", 
+            "data": {
+                "city": "Sofia", 
+                "group": "ALDE", 
+                "country": " Bulgaria\n", 
+                "lon": "23.3216697\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "42.6978388"
+            }
+        }, 
+        {
+            "party": "\u2026", 
+            "data": {
+                "city": "Sofia", 
+                "group": "ALDE", 
+                "country": " Bulgaria\n", 
+                "lon": "23.3216697\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "42.6978388"
+            }
+        }, 
+        {
+            "party": "Venstre", 
+            "data": {
+                "city": "Holte", 
+                "group": "ALDE", 
+                "country": " Denmark\n", 
+                "lon": "12.4722496\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "55.8172508"
+            }
+        }, 
+        {
+            "party": "Radikale B", 
+            "data": {
+                "city": "Copenhagen", 
+                "group": "ALDE", 
+                "country": " Denmark\n", 
+                "lon": "12.5683371\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "55.6760968"
+            }
+        }, 
+        {
+            "party": "Eesti keskerakond", 
+            "data": {
+                "city": "Tallinn", 
+                "group": "ALDE", 
+                "country": " Estonia\n", 
+                "lon": "24.7535746\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "59.43696079999999"
+            }
+        }, 
+        {
+            "party": "Eesti reformierakond", 
+            "data": {
+                "city": "Tallinn", 
+                "group": "ALDE", 
+                "country": " Estonia\n", 
+                "lon": "24.7535746\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "59.43696079999999"
+            }
+        }, 
+        {
+            "party": "Suomen Keskusta", 
+            "data": {
+                "city": "Helsinki", 
+                "group": "ALDE", 
+                "country": " Finland\n", 
+                "lon": "24.9410248\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "60.17332440000001"
+            }
+        }, 
+        {
+            "party": "SFP", 
+            "data": {
+                "city": "Helsinki", 
+                "group": "ALDE", 
+                "country": " Finland\n", 
+                "lon": "24.9410248\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "60.17332440000001"
+            }
+        }, 
+        {
+            "party": "Mouvement Democrate", 
+            "data": {
+                "city": "Paris", 
+                "group": "ALDE", 
+                "country": " France\n", 
+                "lon": "2.3522219\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "48.856614"
+            }
+        }, 
+        {
+            "party": "CAP21", 
+            "data": {
+                "city": "Paris", 
+                "group": "ALDE", 
+                "country": " France\n", 
+                "lon": "2.3522219\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "48.856614"
+            }
+        }, 
+        {
+            "party": "Freie demokratische partei", 
+            "data": {
+                "city": "Berlin", 
+                "group": "ALDE", 
+                "country": " Germany\n", 
+                "lon": "13.404954\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "52.52000659999999"
+            }
+        }, 
+        {
+            "party": "Drassi", 
+            "data": {
+                "city": "Athens", 
+                "group": "ALDE", 
+                "country": " Greece\n", 
+                "lon": "23.7293097\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "37.9837155"
+            }
+        }, 
+        {
+            "party": "MLP", 
+            "data": {
+                "city": "Budapest", 
+                "group": "ALDE", 
+                "country": " Hungary\n", 
+                "lon": "19.040235\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "47.497912"
+            }
+        }, 
+        {
+            "party": "Fianna Fail", 
+            "data": {
+                "city": "Dublin", 
+                "group": "ALDE", 
+                "country": " Ireland\n", 
+                "lon": "-6.2603097\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "53.3498053"
+            }
+        }, 
+        {
+            "party": "Democrazia \u00e8 Lib\u00e8rta", 
+            "data": {
+                "city": "Rome", 
+                "group": "ALDE", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Italia dei Valori", 
+            "data": {
+                "city": "Rome", 
+                "group": "ALDE", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Alleanza per Italia", 
+            "data": {
+                "city": "Rome", 
+                "group": "ALDE", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "Radicali italiani", 
+            "data": {
+                "city": "Rome", 
+                "group": "ALDE", 
+                "country": " Italy\n", 
+                "lon": "12.4825199\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "41.8929163"
+            }
+        }, 
+        {
+            "party": "LPP/LC", 
+            "data": {
+                "city": "Riga", 
+                "group": "ALDE", 
+                "country": " Latvia\n", 
+                "lon": "24.1051864\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "56.9496487"
+            }
+        }, 
+        {
+            "party": "Darbo partija", 
+            "data": {
+                "city": "Vilnius", 
+                "group": "ALDE", 
+                "country": " Lithuania\n", 
+                "lon": "25.2796514\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "54.6871555"
+            }
+        }, 
+        {
+            "party": "Liberalu sajudis", 
+            "data": {
+                "city": "Vilnius", 
+                "group": "ALDE", 
+                "country": " Lithuania\n", 
+                "lon": "25.2796514\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "54.6871555"
+            }
+        }, 
+        {
+            "party": "Demokratesch partei", 
+            "data": {
+                "city": "Luxembourg", 
+                "group": "ALDE", 
+                "country": " Luxembourg\n", 
+                "lon": "6.1319346\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "49.61162100000001"
+            }
+        }, 
+        {
+            "party": "VVD", 
+            "data": {
+                "city": "The Hague", 
+                "group": "ALDE", 
+                "country": " Netherlands\n", 
+                "lon": "4.3006999\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "52.0704978"
+            }
+        }, 
+        {
+            "party": "D66", 
+            "data": {
+                "city": "The Hague", 
+                "group": "ALDE", 
+                "country": " Netherlands\n", 
+                "lon": "4.3006999\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "52.0704978"
+            }
+        }, 
+        {
+            "party": "PNL", 
+            "data": {
+                "city": "Bucharest", 
+                "group": "ALDE", 
+                "country": " Romania\n", 
+                "lon": "26.1038889\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "44.4325"
+            }
+        }, 
+        {
+            "party": "S", 
+            "data": {
+                "city": "Bratislava", 
+                "group": "ALDE", 
+                "country": " Slovak Republic\n", 
+                "lon": "17.1071373\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "48.1458923"
+            }
+        }, 
+        {
+            "party": "LDS", 
+            "data": {
+                "city": "Ljubljana", 
+                "group": "ALDE", 
+                "country": " Slovenia\n", 
+                "lon": "14.5080702\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "46.05645089999999"
+            }
+        }, 
+        {
+            "party": "CDC", 
+            "data": {
+                "city": "Barcelona", 
+                "group": "ALDE", 
+                "country": " Spain\n", 
+                "lon": "2.1734035\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "41.3850639"
+            }
+        }, 
+        {
+            "party": "PNV-EAJ", 
+            "data": {
+                "city": "Bilbao", 
+                "group": "ALDE", 
+                "country": " Spain\n", 
+                "lon": "-2.9349852\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "43.2630126"
+            }
+        }, 
+        {
+            "party": "Folkpartliet liberalerna", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "ALDE", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "59.32893000000001"
+            }
+        }, 
+        {
+            "party": "Centerpartiet", 
+            "data": {
+                "city": "Stockholm", 
+                "group": "ALDE", 
+                "country": " Sweden\n", 
+                "lon": "18.06491\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "59.32893000000001"
+            }
+        }, 
+        {
+            "party": "Liberal democrats", 
+            "data": {
+                "city": "London", 
+                "group": "ALDE", 
+                "country": " UK\n", 
+                "lon": "-0.1254872\n", 
+                "group_name": "Alliance of Liberals and Democrats of Europe", 
+                "lat": "51.508515"
+            }
+        }
+    ]
+}
