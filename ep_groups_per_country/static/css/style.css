@@ -1,0 +1,38 @@
+
+.soften {
+    height: 5px;
+    margin-bottom: 0.5em;
+    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    border: 0;
+    width: 100%;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 5em;
+}
+
+.container {
+    width: auto;
+    padding: 0 2.5em;
+}
+.centered {
+    text-align: center;
+}
+
+.pie {
+    margin: 1em;
+}
+
+.legend {
+    height: 175px;
+}

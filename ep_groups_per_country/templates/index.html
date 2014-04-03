@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>European Parliament groups per country</h1>
+
+            <br><br>
+
+            <table class="table table-bordered table-condensed">
+                <tr class="row">
+                    <td class="col-md-1" style="background-color: #990000;"></td>
+                    <td class="col-md-2">GUE/NGL</td>
+
+                    <td class="col-md-1" style="background-color: #ea9999;"></td>
+                    <td class="col-md-2">S&D</td>
+
+                    <td class="col-md-1" style="background-color: #ffe599;"></td>
+                    <td class="col-md-2">ALDE</td>
+
+                    <td class="col-md-1" style="background-color: #93c47d;"></td>
+                    <td class="col-md-2">Greens</td>
+                </tr>
+
+                <tr class="row">
+                    <td class="col-md-1" style="background-color: #a4c2f4;"></td>
+                    <td class="col-md-2">EPP</td>
+
+                    <td class="col-md-1" style="background-color: #1155cc;"></td>
+                    <td class="col-md-2">ECR</td>
+
+                    <td class="col-md-1" style="background-color: #00ffff;"></td>
+                    <td class="col-md-2">EFD</td>
+
+                    <td class="col-md-1" style="background-color: #b7b7b7;"></td>
+                    <td class="col-md-2">EAF</td>
+                </tr>
+            </table>
+
+            <br><br>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/jquery-2.1.0.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/d3.min.js') }}"></script>
+
+        <script>
+            var radius = 74,
+                padding = 10;
+
+            var color = d3.scale.ordinal()
+                .range([
+                    "#990000",  // GUE/NGL
+                    "#ea9999",  // S&D
+                    "#ffe599",  // ALDE
+                    "#93c47d",  // Greens
+                    "#a4c2f4",  // EPP
+                    "#1155cc",  // ECR
+                    "#00ffff",  // EFD
+                    "#b7b7b7",  // EAF
+                ]);
+
+            var arc = d3.svg.arc()
+                .outerRadius(radius)
+                .innerRadius(radius - 30);
+
+            var pie = d3.layout.pie()
+                .sort(null)
+                .value(function(d) { return d.population; });
+
+            d3.csv("{{ url_for('static', filename='data.csv') }}", function(error, data) {
+              color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Country"; }));
+
+              data.forEach(function(d) {
+                d.ages = color.domain().map(function(name) {
+                  return {name: name, population: +d[name]};
+                });
+              });
+
+              data.forEach(function(d) {
+                if (d['Country'] == 'Country') {
+                    var index = data.indexOf(d);
+                    if (index > -1) {
+                        data.splice(index, 1);
+                    }
+                }
+              });
+
+              // var legend = d3.select(".container").append("svg")
+              //     .attr("class", "legend")
+              //     .attr("width", radius * 2)
+              //     .attr("height", radius * 2)
+              //   .selectAll("g")
+              //     .data(color.domain().slice().reverse())
+              //   .enter().append("g")
+              //     .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+              // legend.append("rect")
+              //     .attr("width", 18)
+              //     .attr("height", 18)
+              //     .style("fill", color);
+
+              // legend.append("text")
+              //     .attr("x", 24)
+              //     .attr("y", 9)
+              //     .attr("dy", ".35em")
+              //     .text(function(d) { return d; });
+
+              var svg = d3.select("body").selectAll(".pie")
+                  .data(data)
+                .enter().append("svg")
+                  .attr("class", "pie")
+                  .attr("width", radius * 2)
+                  .attr("height", radius * 2)
+                .append("g")
+                  .attr("transform", "translate(" + radius + "," + radius + ")");
+
+              svg.selectAll(".arc")
+                  .data(function(d) { return pie(d.ages); })
+                .enter().append("path")
+                  .attr("class", "arc")
+                  .attr("d", arc)
+                  .style("fill", function(d) { return color(d.data.name); });
+
+              svg.append("text")
+                  .attr("dy", ".35em")
+                  .style("text-anchor", "middle")
+                  .text(function(d) { return d.Country; });
+
+            });
+        </script>
+    </body>
+</html>
