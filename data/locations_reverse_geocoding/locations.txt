@@ -1,0 +1,50 @@
+Amersfoort, Netherlands
+Amsterdam, Netherlands
+Anderlecht, Belgium
+Athens, Greece
+Barcelona, Spain
+Bastia, France
+Belfast, Northern Ireland
+Berlin, Germany
+Bilbao, Spain
+Bolzano, Italy
+Bratislava, Slovak Republic
+Brussels, Belgium
+Bucharest, Romania
+Budapest, Hungary
+Cardiff, Wales
+Copenhagen, Denmark
+Devon, England
+Dublin, Ireland
+Edinburgh, Scotland
+Eupen, Belgium
+Frederiksberg, Denmark
+Gent, Belgium
+Gouda, Netherlands
+Hamrun, Malta
+Helsinki, Finland
+Holte, Denmark
+Lisbon, Portugal
+Ljubljana, Slovenia
+London, UK
+Luxembourg, Luxembourg
+Madrid, Spain
+Milan, Italy
+Munich, Germany
+Namur, Belgium
+Nicosia, Cyprus
+Paris, France
+Prague, Czech Republic
+Riga, Latvia
+Rome, Italy
+San Sebastian, Spain
+Santiago de Compostela, Spain
+Sofia, Bulgaria
+Stockholm, Sweden
+Tallinn, Estonia
+The Hague, Netherlands
+Valletta, Malta
+Vienna, Austria
+Vilnius, Lithuania
+Warsaw, Poland
+Zagreb, Croatia
