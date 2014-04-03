@@ -62,7 +62,7 @@ def build_party_group_geo():
         for party in parties:
             name = party['party']
             party_list.append(name)
-            G.add_node(name, group_id = i, group = group, group_name = party['data']['group_name'], city = party['data']['city'], lat = float(party['data']['lat']), lon = float(party['data']['lon']))
+            G.add_node(name, group_id = i, group = group, group_name = party['data']['group_name'], city = party['data']['city'], lat = float(party['data']['lat']), lng = float(party['data']['lon']))
         
         for i in range(0, len(party_list)):
             for j in range(i+1, len(party_list)):

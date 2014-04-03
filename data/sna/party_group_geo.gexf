@@ -4,8 +4,8 @@
       <attribute id="0" title="city" type="string" />
       <attribute id="1" title="group" type="string" />
       <attribute id="2" title="lat" type="double" />
-      <attribute id="3" title="group_id" type="integer" />
-      <attribute id="4" title="lon" type="double" />
+      <attribute id="3" title="lng" type="double" />
+      <attribute id="4" title="group_id" type="integer" />
       <attribute id="5" title="group_name" type="string" />
     </attributes>
     <nodes>
@@ -14,8 +14,8 @@
           <attvalue for="0" value="Brussels" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="50.8503396" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="4.3517103" />
+          <attvalue for="3" value="4.3517103" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -24,8 +24,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -34,8 +34,8 @@
           <attvalue for="0" value="Paris" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="48.856614" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="2.3522219" />
+          <attvalue for="3" value="2.3522219" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -44,8 +44,8 @@
           <attvalue for="0" value="Budapest" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="47.497912" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="19.040235" />
+          <attvalue for="3" value="19.040235" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -54,8 +54,8 @@
           <attvalue for="0" value="London" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="51.508515" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="-0.1254872" />
+          <attvalue for="3" value="-0.1254872" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -64,8 +64,8 @@
           <attvalue for="0" value="Edinburgh" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="55.953252" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="-3.188267" />
+          <attvalue for="3" value="-3.188267" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -74,8 +74,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -84,8 +84,8 @@
           <attvalue for="0" value="Dublin" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="53.3498053" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="-6.2603097" />
+          <attvalue for="3" value="-6.2603097" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -94,8 +94,8 @@
           <attvalue for="0" value="Sofia" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="42.6978388" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="23.3216697" />
+          <attvalue for="3" value="23.3216697" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -104,8 +104,8 @@
           <attvalue for="0" value="Warsaw" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="52.2296756" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="21.0122287" />
+          <attvalue for="3" value="21.0122287" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -114,8 +114,8 @@
           <attvalue for="0" value="Helsinki" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="60.1733244" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="24.9410248" />
+          <attvalue for="3" value="24.9410248" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -124,8 +124,8 @@
           <attvalue for="0" value="Santiago de Compostela" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="42.8782132" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="-8.5448445" />
+          <attvalue for="3" value="-8.5448445" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -134,8 +134,8 @@
           <attvalue for="0" value="Bratislava" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="48.1458923" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="17.1071373" />
+          <attvalue for="3" value="17.1071373" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -144,8 +144,8 @@
           <attvalue for="0" value="Sofia" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="42.6978388" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="23.3216697" />
+          <attvalue for="3" value="23.3216697" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -154,8 +154,8 @@
           <attvalue for="0" value="Namur" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="50.4673883" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="4.8719854" />
+          <attvalue for="3" value="4.8719854" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -164,8 +164,8 @@
           <attvalue for="0" value="Warsaw" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="52.2296756" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="21.0122287" />
+          <attvalue for="3" value="21.0122287" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -174,8 +174,8 @@
           <attvalue for="0" value="Zagreb" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="45.8130293" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="15.9778949" />
+          <attvalue for="3" value="15.9778949" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -184,8 +184,8 @@
           <attvalue for="0" value="Milan" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="45.4654542" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="9.186516" />
+          <attvalue for="3" value="9.186516" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -194,8 +194,8 @@
           <attvalue for="0" value="Vilnius" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="54.6871555" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="25.2796514" />
+          <attvalue for="3" value="25.2796514" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -204,8 +204,8 @@
           <attvalue for="0" value="Berlin" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="52.5200066" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="13.404954" />
+          <attvalue for="3" value="13.404954" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -214,8 +214,8 @@
           <attvalue for="0" value="Sofia" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="42.6978388" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="23.3216697" />
+          <attvalue for="3" value="23.3216697" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -224,8 +224,8 @@
           <attvalue for="0" value="Budapest" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="47.497912" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="19.040235" />
+          <attvalue for="3" value="19.040235" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -234,8 +234,8 @@
           <attvalue for="0" value="Copenhagen" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="55.6760968" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="12.5683371" />
+          <attvalue for="3" value="12.5683371" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -244,8 +244,8 @@
           <attvalue for="0" value="Paris" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="48.856614" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="2.3522219" />
+          <attvalue for="3" value="2.3522219" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -254,8 +254,8 @@
           <attvalue for="0" value="London" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="51.508515" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="-0.1254872" />
+          <attvalue for="3" value="-0.1254872" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -264,8 +264,8 @@
           <attvalue for="0" value="Amsterdam" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="52.3702157" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="4.8951679" />
+          <attvalue for="3" value="4.8951679" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -274,8 +274,8 @@
           <attvalue for="0" value="Tallinn" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="59.4369608" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="24.7535746" />
+          <attvalue for="3" value="24.7535746" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -284,8 +284,8 @@
           <attvalue for="0" value="Madrid" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="40.4167754" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="-3.7037902" />
+          <attvalue for="3" value="-3.7037902" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -294,8 +294,8 @@
           <attvalue for="0" value="Dublin" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="53.3498053" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="-6.2603097" />
+          <attvalue for="3" value="-6.2603097" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -304,8 +304,8 @@
           <attvalue for="0" value="Amersfoort" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="52.1561113" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="5.3878266" />
+          <attvalue for="3" value="5.3878266" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -314,8 +314,8 @@
           <attvalue for="0" value="The Hague" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="52.0704978" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="4.3006999" />
+          <attvalue for="3" value="4.3006999" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -324,8 +324,8 @@
           <attvalue for="0" value="Lisbon" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="38.7222524" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="-9.1393366" />
+          <attvalue for="3" value="-9.1393366" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -334,8 +334,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -344,8 +344,8 @@
           <attvalue for="0" value="Athens" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="37.9837155" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="23.7293097" />
+          <attvalue for="3" value="23.7293097" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -354,8 +354,8 @@
           <attvalue for="0" value="Prague" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="50.0755381" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="14.4378005" />
+          <attvalue for="3" value="14.4378005" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -364,8 +364,8 @@
           <attvalue for="0" value="Riga" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="56.9496487" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="24.1051864" />
+          <attvalue for="3" value="24.1051864" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -374,8 +374,8 @@
           <attvalue for="0" value="Helsinki" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="60.1733244" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="24.9410248" />
+          <attvalue for="3" value="24.9410248" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -384,8 +384,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -394,8 +394,8 @@
           <attvalue for="0" value="Madrid" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="40.4167754" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="-3.7037902" />
+          <attvalue for="3" value="-3.7037902" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -404,8 +404,8 @@
           <attvalue for="0" value="Bratislava" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="48.1458923" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="17.1071373" />
+          <attvalue for="3" value="17.1071373" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -414,8 +414,8 @@
           <attvalue for="0" value="Zagreb" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="45.8130293" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="15.9778949" />
+          <attvalue for="3" value="15.9778949" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -424,8 +424,8 @@
           <attvalue for="0" value="Vilnius" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="54.6871555" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="25.2796514" />
+          <attvalue for="3" value="25.2796514" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -434,8 +434,8 @@
           <attvalue for="0" value="Brussels" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="50.8503396" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="4.3517103" />
+          <attvalue for="3" value="4.3517103" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -444,8 +444,8 @@
           <attvalue for="0" value="Helsinki" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="60.1733244" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="24.9410248" />
+          <attvalue for="3" value="24.9410248" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -454,8 +454,8 @@
           <attvalue for="0" value="Bratislava" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="48.1458923" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="17.1071373" />
+          <attvalue for="3" value="17.1071373" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -464,8 +464,8 @@
           <attvalue for="0" value="Vilnius" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="54.6871555" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="25.2796514" />
+          <attvalue for="3" value="25.2796514" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -474,8 +474,8 @@
           <attvalue for="0" value="Warsaw" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="52.2296756" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="21.0122287" />
+          <attvalue for="3" value="21.0122287" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -484,8 +484,8 @@
           <attvalue for="0" value="Lisbon" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="38.7222524" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="-9.1393366" />
+          <attvalue for="3" value="-9.1393366" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -494,8 +494,8 @@
           <attvalue for="0" value="Zagreb" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="45.8130293" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="15.9778949" />
+          <attvalue for="3" value="15.9778949" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -504,8 +504,8 @@
           <attvalue for="0" value="Luxembourg" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="49.611621" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="6.1319346" />
+          <attvalue for="3" value="6.1319346" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -514,8 +514,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -524,8 +524,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -534,8 +534,8 @@
           <attvalue for="0" value="Helsinki" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="60.1733244" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="24.9410248" />
+          <attvalue for="3" value="24.9410248" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -544,8 +544,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -554,8 +554,8 @@
           <attvalue for="0" value="Gent" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="51.0543422" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="3.7174243" />
+          <attvalue for="3" value="3.7174243" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -564,8 +564,8 @@
           <attvalue for="0" value="London" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="51.508515" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="-0.1254872" />
+          <attvalue for="3" value="-0.1254872" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -574,8 +574,8 @@
           <attvalue for="0" value="Vienna" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="48.2081743" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="16.3738189" />
+          <attvalue for="3" value="16.3738189" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -584,8 +584,8 @@
           <attvalue for="0" value="Vienna" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="48.2081743" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="16.3738189" />
+          <attvalue for="3" value="16.3738189" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -594,8 +594,8 @@
           <attvalue for="0" value="Ljubljana" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="46.0564509" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="14.5080702" />
+          <attvalue for="3" value="14.5080702" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -604,8 +604,8 @@
           <attvalue for="0" value="Paris" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="48.856614" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="2.3522219" />
+          <attvalue for="3" value="2.3522219" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -614,8 +614,8 @@
           <attvalue for="0" value="Prague" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="50.0755381" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="14.4378005" />
+          <attvalue for="3" value="14.4378005" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -624,8 +624,8 @@
           <attvalue for="0" value="Luxembourg" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="49.611621" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="6.1319346" />
+          <attvalue for="3" value="6.1319346" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -634,8 +634,8 @@
           <attvalue for="0" value="Berlin" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="52.5200066" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="13.404954" />
+          <attvalue for="3" value="13.404954" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -644,8 +644,8 @@
           <attvalue for="0" value="Riga" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="56.9496487" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="24.1051864" />
+          <attvalue for="3" value="24.1051864" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -654,8 +654,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -664,8 +664,8 @@
           <attvalue for="0" value="Vilnius" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="54.6871555" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="25.2796514" />
+          <attvalue for="3" value="25.2796514" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -674,8 +674,8 @@
           <attvalue for="0" value="Athens" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="37.9837155" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="23.7293097" />
+          <attvalue for="3" value="23.7293097" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -684,8 +684,8 @@
           <attvalue for="0" value="Warsaw" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="52.2296756" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="21.0122287" />
+          <attvalue for="3" value="21.0122287" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -694,8 +694,8 @@
           <attvalue for="0" value="Dublin" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="53.3498053" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="-6.2603097" />
+          <attvalue for="3" value="-6.2603097" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -704,8 +704,8 @@
           <attvalue for="0" value="Bratislava" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="48.1458923" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="17.1071373" />
+          <attvalue for="3" value="17.1071373" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -714,8 +714,8 @@
           <attvalue for="0" value="Cardiff" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="51.481581" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="-3.17909" />
+          <attvalue for="3" value="-3.17909" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -724,8 +724,8 @@
           <attvalue for="0" value="Tallinn" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="59.4369608" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="24.7535746" />
+          <attvalue for="3" value="24.7535746" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -734,8 +734,8 @@
           <attvalue for="0" value="Munich" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="48.1351253" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="11.5819806" />
+          <attvalue for="3" value="11.5819806" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -744,8 +744,8 @@
           <attvalue for="0" value="Bucharest" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="44.4325" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="26.1038889" />
+          <attvalue for="3" value="26.1038889" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -754,8 +754,8 @@
           <attvalue for="0" value="Sofia" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="42.6978388" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="23.3216697" />
+          <attvalue for="3" value="23.3216697" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -764,8 +764,8 @@
           <attvalue for="0" value="Eupen" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="50.6292029" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="6.0337111" />
+          <attvalue for="3" value="6.0337111" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -774,8 +774,8 @@
           <attvalue for="0" value="Nicosia" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="35.1666667" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="33.3666667" />
+          <attvalue for="3" value="33.3666667" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -784,8 +784,8 @@
           <attvalue for="0" value="Bolzano" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="46.4982953" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="11.3547582" />
+          <attvalue for="3" value="11.3547582" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -794,8 +794,8 @@
           <attvalue for="0" value="Athens" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="37.9837155" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="23.7293097" />
+          <attvalue for="3" value="23.7293097" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -804,8 +804,8 @@
           <attvalue for="0" value="Warsaw" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="52.2296756" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="21.0122287" />
+          <attvalue for="3" value="21.0122287" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -814,8 +814,8 @@
           <attvalue for="0" value="Lisbon" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="38.7222524" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="-9.1393366" />
+          <attvalue for="3" value="-9.1393366" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -824,8 +824,8 @@
           <attvalue for="0" value="Bratislava" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="48.1458923" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="17.1071373" />
+          <attvalue for="3" value="17.1071373" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -834,8 +834,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -844,8 +844,8 @@
           <attvalue for="0" value="Brussels" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="50.8503396" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="4.3517103" />
+          <attvalue for="3" value="4.3517103" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -854,8 +854,8 @@
           <attvalue for="0" value="Athens" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="37.9837155" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="23.7293097" />
+          <attvalue for="3" value="23.7293097" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -864,8 +864,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -874,8 +874,8 @@
           <attvalue for="0" value="Ljubljana" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="46.0564509" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="14.5080702" />
+          <attvalue for="3" value="14.5080702" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -884,8 +884,8 @@
           <attvalue for="0" value="Prague" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="50.0755381" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="14.4378005" />
+          <attvalue for="3" value="14.4378005" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -894,8 +894,8 @@
           <attvalue for="0" value="Tallinn" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="59.4369608" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="24.7535746" />
+          <attvalue for="3" value="24.7535746" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -904,8 +904,8 @@
           <attvalue for="0" value="Riga" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="56.9496487" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="24.1051864" />
+          <attvalue for="3" value="24.1051864" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -914,8 +914,8 @@
           <attvalue for="0" value="Valletta" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="35.89779" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="14.514106" />
+          <attvalue for="3" value="14.514106" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -924,8 +924,8 @@
           <attvalue for="0" value="Dublin" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="53.3498053" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="-6.2603097" />
+          <attvalue for="3" value="-6.2603097" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -934,8 +934,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -944,8 +944,8 @@
           <attvalue for="0" value="Budapest" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="47.497912" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="19.040235" />
+          <attvalue for="3" value="19.040235" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -954,8 +954,8 @@
           <attvalue for="0" value="Copenhagen" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="55.6760968" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="12.5683371" />
+          <attvalue for="3" value="12.5683371" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -964,8 +964,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -974,8 +974,8 @@
           <attvalue for="0" value="Luxembourg" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="49.611621" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="6.1319346" />
+          <attvalue for="3" value="6.1319346" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -984,8 +984,8 @@
           <attvalue for="0" value="Bratislava" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="48.1458923" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="17.1071373" />
+          <attvalue for="3" value="17.1071373" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -994,8 +994,8 @@
           <attvalue for="0" value="Riga" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="56.9496487" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="24.1051864" />
+          <attvalue for="3" value="24.1051864" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -1004,8 +1004,8 @@
           <attvalue for="0" value="Sofia" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="42.6978388" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="23.3216697" />
+          <attvalue for="3" value="23.3216697" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1014,8 +1014,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1024,8 +1024,8 @@
           <attvalue for="0" value="Anderlecht" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="50.8365808" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="4.308187" />
+          <attvalue for="3" value="4.308187" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1034,8 +1034,8 @@
           <attvalue for="0" value="Prague" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="50.0755381" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="14.4378005" />
+          <attvalue for="3" value="14.4378005" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -1044,8 +1044,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="EAF" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="3" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="3" />
           <attvalue for="5" value="European Alliance for Freedom" />
         </attvalues>
       </node>
@@ -1054,8 +1054,8 @@
           <attvalue for="0" value="Paris" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="48.856614" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="2.3522219" />
+          <attvalue for="3" value="2.3522219" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1064,8 +1064,8 @@
           <attvalue for="0" value="Copenhagen" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="55.6760968" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="12.5683371" />
+          <attvalue for="3" value="12.5683371" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1074,8 +1074,8 @@
           <attvalue for="0" value="Berlin" />
           <attvalue for="1" value="EAF" />
           <attvalue for="2" value="52.5200066" />
-          <attvalue for="3" value="3" />
-          <attvalue for="4" value="13.404954" />
+          <attvalue for="3" value="13.404954" />
+          <attvalue for="4" value="3" />
           <attvalue for="5" value="European Alliance for Freedom" />
         </attvalues>
       </node>
@@ -1084,8 +1084,8 @@
           <attvalue for="0" value="Milan" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="45.4654542" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="9.186516" />
+          <attvalue for="3" value="9.186516" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -1094,8 +1094,8 @@
           <attvalue for="0" value="Paris" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="48.856614" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="2.3522219" />
+          <attvalue for="3" value="2.3522219" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1104,8 +1104,8 @@
           <attvalue for="0" value="Helsinki" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="60.1733244" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="24.9410248" />
+          <attvalue for="3" value="24.9410248" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1114,8 +1114,8 @@
           <attvalue for="0" value="Luxembourg" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="49.611621" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="6.1319346" />
+          <attvalue for="3" value="6.1319346" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1124,8 +1124,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1134,8 +1134,8 @@
           <attvalue for="0" value="Helsinki" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="60.1733244" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="24.9410248" />
+          <attvalue for="3" value="24.9410248" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1144,8 +1144,8 @@
           <attvalue for="0" value="Brussels" />
           <attvalue for="1" value="EAF" />
           <attvalue for="2" value="50.8503396" />
-          <attvalue for="3" value="3" />
-          <attvalue for="4" value="4.3517103" />
+          <attvalue for="3" value="4.3517103" />
+          <attvalue for="4" value="3" />
           <attvalue for="5" value="European Alliance for Freedom" />
         </attvalues>
       </node>
@@ -1154,8 +1154,8 @@
           <attvalue for="0" value="The Hague" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="52.0704978" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="4.3006999" />
+          <attvalue for="3" value="4.3006999" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1164,8 +1164,8 @@
           <attvalue for="0" value="Nicosia" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="35.1666667" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="33.3666667" />
+          <attvalue for="3" value="33.3666667" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1174,8 +1174,8 @@
           <attvalue for="0" value="Copenhagen" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="55.6760968" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="12.5683371" />
+          <attvalue for="3" value="12.5683371" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -1184,8 +1184,8 @@
           <attvalue for="0" value="The Hague" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="52.0704978" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="4.3006999" />
+          <attvalue for="3" value="4.3006999" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1194,8 +1194,8 @@
           <attvalue for="0" value="Barcelona" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="41.3850639" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="2.1734035" />
+          <attvalue for="3" value="2.1734035" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1204,8 +1204,8 @@
           <attvalue for="0" value="Madrid" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="40.4167754" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="-3.7037902" />
+          <attvalue for="3" value="-3.7037902" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1214,8 +1214,8 @@
           <attvalue for="0" value="Brussels" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="50.8503396" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="4.3517103" />
+          <attvalue for="3" value="4.3517103" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1224,8 +1224,8 @@
           <attvalue for="0" value="Belfast" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="54.597285" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="-5.93012" />
+          <attvalue for="3" value="-5.93012" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -1234,8 +1234,8 @@
           <attvalue for="0" value="Berlin" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="52.5200066" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="13.404954" />
+          <attvalue for="3" value="13.404954" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1244,8 +1244,8 @@
           <attvalue for="0" value="Athens" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="37.9837155" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="23.7293097" />
+          <attvalue for="3" value="23.7293097" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -1254,8 +1254,8 @@
           <attvalue for="0" value="Paris" />
           <attvalue for="1" value="EAF" />
           <attvalue for="2" value="48.856614" />
-          <attvalue for="3" value="3" />
-          <attvalue for="4" value="2.3522219" />
+          <attvalue for="3" value="2.3522219" />
+          <attvalue for="4" value="3" />
           <attvalue for="5" value="European Alliance for Freedom" />
         </attvalues>
       </node>
@@ -1264,8 +1264,8 @@
           <attvalue for="0" value="Lisbon" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="38.7222524" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="-9.1393366" />
+          <attvalue for="3" value="-9.1393366" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1274,8 +1274,8 @@
           <attvalue for="0" value="Frederiksberg" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="55.677069" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="12.513321" />
+          <attvalue for="3" value="12.513321" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1284,8 +1284,8 @@
           <attvalue for="0" value="Barcelona" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="41.3850639" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="2.1734035" />
+          <attvalue for="3" value="2.1734035" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1294,8 +1294,8 @@
           <attvalue for="0" value="Copenhagen" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="55.6760968" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="12.5683371" />
+          <attvalue for="3" value="12.5683371" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1304,8 +1304,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1314,8 +1314,8 @@
           <attvalue for="0" value="Zagreb" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="45.8130293" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="15.9778949" />
+          <attvalue for="3" value="15.9778949" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1324,8 +1324,8 @@
           <attvalue for="0" value="Madrid" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="40.4167754" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="-3.7037902" />
+          <attvalue for="3" value="-3.7037902" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1334,8 +1334,8 @@
           <attvalue for="0" value="Nicosia" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="35.1666667" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="33.3666667" />
+          <attvalue for="3" value="33.3666667" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1344,8 +1344,8 @@
           <attvalue for="0" value="Prague" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="50.0755381" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="14.4378005" />
+          <attvalue for="3" value="14.4378005" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1354,8 +1354,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1364,8 +1364,8 @@
           <attvalue for="0" value="Athens" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="37.9837155" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="23.7293097" />
+          <attvalue for="3" value="23.7293097" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1374,8 +1374,8 @@
           <attvalue for="0" value="Bucharest" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="44.4325" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="26.1038889" />
+          <attvalue for="3" value="26.1038889" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1384,8 +1384,8 @@
           <attvalue for="0" value="Barcelona" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="41.3850639" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="2.1734035" />
+          <attvalue for="3" value="2.1734035" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1394,8 +1394,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="GUE/NGL" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="1" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="1" />
           <attvalue for="5" value="European Left" />
         </attvalues>
       </node>
@@ -1404,8 +1404,8 @@
           <attvalue for="0" value="Bilbao" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="43.2630126" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="-2.9349852" />
+          <attvalue for="3" value="-2.9349852" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1414,8 +1414,8 @@
           <attvalue for="0" value="London" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="51.508515" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="-0.1254872" />
+          <attvalue for="3" value="-0.1254872" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1424,8 +1424,8 @@
           <attvalue for="0" value="Warsaw" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="52.2296756" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="21.0122287" />
+          <attvalue for="3" value="21.0122287" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1434,8 +1434,8 @@
           <attvalue for="0" value="San Sebastian" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="43.318334" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="-1.9812313" />
+          <attvalue for="3" value="-1.9812313" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1444,8 +1444,8 @@
           <attvalue for="0" value="Paris" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="48.856614" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="2.3522219" />
+          <attvalue for="3" value="2.3522219" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -1454,8 +1454,8 @@
           <attvalue for="0" value="Gouda" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="52.0115205" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="4.7104633" />
+          <attvalue for="3" value="4.7104633" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -1464,8 +1464,8 @@
           <attvalue for="0" value="Devon" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="50.7772135" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="-3.999461" />
+          <attvalue for="3" value="-3.999461" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -1474,8 +1474,8 @@
           <attvalue for="0" value="Vilnius" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="54.6871555" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="25.2796514" />
+          <attvalue for="3" value="25.2796514" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1484,8 +1484,8 @@
           <attvalue for="0" value="Vilnius" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="54.6871555" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="25.2796514" />
+          <attvalue for="3" value="25.2796514" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1494,8 +1494,8 @@
           <attvalue for="0" value="Bucharest" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="44.4325" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="26.1038889" />
+          <attvalue for="3" value="26.1038889" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1504,8 +1504,8 @@
           <attvalue for="0" value="Brussels" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="50.8503396" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="4.3517103" />
+          <attvalue for="3" value="4.3517103" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1514,8 +1514,8 @@
           <attvalue for="0" value="Berlin" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="52.5200066" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="13.404954" />
+          <attvalue for="3" value="13.404954" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1524,8 +1524,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1534,8 +1534,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1544,8 +1544,8 @@
           <attvalue for="0" value="Helsinki" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="60.1733244" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="24.9410248" />
+          <attvalue for="3" value="24.9410248" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1554,8 +1554,8 @@
           <attvalue for="0" value="Bucharest" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="44.4325" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="26.1038889" />
+          <attvalue for="3" value="26.1038889" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1564,8 +1564,8 @@
           <attvalue for="0" value="Athens" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="37.9837155" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="23.7293097" />
+          <attvalue for="3" value="23.7293097" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1574,8 +1574,8 @@
           <attvalue for="0" value="Amersfoort" />
           <attvalue for="1" value="ECR" />
           <attvalue for="2" value="52.1561113" />
-          <attvalue for="3" value="4" />
-          <attvalue for="4" value="5.3878266" />
+          <attvalue for="3" value="5.3878266" />
+          <attvalue for="4" value="4" />
           <attvalue for="5" value="European Conservatives and Reformists" />
         </attvalues>
       </node>
@@ -1584,8 +1584,8 @@
           <attvalue for="0" value="Vienna" />
           <attvalue for="1" value="EAF" />
           <attvalue for="2" value="48.2081743" />
-          <attvalue for="3" value="3" />
-          <attvalue for="4" value="16.3738189" />
+          <attvalue for="3" value="16.3738189" />
+          <attvalue for="4" value="3" />
           <attvalue for="5" value="European Alliance for Freedom" />
         </attvalues>
       </node>
@@ -1594,8 +1594,8 @@
           <attvalue for="0" value="Vienna" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="48.2081743" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="16.3738189" />
+          <attvalue for="3" value="16.3738189" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1604,8 +1604,8 @@
           <attvalue for="0" value="Budapest" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="47.497912" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="19.040235" />
+          <attvalue for="3" value="19.040235" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1614,8 +1614,8 @@
           <attvalue for="0" value="Barcelona" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="41.3850639" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="2.1734035" />
+          <attvalue for="3" value="2.1734035" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1624,8 +1624,8 @@
           <attvalue for="0" value="Nicosia" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="35.1666667" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="33.3666667" />
+          <attvalue for="3" value="33.3666667" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1634,8 +1634,8 @@
           <attvalue for="0" value="Ljubljana" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="46.0564509" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="14.5080702" />
+          <attvalue for="3" value="14.5080702" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1644,8 +1644,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1654,8 +1654,8 @@
           <attvalue for="0" value="Berlin" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="52.5200066" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="13.404954" />
+          <attvalue for="3" value="13.404954" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1664,8 +1664,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1674,8 +1674,8 @@
           <attvalue for="0" value="Ljubljana" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="46.0564509" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="14.5080702" />
+          <attvalue for="3" value="14.5080702" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1684,8 +1684,8 @@
           <attvalue for="0" value="Stockholm" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="59.32893" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="18.06491" />
+          <attvalue for="3" value="18.06491" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1694,8 +1694,8 @@
           <attvalue for="0" value="Holte" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="55.8172508" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="12.4722496" />
+          <attvalue for="3" value="12.4722496" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
@@ -1704,8 +1704,8 @@
           <attvalue for="0" value="Tallinn" />
           <attvalue for="1" value="S&amp;D" />
           <attvalue for="2" value="59.4369608" />
-          <attvalue for="3" value="5" />
-          <attvalue for="4" value="24.7535746" />
+          <attvalue for="3" value="24.7535746" />
+          <attvalue for="4" value="5" />
           <attvalue for="5" value="Socialists &amp; Democrats" />
         </attvalues>
       </node>
@@ -1714,8 +1714,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1724,8 +1724,8 @@
           <attvalue for="0" value="Sofia" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="42.6978388" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="23.3216697" />
+          <attvalue for="3" value="23.3216697" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1734,8 +1734,8 @@
           <attvalue for="0" value="Athens" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="37.9837155" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="23.7293097" />
+          <attvalue for="3" value="23.7293097" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1744,8 +1744,8 @@
           <attvalue for="0" value="Budapest" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="47.497912" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="19.040235" />
+          <attvalue for="3" value="19.040235" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1754,8 +1754,8 @@
           <attvalue for="0" value="Bastia" />
           <attvalue for="1" value="Greens" />
           <attvalue for="2" value="42.697283" />
-          <attvalue for="3" value="0" />
-          <attvalue for="4" value="9.450881" />
+          <attvalue for="3" value="9.450881" />
+          <attvalue for="4" value="0" />
           <attvalue for="5" value="The Greens / European Free Alliance" />
         </attvalues>
       </node>
@@ -1764,8 +1764,8 @@
           <attvalue for="0" value="Paris" />
           <attvalue for="1" value="EPP" />
           <attvalue for="2" value="48.856614" />
-          <attvalue for="3" value="2" />
-          <attvalue for="4" value="2.3522219" />
+          <attvalue for="3" value="2.3522219" />
+          <attvalue for="4" value="2" />
           <attvalue for="5" value="European People's Party" />
         </attvalues>
       </node>
@@ -1774,8 +1774,8 @@
           <attvalue for="0" value="Rome" />
           <attvalue for="1" value="EFD" />
           <attvalue for="2" value="41.8929163" />
-          <attvalue for="3" value="6" />
-          <attvalue for="4" value="12.4825199" />
+          <attvalue for="3" value="12.4825199" />
+          <attvalue for="4" value="6" />
           <attvalue for="5" value="Europe for Freedom and Democracy" />
         </attvalues>
       </node>
@@ -1784,8 +1784,8 @@
           <attvalue for="0" value="Brussels" />
           <attvalue for="1" value="ALDE" />
           <attvalue for="2" value="50.8503396" />
-          <attvalue for="3" value="7" />
-          <attvalue for="4" value="4.3517103" />
+          <attvalue for="3" value="4.3517103" />
+          <attvalue for="4" value="7" />
           <attvalue for="5" value="Alliance of Liberals and Democrats of Europe" />
         </attvalues>
       </node>
