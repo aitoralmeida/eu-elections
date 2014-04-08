@@ -1,0 +1,66 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+.centered, .center {
+    text-align: center;
+}
+
+#main-container {
+    display: block;
+    min-height: 500px;
+}
+
+.soften {
+    height: 5px;
+    margin: 3em 0 1.5em 0;
+    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    border: 0;
+}
+
+.soften-limited {
+    height: 5px;
+    margin: 1em 0;
+    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, .2), transparent);
+    border: 0;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 5em;
+    background-color: transparent;
+}
+
+footer {
+    /*position: absolute;*/
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 5em;
+    background-color: #ccc;
+}
+
+/* End sticky footer styles
+-------------------------------------------------- */

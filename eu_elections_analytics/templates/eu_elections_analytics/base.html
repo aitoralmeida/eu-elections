@@ -1,0 +1,58 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EU elections analytics</title>
+        <link rel="shortcut icon" href="{{ STATIC_PREFIX }}img/favicon.ico">
+
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <meta name="author" content="">
+        <meta name="robots" content="index, follow" />
+
+        <meta name="keywords" content="" />
+        <meta name="description" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/style.css"/>
+
+        {% block header_css %}{% endblock %}
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="masthead">
+                <a href="{% url 'home' %}">
+                    <h1>EU elections analytics</h1>
+                </a>
+                <div class="soften-limited"></div>
+                <br>
+            </div> <!-- end .masthead -->
+
+            <div id="main-container" class="container">
+                {% block content %}{% endblock %}
+            </div> <!-- end main-container -->
+
+        </div> <!-- first .container -->
+
+
+        <footer>
+            <p>
+                Work in progress...
+            </p>
+        </footer>
+    </body>
+
+    <script src="{{ STATIC_PREFIX }}js/jquery-2.1.0.min.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/bootstrap.min.js"></script>
+
+    {% block scripts %}{% endblock %}
+</html>
