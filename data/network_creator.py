@@ -6,7 +6,7 @@ Created on Thu Apr 03 14:44:00 2014
 """
 
 import networkx as nx
-
+import random
 import json
 
 
@@ -62,7 +62,11 @@ def build_party_group_geo():
         for party in parties:
             name = party['party']
             party_list.append(name)
-            G.add_node(name, group_id = i, group = group, group_name = party['data']['group_name'], city = party['data']['city'], lat = float(party['data']['lat']), lng = float(party['data']['lon']))
+            lat = float(party['data']['lat'])
+            lng = float(party['data']['lon'])
+            lat, lng = scatter(lat, lng)             
+            
+            G.add_node(name, group_id = i, group = group, group_name = party['data']['group_name'], city = party['data']['city'], lat = lat, lng = lng)
         
         for i in range(0, len(party_list)):
             for j in range(i+1, len(party_list)):
@@ -72,6 +76,23 @@ def build_party_group_geo():
     print 'Edges:', len(G.edges())
     
     nx.write_gexf(G, './sna/party_group_geo.gexf')
+    
+def scatter(lat, lon):
+    lat = lat + generate_variation()
+    lon = lon + generate_variation() 
+    return lat, lon
+    
+def generate_variation():
+    variation = random.random()
+    sign = random.random()
+    if sign < 0.50:
+        sign = -1
+    else:
+        sign = 1
+    
+    variation = variation * sign
+    
+    return variation
     
             
             
