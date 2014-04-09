@@ -44,9 +44,9 @@ def load_locations():
     
     for country in countries:
         print 'Adding', slugify(country)
-        cursor.execute('INSERT INTO countries (short_name, long_name) VALUES (' + slugify(country)  + ', ' + country + ')')
+        cursor.execute('INSERT INTO countries (short_name, long_name) VALUES (' + country  + ', ' + country + ')')
         for city in country_cities[country]:
-            cursor.execute('INSERT INTO locations (city, lat, lon, country_id) VALUES (' + city +', ' + lat + ', ' + lon + ', ' + slugify(country) +')')
+            cursor.execute('INSERT INTO locations (city, lat, lon, country_id) VALUES (' + city +', ' + lat + ', ' + lon + ', ' + country +')')
     
     cursor.close()
     cnx.close()
