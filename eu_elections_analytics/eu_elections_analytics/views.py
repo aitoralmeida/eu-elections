@@ -13,3 +13,11 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, "eu_elections_analytics/index.html")
+
+
+####################################################################################################
+#####   View: group_representation_by_country()
+####################################################################################################
+
+def group_representation_by_country(request):
+    return render(request, "eu_elections_analytics/group_representation_by_country.html")
