@@ -64,3 +64,11 @@ footer {
 
 /* End sticky footer styles
 -------------------------------------------------- */
+
+g.country-axis > g.tick > text {
+    -webkit-transform: rotate(-90deg);
+}
+
+#chart {
+    margin-bottom: 10em;
+}
