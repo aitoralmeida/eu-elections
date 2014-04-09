@@ -72,3 +72,8 @@ g.country-axis > g.tick > text {
 #chart {
     margin-bottom: 10em;
 }
+
+#sigma-container {
+    width: 100%;
+    min-height: 600px;
+}
