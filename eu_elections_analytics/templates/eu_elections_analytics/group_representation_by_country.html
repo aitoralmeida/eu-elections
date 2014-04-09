@@ -130,7 +130,8 @@
                     .attr("width", x.rangeBand())
                     .attr("y", function(d) { return y(d.y1); })
                     .attr("height", function(d) { return y(d.y0) - y(d.y1); })
-                    .style("fill", function(d) { return color(d.party); });
+                    .style("fill", function(d) { return color(d.party); })
+                    .style("opacity", 0.8);
 
             var legend = svg.selectAll(".legend")
                 .data(color.domain().slice().reverse())
