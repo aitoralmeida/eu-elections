@@ -12,11 +12,16 @@ CONSUMER_SECRET="ttGu9aGzIDhvbNSRY4EGSujcquyvDbAXY4TuiSEd4"
 ACCESS_KEY="1857555254-hAhPx0xu3dybBWoY9KrFBkV9M5gqifCQsYUVxWt"
 ACCESS_SECRET="0HtrefAmeqPOgJzasnv4mVPfCHhXw3vVpdzbUHvXkco3T"
 FILE_NUM = 0
+starting_point = time.time()
 
 
 class StdOutListener(StreamListener):
     def on_data(self, data):
-        print data
+        global starting_point, FILE_NUM
+        elapsed_time = time.time () - starting_point
+        if elapsed_time > (30*60):
+            starting_point = time.time()
+            FILE_NUM += 1
         d = date.today()
         file = "eu-elections-"+str(d.day)+"-"+str(FILE_NUM)+".txt"
         text_file = open(file, "a")
