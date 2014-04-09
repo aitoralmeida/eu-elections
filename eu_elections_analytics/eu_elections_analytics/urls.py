@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 
     url(r'^map1/$', 'eu_elections_analytics.views.map1', name='map1'),
     url(r'^map2/$', 'eu_elections_analytics.views.map2', name='map2'),
+    url(r'^map3/$', 'eu_elections_analytics.views.map3', name='map3'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

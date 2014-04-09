@@ -45,3 +45,11 @@ def map1(request):
 
 def map2(request):
     return render(request, "eu_elections_analytics/map2.html")
+
+
+####################################################################################################
+#####   View: map3()
+####################################################################################################
+
+def map3(request):
+    return render(request, "eu_elections_analytics/map3.html")
