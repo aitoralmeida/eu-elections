@@ -22,7 +22,7 @@ def load_locations():
     with open('./locations_reverse_geocoding/locations.csv', 'r') as infile:
         
         for line in infile:
-            if line != "city,country,lat,lng":
+            if not 'city' in line:
                 tokens = line.split(',')
                 city = tokens[0]
                 country = tokens[1]
@@ -44,9 +44,14 @@ def load_locations():
     
     for country in countries:
         print 'Adding', country
-        cursor.execute('INSERT INTO countries (short_name, long_name) VALUES (' + country  + ', ' + country + ')')
+        query = "INSERT INTO countries (short_name, long_name) VALUES ('" + country  + "', '" + country + "')"
+
+        cursor.execute(query)
         for city in country_cities[country]:
-            cursor.execute('INSERT INTO locations (city, lat, lon, country_id) VALUES (' + city +', ' + lat + ', ' + lon + ', ' + country +')')
+            print 'Adding', city
+            query = "INSERT INTO locations (city, lat, lon, country_id) VALUES ('" + city +"', " + lat + ", " + lon + ", '" + country +"')"
+            cursor.execute(query)
+
     
     cursor.close()
     cnx.close()
