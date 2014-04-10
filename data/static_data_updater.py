@@ -96,6 +96,7 @@ def load_parties():
                 print line
                 break
 
+    cnx.commit()    
     cursor.close()
     cnx.close()  
     
@@ -124,19 +125,18 @@ def load_groups():
                 print screename
                 user_id = 0
             query = "INSERT INTO groups (initials, candidate_id, subcandidate_id, name, total_tweets, user_id) VALUES ('" + group  + "', " + str(candidate_id) + ", " +  str(subcandidate_id) + ", '" + name + "', 0, " + str(user_id)  + ");"
-            print query            
-            try:            
-                cursor.execute(query)
-            except:
-                pass
-        
+            print query                     
+            cursor.execute(query)
+            
+
+    cnx.commit()
     cursor.close()
     cnx.close()  
        
         
 
     
-load_groups()
+load_parties()
 
 print 'done'
         
