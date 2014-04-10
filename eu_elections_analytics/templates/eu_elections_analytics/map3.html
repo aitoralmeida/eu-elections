@@ -1,0 +1,106 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block content %}
+
+    <div id="sigma-container"></div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+    <script src="{{ STATIC_PREFIX }}js/jquery-2.1.0.min.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/sigma.min.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/plugins/sigma.parsers.gexf.min.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/plugins/sigma.layout.forceAtlas2.min.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/plugins/sigma.plugins.animate.min.js"></script>
+
+    <script>
+        var hiddenColor = '#bbb';
+
+        // Add a method to the graph model that returns an object with every neighbors of a node inside:
+        sigma.classes.graph.addMethod('neighbors', function(nodeId) {
+            var k, neighbors = {}, index = this.allNeighborsIndex[nodeId] || {};
+
+            for (k in index)
+                neighbors[k] = this.nodesIndex[k];
+
+            return neighbors;
+        });
+
+        sigma.parsers.gexf('{{ STATIC_PREFIX }}data/geo_map.gexf', {
+                // Here is the ID of the DOM element that will contain the graph:
+                container: 'sigma-container'
+            }, function(s) {
+                // This function will be executed when the graph is displayed, with "s" the related sigma instance.
+
+                s.settings({
+                    font: 'ubuntu',
+                    labelThreshold: 2,
+                    sideMargin: 100,
+                });
+
+                // Refresh the graph to see the changes:
+                s.refresh();
+
+                node_colors = {};
+                s.graph.nodes().forEach(function(n) {
+                    node_colors[n.id] = n.color;
+                });
+
+                edge_colors = {};
+                s.graph.edges().forEach(function(e) {
+                    edge_colors[e.id] = node_colors[e.source];
+                });
+
+                // s.bind('clickNode', function(e) {
+                s.bind('overNode', function(e) {
+                    var nodeId = e.data.node.id,
+                    toKeep = s.graph.neighbors(nodeId);
+                    toKeep[nodeId] = e.data.node;
+
+                    s.graph.nodes().forEach(function(n) {
+                        if (toKeep[n.id]) {
+                            n.color = node_colors[n.id];
+                        }
+                        else {
+                            n.color = hiddenColor;
+                            s.settings({
+                                // labelColor: 'node',
+                            });
+                        }
+                    });
+
+                    s.graph.edges().forEach(function(e) {
+                        if (toKeep[e.source] && toKeep[e.target])
+                            e.color = edge_colors[e.id];
+                        else
+                            e.color = hiddenColor;
+                    });
+
+                    s.refresh();
+                });
+
+                // s.bind('clickStage', function(e) {
+                s.bind('outNode', function(e) {
+                    s.graph.nodes().forEach(function(n) {
+                        n.color = node_colors[n.id];
+                        s.settings({
+                            labelColor: 'default',
+                        });
+                    });
+
+                    s.graph.edges().forEach(function(e) {
+                        e.color = edge_colors[e.id];
+                    });
+
+                    s.refresh();
+                });
+            });
+
+    </script>
+
+{% endblock %}
