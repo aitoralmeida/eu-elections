@@ -1,12 +1,11 @@
 __author__ = 'juan'
-import database
+import remote_database
 import glob
 
 
 
-db = database.database("database.db")
-db.create()
-files =  glob.glob("corpus_def/*.txt")
+db = remote_database.database()
+files =  glob.glob("*.txt")
 print files
 
 for file in files:
@@ -19,6 +18,7 @@ for file in files:
      except IOError:
          pass
 
-     for line in lines:
+     for line in lines[:20]:
          db.insert(line)
+
      print "Finished ",file

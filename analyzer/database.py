@@ -3,14 +3,32 @@ __author__ = 'juan'
 import sqlite3 as lite
 import json
 from termcolor import colored
+import mysql.connector
+
+config = {
+    'user': 'elec',
+    'password': 'elec',
+    'host': 'thor.deusto.es',
+    'database': 'eu_test2',
+}
 
 class database:
     def __init__(self, db):
         self.db = db
+        self.groups = []
+        self.groups_ids = {}
+        self.countries = {}
+        self.parties = []
+        self.locations = []
+        self.con = mysql.connector.connect(**config)
+        #self.groups = self.load_groups()
+        #self.countries = self.load_countries()
+        #self.parties = self.load_parties()
+        #self.locations = self.load_locations()
+
 
     def create(self):
         try:
-            self.con = lite.connect(self.db)
             with self.con:
                 cursor = self.con.cursor()
                 comm = "CREATE TABLE users (id INT, id_str TEXT, screen_name TEXT, total_tweets INT);"
@@ -43,48 +61,106 @@ class database:
 
     def insert(self,tweet):
         try:
+            self.con = mysql.connector.connect(**config)
             tweet = json.loads(tweet)
-            self.con = lite.connect(self.db)
             self.insert_users(tweet)
-            self.insert_tweets(tweet)
-            self.insert_reply(tweet)
-            self.insert_mentions(tweet)
-            self.insert_retweet(tweet)
-            self.insert_language_group(tweet)
-            self.insert_language_candidate(tweet)
-            self.insert_hash_country(tweet)
-            self.insert_hash_group(tweet)
-            self.insert_hash_candidate(tweet)
+            #self.insert_tweets(tweet)
+            #self.insert_reply(tweet)
+            #self.insert_mentions(tweet)
+            #self.insert_retweet(tweet)
+            #self.insert_language_group(tweet)
+            #self.insert_language_candidate(tweet)
+            #self.insert_hash_country(tweet)
+            #self.insert_hash_group(tweet)
+            #self.insert_hash_candidate(tweet)
+            self.con.commit()
             self.con.close()
         except Exception, e:
             print colored("Insertion error "+ e.message, "red")
             print tweet
             print "__________"
 
+    def load_groups(self):
+         try:
+            with self.con:
+                cursor = self.con.cursor()
+                val =  cursor.execute("SELECT * from groups" ).fetchall()
+                for v in val:
+                    if v[0]:
+                        self.groups_ids[v[0]] = v[1]
+                    if v[2]:
+                        self.groups_ids[v[2]] = v[1]
+                    if v[5]:
+                        self.groups_ids[v[5]] = v[1]
+                return val
+         except Exception, e:
+             print "DB Error - load_groups ", e
+
+
+    def load_countries(self):
+         try:
+            with self.con:
+                cursor = self.con.cursor()
+                val = cursor.execute("SELECT * from countries" ).fetchall()
+            return val
+         except Exception, e:
+             print "DB Error - load_countries ", e
+
+
+    def load_parties(self):
+         try:
+            with self.con:
+                cursor = self.con.cursor()
+                return cursor.execute("SELECT * from parties" ).fetchall()
+         except Exception, e:
+             print "DB Error - load_groups ", e
+
+    def load_locations(self):
+         try:
+            with self.con:
+                cursor = self.con.cursor()
+                return cursor.execute("SELECT * from locations" ).fetchall()
+         except Exception, e:
+             print "DB Error - load_groups ", e
+
     def insert_users(self,tweet):
         #id INT, id_str TEXT, screen_name TEXT, total_tweets INT
         keys = [tweet['user']['id'], tweet['user']['id_str'], tweet['user']['screen_name'],1]
+        print tweet['user']['id']
         try:
-            with self.con:
-                cursor = self.con.cursor()
-                cursor.execute("SELECT id, total_tweets from users where id='"+str(tweet['user']['id'])+"'")
-                node = cursor.fetchone()
-                if node:
-                    total = node[1]+1
-                    cursor.execute("UPDATE users set total_tweets = "+str(total)+" where id = "+str(node[0]))
-                else:
-                    cursor.execute("INSERT INTO users VALUES (?,?,?,?)",keys)
+            cursor = self.con.cursor()
+            select = "SELECT id, total_tweets from users where id="+str(keys[0])
+            cursor.execute(select)
+            node = cursor.fetchone()
+            if node:
+                print node
+                total = node[1]+1
+                update = "UPDATE users set total_tweets = "+str(total)+" where id = "+str(keys[0])
+                cursor.execute(update)
+            else:
+
+                insert = "INSERT INTO users(id, id_str, screen_name, total_tweets) VALUES (" + str(keys[0]) + ",'" + keys[1] +"' ,'" + keys[2] + "', 1)"
+                print insert
+                cursor.execute(insert)
+
+
         except Exception, e:
             print "DB Error - insert_user: ", e
 
 
+
     def insert_tweets(self,tweet):
         # id INT, user_id INT, id_str  TEXT ,text  TEXT, created_at  DATE, lang  TEXT, retweeted  BOOL
-        keys = [tweet['id'], tweet['user']['id'], tweet['user']['id_str'], tweet['text'], tweet['created_at'][:len(tweet['created_at'])-17], tweet['lang'], tweet['retweeted']]
+        keys = [tweet['id'], tweet['user']['id'], tweet['user']['id_str'], tweet['text'], tweet['created_at'][:len(tweet['created_at'])-20], tweet['lang'], tweet['retweeted']]
         try:
             with self.con:
                 cursor = self.con.cursor()
                 cursor.execute("INSERT INTO tweets VALUES (?,?,?,?,?,?,?)",keys)
+                if self.groups_ids.get(tweet['user']['id']):
+                    cursor.execute("SELECT total_tweets FROM groups where initials = '"+str(self.groups_ids.get(tweet['user']['id']))+"'")
+                    node = cursor.fetchone()
+                    node[0] += 1
+                    cursor.execute("UPDATE groups set total_tweets = "+str(node[0])+" where initials = '"+str(self.groups_ids.get(tweet['user']['id']))+"'")
         except Exception, e:
             print "DB Error - insert_tweet: ", e
 
@@ -92,16 +168,16 @@ class database:
         #user_id INT, target_id INT, day DATE, weight INT, mentions INT, retweets INT, replies INT
         replies = tweet['in_reply_to_user_id']
         if replies:
-            keys = [tweet['id'], replies, tweet['created_at'][:len(tweet['created_at'])-17], 1, 0, 0, 1]
+            keys = [tweet['id'], replies, tweet['created_at'][:len(tweet['created_at'])-20], 1, 0, 0, 1]
             try:
                 with self.con:
                     cursor = self.con.cursor()
-                    cursor.execute("SELECT * from interactions where (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(replies)+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                    cursor.execute("SELECT * from interactions where (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(replies)+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     node = cursor.fetchone()
                     if node:
                         total = node[3]+1
                         partial = node[6]+1
-                        cursor.execute("UPDATE interactions set weight = "+str(total)+" ,replies = "+str(partial)+" WHERE (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(replies)+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                        cursor.execute("UPDATE interactions set weight = "+str(total)+" ,replies = "+str(partial)+" WHERE (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(replies)+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     else:
                         cursor.execute("INSERT INTO interactions VALUES (?,?,?,?,?,?,?)",keys)
             except Exception, e:
@@ -112,16 +188,16 @@ class database:
         mentions = tweet['entities']['user_mentions']
         if mentions:
             for m in mentions:
-                keys = [tweet['id'], m['id'], tweet['created_at'][:len(tweet['created_at'])-17], 1, 1, 0, 0]
+                keys = [tweet['id'], m['id'], tweet['created_at'][:len(tweet['created_at'])-20], 1, 1, 0, 0]
                 try:
                     with self.con:
                         cursor = self.con.cursor()
-                        cursor.execute("SELECT * from interactions where (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(m['id'])+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                        cursor.execute("SELECT * from interactions where (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(m['id'])+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                         node = cursor.fetchone()
                         if node:
                             total = node[3]+1
                             partial = node[4]+1
-                            cursor.execute("UPDATE interactions set weight = "+str(total)+" ,mentions = "+str(partial)+" WHERE (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(m['id'])+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                            cursor.execute("UPDATE interactions set weight = "+str(total)+" ,mentions = "+str(partial)+" WHERE (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(m['id'])+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                         else:
                             cursor.execute("INSERT INTO interactions VALUES (?,?,?,?,?,?,?)",keys)
                 except Exception, e:
@@ -131,16 +207,16 @@ class database:
         #user_id INT, target_id INT, day DATE, weight INT, mentions INT, retweets INT, replies INT
         if tweet.get('retweeted_status', False):
             retweets = tweet['retweeted_status']
-            keys = [tweet['id'], retweets['user']['id'], tweet['created_at'][:len(tweet['created_at'])-17], 1, 0, 1, 0]
+            keys = [tweet['id'], retweets['user']['id'], tweet['created_at'][:len(tweet['created_at'])-20], 1, 0, 1, 0]
             try:
                 with self.con:
                     cursor = self.con.cursor()
-                    cursor.execute("SELECT * from interactions where (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(retweets['user']['id'])+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                    cursor.execute("SELECT * from interactions where (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(retweets['user']['id'])+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     node = cursor.fetchone()
                     if node:
                         total = node[3]+1
                         partial = node[5]+1
-                        cursor.execute("UPDATE interactions set weight = "+str(total)+" ,retweets = "+str(partial)+" WHERE (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(retweets['user']['id'])+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                        cursor.execute("UPDATE interactions set weight = "+str(total)+" ,retweets = "+str(partial)+" WHERE (user_id = '"+str(tweet['id'])+"' AND target_id = '"+str(retweets['user']['id'])+"' AND day = '"+ tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     else:
                         cursor.execute("INSERT INTO interactions VALUES (?,?,?,?,?,?,?)",keys)
             except Exception, e:
@@ -149,15 +225,15 @@ class database:
 
     def insert_language_group(self,tweet):
         #lang TEXT, group_id TEXT, total INT
-        keys = [tweet['lang'], "ALDE", 1]
+        keys = [tweet['lang'], "", 1]
         try:
             with self.con:
                 cursor = self.con.cursor()
-                cursor.execute("SELECT total from language_group WHERE ( lang='"+tweet['lang']+"' AND group_id ='"+"ALDE"+"')")
+                cursor.execute("SELECT total from language_group WHERE ( lang='"+tweet['lang']+"' AND group_id ='"+""+"')")
                 node = cursor.fetchone()
                 if node:
                     total = node[0]+1
-                    cursor.execute("UPDATE language_group set total = "+str(total)+" WHERE  ( lang='"+tweet['lang']+"' AND group_id ='"+"ALDE"+"')")
+                    cursor.execute("UPDATE language_group set total = "+str(total)+" WHERE  ( lang='"+tweet['lang']+"' AND group_id ='"+""+"')")
                 else:
                     cursor.execute("INSERT INTO language_group VALUES (?,?,?)",keys)
         except Exception, e:
@@ -184,15 +260,15 @@ class database:
         hashtags = tweet['entities']['hashtags']
         for h in hashtags:
             hashtag = h['text']
-            keys = [hashtag, tweet['lang'], tweet['created_at'][:len(tweet['created_at'])-17], 1]
+            keys = [hashtag, tweet['lang'], tweet['created_at'][:len(tweet['created_at'])-20], 1]
             try:
                 with self.con:
                     cursor = self.con.cursor()
-                    cursor.execute("SELECT text, total from hash_country WHERE ( text='"+hashtag+"' AND country_id = '"+tweet['lang']+"' AND day = '"+tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                    cursor.execute("SELECT text, total from hash_country WHERE ( text='"+hashtag+"' AND country_id = '"+tweet['lang']+"' AND day = '"+tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     node = cursor.fetchone()
                     if node:
                         total = node[1]+1
-                        cursor.execute("UPDATE hash_country set total = "+str(total)+"  WHERE ( text='"+hashtag+"' AND country_id = '"+tweet['lang']+"' AND day = '"+tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                        cursor.execute("UPDATE hash_country set total = "+str(total)+"  WHERE ( text='"+hashtag+"' AND country_id = '"+tweet['lang']+"' AND day = '"+tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     else:
                         cursor.execute("INSERT INTO hash_country VALUES (?,?,?,?)",keys)
             except Exception, e:
@@ -203,15 +279,15 @@ class database:
         hashtags = tweet['entities']['hashtags']
         for h in hashtags:
             hashtag = h['text']
-            keys = [hashtag, "ALDE", tweet['created_at'][:len(tweet['created_at'])-17], 1]
+            keys = [hashtag, "ALDE", tweet['created_at'][:len(tweet['created_at'])-20], 1]
             try:
                 with self.con:
                     cursor = self.con.cursor()
-                    cursor.execute("SELECT text, total from hash_group WHERE ( text='"+hashtag+"' AND group_id = 'ALDE' AND day = '"+tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                    cursor.execute("SELECT text, total from hash_group WHERE ( text='"+hashtag+"' AND group_id = 'ALDE' AND day = '"+tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     node = cursor.fetchone()
                     if node:
                         total = node[1]+1
-                        cursor.execute("UPDATE hash_group set total = "+str(total)+"  WHERE ( text='"+hashtag+"' AND group_id = 'ALDE' AND day = '"+tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                        cursor.execute("UPDATE hash_group set total = "+str(total)+"  WHERE ( text='"+hashtag+"' AND group_id = 'ALDE' AND day = '"+tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     else:
                         cursor.execute("INSERT INTO hash_group VALUES (?,?,?,?)",keys)
             except Exception, e:
@@ -222,15 +298,15 @@ class database:
         hashtags = tweet['entities']['hashtags']
         for h in hashtags:
             hashtag = h['text']
-            keys = [hashtag, 44101578, tweet['created_at'][:len(tweet['created_at'])-17], 1]
+            keys = [hashtag, 44101578, tweet['created_at'][:len(tweet['created_at'])-20], 1]
             try:
                 with self.con:
                     cursor = self.con.cursor()
-                    cursor.execute("SELECT text, total from hash_candidate WHERE ( text='"+hashtag+"' AND candidate_id = "+str(44101578)+" AND day = '"+tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                    cursor.execute("SELECT text, total from hash_candidate WHERE ( text='"+hashtag+"' AND candidate_id = "+str(44101578)+" AND day = '"+tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     node = cursor.fetchone()
                     if node:
                         total = node[1]+1
-                        cursor.execute("UPDATE hash_candidate set total = "+str(total)+"  WHERE ( text='"+hashtag+"' AND candidate_id = "+str(44101578)+" AND day = '"+tweet['created_at'][:len(tweet['created_at'])-17]+"')")
+                        cursor.execute("UPDATE hash_candidate set total = "+str(total)+"  WHERE ( text='"+hashtag+"' AND candidate_id = "+str(44101578)+" AND day = '"+tweet['created_at'][:len(tweet['created_at'])-20]+"')")
                     else:
                         cursor.execute("INSERT INTO hash_candidate VALUES (?,?,?,?)",keys)
             except Exception, e:
