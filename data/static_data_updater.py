@@ -56,6 +56,53 @@ def load_locations():
     cursor.close()
     cnx.close()
     
-load_locations()
+def get_party_ids():
+    ids = {}
+    with open('twitter_ids.csv', 'r') as infile:
+        for line in infile:
+            screen_name, twitter_id = line.split(',')
+            ids[screen_name] = twitter_id
+            
+    return ids
+    
+def load_parties():
+    ids = get_party_ids()
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    with open('parties.csv', 'r') as infile:
+        for line in infile:
+            #GUE/NGL,Bloco de esquerda,Left block,GPBloco,Lisbon, Portugal
+            if len(line.split(',')) == 6:
+                group, initials, name, screen_name, city, country = line.split(',')
+                is_group_party = 0
+            elif len(line.split(',')) == 5:
+                group, initials, name, screen_name, __ = line.split(',')
+                country = "none"
+                is_group_party = 1
+            else:
+                print line
+            
+            if screen_name == '':
+                screen_name = "NO"
+                
+            if screen_name != "NO": 
+                twitter_id = ids[screen_name]
+            else:
+                twitter_id = 0
+
+            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id) VALUES ('" + initials  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +")"
+            try:            
+             cursor.execute(query)
+            except:
+                print line
+                break
+
+    cursor.close()
+    cnx.close()     
+
+    
+load_parties()
+
+print 'done'
         
         
