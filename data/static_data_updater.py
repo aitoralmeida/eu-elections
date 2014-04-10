@@ -5,7 +5,6 @@ Created on Wed Apr 09 10:35:28 2014
 @author: aitor
 """
 
-from slugify import slugify
 import mysql.connector
 
 config = {
@@ -77,7 +76,7 @@ def load_parties():
                 is_group_party = 0
             elif len(line.split(',')) == 5:
                 group, initials, name, screen_name, __ = line.split(',')
-                country = "none"
+                city = "none"
                 is_group_party = 1
             else:
                 print line
@@ -90,15 +89,51 @@ def load_parties():
             else:
                 twitter_id = 0
 
-            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id) VALUES ('" + initials  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +")"
+            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id) VALUES ('" + initials  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +");"
             try:            
              cursor.execute(query)
             except:
                 print line
                 break
 
+    cnx.commit()    
     cursor.close()
-    cnx.close()     
+    cnx.close()  
+    
+    
+def load_groups():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    ids = get_party_ids()
+    with open('groups.csv', 'r') as infile:
+        for line in infile:
+            #GUE/NGL,European Left ,GUENGL,tsipras_eu,
+            group, name, screename, candidate, subcandidate = line.split(',')
+            try:            
+                candidate_id = ids[candidate]
+            except KeyError:
+                print candidate
+                candidate_id = 0
+            try:            
+                subcandidate_id = ids[subcandidate]
+            except KeyError:
+                print subcandidate
+                subcandidate_id = 0
+            try:
+                user_id = ids[screename]
+            except KeyError:
+                print screename
+                user_id = 0
+            query = "INSERT INTO groups (initials, candidate_id, subcandidate_id, name, total_tweets, user_id) VALUES ('" + group  + "', " + str(candidate_id) + ", " +  str(subcandidate_id) + ", '" + name + "', 0, " + str(user_id)  + ");"
+            print query                     
+            cursor.execute(query)
+            
+
+    cnx.commit()
+    cursor.close()
+    cnx.close()  
+       
+        
 
     
 load_parties()

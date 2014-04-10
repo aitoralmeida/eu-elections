@@ -1,13 +1,10 @@
 __author__ = 'juan'
-import database
 import glob
 
-
-
-db = database.database("database.db")
-db.create()
 files =  glob.glob("corpus_def/*.txt")
 print files
+nlines = 0
+times = 0
 
 for file in files:
      try:
@@ -18,7 +15,11 @@ for file in files:
              file.close()
      except IOError:
          pass
-
+	
      for line in lines:
-         db.insert(line)
-     print "Finished ",file
+		nlines += 1
+     times += 30
+ 	     	
+     print "Finished ",nlines
+     print times / 60
+     

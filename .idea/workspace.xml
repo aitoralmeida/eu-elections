@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4be1ef23-9ac9-418c-aafa-ef10a7225259" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/analyzer/test.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/analyzer/database.db" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/wrapper/eu-elections-8-0.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/database.db" afterPath="$PROJECT_DIR$/analyzer/database.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/database.py" afterPath="$PROJECT_DIR$/analyzer/database.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrapper/main_wrapper.py" afterPath="$PROJECT_DIR$/wrapper/main_wrapper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/test.py" afterPath="$PROJECT_DIR$/analyzer/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="eu-elections.iws" />
@@ -38,21 +39,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_wrapper.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main_wrapper.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="7" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1062">
-              <folding>
-                <element signature="e#21#41#0" expanded="true" />
-              </folding>
+            <state line="8" column="1922" selection-start="2031" selection-end="2031" vertical-scroll-proportion="0.133829" vertical-offset="0" max-vertical-offset="990">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="database.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="2811" selection-end="3644" vertical-scroll-proportion="0.39469028" vertical-offset="893" max-vertical-offset="2088">
+            <state line="120" column="32" selection-start="6213" selection-end="6213" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="4392">
               <folding>
                 <element signature="e#21#43#0" expanded="true" />
               </folding>
@@ -60,10 +59,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="18" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="522">
               <folding />
             </state>
           </provider>
@@ -90,9 +98,9 @@
         <option value="$PROJECT_DIR$/analyzer/DBRefresher.py" />
         <option value="$PROJECT_DIR$/wrapper/Main_Wrapper.py" />
         <option value="$PROJECT_DIR$/wrapper/eu-elections-8-0.txt" />
-        <option value="$PROJECT_DIR$/wrapper/main_wrapper.py" />
         <option value="$PROJECT_DIR$/analyzer/test.py" />
         <option value="$PROJECT_DIR$/analyzer/database.py" />
+        <option value="$PROJECT_DIR$/wrapper/main_wrapper.py" />
       </list>
     </option>
   </component>
@@ -127,6 +135,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -169,13 +178,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eu-elections" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eu-elections" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="analyzer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -186,7 +208,7 @@
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.main_wrapper">
     <configuration default="false" name="main_wrapper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -371,9 +393,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.database" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main_wrapper" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main_wrapper" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.database" />
       </list>
     </recent_temporary>
   </component>
@@ -415,7 +437,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34689265" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -463,10 +485,135 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="33" selection-start="2710" selection-end="2710" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1062">
+        <state line="19" column="39" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="32" selection-start="6213" selection-end="6213" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="4392">
           <folding>
-            <element signature="e#21#41#0" expanded="true" />
+            <element signature="e#21#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="7" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="12" selection-start="2457" selection-end="2457" vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="4518">
+          <folding>
+            <element signature="e#21#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="7" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="66" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="3384">
+          <folding>
+            <element signature="e#21#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="7" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="4151" selection-end="4151" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="3384">
+          <folding>
+            <element signature="e#21#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="33" selection-start="2710" selection-end="2710" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1062">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -486,28 +633,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="32" selection-start="6213" selection-end="6213" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="4392">
+          <folding>
+            <element signature="e#21#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="18" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="522">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1062">
-          <folding>
-            <element signature="e#21#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="2811" selection-end="3644" vertical-scroll-proportion="0.39469028" vertical-offset="893" max-vertical-offset="2088">
-          <folding>
-            <element signature="e#21#43#0" expanded="true" />
-          </folding>
+        <state line="8" column="1922" selection-start="2031" selection-end="2031" vertical-scroll-proportion="0.133829" vertical-offset="0" max-vertical-offset="990">
+          <folding />
         </state>
       </provider>
     </entry>
