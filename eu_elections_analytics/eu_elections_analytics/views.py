@@ -21,3 +21,11 @@ def home(request):
 
 def group_representation_by_country(request):
     return render(request, "eu_elections_analytics/group_representation_by_country.html")
+
+
+####################################################################################################
+#####   View: geo_group_representation()
+####################################################################################################
+
+def geo_group_representation(request):
+    return render(request, "eu_elections_analytics/geo_group_representation.html")

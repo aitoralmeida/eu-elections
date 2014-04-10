@@ -1,0 +1,93 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block header_css %}
+
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/leaflet.css">
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/leaflet.awesome-markers.css">
+
+    <style>
+        #map {
+            height: 600px;
+        }
+    </style>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div id="map"></div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+    <script src="{{ STATIC_PREFIX }}js/leaflet.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/leaflet.awesome-markers.min.js"></script>
+
+    <script>
+        // var group_colors = [
+        //     "#f7981d",  // ALDE
+        //     "#858585",  // EAF
+        //     "#22205f",  // ECR
+        //     "#973693",  // EFD
+        //     "#6598cb",  // EPP
+        //     "#981b1e",  // GUE/NGL
+        //     "#0b9147",  // Greens
+        //     "#ef4d4d"   // S&D
+        // ];
+
+        var iconALDE = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'orange'});
+        var iconEAF = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'darkgreen'});
+        var iconECR = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'cadetblue'});
+        var iconEFD = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'purple'});
+        var iconEPP = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'blue'});
+        var iconGUENGL = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'darkred'});
+        var iconGreens = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'green'});
+        var iconSD = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'red'});
+
+        var iconObject = {
+            "ALDE": iconALDE,
+            "EAF": iconEAF,
+            "ECR": iconECR,
+            "EFD": iconEFD,
+            "EPP": iconEPP,
+            "GUE/NGL": iconGUENGL,
+            "Greens": iconGreens,
+            "S&D": iconSD
+        };
+
+        var map = L.map('map').setView([51.5, -0.1], 4);
+
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18}).addTo(map);
+
+        $.getJSON("{{ STATIC_PREFIX }}data/group_parties.json", function(json) {
+            for (var group_array_index in json) {
+                var group_array = json[group_array_index];
+
+                for (var party_index in group_array) {
+                    var party = group_array[party_index];
+
+                    var max = 0.025;
+                    var min = -0.025;
+
+                    var lat = parseFloat(party['data']['lat']) + Math.floor(Math.random()*(max-min+1)+min);
+                    var lng = parseFloat(party['data']['lon']) + Math.floor(Math.random()*(max-min+1)+min);
+
+                    var party_name = party['party'];
+                    var group_name = party['data']['group'];
+
+                    var popupContent = "<h5>" + party_name + " (" + group_name + ")</h5>";
+
+                    L.marker([lat, lng], {icon: iconObject[group_name]}).bindPopup(popupContent).addTo(map);
+                }
+            }
+        });
+    </script>
+
+{% endblock %}
