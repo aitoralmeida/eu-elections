@@ -5,7 +5,6 @@ Created on Wed Apr 09 10:35:28 2014
 @author: aitor
 """
 
-from slugify import slugify
 import mysql.connector
 
 config = {
@@ -90,7 +89,7 @@ def load_parties():
             else:
                 twitter_id = 0
 
-            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id) VALUES ('" + initials  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +")"
+            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id) VALUES ('" + initials  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +");"
             try:            
              cursor.execute(query)
             except:
@@ -124,8 +123,12 @@ def load_groups():
             except KeyError:
                 print screename
                 user_id = 0
-            query = "INSERT INTO groups (initials, candidate_id, subcandidate_id, name, total_tweets, user_id) VALUES ('" + group  + "', " + str(candidate_id) + ", " +  str(subcandidate_id) + ", '" + name + "', 0," + str(user_id)  + ")"
-            cursor.execute(query)
+            query = "INSERT INTO groups (initials, candidate_id, subcandidate_id, name, total_tweets, user_id) VALUES ('" + group  + "', " + str(candidate_id) + ", " +  str(subcandidate_id) + ", '" + name + "', 0, " + str(user_id)  + ");"
+            print query            
+            try:            
+                cursor.execute(query)
+            except:
+                pass
         
     cursor.close()
     cnx.close()  
