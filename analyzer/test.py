@@ -18,7 +18,7 @@ for file in files:
      except IOError:
          pass
 
-     for line in lines[:20]:
+     for line in lines:
          db.insert(line)
 
      print "Finished ",file
