@@ -15,10 +15,12 @@ config = {
 class database:
     def __init__(self):
         self.con = mysql.connector.connect(**config)
-        self.parties = []
-        self.groups ={}
+        self.parties = {}                   # Parties group_id : initials
+        self.groups ={}                     # Grupos initials : initials , total_tweets, user_id
+        self.groups_mods = {}
         self.twitter_users = {}             # Usuarios id : total_tweets
         self.twitter_users_mods = {}        # usuarios modificados id : total_tweets, screen_name
+        self.tweets = {}                    # Tweets recibidos id : user_id, id_str, text, created_at, lang, retweeted
         self.interactions = {}
         self.language_group = {}
         self.language_candidate = {}
@@ -48,10 +50,13 @@ class database:
         for line in lines:
             tweet = json.loads(line)
             self.load_twitter_user(tweet)
+            self.load_tweets(tweet)
 
         try:
             self.con = mysql.connector.connect(**config)
             self.write_twitter_users()
+            self.write_tweets()
+            self.write_groups()
             self.con.commit()
             self.con.close()
         except Exception, e:
@@ -63,11 +68,11 @@ class database:
     def read_parties(self):
         try:
             cursor = self.con.cursor()
-            select = "SELECT user_id FROM parties;"
+            select = "SELECT user_id, group_id FROM parties;"
             cursor.execute(select)
             nodes = cursor.fetchall()
             for node in nodes:
-                self.parties.append(node[0])
+                self.parties[node[0]] = node[1]
         except Exception, e:
             print "DB Error - read_parties: ", e.message
 
@@ -175,20 +180,35 @@ class database:
         except Exception, e:
             print "Load User Exception: ", e.message , " tweet: ", tweet
 
+    def load_tweets(self,tweet):
+        date = time.strftime('%Y-%m-%d', time.strptime(tweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y'))
+        self.tweets[str(tweet['id'])] = [tweet['user']['id'],str(tweet['user']['id']), tweet['text'], date, tweet['lang'], bool(tweet['retweeted'])]
+        ##############################
+        ### Load parties and groups ##
+        ##############################
+        if str(tweet['user']['id']) in self.parties.keys():
+            initials = self.parties[str(tweet['user']['id'])]
+            print "A",initials
+            if initials in self.groups_mods.keys():
+                self.groups_mods[initials][1] += 1
+                print self.groups_mods[initials]
+            else:
+                group = self.groups[initials]
+                self.groups_mods[initials] = [initials, group[1]+1, group[2]]
+                print self.groups_mods[initials]
+
+
 
         ##########################################################
         ##                  WRITE FUNCTIONS                     ##
         ##########################################################
 
     def write_twitter_users(self):
-        #print self.twitter_users
-        #print self.twitter_users_mods
         for id in self.twitter_users_mods:
             if str(id) in self.twitter_users.keys():
                 try:
                     cursor = self.con.cursor()
                     update = "UPDATE twitter_users set total_tweets = "+str(self.twitter_users_mods[id][0])+" WHERE id = "+str(id)+" ;"
-                    print update
                     cursor.execute(update)
                 except Exception, e:
                     print "DB Error - write_user: ", e
@@ -196,7 +216,36 @@ class database:
                 try:
                     cursor = self.con.cursor()
                     insert = "INSERT INTO twitter_users (id, total_tweets, screen_name) VALUES ("+str(id)+","+str(self.twitter_users_mods[id][0])+",'"+self.twitter_users_mods[id][1]+"');"
-                    print insert
                     cursor.execute(insert)
                 except Exception, e:
                     print "DB Error - update_user: ", e
+
+    def write_tweets(self):
+        for tid in self.tweets:
+            try:
+                tweet =  self.tweets[tid]
+                cursor = self.con.cursor()
+                insert = "INSERT INTO tweets (id, user_id, id_str, text, created_at, lang, retweeted) VALUES ('"+str(tid)+"','"+str(tweet[0])+"','"+str(tweet[1])+"','"+tweet[2].replace("\'","")+"',"+tweet[3]+",'"+tweet[4]+"',"+str(tweet[5])+");"
+                cursor.execute(insert)
+            except Exception, e:
+                    #print "DB Error - write_tweets: ", e
+                    pass
+
+    def write_groups(self):
+        for g in self.groups_mods:
+            if str(g) in self.groups.keys():
+                try:
+                    cursor = self.con.cursor()
+                    update = "UPDATE groups set total_tweets = "+str(self.groups_mods[g][1])+" WHERE initials = '"+str(g)+"' ;"
+                    print update
+                    cursor.execute(update)
+                except Exception, e:
+                    print "DB Error - write_groups: ", e
+            else:
+                try:
+                    cursor = self.con.cursor()
+                    insert = "INSERT into groups (initials, total_tweets, user_id) VALUES ('"+str(g)+"',"+str(self.groups_mods[g][1])+",'"+str(self.groups_mods[g][2])+"');"
+                    print insert
+                    cursor.execute(insert)
+                except Exception, e:
+                    print "DB Error - write_groups: ", e

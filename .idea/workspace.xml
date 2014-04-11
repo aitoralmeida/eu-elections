@@ -4,7 +4,6 @@
     <list default="true" id="4be1ef23-9ac9-418c-aafa-ef10a7225259" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/wrapper/eu-elections-8-0.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/mem_database.py" afterPath="$PROJECT_DIR$/analyzer/mem_database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/remote_database.py" afterPath="$PROJECT_DIR$/analyzer/remote_database.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/test2.py" afterPath="$PROJECT_DIR$/analyzer/test2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -50,7 +49,7 @@
       <file leaf-file-name="remote_database.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="42" selection-start="3870" selection-end="3870" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="3546">
+            <state line="72" column="19" selection-start="2853" selection-end="2853" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="3492">
               <folding />
             </state>
           </provider>
@@ -59,7 +58,7 @@
       <file leaf-file-name="mem_database.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analyzer/mem_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="33" selection-start="6533" selection-end="6533" vertical-scroll-proportion="1.1069767" vertical-offset="2580" max-vertical-offset="3726">
+            <state line="249" column="36" selection-start="10041" selection-end="10041" vertical-scroll-proportion="1.5551602" vertical-offset="3171" max-vertical-offset="4608">
               <folding>
                 <element signature="e#21#32#0" expanded="true" />
               </folding>
@@ -128,8 +127,8 @@
         <option value="$PROJECT_DIR$/analyzer/database.py" />
         <option value="$PROJECT_DIR$/analyzer/test.py" />
         <option value="$PROJECT_DIR$/analyzer/remote_database.py" />
-        <option value="$PROJECT_DIR$/analyzer/mem_database.py" />
         <option value="$PROJECT_DIR$/analyzer/test2.py" />
+        <option value="$PROJECT_DIR$/analyzer/mem_database.py" />
       </list>
     </option>
   </component>
@@ -493,7 +492,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23895809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.23895809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1766" y="21" width="1190" height="688" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -802,13 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="42" selection-start="3870" selection-end="3870" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="3546">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="31" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
@@ -816,9 +808,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="19" selection-start="2853" selection-end="2853" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="3492">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/mem_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="33" selection-start="6533" selection-end="6533" vertical-scroll-proportion="1.1069767" vertical-offset="2580" max-vertical-offset="3726">
+        <state line="249" column="36" selection-start="10041" selection-end="10041" vertical-scroll-proportion="1.5551602" vertical-offset="3171" max-vertical-offset="4608">
           <folding>
             <element signature="e#21#32#0" expanded="true" />
           </folding>
