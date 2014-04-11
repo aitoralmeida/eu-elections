@@ -1,0 +1,156 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block header_css %}
+
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/jqcloud.css">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <h1>{{ number }} language{{ number|pluralize }} for <strong>{{ group.initials }}</strong></h1>
+
+    <br>
+
+    <div class="row">
+        <div id="pie" class="col-md-3"></div>
+        <div id="bar" class="col-md-9"></div>
+    </div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+    <script src="{{ STATIC_PREFIX }}js/d3.min.js"></script>
+
+    <script>
+        var page_width = $("#main-container").width();
+        var col_3_width = (page_width / 12) * 3;
+        var col_9_width = (page_width / 12) * 9;
+        var col_height = 400;
+
+        var color = d3.scale.category20c();
+
+        var data = [];
+        var color_domain = [];
+
+        {% for language in languages %}
+            data.push({lang: "{{ language.lang }}", total: {{ language.total }}});
+            color_domain.push("{{ language.lang }}");
+        {% endfor %}
+
+        color.domain(color_domain);
+
+        /*
+        *   Pie chart set-up
+        */
+
+        var width = col_3_width;
+        var height = col_height;
+        var radius = Math.min(width, height) / 2 - 20;
+
+        var arc = d3.svg.arc()
+            .outerRadius(radius - 10)
+            .innerRadius(0);
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function(d) { return d.total; });
+
+        var svg_pie = d3.select("#pie").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        var g_pie = svg_pie.selectAll(".arc")
+            .data(pie(data))
+            .enter().append("g")
+                .attr("class", "arc");
+
+        g_pie.append("path")
+            .attr("d", arc)
+            .style("fill", function(d) { return color(d.data.total); });
+
+        // g_pie.append("text")
+        //     .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+        //     .attr("dy", ".35em")
+        //     .style("text-anchor", "middle")
+        //     .text(function(d) { return d.data.lang; });
+
+        /*
+        *   Bar chart set-up
+        */
+
+        var margin = {top: 20, right: 20, bottom: 30, left: 40};
+        width = col_9_width - margin.left - margin.right;
+        height = col_height - margin.top - margin.bottom;
+
+        var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
+        var y = d3.scale.linear().range([height, 0]);
+
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left");
+
+        var svg_bar = d3.select("#bar").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        x.domain(data.map(function(d) { return d.lang; }));
+        y.domain([0, d3.max(data, function(d) { return Math.ceil((d.total) / 100) * 100; })]);
+
+        svg_bar.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        svg_bar.selectAll("line.horizontalGrid")
+            .data(y.ticks())
+            .enter().append("line")
+                .attr({
+                    "class":"horizontalGrid",
+                    "x1" : 0,
+                    "x2" : width,
+                    "y1" : function(d){ return y(d); },
+                    "y2" : function(d){ return y(d); },
+                    "fill" : "none",
+                    "shape-rendering" : "crispEdges",
+                    "stroke" : "#ccc",
+                    "stroke-width" : "1px"
+                });
+
+        svg_bar.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Number of tweets");
+
+        svg_bar.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) { return x(d.lang); })
+            .attr("width", x.rangeBand())
+            .attr("y", function(d) { return y(d.total); })
+            .attr("height", function(d) { return height - y(d.total); })
+            .style("fill", function(d) { return color(d.total); });
+    </script>
+
+{% endblock %}

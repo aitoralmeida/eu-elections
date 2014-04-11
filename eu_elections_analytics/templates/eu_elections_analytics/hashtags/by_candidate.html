@@ -12,6 +12,8 @@
 
 {% block content %}
 
+    <h1>{{ number }} hashtag{{ number|pluralize }} for <strong>@{{ candidate.screen_name }}</strong></h1>
+
     <div class="centered">
         <!-- Dimensions of the tag cloud container element must be explicitly specified -->
         <div id="hashtag_tag_cloud" style="width: 1000px; height: 450px;"></div>
@@ -31,7 +33,7 @@
         */
         var word_array = [
             {% for hashtag in hashtags %}
-                {text: "{{ text }}", weight: "{{ total }}"},
+                {text: "{{ hashtag.text }}", weight: "{{ hashtag.total }}"},
             {% endfor %}
         ];
 
