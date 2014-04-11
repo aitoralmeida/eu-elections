@@ -8,6 +8,7 @@ urlpatterns = patterns('',
 
     url(r'^group_representation_by_country/$', 'eu_elections_analytics.views.group_representation_by_country', name='group_representation_by_country'),
     url(r'^geo_group_representation/$', 'eu_elections_analytics.views.geo_group_representation', name='geo_group_representation'),
+    url(r'^interaction_communities/$', 'eu_elections_analytics.views.interaction_communities', name='interaction_communities'),
 
     # HASHTAGS
     #   Candidates
@@ -17,7 +18,7 @@ urlpatterns = patterns('',
     #     # Group
     url(r'^hashtags/grupo_parlamentario/(?P<group_slug>\S+)/$', 'eu_elections_analytics.views.hashtags_by_group', name='hashtags_by_group'),
     #   Evolution
-    # url(r'^hashtags/evolucion/$', 'eu_elections_analytics.views.hashtags_evolution', name='hashtags_evolution'),
+    url(r'^hashtags/evolucion/$', 'eu_elections_analytics.views.hashtag_evolution', name='hashtag_evolution'),
     #   Index
     url(r'^hashtags/$', 'eu_elections_analytics.views.hashtags', name='hashtags'),
 

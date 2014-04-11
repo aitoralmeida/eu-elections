@@ -1,0 +1,48 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block header_css %}
+
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/jqcloud.css">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div id="chart" style="width: 900px; height: 500px;"></div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+    <script src="{{ STATIC_PREFIX }}js/gcharts.min.js"></script>
+
+    <script>
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Day', '#queremosvotar', '#DPGValls', '#Europa'],
+                ['07 abr', 16, 44, 3],
+                ['08 abr', 651, 146, 541],
+                ['09 abr', 94, 84, 163],
+                ['10 abr', 54, 134, 643]
+            ]);
+
+            var options = {
+                title: 'Top Hashtags',
+                curveType: 'function'
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+{% endblock %}
