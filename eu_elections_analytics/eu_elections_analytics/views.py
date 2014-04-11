@@ -348,11 +348,11 @@ def languages_by_candidate(request, candidate_screen_name):
             'screen_name': result[1],
         }
 
-    cursor.execute("Select text, total from hash_candidate where candidate_id = '%s'" % candidate['id'])
+    cursor.execute("Select lang, total from language_candidate where candidate_id = '%s'" % candidate['id'])
 
     for result in cursor:
         languages.append({
-            'text': result[0],
+            'lang': result[0],
             'total': result[1],
         })
 
@@ -372,33 +372,4 @@ def languages_by_candidate(request, candidate_screen_name):
 ####################################################################################################
 
 def languages_by_country(request, country_slug):
-    languages = []
-    country = None
-
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
-
-    cursor.execute("Select long_name from countries where slug = '%s'" % country_slug)
-    for result in cursor:
-        country = {
-            'long_name': result[0],
-        }
-
-    cursor.execute("Select text, total from hash_country where country_id = '%s'" % country['long_name'])
-
-    for result in cursor:
-        languages.append({
-            'text': result[0],
-            'total': result[1],
-        })
-
-    cursor.close()
-    cnx.close()
-
-    return_dict = {
-        'country': country,
-        'languages': languages,
-        'number': len(languages),
-    }
-
-    return render(request, "eu_elections_analytics/languages/by_country.html", return_dict)
+    return render(request, "eu_elections_analytics/languages/by_country.html")
