@@ -3,7 +3,7 @@
 
 from django.shortcuts import render
 
-from eu_elections_analytics.models import Users, HashCandidate, Groups
+from eu_elections_analytics.models import Users, HashCandidate, HashGroup, Groups
 
 
 # Create your views here.
@@ -16,21 +16,8 @@ from eu_elections_analytics.models import Users, HashCandidate, Groups
 def home(request):
     groups = Groups.objects.all()
 
-    candidate_ids_set = set()
-
-    for group in groups:
-        candidate_ids_set.add(group.candidate_id)
-        try:
-            candidate_ids_set.add(group.subcandidate_id)
-        except:
-            pass
-
-    candidate_ids = list(candidate_ids_set)
-
-    candidates = Users.objects.filter(id__in=candidate_ids)
-
     return_dict = {
-        'candidates': candidates,
+        'groups': groups,
     }
 
     return render(request, "eu_elections_analytics/index.html", return_dict)
@@ -76,24 +63,17 @@ def hashtags_by_candidate(request, candidate_screen_name):
 
 
 ####################################################################################################
-#####   View: hashtags_candidate_index()
+#####   View: hashtags_by_group()
 ####################################################################################################
 
-def hashtags_candidate_index(request, country_slug):
-    return render(request, "eu_elections_analytics/hashtags/by_country.html")
+def hashtags_by_group(request, group_slug):
+    group = Groups.objects.get(slug=group_slug)
 
+    hashtags = HashGroup.objects.filter(group_id=group.id)
 
-####################################################################################################
-#####   View: hashtags_by_candidate()
-####################################################################################################
+    return_dict = {
+        'group': group,
+        'hashtags': hashtags,
+    }
 
-def hashtags_by_candidate(request, candidate_slug):
-    return render(request, "eu_elections_analytics/hashtags/by_candidate.html")
-
-
-####################################################################################################
-#####   View: hashtags_by_candidate()
-####################################################################################################
-
-def hashtags_by_candidate(request, candidate_slug):
-    return render(request, "eu_elections_analytics/hashtags/by_candidate.html")
+    return render(request, "eu_elections_analytics/hashtags/by_group.html", return_dict)

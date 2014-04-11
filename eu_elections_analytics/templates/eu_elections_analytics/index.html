@@ -17,9 +17,9 @@
     <div class="soften"></div>
 
     <ul>
-        {% for candidate in candidates %}
+        {% for group in groups %}
             <li>
-                <a href="{% url 'hashtags_by_candidate' candidate.screen_name %}">{{ candidate.screen_name }}</a>
+                <a href="{% url 'hashtags_by_group' group.slug %}">{{ group.initials }}</a>
             </li>
         {% endfor %}
     </ul>
