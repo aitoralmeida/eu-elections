@@ -14,15 +14,12 @@
         Geo group representation
     </a>
 
-    <div class="soften"></div>
+    <br>
+    <br>
 
-    <ul>
-        {% for group in groups %}
-            <li>
-                <a href="{% url 'hashtags_by_group' group.slug %}">{{ group.initials }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    <a href="{% url 'hashtags' %}">
+        Hashtags
+    </a>
 
 {% endblock %}
 

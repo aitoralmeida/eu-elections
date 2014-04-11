@@ -73,8 +73,8 @@
                 for (var party_index in group_array) {
                     var party = group_array[party_index];
 
-                    var max = 0.025;
-                    var min = -0.025;
+                    var max = 0.05;
+                    var min = -0.05;
 
                     var lat = parseFloat(party['data']['lat']) + Math.floor(Math.random()*(max-min+1)+min);
                     var lng = parseFloat(party['data']['lon']) + Math.floor(Math.random()*(max-min+1)+min);

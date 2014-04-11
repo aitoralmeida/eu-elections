@@ -12,9 +12,7 @@
 
 {% block content %}
 
-    {{ results }}
-
-    <h1>Hashtags for <strong>{{ group.initials }}</strong></h1>
+    <h1>{{ number }} hashtag{{ number|pluralize }} for <strong>{{ group.initials }}</strong></h1>
 
     <div class="centered">
         <!-- Dimensions of the tag cloud container element must be explicitly specified -->
@@ -34,6 +32,9 @@
         * Create an array of word objects, each representing a word in the cloud
         */
         var word_array = [
+            {% for hashtag in hashtags %}
+                {text: "{{ hashtag.text }}", weight: "{{ hashtag.total }}", link: {href: "https://twitter.com/hashtag/{{ hashtag.text}}", target: "_blank", title: "#{{ hashtag.text }}"}},
+            {% endfor %}
         ];
 
         $(function() {

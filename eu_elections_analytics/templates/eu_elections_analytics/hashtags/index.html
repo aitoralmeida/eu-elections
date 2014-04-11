@@ -1,0 +1,55 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block header_css %}
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Por grupos parlamentarios</h2>
+
+            <ul>
+                {% for group in groups %}
+                    <li>
+                        <a href="{% url 'hashtags_by_group' group.slug %}">{{ group.initials }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Por país</h2>
+
+            <ul>
+                {% for country in countries %}
+                    <li>
+                        <a href="{% url 'hashtags_by_country' country.slug %}">{{ country.long_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Por candidato</h2>
+
+            <ul>
+                {% for candidate in candidates %}
+                    <li>
+                        <a href="{% url 'hashtags_by_candidate' candidate.screen_name %}">@{{ candidate.screen_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+{% endblock %}
