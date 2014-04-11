@@ -3,7 +3,8 @@
 
 from django.shortcuts import render
 
-from eu_elections_analytics.models import Users, HashCandidate, HashGroup, Groups
+from eu_elections_analytics.models import TwitterUsers, HashCandidate, HashGroup, Groups
+import mysql.connector
 
 
 # Create your views here.
@@ -52,7 +53,7 @@ def geo_group_representation(request):
 ####################################################################################################
 
 def hashtags_by_candidate(request, candidate_screen_name):
-    candidate = Users.objects.get(screen_name=candidate_screen_name)
+    candidate = TwitterUsers.objects.get(screen_name=candidate_screen_name)
     hashtags = HashCandidate.objects.filter(candidate_id=candidate.id)
 
     return_dict = {
@@ -68,12 +69,29 @@ def hashtags_by_candidate(request, candidate_screen_name):
 
 def hashtags_by_group(request, group_slug):
     group = Groups.objects.get(slug=group_slug)
+    
+    config = {
+    'user': 'elections',
+    'password': 'elections',
+    'host': 'thor.deusto.es',
+    'database': 'eu_test2',
+    }
 
-    hashtags = HashGroup.objects.filter(group_id=group.id)
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+
+    cursor.execute("Select text, total from hash_group where group_id = '%s'" % group.user_id)
+    results = {}
+    for result in cursor:
+	results[result[0]] = result[1]
+    	
+
+    #hashtags = HashGroup.objects.filter(group_id=group.user_id)
 
     return_dict = {
         'group': group,
-        'hashtags': hashtags,
+        #'hashtags': hashtags,
+        'results': results,
     }
 
     return render(request, "eu_elections_analytics/hashtags/by_group.html", return_dict)
