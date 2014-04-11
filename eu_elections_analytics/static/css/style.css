@@ -49,7 +49,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 5em;
+    margin-bottom: 3em;
     background-color: transparent;
 }
 
@@ -58,7 +58,7 @@ footer {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 5em;
+    height: 3em;
     background-color: #ccc;
 }
 

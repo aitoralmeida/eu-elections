@@ -6,12 +6,13 @@ Created on Wed Apr 09 10:35:28 2014
 """
 
 import mysql.connector
+from slugify import slugify
 
 config = {
     'user': 'elections',
     'password': 'elections',
     'host': 'thor.deusto.es',
-    'database': 'eu_test',
+    'database': 'eu_test2',
 }
 
 def load_locations():
@@ -43,15 +44,18 @@ def load_locations():
     
     for country in countries:
         print 'Adding', country
-        query = "INSERT INTO countries (short_name, long_name) VALUES ('" + country  + "', '" + country + "')"
+        slug_country = slugify(country)
+        query = "INSERT INTO countries (long_name, slug) VALUES ('" + country  + "', '" + slug_country + "')"
 
         cursor.execute(query)
         for city in country_cities[country]:
             print 'Adding', city
-            query = "INSERT INTO locations (city, lat, lon, country_id) VALUES ('" + city +"', " + lat + ", " + lon + ", '" + country +"')"
+            slug_city = slugify(city)
+            query = "INSERT INTO locations (city, lat, lon, country_id, slug) VALUES ('" + city +"', " + lat + ", " + lon + ", '" + country +"', '" + slug_city + "')"
             cursor.execute(query)
 
     
+    cnx.commit()     
     cursor.close()
     cnx.close()
     
@@ -89,7 +93,8 @@ def load_parties():
             else:
                 twitter_id = 0
 
-            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id) VALUES ('" + initials  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +");"
+            slug = slugify(initials)
+            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id, slug) VALUES ('" + initials  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +", '" + slug + "');"
             try:            
              cursor.execute(query)
             except:
@@ -124,7 +129,9 @@ def load_groups():
             except KeyError:
                 print screename
                 user_id = 0
-            query = "INSERT INTO groups (initials, candidate_id, subcandidate_id, name, total_tweets, user_id) VALUES ('" + group  + "', " + str(candidate_id) + ", " +  str(subcandidate_id) + ", '" + name + "', 0, " + str(user_id)  + ");"
+                
+            slug = slugify(group)
+            query = "INSERT INTO groups (initials, candidate_id, subcandidate_id, name, total_tweets, user_id, slug) VALUES ('" + group  + "', " + str(candidate_id) + ", " +  str(subcandidate_id) + ", '" + name + "', 0, " + str(user_id)  +", '" + slug + "');"
             print query                     
             cursor.execute(query)
             
@@ -136,7 +143,7 @@ def load_groups():
         
 
     
-load_parties()
+load_groups()
 
 print 'done'
         

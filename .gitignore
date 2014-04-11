@@ -54,3 +54,5 @@ docs/_build/
 
 collected_static/
 *prod.py
+
+.DS_Store
