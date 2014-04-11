@@ -78,20 +78,11 @@ g.country-axis > g.tick > text {
     min-height: 600px;
 }
 
-.bar {
-    fill: steelblue;
-}
-
-.bar:hover {
-    fill: brown;
-}
-
 .axis {
     font: 10px sans-serif;
 }
 
-.axis path,
-.axis line {
+.axis path, .axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
