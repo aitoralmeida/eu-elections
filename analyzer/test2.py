@@ -7,3 +7,14 @@ import glob
 db = mem_database.database()
 files =  glob.glob("*.txt")
 print files
+
+for file in files:
+     try:
+         file = open(file,"r")
+         try:
+             lines = file.readlines()
+             db.insert(lines[:20])
+         finally:
+             file.close()
+     except IOError:
+         pass
