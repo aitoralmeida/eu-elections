@@ -86,7 +86,7 @@ class database:
                 print "DB Error - insert_mention: ", e
 
             try:
-                cursor = self.con.cursor()                        ################
+                cursor = self.con.cursor()
                 select = "SELECT id from twitter_users WHERE id="+str(replies)+";"
                 print select
                 cursor.execute(select)
