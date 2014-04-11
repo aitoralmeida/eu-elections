@@ -23,6 +23,7 @@ class database:
         self.tweets = {}                    # Tweets recibidos id : user_id, id_str, text, created_at, lang, retweeted
         self.interactions = {}
         self.language_group = {}
+        self.language_group_mods = {}
         self.language_candidate = {}
         self.hash_country = {}
         self.hash_group = {}
@@ -51,12 +52,14 @@ class database:
             tweet = json.loads(line)
             self.load_twitter_user(tweet)
             self.load_tweets(tweet)
+            self.load_language_group(tweet)
 
         try:
             self.con = mysql.connector.connect(**config)
             self.write_twitter_users()
             self.write_tweets()
             self.write_groups()
+            self.write_language_group()
             self.con.commit()
             self.con.close()
         except Exception, e:
@@ -188,14 +191,21 @@ class database:
         ##############################
         if str(tweet['user']['id']) in self.parties.keys():
             initials = self.parties[str(tweet['user']['id'])]
-            print "A",initials
             if initials in self.groups_mods.keys():
                 self.groups_mods[initials][1] += 1
-                print self.groups_mods[initials]
             else:
                 group = self.groups[initials]
                 self.groups_mods[initials] = [initials, group[1]+1, group[2]]
-                print self.groups_mods[initials]
+
+    def load_language_group(self,tweet):
+        lang = tweet['lang']
+        tid = str(tweet['user']['id'])
+        if tid in self.parties.keys():
+            initials =  self.parties[tid]
+            if (lang,initials) in self.language_group:
+                self.language_group_mods[(lang,initials)]  = self.language_group[(lang,initials)][0]+1
+            else:
+                self.language_group_mods[(lang,initials)]  = 1
 
 
 
@@ -237,7 +247,6 @@ class database:
                 try:
                     cursor = self.con.cursor()
                     update = "UPDATE groups set total_tweets = "+str(self.groups_mods[g][1])+" WHERE initials = '"+str(g)+"' ;"
-                    print update
                     cursor.execute(update)
                 except Exception, e:
                     print "DB Error - write_groups: ", e
@@ -245,7 +254,23 @@ class database:
                 try:
                     cursor = self.con.cursor()
                     insert = "INSERT into groups (initials, total_tweets, user_id) VALUES ('"+str(g)+"',"+str(self.groups_mods[g][1])+",'"+str(self.groups_mods[g][2])+"');"
-                    print insert
                     cursor.execute(insert)
                 except Exception, e:
                     print "DB Error - write_groups: ", e
+
+    def write_language_group(self):
+        for l in self.language_group_mods:
+            if l in self.language_group.keys():
+                try:
+                    cursor = self.con.cursor()
+                    update = "UPDATE language_group set total = "+str(self.language_group_mods[l])+" WHERE lang = '"+str(l[0])+"' AND group_id = '"+str(l[1])+"' ;"
+                    cursor.execute(update)
+                except Exception, e:
+                    print "DB Error - write_language_groups: ", e
+            else:
+                try:
+                    cursor = self.con.cursor()
+                    insert = "INSERT into language_group (lang, group_id, total) VALUES ('"+str(l[0])+"','"+str(l[1])+"',"+str(self.language_group_mods[l])+");"
+                    cursor.execute(insert)
+                except Exception, e:
+                    print "DB Error - write_language_groups: ", e
