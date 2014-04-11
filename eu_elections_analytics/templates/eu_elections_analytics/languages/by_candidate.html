@@ -110,12 +110,27 @@
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         x.domain(data.map(function(d) { return d.lang; }));
-        y.domain([0, d3.max(data, function(d) { return d.total; })]);
+        y.domain([0, d3.max(data, function(d) { return Math.ceil((d.total) / 100) * 100; })]);
 
         svg_bar.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis);
+
+        svg_bar.selectAll("line.horizontalGrid")
+            .data(y.ticks())
+            .enter().append("line")
+                .attr({
+                    "class":"horizontalGrid",
+                    "x1" : 0,
+                    "x2" : width,
+                    "y1" : function(d){ return y(d); },
+                    "y2" : function(d){ return y(d); },
+                    "fill" : "none",
+                    "shape-rendering" : "crispEdges",
+                    "stroke" : "#ccc",
+                    "stroke-width" : "1px"
+                });
 
         svg_bar.append("g")
             .attr("class", "y axis")
