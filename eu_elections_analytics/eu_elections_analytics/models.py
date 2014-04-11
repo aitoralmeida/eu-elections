@@ -25,7 +25,7 @@ class Groups(models.Model):
     subcandidate_id = models.IntegerField(blank=True, null=True)
     name = models.CharField(max_length=200)
     total_tweets = models.IntegerField(blank=True, null=True)
-    user_id = models.IntegerField()
+    user_id = models.CharField(max_length=100)
     class Meta:
         managed = False
         db_table = 'groups'
@@ -58,21 +58,18 @@ class HashGroup(models.Model):
         db_table = 'hash_group'
 
 class Interactions(models.Model):
-    user_id = models.IntegerField()
-    target_id = models.IntegerField()
+    user_id = models.CharField(max_length=100)
     day = models.DateField()
     weight = models.IntegerField()
-    mentions = models.IntegerField(blank=True, null=True)
-    retweets = models.IntegerField(blank=True, null=True)
-    replies = models.IntegerField(blank=True, null=True)
+    target_id = models.CharField(max_length=100)
     class Meta:
         managed = False
         db_table = 'interactions'
 
 class LanguageCandidate(models.Model):
     lang = models.CharField(max_length=100)
-    candidate_id = models.IntegerField()
     total = models.IntegerField(blank=True, null=True)
+    candidate_id = models.CharField(max_length=200)
     class Meta:
         managed = False
         db_table = 'language_candidate'
@@ -100,26 +97,25 @@ class Parties(models.Model):
     group_id = models.CharField(max_length=50)
     name = models.CharField(max_length=200, blank=True)
     is_group_party = models.IntegerField(blank=True, null=True)
-    user_id = models.IntegerField(blank=True, null=True)
+    user_id = models.CharField(max_length=100, blank=True)
     class Meta:
         managed = False
         db_table = 'parties'
 
 class Tweets(models.Model):
-    id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField()
+    user_id = models.CharField(max_length=100)
     id_str = models.CharField(max_length=100, blank=True)
     text = models.CharField(max_length=200, blank=True)
     created_at = models.DateField()
     lang = models.CharField(max_length=50)
     retweeted = models.IntegerField(blank=True, null=True)
+    id = models.CharField(primary_key=True, max_length=200)
     class Meta:
         managed = False
         db_table = 'tweets'
 
 class Users(models.Model):
-    id = models.IntegerField(primary_key=True)
-    id_str = models.CharField(max_length=100, blank=True)
+    id = models.CharField(primary_key=True, max_length=100)
     screen_name = models.CharField(max_length=100)
     total_tweets = models.IntegerField(blank=True, null=True)
     class Meta:

@@ -19,9 +19,9 @@ def home(request):
     candidate_ids_set = set()
 
     for group in groups:
-        candidates_set.add(group.candidate_id)
+        candidate_ids_set.add(group.candidate_id)
         try:
-            candidates_set.add(group.subcandidate_id)
+            candidate_ids_set.add(group.subcandidate_id)
         except:
             pass
 
