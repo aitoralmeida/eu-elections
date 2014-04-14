@@ -24,7 +24,8 @@ class database:
         self.interactions = {}
         self.language_group = {}
         self.language_group_mods = {}
-        self.language_candidate = {}
+        self.language_candidate = {}        # lang, candidate_id : total
+        self.language_candidate_mods = {}
         self.hash_country = {}
         self.hash_group = {}
         self.hash_candidate = {}
@@ -53,6 +54,7 @@ class database:
             self.load_twitter_user(tweet)
             self.load_tweets(tweet)
             self.load_language_group(tweet)
+            self.load_language_candidate(tweet)
 
         try:
             self.con = mysql.connector.connect(**config)
@@ -60,6 +62,7 @@ class database:
             self.write_tweets()
             self.write_groups()
             self.write_language_group()
+            self.write_language_candidate()
             self.con.commit()
             self.con.close()
         except Exception, e:
@@ -130,7 +133,7 @@ class database:
             cursor.execute(select)
             nodes = cursor.fetchall()
             for node in nodes:
-                self.language_candidate[(node[0], node[1])] = [node[2]]
+                self.language_candidate[(node[0], node[1].encode('utf-8'))] = [node[2]]
         except Exception, e:
             print "DB Error - read_language_candidate: ", e.message
 
@@ -202,10 +205,27 @@ class database:
         tid = str(tweet['user']['id'])
         if tid in self.parties.keys():
             initials =  self.parties[tid]
-            if (lang,initials) in self.language_group:
+            if (lang,initials) in self.language_group_mods:
+                self.language_group_mods[(lang,initials)] += 1
+            elif (lang,initials) in self.language_group:
                 self.language_group_mods[(lang,initials)]  = self.language_group[(lang,initials)][0]+1
             else:
                 self.language_group_mods[(lang,initials)]  = 1
+
+    def load_language_candidate(self,tweet):
+        lang = tweet['lang']
+        tid = str(tweet['user']['id'])
+        key = (lang,str(tid))
+        if tid in self.parties.keys():
+            if key in self.language_candidate_mods:
+                self.language_candidate_mods[key] += 1
+                print "mod +1"
+            elif key in self.language_candidate:
+                self.language_candidate_mods[key] = self.language_candidate[key][0]+1
+                print "basic +1"
+            else:
+                self.language_candidate_mods[key] = 1
+                print "1"
 
 
 
@@ -274,3 +294,20 @@ class database:
                     cursor.execute(insert)
                 except Exception, e:
                     print "DB Error - write_language_groups: ", e
+
+    def write_language_candidate(self):
+        for l in self.language_candidate_mods:
+            if l in self.language_candidate.keys():
+                try:
+                    cursor = self.con.cursor()
+                    update = "UPDATE language_candidate set total = "+str(self.language_candidate_mods[l])+" WHERE lang = '"+str(l[0])+"' AND candidate_id = '"+str(l[1])+"';"
+                    cursor.execute(update)
+                except Exception, e:
+                    print "DB Error - write_language_candidate: ", e
+            else:
+                try:
+                    cursor = self.con.cursor()
+                    insert = "INSERT into language_candidate (lang, candidate_id, total) VALUES ('"+str(l[0])+"','"+str(l[1])+"',"+str(self.language_candidate_mods[l])+");"
+                    cursor.execute(insert)
+                except Exception, e:
+                    print "DB Error - write_language_candidate: ", e
