@@ -15,8 +15,11 @@ config = {
 class database:
     def __init__(self):
         self.con = mysql.connector.connect(**config)
-        self.parties = {}                   # Parties group_id : initials
+        self.parties = {}                   # Parties user_id : group_id
+        self.parties_by_location = {}       # Parties user_id : location_id
+        self.locations = {}                 # city : country_id
         self.groups ={}                     # Grupos initials : initials , total_tweets, user_id
+        self.candidates = {}                # candidate : initials
         self.groups_mods = {}
         self.twitter_users = {}             # Usuarios id : total_tweets
         self.twitter_users_mods = {}        # usuarios modificados id : total_tweets, screen_name
@@ -27,8 +30,11 @@ class database:
         self.language_candidate = {}        # lang, candidate_id : total
         self.language_candidate_mods = {}
         self.hash_country = {}
+        self.hash_country_mods = {}
         self.hash_group = {}
+        self.hash_group_mods = {}
         self.hash_candidate = {}
+        self.hash_candidate_mods = {}
         self.read()
 
     def read(self):
@@ -43,6 +49,7 @@ class database:
             self.read_hash_country()
             self.read_hash_group()
             self.read_hash_candidate()
+            self.read_locations()
             self.con.commit()
             self.con.close()
         except Exception, e:
@@ -51,22 +58,31 @@ class database:
     def insert(self, lines):
         for line in lines:
             tweet = json.loads(line)
-            self.load_twitter_user(tweet)
-            self.load_tweets(tweet)
-            self.load_language_group(tweet)
-            self.load_language_candidate(tweet)
-
-        try:
-            self.con = mysql.connector.connect(**config)
-            self.write_twitter_users()
-            self.write_tweets()
-            self.write_groups()
-            self.write_language_group()
-            self.write_language_candidate()
-            self.con.commit()
-            self.con.close()
-        except Exception, e:
-            print colored("Write error "+ e.message, "red")
+            if  tweet['user']:
+                self.load_twitter_user(tweet)
+                self.load_tweets(tweet)
+                self.load_language_group(tweet)
+                self.load_language_candidate(tweet)
+                hashtags = tweet['entities']['hashtags']
+                if hashtags:
+                    for h in hashtags:
+                        self.load_hash_country(h,tweet['created_at'],tweet['user']['id'])
+                        self.load_hash_group(h,tweet['created_at'], tweet['user']['id'])
+                        self.load_hash_candidate(h,tweet['created_at'], tweet['user']['id'])
+            try:
+                self.con = mysql.connector.connect(**config)
+                self.write_twitter_users()
+                self.write_tweets()
+                self.write_groups()
+                self.write_language_group()
+                self.write_language_candidate()
+                self.write_hash_country()
+                self.write_hash_group()
+                self.write_hash_candidate()
+                self.con.commit()
+                self.con.close()
+            except Exception, e:
+                print colored("Write error "+ e.message, "red")
 
         ##########################################################
         ##                  READ FUNCTIONS                      ##
@@ -74,11 +90,12 @@ class database:
     def read_parties(self):
         try:
             cursor = self.con.cursor()
-            select = "SELECT user_id, group_id FROM parties;"
+            select = "SELECT user_id, group_id, location FROM parties;"
             cursor.execute(select)
             nodes = cursor.fetchall()
             for node in nodes:
                 self.parties[node[0]] = node[1]
+                self.parties_by_location[node[0]] = node[2]
         except Exception, e:
             print "DB Error - read_parties: ", e.message
 
@@ -90,6 +107,9 @@ class database:
             nodes = cursor.fetchall()
             for node in nodes:
                 self.groups[node[0]] = [node[0], node[4],node[5]]
+                self.candidates[node[1]] = node[0]
+                if node[2] > 0:
+                    self.candidates[node[2]] = node[0]
         except Exception, e:
             print "DB Error - read_parties: ", e.message
 
@@ -144,7 +164,7 @@ class database:
             cursor.execute(select)
             nodes = cursor.fetchall()
             for node in nodes:
-                self.hash_country[(node[0], node[1], node[2])] = [node[3]]
+                self.hash_country[(node[0].encode('utf-8'), node[1], str(node[2]))] = [node[3]]
         except Exception, e:
             print "DB Error - read_hash_country: ", e.message
 
@@ -155,7 +175,7 @@ class database:
             cursor.execute(select)
             nodes = cursor.fetchall()
             for node in nodes:
-                self.hash_group[(node[0], node[1], node[2])] = [node[3]]
+                self.hash_group[(node[0], node[1], str(node[2]))] = [node[3]]
         except Exception, e:
             print "DB Error - read_hash_group: ", e.message
 
@@ -169,6 +189,17 @@ class database:
                 self.hash_candidate[(node[0], node[1], node[2])] = [node[3]]
         except Exception, e:
             print "DB Error - read_hash_candidate: ", e.message
+
+    def read_locations(self):
+        try:
+            cursor = self.con.cursor()
+            select = "SELECT city, country_id FROM locations;"
+            cursor.execute(select)
+            nodes = cursor.fetchall()
+            for node in nodes:
+                self.locations[node[0]] = node[1]
+        except Exception, e:
+            print "DB Error - read_locations: ", e.message
 
         ##########################################################
         ##                  LOAD FUNCTIONS                      ##
@@ -219,13 +250,49 @@ class database:
         if tid in self.parties.keys():
             if key in self.language_candidate_mods:
                 self.language_candidate_mods[key] += 1
-                print "mod +1"
             elif key in self.language_candidate:
                 self.language_candidate_mods[key] = self.language_candidate[key][0]+1
-                print "basic +1"
             else:
                 self.language_candidate_mods[key] = 1
-                print "1"
+
+    def load_hash_country(self,hashtag, created_at, user_id):
+        if str(user_id) in self.parties.keys():
+            country_id = self.parties_by_location[str(user_id)]
+            text = hashtag['text']
+            date=  time.strftime('%Y-%m-%d', time.strptime(created_at,'%a %b %d %H:%M:%S +0000 %Y'))
+            key = (text, country_id, date)
+            if key in self.hash_country_mods:
+                self.hash_country_mods[key] += 1
+            elif key in self.hash_country:
+                self.hash_country_mods[key] = self.hash_country[key][0]+1
+            else:
+                self.hash_country_mods[key] = 1
+
+    def load_hash_group(self,hashtag, created_at, user_id):
+         if str(user_id) in self.parties.keys():
+            group_id = self.parties[str(user_id)]
+            text = hashtag['text']
+            date=  time.strftime('%Y-%m-%d', time.strptime(created_at,'%a %b %d %H:%M:%S +0000 %Y'))
+            key = (text, group_id, date)
+            if key in self.hash_group_mods:
+                self.hash_group_mods[key] += 1
+            elif key in self.hash_group:
+                self.hash_group_mods[key] = self.hash_group[key][0]+1
+            else:
+                self.hash_group_mods[key] = 1
+
+    def load_hash_candidate(self,hashtag, created_at, candidate_id):
+        if str(candidate_id) in self.candidates:
+            id = str(candidate_id)
+            text = hashtag['text']
+            date=  time.strftime('%Y-%m-%d', time.strptime(created_at,'%a %b %d %H:%M:%S +0000 %Y'))
+            key = (text, id, date)
+            if key in self.hash_candidate_mods:
+                self.hash_candidate_mods[key] += 1
+            elif key in self.hash_candidate:
+                self.hash_candidate_mods[key] = self.hash_candidate[key][0]+1
+            else:
+                self.hash_candidate[key] = 1
 
 
 
@@ -311,3 +378,54 @@ class database:
                     cursor.execute(insert)
                 except Exception, e:
                     print "DB Error - write_language_candidate: ", e
+
+    def write_hash_country(self):
+        for l in self.hash_country_mods:
+            if l in self.hash_country.keys():
+                try:
+                    cursor = self.con.cursor()
+                    #update = "UPDATE hash_country set total = "+str(self.hash_country_mods[l])+" WHERE text = '"+l[0]+"' AND country_id = '"+str(l[1])+"' AND day = '"+l[2]+"';"
+                    cursor.execute("UPDATE hash_country set total = "+str(self.hash_country_mods[l])+" WHERE text = %s AND country_id = %s AND day = %s;",(l[0],l[1],l[2]))
+                except Exception, e:
+                    print "DB Error - write_hash_country: ", e
+            else:
+                try:
+                    cursor = self.con.cursor()
+                    #insert = "INSERT into hash_country (text, country_id, day,  total) VALUES ('"+l[0]+"','"+str(l[1])+"','"+l[2]+"',"+str(self.hash_country_mods[l])+");"
+                    cursor.execute("INSERT into hash_country (text, country_id, day,  total) VALUES (%s, %s, %s, %s)", (l[0], l[1], l[2], str(self.hash_country_mods[l])))
+                except Exception, e:
+                    print "DB Error - write_hash_country: ", e
+
+    def write_hash_group(self):
+        for l in self.hash_group_mods:
+            if l in self.hash_group.keys():
+                try:
+                    cursor = self.con.cursor()
+                    #update = "UPDATE hash_country set total = "+str(self.hash_country_mods[l])+" WHERE text = '"+l[0]+"' AND country_id = '"+str(l[1])+"' AND day = '"+l[2]+"';"
+                    cursor.execute("UPDATE hash_group set total = "+str(self.hash_group_mods[l])+" WHERE text = %s AND group_id = %s AND day = %s;",(l[0],l[1],l[2]))
+                except Exception, e:
+                    print "DB Error - write_hash_group: ", e
+            else:
+                try:
+                    cursor = self.con.cursor()
+                    #insert = "INSERT into hash_country (text, country_id, day,  total) VALUES ('"+l[0]+"','"+str(l[1])+"','"+l[2]+"',"+str(self.hash_country_mods[l])+");"
+                    cursor.execute("INSERT into hash_group (text, group_id, day,  total) VALUES (%s, %s, %s, %s)", (l[0], l[1], l[2], str(self.hash_group_mods[l])))
+                except Exception, e:
+                    print "DB Error - write_hash_group: ", e
+
+    def write_hash_candidate(self):
+        for l in self.hash_candidate_mods:
+            if l in self.hash_candidate.keys():
+                try:
+                    cursor = self.con.cursor()
+                    #update = "UPDATE hash_country set total = "+str(self.hash_country_mods[l])+" WHERE text = '"+l[0]+"' AND country_id = '"+str(l[1])+"' AND day = '"+l[2]+"';"
+                    cursor.execute("UPDATE hash_candidate set total = "+str(self.hash_candidate_mods[l])+" WHERE text = %s AND candidate_id = %s AND day = %s;",(l[0],l[1],l[2]))
+                except Exception, e:
+                    print "DB Error - write_hash_candidate: ", e
+            else:
+                try:
+                    cursor = self.con.cursor()
+                    #insert = "INSERT into hash_country (text, country_id, day,  total) VALUES ('"+l[0]+"','"+str(l[1])+"','"+l[2]+"',"+str(self.hash_country_mods[l])+");"
+                    cursor.execute("INSERT into hash_candidate (text, candidate_id, day,  total) VALUES (%s, %s, %s, %s)", (l[0], l[1], l[2], str(self.hash_candidate_mods[l])))
+                except Exception, e:
+                    print "DB Error - write_hash_candidate: ", e
