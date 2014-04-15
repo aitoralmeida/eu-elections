@@ -10,6 +10,7 @@ import random
 import json
 from slugify import slugify
 import mysql.connector
+import datetime
 
 config = {
     'user': 'elections',
@@ -131,7 +132,7 @@ def build_interaction():
     print 'Edges:', len(G.edges())
 
     
-    nx.write_gexf(G, './sna/interactions.gexf')
+    nx.write_gexf(G, './sna/interactions-%s-%s.gexf' % (datetime.datetime.now().month, datetime.datetime.now().day))
     
     
 def get_all_ids():
