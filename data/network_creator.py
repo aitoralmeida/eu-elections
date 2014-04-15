@@ -125,6 +125,12 @@ def build_interaction():
     print 'Nodes:', len(G.nodes())
     print 'Edges:', len(G.edges())
     
+    filter_weight(G, weight_limit = 3, degree_limit = 1)
+    
+    print 'Nodes:', len(G.nodes())
+    print 'Edges:', len(G.edges())
+
+    
     nx.write_gexf(G, './sna/interactions.gexf')
     
     
@@ -174,9 +180,24 @@ def generate_variation():
     
     return variation
     
+def filter_weight(G, weight_limit = 3, degree_limit = 1):
+    
+    removed = ['a']    
+    
+    while len(removed) > 0:
+        removed = []
+        for edge in G.edges(data=True):
+            if edge[2]['weight'] <= weight_limit:
+                G.remove_edge(edge[0], edge[1])
+                
+        degrees = G.degree()
+        for node in degrees:
+            if degrees[node] <= degree_limit:
+                G.remove_node(node)
+                removed.append(node)
             
 build_interaction() 
-print done      
+print 'done'      
                 
                 
                 
