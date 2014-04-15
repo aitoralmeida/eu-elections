@@ -25,6 +25,7 @@ class database:
         self.twitter_users_mods = {}        # usuarios modificados id : total_tweets, screen_name
         self.tweets = {}                    # Tweets recibidos id : user_id, id_str, text, created_at, lang, retweeted
         self.interactions = {}
+        self.interactions_mod = {}
         self.language_group = {}
         self.language_group_mods = {}
         self.language_candidate = {}        # lang, candidate_id : total
@@ -69,20 +70,33 @@ class database:
                         self.load_hash_country(h,tweet['created_at'],tweet['user']['id'])
                         self.load_hash_group(h,tweet['created_at'], tweet['user']['id'])
                         self.load_hash_candidate(h,tweet['created_at'], tweet['user']['id'])
-            try:
-                self.con = mysql.connector.connect(**config)
-                self.write_twitter_users()
-                self.write_tweets()
-                self.write_groups()
-                self.write_language_group()
-                self.write_language_candidate()
-                self.write_hash_country()
-                self.write_hash_group()
-                self.write_hash_candidate()
-                self.con.commit()
-                self.con.close()
-            except Exception, e:
-                print colored("Write error "+ e.message, "red")
+
+                mentions = tweet['entities']['user_mentions']
+                for m in mentions:
+                    self.load_interaction(tweet['user']['id'],m['id'], m['screen_name'], tweet['created_at'])
+                if 'retweeted_status' in tweet:
+                    retweets = tweet['retweeted_status']
+                    self.load_interaction(tweet['user']['id'],retweets['user']['id'],retweets['user']['screen_name'],tweet['created_at'])
+                reply_id = tweet['in_reply_to_user_id']
+                reply_screen_name = tweet['in_reply_to_screen_name']
+                if reply_id != None:
+                    self.load_interaction(tweet['user']['id'],reply_id, reply_screen_name,tweet['created_at'])
+
+        try:
+            self.con = mysql.connector.connect(**config)
+            self.write_twitter_users()
+            self.write_tweets()
+            self.write_groups()
+            self.write_language_group()
+            self.write_language_candidate()
+            self.write_hash_country()
+            self.write_hash_group()
+            self.write_hash_candidate()
+            self.write_interactions()
+            self.con.commit()
+            self.con.close()
+        except Exception, e:
+            print colored("Write error "+ e.message, "red")
 
         ##########################################################
         ##                  READ FUNCTIONS                      ##
@@ -131,7 +145,7 @@ class database:
             cursor.execute(select)
             nodes = cursor.fetchall()
             for node in nodes:
-                self.interactions[(node[0], node[1], node[2])] = [node[3]]
+                self.interactions[(node[0], node[1],str(node[2]))] = [node[3]]
         except Exception, e:
             print "DB Error - read_interactions: ", e.message
 
@@ -200,6 +214,8 @@ class database:
                 self.locations[node[0]] = node[1]
         except Exception, e:
             print "DB Error - read_locations: ", e.message
+
+
 
         ##########################################################
         ##                  LOAD FUNCTIONS                      ##
@@ -292,8 +308,21 @@ class database:
             elif key in self.hash_candidate:
                 self.hash_candidate_mods[key] = self.hash_candidate[key][0]+1
             else:
-                self.hash_candidate[key] = 1
+                self.hash_candidate_mods[key] = 1
 
+    def load_interaction(self,user_id, target_id, target_screen_name, created_at):
+        date=  time.strftime('%Y-%m-%d', time.strptime(created_at,'%a %b %d %H:%M:%S +0000 %Y'))
+        key = (str(user_id), str(target_id), date)
+        ##################### Check User #######################################
+        if target_id not in self.twitter_users.keys():
+            if target_id not in self.twitter_users_mods.keys():
+                self.twitter_users_mods[target_id] = (0, target_screen_name)
+        if key in self.interactions_mod:
+            self.interactions_mod[key] += 1
+        elif key in self.interactions:
+            self.interactions_mod[key] = self.interactions[key][0]+1
+        else:
+            self.interactions_mod[key] = 1
 
 
         ##########################################################
@@ -429,3 +458,20 @@ class database:
                     cursor.execute("INSERT into hash_candidate (text, candidate_id, day,  total) VALUES (%s, %s, %s, %s)", (l[0], l[1], l[2], str(self.hash_candidate_mods[l])))
                 except Exception, e:
                     print "DB Error - write_hash_candidate: ", e
+
+    def write_interactions(self):
+        for l in self.interactions_mod:
+            if l in self.interactions.keys():
+                try:
+                    cursor = self.con.cursor()
+                    update = "UPDATE interactions set weight = "+str(self.interactions_mod[l])+" WHERE ( user_id = '"+str(l[0])+"' AND target_id = '"+str(l[1])+"' AND day = '"+(l[2])+"');"
+                    cursor.execute(update)
+                except Exception, e:
+                    print "DB Error - write_interactions: ", e
+            else:
+                try:
+                    cursor = self.con.cursor()
+                    insert = "INSERT into interactions (user_id, target_id, day, weight) VALUES ('"+str(l[0])+"','"+str(l[1])+"','"+str(l[2])+"',"+str(self.interactions_mod[l])+");"
+                    cursor.execute(insert)
+                except Exception, e:
+                    print "DB Error - write_interactions: ", e

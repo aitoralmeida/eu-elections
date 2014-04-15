@@ -39,7 +39,7 @@
       <file leaf-file-name="database.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="295" column="0" selection-start="14518" selection-end="15670" vertical-scroll-proportion="0.0" vertical-offset="4863" max-vertical-offset="5706">
+            <state line="295" column="0" selection-start="14518" selection-end="15670" vertical-scroll-proportion="0.0" vertical-offset="5310" max-vertical-offset="5760">
               <folding />
             </state>
           </provider>
@@ -48,16 +48,16 @@
       <file leaf-file-name="remote_database.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="8" selection-start="7551" selection-end="7648" vertical-scroll-proportion="0.0" vertical-offset="2160" max-vertical-offset="3492">
+            <state line="157" column="8" selection-start="7551" selection-end="7648" vertical-scroll-proportion="0.0" vertical-offset="2826" max-vertical-offset="3546">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mem_database.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mem_database.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer/mem_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="430" column="59" selection-start="20032" selection-end="20032" vertical-scroll-proportion="0.86764705" vertical-offset="7032" max-vertical-offset="7848">
+            <state line="466" column="188" selection-start="21926" selection-end="21926" vertical-scroll-proportion="-20.222221" vertical-offset="7842" max-vertical-offset="8676">
               <folding>
                 <element signature="e#21#32#0" expanded="true" />
               </folding>
@@ -86,16 +86,16 @@
       <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="132" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+            <state line="19" column="0" selection-start="132" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="522">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test2.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="test2.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analyzer/test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="28" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="15" column="32" selection-start="269" selection-end="269" vertical-scroll-proportion="0.29439253" vertical-offset="0" max-vertical-offset="856">
               <folding />
             </state>
           </provider>
@@ -126,8 +126,8 @@
         <option value="$PROJECT_DIR$/analyzer/database.py" />
         <option value="$PROJECT_DIR$/analyzer/test.py" />
         <option value="$PROJECT_DIR$/analyzer/remote_database.py" />
-        <option value="$PROJECT_DIR$/analyzer/test2.py" />
         <option value="$PROJECT_DIR$/analyzer/mem_database.py" />
+        <option value="$PROJECT_DIR$/analyzer/test2.py" />
       </list>
     </option>
   </component>
@@ -481,7 +481,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1684" height="1027" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -491,16 +491,16 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.23895809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1766" y="20" width="1190" height="750" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.23895809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1766" y="18" width="1190" height="750" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -865,19 +865,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="28" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/mem_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="430" column="59" selection-start="20032" selection-end="20032" vertical-scroll-proportion="0.86764705" vertical-offset="7032" max-vertical-offset="7848">
+        <state line="466" column="188" selection-start="21926" selection-end="21926" vertical-scroll-proportion="-20.222221" vertical-offset="7842" max-vertical-offset="8676">
           <folding>
             <element signature="e#21#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="32" selection-start="269" selection-end="269" vertical-scroll-proportion="0.29439253" vertical-offset="0" max-vertical-offset="856">
+          <folding />
         </state>
       </provider>
     </entry>

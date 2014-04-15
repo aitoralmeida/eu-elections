@@ -13,7 +13,7 @@ for file in files:
          file = open(file,"r")
          try:
              lines = file.readlines()
-             db.insert(lines)
+             db.insert(lines[:10])
          finally:
              file.close()
      except IOError:
