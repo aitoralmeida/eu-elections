@@ -252,17 +252,20 @@ class database:
 
     def load_tweets(self,tweet):
         date = time.strftime('%Y-%m-%d', time.strptime(tweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y'))
-        self.tweets[str(tweet['id'])] = [tweet['user']['id'],str(tweet['user']['id']), tweet['text'], date, tweet['lang'], bool(tweet['retweeted'])]
-        ##############################
-        ### Load parties and groups ##
-        ##############################
-        if str(tweet['user']['id']) in self.parties.keys():
-            initials = self.parties[str(tweet['user']['id'])]
-            if initials in self.groups_mods.keys():
-                self.groups_mods[initials][1] += 1
-            else:
-                group = self.groups[initials]
-                self.groups_mods[initials] = [initials, group[1]+1, group[2]]
+        try:
+            self.tweets[str(tweet['id'])] = [tweet['user']['id'],str(tweet['user']['id']), tweet['text'], date, tweet['lang'], bool(tweet['retweeted'])]
+            ##############################
+            ### Load parties and groups ##
+            ##############################
+            if str(tweet['user']['id']) in self.parties.keys():
+                initials = self.parties[str(tweet['user']['id'])]
+                if initials in self.groups_mods.keys():
+                    self.groups_mods[initials][1] += 1
+                else:
+                    group = self.groups[initials]
+                    self.groups_mods[initials] = [initials, group[1]+1, group[2]]
+        except:
+            pass
 
     def load_language_group(self,tweet):
         lang = tweet['lang']
