@@ -15,8 +15,10 @@
     <script src="{{ STATIC_PREFIX }}js/d3.min.js"></script>
 
     <script>
+        var page_width = $("#main-container").width();
+
         var margin = {top: 20, right: 20, bottom: 150, left: 40};
-        var width = 1200 - margin.left - margin.right;
+        var width = page_width - margin.left - margin.right;
         var height = 500 - margin.top - margin.bottom;
 
         var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
