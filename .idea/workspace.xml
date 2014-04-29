@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4be1ef23-9ac9-418c-aafa-ef10a7225259" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wrapper/eu-elections-8-0.txt" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/analyzer/analyzer_cron.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/db_refresher.py" afterPath="$PROJECT_DIR$/analyzer/db_refresher.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/mem_database.py" afterPath="$PROJECT_DIR$/analyzer/mem_database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/remote_database.py" afterPath="$PROJECT_DIR$/analyzer/remote_database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/test2.py" afterPath="$PROJECT_DIR$/analyzer/test2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="eu-elections.iws" />
@@ -32,25 +31,7 @@
       <file leaf-file-name="main_wrapper.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="25" selection-start="2562" selection-end="2562" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1062">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analyzer/database.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="295" column="0" selection-start="14518" selection-end="15670" vertical-scroll-proportion="0.0" vertical-offset="5310" max-vertical-offset="5760">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="remote_database.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="42" selection-start="3870" selection-end="3870" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="3546">
+            <state line="48" column="28" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -59,36 +40,16 @@
       <file leaf-file-name="mem_database.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analyzer/mem_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="33" selection-start="6533" selection-end="6533" vertical-scroll-proportion="1.1069767" vertical-offset="2580" max-vertical-offset="3726">
-              <folding>
-                <element signature="e#21#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="static_data_updater.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/static_data_updater.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="7" selection-start="2083" selection-end="2083" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="2808">
+            <state line="278" column="17" selection-start="11268" selection-end="11268" vertical-scroll-proportion="0.81183434" vertical-offset="4264" max-vertical-offset="9576">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
+      <file leaf-file-name="db_refresher.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analyzer/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="132" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="522">
+            <state line="3" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162">
               <folding />
             </state>
           </provider>
@@ -97,8 +58,21 @@
       <file leaf-file-name="test2.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer/test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="31" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <folding />
+            <state line="12" column="9" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+              <folding>
+                <element signature="e#20#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="analyzer_cron.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzer/analyzer_cron.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="954">
+              <folding>
+                <element signature="e#20#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,8 +102,10 @@
         <option value="$PROJECT_DIR$/analyzer/database.py" />
         <option value="$PROJECT_DIR$/analyzer/test.py" />
         <option value="$PROJECT_DIR$/analyzer/remote_database.py" />
-        <option value="$PROJECT_DIR$/analyzer/mem_database.py" />
         <option value="$PROJECT_DIR$/analyzer/test2.py" />
+        <option value="$PROJECT_DIR$/analyzer/db_refresher.py" />
+        <option value="$PROJECT_DIR$/analyzer/analyzer_cron.py" />
+        <option value="$PROJECT_DIR$/analyzer/mem_database.py" />
       </list>
     </option>
   </component>
@@ -231,6 +207,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/rdls_monster_generator" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -242,7 +219,7 @@
       <recent name="$PROJECT_DIR$/analyzer" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test2">
+  <component name="RunManager" selected="Python.analyzer_cron">
     <configuration default="false" name="main_wrapper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -316,6 +293,24 @@
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="analyzer_cron" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analyzer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="eu-elections" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyzer/analyzer_cron.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -440,18 +435,20 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.main_wrapper" />
       <item index="1" class="java.lang.String" itemvalue="Python.database" />
       <item index="2" class="java.lang.String" itemvalue="Python.test" />
       <item index="3" class="java.lang.String" itemvalue="Python.test2" />
+      <item index="4" class="java.lang.String" itemvalue="Python.analyzer_cron" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.test2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main_wrapper" />
-        <item index="3" class="java.lang.String" itemvalue="Python.database" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.analyzer_cron" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main_wrapper" />
+        <item index="4" class="java.lang.String" itemvalue="Python.database" />
       </list>
     </recent_temporary>
   </component>
@@ -483,7 +480,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1684" height="1027" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -493,7 +490,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23895809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.5141563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1680" y="0" width="1365" height="765" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -532,6 +529,49 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/analyzer/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="295" column="0" selection-start="14518" selection-end="15670" vertical-scroll-proportion="0.0" vertical-offset="5310" max-vertical-offset="5760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="19" selection-start="2853" selection-end="2853" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="3546" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/mem_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="42" selection-start="9965" selection-end="9965" vertical-scroll-proportion="0.0" vertical-offset="4197" max-vertical-offset="5058">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/static_data_updater.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="7" selection-start="2083" selection-end="2083" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="2808" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="132" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="522" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="31" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="468">
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="25" selection-start="2562" selection-end="2562" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1062">
@@ -548,45 +588,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="42" selection-start="3870" selection-end="3870" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3546">
-          <folding />
-        </state>
+        <state line="88" column="42" selection-start="3870" selection-end="3870" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3546" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/mem_database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="178" column="47" selection-start="6270" selection-end="6270" vertical-scroll-proportion="0.0" vertical-offset="2803" max-vertical-offset="3798">
-          <folding>
-            <element signature="e#21#32#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/static_data_updater.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="7" selection-start="2083" selection-end="2083" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="2808">
-          <folding />
-        </state>
+        <state line="72" column="7" selection-start="2083" selection-end="2083" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="2808" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="132" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="522">
-          <folding />
-        </state>
+        <state line="19" column="0" selection-start="132" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="522" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="31" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="468">
-          <folding />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -606,30 +638,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="66" selection-start="5129" selection-end="5129" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="2178">
-          <folding />
-        </state>
+        <state line="112" column="66" selection-start="5129" selection-end="5129" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="2178" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/static_data_updater.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="7" selection-start="1925" selection-end="1928" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2682">
-          <folding />
-        </state>
+        <state line="68" column="7" selection-start="1925" selection-end="1928" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2682" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="25" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="522">
-          <folding />
-        </state>
+        <state line="20" column="25" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="522" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
@@ -653,16 +677,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="522">
-          <folding />
-        </state>
+        <state line="18" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="522" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
@@ -686,9 +706,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450">
-          <folding />
-        </state>
+        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
@@ -712,9 +730,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450">
-          <folding />
-        </state>
+        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
@@ -738,9 +754,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450">
-          <folding />
-        </state>
+        <state line="19" column="19" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
@@ -762,66 +776,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
+    <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.035856575" vertical-offset="0" max-vertical-offset="502" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="25" selection-start="2562" selection-end="2562" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="0" selection-start="14518" selection-end="15670" vertical-scroll-proportion="0.0" vertical-offset="5190" max-vertical-offset="5706">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wrapper/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+        <state line="295" column="0" selection-start="14518" selection-end="15670" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5706">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="132" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/static_data_updater.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="7" selection-start="2083" selection-end="2083" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="2808">
-          <folding />
-        </state>
+        <state line="19" column="0" selection-start="132" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/remote_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="42" selection-start="3870" selection-end="3870" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="3546">
-          <folding />
-        </state>
+        <state line="157" column="8" selection-start="7551" selection-end="7648" vertical-scroll-proportion="0.0" vertical-offset="2160" max-vertical-offset="3492" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/static_data_updater.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="4" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2790" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/test2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="31" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="12" column="9" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/db_refresher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper/main_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="28" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/analyzer_cron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="954">
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer/mem_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="33" selection-start="6533" selection-end="6533" vertical-scroll-proportion="1.1069767" vertical-offset="2580" max-vertical-offset="3726">
-          <folding>
-            <element signature="e#21#32#0" expanded="true" />
-          </folding>
+        <state line="278" column="17" selection-start="11268" selection-end="11268" vertical-scroll-proportion="0.81183434" vertical-offset="4264" max-vertical-offset="9576">
+          <folding />
         </state>
       </provider>
     </entry>
