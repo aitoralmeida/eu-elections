@@ -8,14 +8,14 @@
     "link": ""
   },
   "text": {
-    "title": "Second level UNESCO codes relations",
-    "more": "Co-author relations",
-    "intro": "Co-authorship relations"
+    "title": "Interactions between twitter accounts",
+    "more": "Interactions between twitter accounts during the European elections",
+    "intro": "Interactions between twitter accounts during the European elections"
   },
   "legend": {
     "edgeLabel": "Interaction",
-    "colorLabel": "Community",
-    "nodeLabel": "Twitter account"
+    "colorLabel": "Group",
+    "nodeLabel": "Twitter Account"
   },
   "features": {
     "search": true,
@@ -28,15 +28,15 @@
   },
   "sigma": {
     "graphProperties": {
-      "minEdgeSize": 3,
-      "maxNodeSize": 10,
-      "maxEdgeSize": 8,
+      "minEdgeSize": 0.2,
+      "maxNodeSize": 7,
+      "maxEdgeSize": 0.5,
       "minNodeSize": 1
     },
     "drawingProperties": {
       "labelThreshold": 10,
       "hoverFontStyle": "bold",
-      "defaultEdgeType": "arrow",
+      "defaultEdgeType": "curve",
       "defaultLabelColor": "#000",
       "defaultLabelHoverColor": "#fff",
       "defaultLabelSize": 14,

@@ -17,6 +17,7 @@ html, body {
 #main-container {
     display: block;
     min-height: 500px;
+    margin-top: 25px;
 }
 
 .soften {
@@ -204,4 +205,18 @@ g.country-axis > g.tick > text {
 .membership {
   color: #4d6df3;
   font-size: 0.75em;
+}
+
+.navbar-wrapper {
+    margin-top: 20px;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    color: #5a5a5a;
+}
+
+.navbar-wrapper .navbar {
+    border-radius: 5px;
 }

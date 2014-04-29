@@ -27,15 +27,117 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="navbar-wrapper">
+            <div class="container">
+                <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
 
-            <div class="masthead">
-                <a href="{% url 'home' %}">
-                    <h1>EU elections analytics</h1>
-                </a>
-                <div class="soften-limited"></div>
-                <br>
-            </div> <!-- end .masthead -->
+                            <a class="navbar-brand" href="{% url 'home' %}">
+                                <img src="{{ STATIC_PREFIX }}img/ep_logo.png" width="50">
+                                euro e-lecciones
+                            </a>
+                        </div>
+
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                        Hashtags&emsp;<b class="caret"></b>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{% url 'hashtags' %}">All (index)</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">By country</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">By candidate</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">By group</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Top evolution</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        Languages&emsp;<b class="caret"></b>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{% url 'languages' %}">All (index)</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">By country</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">By candidate</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">By group</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Top evolution</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="{% url 'geo_group_representation' %}">
+                                        Geo group representation
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{% url 'group_representation_by_country' %}">
+                                        Group representation
+                                    </a>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        Interaction communities&emsp;<b class="caret"></b>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Between parties</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{% url 'interaction_communities' %}">On twitter</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
 
             <div id="main-container" class="container">
                 {% block content %}{% endblock %}
