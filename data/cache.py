@@ -164,4 +164,3 @@ groups = _load_groups_cache()
 parties = _load_parties_cache()
 twitter_ids = _load_ids_cache()
 
-print len(twitter_ids)
