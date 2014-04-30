@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-8">
             <div id="zoom">
                 <div class="z" rel="in"></div>
                 <div class="z" rel="out"></div>
@@ -128,39 +128,41 @@
 
             var drawProps, graphProps,mouseProps;
             // if (config.sigma && config.sigma.drawingProperties)
-            //     drawProps=config.sigma.drawingProperties;
+                drawProps=config.sigma.drawingProperties;
             // else
-            drawProps={
-                activeFontStyle: "bold",
-                defaultEdgeType: "curve",
-                defaultHoverLabelBGColor: "#002147",
-                defaultLabelBGColor: "#ddd",
-                defaultLabelColor: "#000",
-                defaultLabelHoverColor: "#fff",
-                defaultLabelSize: 14,
-                fontStyle: "bold",
-                hoverFontStyle: "bold",
-                labelThreshold: 11
-                // defaultEdgeArrow: "target"
-            };
+            // drawProps={
+            //     activeFontStyle: "bold",
+            //     defaultEdgeType: "curve",
+            //     defaultHoverLabelBGColor: "#002147",
+            //     defaultLabelBGColor: "#ddd",
+            //     defaultLabelColor: "#000",
+            //     defaultLabelHoverColor: "#fff",
+            //     defaultLabelSize: 14,
+            //     fontStyle: "bold",
+            //     hoverFontStyle: "bold",
+            //     labelThreshold: 11
+            //     // defaultEdgeArrow: "target"
+            // };
 
             // if (config.sigma && config.sigma.graphProperties)
-            //     graphProps=config.sigma.graphProperties;
+                graphProps=config.sigma.graphProperties;
+                graphProps.maxNodeSize = 2.5;
+                graphProps.minNodeSize = 0.1;
             // else
-            graphProps = {
-                maxEdgeSize: 8,
-                maxNodeSize: 10,
-                minEdgeSize: 3,
-                minNodeSize: 1
-            };
+            // graphProps = {
+            //     maxEdgeSize: 8,
+            //     maxNodeSize: 10,
+            //     minEdgeSize: 3,
+            //     minNodeSize: 1
+            // };
 
             // if (config.sigma && config.sigma.mouseProperties)
-            //     mouseProps=config.sigma.mouseProperties;
+                mouseProps=config.sigma.mouseProperties;
             // else
-            mouseProps={
-                    minRatio: 0.75, // How far can we zoom out?
-                    maxRatio: 20 // How far can we zoom in?
-            };
+            // mouseProps={
+            //         minRatio: 0.75, // How far can we zoom out?
+            //         maxRatio: 20 // How far can we zoom in?
+            // };
 
             var a = sigma.init(document.getElementById("sigma-canvas")).drawingProperties(drawProps).graphProperties(graphProps).mouseProperties(mouseProps);
             sigInst = a;
