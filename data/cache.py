@@ -86,6 +86,7 @@ def _create_parties_cache():
     print 'CACHING PARTIES'
     print
     ps = {}
+    p_ids = {}
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()    
     query = "SELECT initials, name, location, group_id, user_id, slug FROM parties"
@@ -107,9 +108,12 @@ def _create_parties_cache():
                         'user_id' : user_id,
         }  
         
+        p_ids[user_id] = slug
+        
     cnx.close()
     
     json.dump(ps, open('./cache/parties.json', 'w'))
+    json.dump(ps, open('./cache/parties_ids.json', 'w'))
     
 def _load_parties_cache():
     try:
@@ -117,7 +121,15 @@ def _load_parties_cache():
     except:
         print 'Error loading groups'
         
-    return res 
+    return res
+    
+def _load_parties_ids_cache():
+    try:
+        res =json.load(open('./cache/parties_ids.json', 'r'))
+    except:
+        print 'Error loading groups'
+        
+    return res
     
 def _create_ids_cache():
     print
@@ -155,12 +167,13 @@ def regenerate_cache():
     _create_parties_cache()
     _create_ids_cache()
     
-regenerate_cache()
+#regenerate_cache()
 
 #******************CACHE VARIABLES*******************************    
     
 locations = _load_locations_cache()
 groups = _load_groups_cache()
 parties = _load_parties_cache()
+parties_ids = _load_parties_ids_cache()
 twitter_ids = _load_ids_cache()
 
