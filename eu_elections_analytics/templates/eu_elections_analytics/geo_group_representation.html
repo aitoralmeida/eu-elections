@@ -19,6 +19,42 @@
 
 {% block content %}
 
+    <div class="center">
+        <span id="alde-button" type="button" class="btn btn-alde" onclick="toogleLayerGroupVisibility(this, 'alde');">
+            ALDE&emsp;<span class="badge">35</span>
+        </span>
+
+        <span id="eaf-button" type="button" class="btn btn-eaf" onclick="toogleLayerGroupVisibility(this, 'eaf');">
+            EAF&emsp;<span class="badge">5</span>
+        </span>
+
+        <span id="ecr-button" type="button" class="btn btn-ecr" onclick="toogleLayerGroupVisibility(this, 'ecr');">
+            ECR&emsp;<span class="badge">12</span>
+        </span>
+
+        <span id="efd-button" type="button" class="btn btn-efd" onclick="toogleLayerGroupVisibility(this, 'efd');">
+            EFD&emsp;<span class="badge">11</span>
+        </span>
+
+        <span id="epp-button" type="button" class="btn btn-epp" onclick="toogleLayerGroupVisibility(this, 'epp');">
+            EPP&emsp;<span class="badge">50</span>
+        </span>
+
+        <span id="gue-ngl-button" type="button" class="btn btn-gue-ngl" onclick="toogleLayerGroupVisibility(this, 'gue-ngl');">
+            GUE/NGL&emsp;<span class="badge">16</span>
+        </span>
+
+        <span id="greens-button" type="button" class="btn btn-greens" onclick="toogleLayerGroupVisibility(this, 'greens');">
+            Greens&emsp;<span class="badge">21</span>
+        </span>
+
+        <span id="sd-button" type="button" class="btn btn-sd" onclick="toogleLayerGroupVisibility(this, 'sd');">
+            S&D&emsp;<span class="badge">31</span>
+        </span>
+    </div>
+
+    <br>
+
     <div id="map"></div>
 
 {% endblock %}
@@ -42,24 +78,32 @@
         //     "#ef4d4d"   // S&D
         // ];
 
-        var iconALDE = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'orange'});
-        var iconEAF = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'darkgreen'});
-        var iconECR = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'cadetblue'});
-        var iconEFD = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'purple'});
-        var iconEPP = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'blue'});
-        var iconGUENGL = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'darkred'});
-        var iconGreens = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'green'});
-        var iconSD = L.AwesomeMarkers.icon({icon: 'star', prefix: 'fa', iconColor: 'white', spin: false, markerColor: 'red'});
+        var partyIcon = L.Icon.extend({
+            options: {
+                shadowUrl: '/static/img/shadow.png',
+                iconSize: [30, 48],
+                shadowSize: [35, 16],
+            }
+        });
+
+        var aldeIcon = new partyIcon({iconUrl: '/static/img/alde_icon.png'});
+        var eafIcon = new partyIcon({iconUrl: '/static/img/eaf_icon.png'});
+        var ecrIcon = new partyIcon({iconUrl: '/static/img/ecr_icon.png'});
+        var efdIcon = new partyIcon({iconUrl: '/static/img/efd_icon.png'});
+        var eppIcon = new partyIcon({iconUrl: '/static/img/epp_icon.png'});
+        var guenglIcon = new partyIcon({iconUrl: '/static/img/gue_ngl_icon.png'});
+        var greensIcon = new partyIcon({iconUrl: '/static/img/greens_icon.png'});
+        var sdIcon = new partyIcon({iconUrl: '/static/img/sd_icon.png'});
 
         var iconObject = {
-            "ALDE": iconALDE,
-            "EAF": iconEAF,
-            "ECR": iconECR,
-            "EFD": iconEFD,
-            "EPP": iconEPP,
-            "GUE/NGL": iconGUENGL,
-            "Greens": iconGreens,
-            "S&D": iconSD
+            "ALDE": aldeIcon,
+            "EAF": eafIcon,
+            "ECR": ecrIcon,
+            "EFD": efdIcon,
+            "EPP": eppIcon,
+            "GUE/NGL": guenglIcon,
+            "Greens": greensIcon,
+            "S&D": sdIcon
         };
 
         var map = L.map('map').setView([51.5, -0.1], 4);
@@ -117,22 +161,83 @@
                 }
             };
 
-            // L.layerGroup(alde).addTo(map);
-
-
             alde_layergroup = L.layerGroup(alde);
             alde_layergroup.addTo(map);
 
-            L.layerGroup(eaf).addTo(map);
-            L.layerGroup(ecr).addTo(map);
-            L.layerGroup(efd).addTo(map);
-            L.layerGroup(epp).addTo(map);
-            L.layerGroup(gue_ngl).addTo(map);
-            L.layerGroup(greens).addTo(map);
-            L.layerGroup(sd).addTo(map);
+            eaf_layergroup = L.layerGroup(eaf);
+            eaf_layergroup.addTo(map);
+
+            ecr_layergroup = L.layerGroup(ecr);
+            ecr_layergroup.addTo(map);
+
+            efd_layergroup = L.layerGroup(efd);
+            efd_layergroup.addTo(map);
+
+            epp_layergroup = L.layerGroup(epp);
+            epp_layergroup.addTo(map);
+
+            gue_ngl_layergroup = L.layerGroup(gue_ngl);
+            gue_ngl_layergroup.addTo(map);
+
+            greens_layergroup = L.layerGroup(greens);
+            greens_layergroup.addTo(map);
+
+            sd_layergroup = L.layerGroup(sd);
+            sd_layergroup.addTo(map);
         });
 
 
+        function toogleLayerGroupVisibility(that, layer_group_name) {
+            var button = $(that);
+            var layer_group;
+            var btn_class;
+
+            if (layer_group_name == 'alde') {
+                layer_group = alde_layergroup;
+                btn_class = 'btn-alde';
+            }
+            else if (layer_group_name == 'eaf') {
+                layer_group = eaf_layergroup;
+                btn_class = 'btn-eaf';
+            }
+            else if (layer_group_name == 'ecr') {
+                layer_group = ecr_layergroup;
+                btn_class = 'btn-ecr';
+            }
+            else if (layer_group_name == 'efd') {
+                layer_group = efd_layergroup;
+                btn_class = 'btn-efd';
+            }
+            else if (layer_group_name == 'epp') {
+                layer_group = epp_layergroup;
+                btn_class = 'btn-epp';
+            }
+            else if (layer_group_name == 'gue-ngl') {
+                layer_group = gue_ngl_layergroup;
+                btn_class = 'btn-gue-ngl';
+            }
+            else if (layer_group_name == 'greens') {
+                layer_group = greens_layergroup;
+                btn_class = 'btn-greens';
+            }
+            else if (layer_group_name == 'sd') {
+                layer_group = sd_layergroup;
+                btn_class = 'btn-sd';
+            }
+
+            // Toogle visibility
+            if (button.hasClass("btn-default")) {
+                map.addLayer(layer_group);
+                button.removeClass();
+                button.addClass("btn");
+                button.addClass(btn_class);
+            }
+            else {
+                map.removeLayer(layer_group);
+                button.removeClass();
+                button.addClass("btn btn-default");
+            }
+        }
 
 
 
