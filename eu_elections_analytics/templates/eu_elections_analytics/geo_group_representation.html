@@ -64,30 +64,102 @@
 
         var map = L.map('map').setView([51.5, -0.1], 4);
 
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18}).addTo(map);
+        var osm_tile = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var ocm_tile = 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png';
+        // More maps in here:   https://github.com/leaflet-extras/leaflet-providers
 
-        $.getJSON("{{ STATIC_PREFIX }}data/group_parties.json", function(json) {
-            for (var group_array_index in json) {
-                var group_array = json[group_array_index];
+        L.tileLayer(osm_tile, {maxZoom: 18}).addTo(map);
 
-                for (var party_index in group_array) {
-                    var party = group_array[party_index];
+        var alde = [];
+        var eaf = [];
+        var ecr = [];
+        var efd = [];
+        var epp = [];
+        var gue_ngl = [];
+        var greens = [];
+        var sd = [];
 
-                    var max = 0.05;
-                    var min = -0.05;
+        var alde_layergroup;
 
-                    var lat = parseFloat(party['data']['lat']) + Math.floor(Math.random()*(max-min+1)+min);
-                    var lng = parseFloat(party['data']['lon']) + Math.floor(Math.random()*(max-min+1)+min);
+        var parties_json;
+        $.getJSON("{{ STATIC_PREFIX }}data/all_parties_data.json", function(json) {
+            parties_json = json;
 
-                    var party_name = party['party'];
-                    var group_name = party['data']['group'];
+            for (var party_index in parties_json) {
+                var party = parties_json[party_index];
 
-                    var popupContent = "<h5>" + party_name + " (" + group_name + ")</h5>";
+                var popupContent = "<h5>" + party.name + " (" + party.group + ")</h5>" + party.wikipedia_site + "<br>" + party.city + " (" + party.country + ") <br>(" + party.lat + ", " + party.lng +")";
+                var marker = L.marker([party.lat, party.lng], {icon: iconObject[party.group]}).bindPopup(popupContent);
 
-                    L.marker([lat, lng], {icon: iconObject[group_name]}).bindPopup(popupContent).addTo(map);
+                if (party.group == "ALDE") {
+                    alde.push(marker);
                 }
-            }
+                else if (party.group == "EAF") {
+                    eaf.push(marker);
+                }
+                else if (party.group == "ECR") {
+                    ecr.push(marker);
+                }
+                else if (party.group == "EFD") {
+                    efd.push(marker);
+                }
+                else if (party.group == "EPP") {
+                    epp.push(marker);
+                }
+                else if (party.group == "GUE/NGL") {
+                    gue_ngl.push(marker);
+                }
+                else if (party.group == "Greens") {
+                    greens.push(marker);
+                }
+                else if (party.group == "S&D") {
+                    sd.push(marker);
+                }
+            };
+
+            // L.layerGroup(alde).addTo(map);
+
+
+            alde_layergroup = L.layerGroup(alde);
+            alde_layergroup.addTo(map);
+
+            L.layerGroup(eaf).addTo(map);
+            L.layerGroup(ecr).addTo(map);
+            L.layerGroup(efd).addTo(map);
+            L.layerGroup(epp).addTo(map);
+            L.layerGroup(gue_ngl).addTo(map);
+            L.layerGroup(greens).addTo(map);
+            L.layerGroup(sd).addTo(map);
         });
+
+
+
+
+
+        // L.layerGroup(alde).addTo(map);
+
+        // $.getJSON("{{ STATIC_PREFIX }}data/group_parties.json", function(json) {
+        //     for (var group_array_index in json) {
+        //         var group_array = json[group_array_index];
+
+        //         for (var party_index in group_array) {
+        //             var party = group_array[party_index];
+
+        //             var max = 0.05;
+        //             var min = -0.05;
+
+        //             var lat = parseFloat(party['data']['lat']) + Math.floor(Math.random()*(max-min+1)+min);
+        //             var lng = parseFloat(party['data']['lon']) + Math.floor(Math.random()*(max-min+1)+min);
+
+        //             var party_name = party['party'];
+        //             var group_name = party['data']['group'];
+
+        //             var popupContent = "<h5>" + party_name + " (" + group_name + ")</h5>";
+
+        //             L.marker([lat, lng], {icon: iconObject[group_name]}).bindPopup(popupContent).addTo(map);
+        //         }
+        //     }
+        // });
     </script>
 
 {% endblock %}
