@@ -220,3 +220,55 @@ g.country-axis > g.tick > text {
 .navbar-wrapper .navbar {
     border-radius: 5px;
 }
+
+.btn-alde {
+    color: #fff;
+    background-color: #f7981d;
+    border-color: #de881a;
+}
+
+.btn-eaf {
+    color: #fff;
+    background-color: #858585;
+    border-color: #777;
+}
+
+.btn-ecr {
+    color: #fff;
+    background-color: #22205f;
+    border-color: #1e1c55;
+}
+
+.btn-efd {
+    color: #fff;
+    background-color: #973693;
+    border-color: #873084;
+}
+
+.btn-epp {
+    color: #fff;
+    background-color: #6598cb;
+    border-color: #5a88b6;
+}
+
+.btn-gue-ngl {
+    color: #fff;
+    background-color: #981b1e;
+    border-color: #88181b;
+}
+
+.btn-greens {
+    color: #fff;
+    background-color: #0b9147;
+    border-color: #09823f;
+}
+
+.btn-sd {
+    color: #fff;
+    background-color: #ef4d4d;
+    border-color: #d74545;
+}
+
+#map {
+    border: 3px solid #777;
+}
