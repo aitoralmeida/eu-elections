@@ -15,6 +15,8 @@ config = {
     'database': 'eu_test2',
 }
 
+GROUPS = ['ALDE', 'EAF', 'ECR', 'EFD', 'EPP', 'GUE/NGL', 'Greens', 'S&D']
+
 
 ####################################################################################################
 #####   View: home()
@@ -27,13 +29,62 @@ def home(request):
         cnx = mysql.connector.connect(**config)
         cursor = cnx.cursor()
 
-        cursor.execute("Select initials, slug from groups")
+        for group in GROUPS:
+            group_data = {
+                'initials': '',
+                'slug': '',
+                'name': '',
+                'twitter_account': '',
+                'top_hashtag': '',
+                'parties': [],
+            }
 
-        for result in cursor:
-            groups.append({
-                'initials': result[0],
-                'slug': result[1]
-            })
+            cursor.execute("Select initials, slug, name from groups where initials = '%s'" % group)
+            for result in cursor:
+                group_data['initials'] = result[0]
+                group_data['slug'] = result[1]
+                group_data['name'] = result[2]
+
+            cursor.execute("Select text from hash_group where group_id = '%s' and total = (SELECT MAX(total) from hash_group where group_id = '%s')" % (group, group))
+            for result in cursor:
+                group_data['top_hashtag'] = result[0]
+
+            cursor.execute("Select screen_name from twitter_users where id = (select user_id from parties where group_id = '%s' and is_group_party = 1)" % group)
+            for result in cursor:
+                group_data['twitter_account'] = result[0]
+
+            cursor.execute("Select twitter_users.screen_name, parties.initials, parties.name from twitter_users, parties where twitter_users.id = parties.user_id and twitter_users.id in (select user_id from parties where group_id = '%s' and is_group_party = 0)" % group)
+            for result in cursor:
+                party_data = {
+                    'screen_name': result[0],
+                    'initials': result[1],
+                    'name': result[2]
+                }
+
+            # twitter_id = None;
+            # cursor.execute("Select initials, name, user_id from parties where group_id = '%s' and is_group_party = 0" % group)
+            # for result in cursor:
+            #     party_data = {
+            #         'screen_name': None,
+            #         'initials': result[0],
+            #         'name': result[1]
+            #     }
+
+            #     twitter_id = result[2]
+            #     # twitter_id = int(result[2])
+
+            # if twitter_id != '0':
+            #     try:
+            #         cursor.execute("Select screen_name from twitter_users where id = %s" % twitter_id)
+            #         for r in cursor:
+            #             party_data['screen_name'] = r[0]
+            #             print party_data
+            #     except:
+            #         pass
+
+                group_data['parties'].append(party_data)
+
+            groups.append(group_data)
 
         cursor.close()
         cnx.close()
