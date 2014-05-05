@@ -328,5 +328,5 @@ g.country-axis > g.tick > text {
 }
 
 .country-well {
-    padding: 1em;
+    margin: 1.5em;
 }
