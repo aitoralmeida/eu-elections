@@ -27,7 +27,9 @@
     </head>
 
     <body>
-        <img id="header-image" class="img-responsive" src="{{ STATIC_PREFIX }}img/header.jpg"/>
+        <a href="{% url 'home' %}">
+            <img id="header-image" class="img-responsive" src="{{ STATIC_PREFIX }}img/header.jpg"/>
+        </a>
 
         <div class="navbar-wrapper">
             <div class="container">
