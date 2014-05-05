@@ -75,19 +75,15 @@
 
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="{% url 'languages' %}">All (index)</a>
+                                            <a href="{% url 'languages_group_index' %}">Por grupo</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">Por grupo</a>
+                                            <a href="{% url 'languages_country_index' %}">Por país</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">Por país</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Por candidato</a>
+                                            <a href="{% url 'languages_candidate_index' %}">Por candidato</a>
                                         </li>
 
                                         <li>
