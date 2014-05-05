@@ -383,12 +383,42 @@ def hashtag_evolution(request):
 ####################################################################################################
 
 ####################################################################################################
-#####   View: languages()
+#####   View: languages_country_index()
 ####################################################################################################
 
-def languages(request):
-    candidates = []
+def languages_country_index(request):
     countries = []
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        cursor.execute("Select long_name, slug from countries")
+
+        for result in cursor:
+            countries.append({
+                'long_name': result[0],
+                'slug': result[1],
+            })
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
+        'countries': countries,
+    }
+
+    return render(request, "eu_elections_analytics/languages/country_index.html", return_dict)
+
+
+####################################################################################################
+#####   View: languages_group_index()
+####################################################################################################
+
+def languages_group_index(request):
     groups = []
 
     try:
@@ -403,13 +433,29 @@ def languages(request):
                 'slug': result[1],
             })
 
-        cursor.execute("Select long_name, slug from countries")
+        cursor.close()
+        cnx.close()
 
-        for result in cursor:
-            countries.append({
-                'long_name': result[0],
-                'slug': result[1],
-            })
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
+        'groups': groups,
+    }
+
+    return render(request, "eu_elections_analytics/languages/group_index.html", return_dict)
+
+
+####################################################################################################
+#####   View: languages_candidate_index()
+####################################################################################################
+
+def languages_candidate_index(request):
+    candidates = []
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
         cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
 
@@ -433,11 +479,9 @@ def languages(request):
 
     return_dict = {
         'candidates': candidates,
-        'countries': countries,
-        'groups': groups,
     }
 
-    return render(request, "eu_elections_analytics/languages/index.html", return_dict)
+    return render(request, "eu_elections_analytics/languages/candidate_index.html", return_dict)
 
 
 ####################################################################################################

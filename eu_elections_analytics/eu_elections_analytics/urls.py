@@ -1,7 +1,4 @@
-from django.conf.urls import patterns, include, url
-
-from django.contrib import admin
-admin.autodiscover()
+from django.conf.urls import patterns, url
 
 urlpatterns = patterns('',
     url(r'^$', 'eu_elections_analytics.views.home', name='home'),
@@ -27,16 +24,13 @@ urlpatterns = patterns('',
     # LANGUAGES
     #   Candidates
     url(r'^idiomas/candidato/(?P<candidate_screen_name>\S+)/$', 'eu_elections_analytics.views.languages_by_candidate', name='languages_by_candidate'),
+    url(r'^idiomas/candidato/$', 'eu_elections_analytics.views.languages_candidate_index', name='languages_candidate_index'),
     #   Country
     url(r'^idiomas/pais/(?P<country_slug>\S+)/$', 'eu_elections_analytics.views.languages_by_country', name='languages_by_country'),
+    url(r'^idiomas/pais/$', 'eu_elections_analytics.views.languages_country_index', name='languages_country_index'),
     #     # Group
     url(r'^idiomas/grupo_parlamentario/(?P<group_slug>\S+)/$', 'eu_elections_analytics.views.languages_by_group', name='languages_by_group'),
+    url(r'^idiomas/grupo_parlamentario/$', 'eu_elections_analytics.views.languages_group_index', name='languages_group_index'),
     #   Evolution
     # url(r'^idiomas/evolucion/$', 'eu_elections_analytics.views.languages_evolution', name='languages_evolution'),
-    #   Index
-    url(r'^idiomas/$', 'eu_elections_analytics.views.languages', name='languages'),
-
-    # url(r'^foo/$', 'eu_elections_analytics.views.foo', name='foo'),
-
-    url(r'^admin/', include(admin.site.urls)),
 )
