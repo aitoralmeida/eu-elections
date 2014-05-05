@@ -272,3 +272,53 @@ g.country-axis > g.tick > text {
 #map {
     border: 3px solid #777;
 }
+
+
+.panel-alde > .panel-heading {
+    color: #000;
+    background-color: #f7981d;
+}
+
+.panel-eaf > .panel-heading {
+    color: #000;
+    background-color: #858585;
+}
+
+.panel-ecr > .panel-heading {
+    color: #000;
+    background-color: #22205f;
+}
+
+.panel-efd > .panel-heading {
+    color: #000;
+    background-color: #973693;
+}
+
+.panel-epp > .panel-heading {
+    color: #000;
+    background-color: #6598cb;
+}
+
+.panel-gue-ngl > .panel-heading {
+    color: #000;
+    background-color: #981b1e;
+}
+
+.panel-greens > .panel-heading {
+    color: #000;
+    background-color: #0b9147;
+}
+
+.panel-s-d > .panel-heading {
+    color: #000;
+    background-color: #ef4d4d;
+}
+
+.group-name {
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.descriptions {
+    text-align: justify;
+}
