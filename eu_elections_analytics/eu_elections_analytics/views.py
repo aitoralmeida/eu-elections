@@ -36,6 +36,7 @@ def home(request):
                 'name': '',
                 'twitter_account': '',
                 'top_hashtag': '',
+                'top_hashtag_count': '',
                 'parties': [],
             }
 
@@ -45,9 +46,10 @@ def home(request):
                 group_data['slug'] = result[1]
                 group_data['name'] = result[2]
 
-            cursor.execute("Select text from hash_group where group_id = '%s' and total = (SELECT MAX(total) from hash_group where group_id = '%s')" % (group, group))
+            cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text order by total DESC limit 1" % group)
             for result in cursor:
                 group_data['top_hashtag'] = result[0]
+                group_data['top_hashtag_count'] = result[1]
 
             cursor.execute("Select screen_name from twitter_users where id = (select user_id from parties where group_id = '%s' and is_group_party = 1)" % group)
             for result in cursor:
@@ -206,7 +208,7 @@ def hashtags_by_group(request, group_slug):
                 'user_id': result[1],
             }
 
-        cursor.execute("Select text, total from hash_group where group_id = '%s'" % group['initials'])
+        cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text;" % group['initials'])
 
         for result in cursor:
             hashtags.append({
