@@ -87,11 +87,36 @@
                         </p>
 
                         <p>
-                            <strong>Idiomas empleados:</strong>&emsp;
+                            <strong>Idiomas más empleados:</strong>&emsp;
+
+                            <table class="table table-striped table-condensed">
+                            {% for language in group.languages %}
+                                <tr class="row">
+                                    <td class="col-md-2 col-md-offset-4">
+                                        &emsp;<strong>{{ language.language }}</strong>
+                                    </td>
+
+                                    <td class="col-md-2">
+                                        {{ language.percentage }} %
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </table>
                         </p>
 
                         <p>
-                            <strong>Tipo de discurso:</strong>&emsp;
+                            <strong>Tipo de discurso:</strong>
+                            &emsp;<i class="fa fa-circle" style="color: #5bc0de;"></i>&emsp;Europeo&emsp;&emsp;<i class="fa fa-circle" style="color: #5cb85c;"></i>&emsp;Nacional
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" style="width: {{ group.discourse.european }}%">
+                                    {{ group.discourse.european }}%
+                                </div>
+
+                                <div class="progress-bar progress-bar-success" style="width: {{ group.discourse.national }}%">
+                                    {{ group.discourse.national }}%
+                                </div>
+                            </div>
                         </p>
 
                         <p>

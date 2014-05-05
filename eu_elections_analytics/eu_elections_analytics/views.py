@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
+from decimal import *
 
 import mysql.connector
 
@@ -38,6 +39,8 @@ def home(request):
                 'top_hashtag': '',
                 'top_hashtag_count': '',
                 'parties': [],
+                'discourse': '',
+                'languages': [],
             }
 
             cursor.execute("Select initials, slug, name from groups where initials = '%s'" % group)
@@ -63,28 +66,36 @@ def home(request):
                     'name': result[2]
                 }
 
-            # twitter_id = None;
-            # cursor.execute("Select initials, name, user_id from parties where group_id = '%s' and is_group_party = 0" % group)
-            # for result in cursor:
-            #     party_data = {
-            #         'screen_name': None,
-            #         'initials': result[0],
-            #         'name': result[1]
-            #     }
-
-            #     twitter_id = result[2]
-            #     # twitter_id = int(result[2])
-
-            # if twitter_id != '0':
-            #     try:
-            #         cursor.execute("Select screen_name from twitter_users where id = %s" % twitter_id)
-            #         for r in cursor:
-            #             party_data['screen_name'] = r[0]
-            #             print party_data
-            #     except:
-            #         pass
-
                 group_data['parties'].append(party_data)
+
+            cursor.execute("Select eu_total, co_total from europe_group where group_id = '%s'" % group)
+            for result in cursor:
+                europe_mentions = result[0]
+                country_mentions = result[1]
+                total = europe_mentions + country_mentions
+
+                getcontext().prec = 3
+
+                discourse_data = {
+                    'european': (Decimal(europe_mentions) / Decimal(total)) * 100,
+                    'national': (Decimal(country_mentions) / Decimal(total)) * 100,
+                }
+
+                group_data['discourse'] = discourse_data
+
+            total_lang = 0
+            cursor.execute("Select sum(total) from language_group where group_id = '%s'" % group)
+            for result in cursor:
+                total_lang = result[0]
+
+            cursor.execute("Select lang, total from language_group where group_id = '%s' order by total desc limit 5" % group)
+            for result in cursor:
+                language = result[0]
+                percentage = (Decimal(result[1]) / Decimal(total_lang)) * 100
+                group_data['languages'].append({
+                    'language': language,
+                    'percentage': percentage,
+                })
 
             groups.append(group_data)
 
