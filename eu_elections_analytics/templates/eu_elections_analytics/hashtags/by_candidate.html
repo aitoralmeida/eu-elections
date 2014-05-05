@@ -33,7 +33,7 @@
         */
         var word_array = [
             {% for hashtag in hashtags %}
-                {text: "{{ hashtag.text }}", weight: "{{ hashtag.total }}"},
+                {text: "{{ hashtag.text }}", weight: "{{ hashtag.total }}", link: {href: "https://twitter.com/hashtag/{{ hashtag.text}}", target: "_blank", title: "#{{ hashtag.text }}"}},
             {% endfor %}
         ];
 
