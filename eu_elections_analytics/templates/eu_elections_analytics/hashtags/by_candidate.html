@@ -12,7 +12,7 @@
 
 {% block content %}
 
-    <h1>{{ number }} hashtag{{ number|pluralize }} for <strong>@{{ candidate.screen_name }}</strong></h1>
+    <h1>{{ number }} hashtag{{ number|pluralize }} usados por el candidato <a target="_blank" href="https://twitter.com/{{ candidate.screen_name }}"><strong>@{{ candidate.screen_name }}</strong></a></h1>
 
     <div class="centered">
         <!-- Dimensions of the tag cloud container element must be explicitly specified -->
