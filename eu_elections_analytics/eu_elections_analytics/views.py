@@ -208,7 +208,7 @@ def hashtags_by_group(request, group_slug):
                 'user_id': result[1],
             }
 
-        cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text;" % group['initials'])
+        cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text" % group['initials'])
 
         for result in cursor:
             hashtags.append({
@@ -250,7 +250,7 @@ def hashtags_by_candidate(request, candidate_screen_name):
                 'screen_name': result[1],
             }
 
-        cursor.execute("Select text, total from hash_candidate where candidate_id = '%s'" % candidate['id'])
+        cursor.execute("Select text, sum(total) from hash_candidate where candidate_id = '%s' group by text" % candidate['id'])
 
         for result in cursor:
             hashtags.append({
@@ -290,7 +290,7 @@ def hashtags_by_country(request, country_slug):
                 'long_name': result[0],
             }
 
-        cursor.execute("Select text, total from hash_country where country_id = '%s'" % country['long_name'])
+        cursor.execute("Select text, sum(total) from hash_country where country_id = '%s' group by text" % country['long_name'])
 
         for result in cursor:
             hashtags.append({
