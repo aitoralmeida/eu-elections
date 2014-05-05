@@ -38,18 +38,13 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-
-                            <a class="navbar-brand" href="{% url 'home' %}">
-                                <img src="{{ STATIC_PREFIX }}img/ep_logo.png" width="50">
-                                euro e-lecciones
-                            </a>
                         </div>
 
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
                                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                                        Hashtags&emsp;<b class="caret"></b>
+                                        Hashtags de la campaña&emsp;<b class="caret"></b>
                                     </a>
 
                                     <ul class="dropdown-menu">
@@ -58,26 +53,26 @@
                                         </li>
 
                                         <li>
-                                            <a href="#">By country</a>
+                                            <a href="#">Por grupo</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By candidate</a>
+                                            <a href="#">Por país</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By group</a>
+                                            <a href="#">Por candidato</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">Top evolution</a>
+                                            <a href="#">Evolución de los más utilizados</a>
                                         </li>
                                     </ul>
                                 </li>
 
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        Languages&emsp;<b class="caret"></b>
+                                        Idioma de los tweets&emsp;<b class="caret"></b>
                                     </a>
 
                                     <ul class="dropdown-menu">
@@ -86,49 +81,33 @@
                                         </li>
 
                                         <li>
-                                            <a href="#">By country</a>
+                                            <a href="#">Por grupo</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By candidate</a>
+                                            <a href="#">Por país</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By group</a>
+                                            <a href="#">Por candidato</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">Top evolution</a>
+                                            <a href="#">Evolución de los más utilizados</a>
                                         </li>
                                     </ul>
                                 </li>
 
                                 <li>
                                     <a href="{% url 'geo_group_representation' %}">
-                                        Geo group representation
+                                        Mapeando los partidos
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="{% url 'group_representation_by_country' %}">
-                                        Group representation
+                                    <a href="{% url 'interaction_communities' %}">
+                                        Interacciones en twitter
                                     </a>
-                                </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        Interaction communities&emsp;<b class="caret"></b>
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#">Between parties</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{% url 'interaction_communities' %}">On twitter</a>
-                                        </li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>
