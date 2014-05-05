@@ -56,7 +56,7 @@
     <br>
 
     <div class="row">
-        <div id="map" class="col-md-8 col-md-offset-2"></div>
+        <div id="map" class="col-md-10 col-md-offset-1"></div>
     </div>
 
 {% endblock %}
@@ -88,14 +88,14 @@
             }
         });
 
-        var aldeIcon = new partyIcon({iconUrl: '/static/img/alde_icon.png'});
-        var eafIcon = new partyIcon({iconUrl: '/static/img/eaf_icon.png'});
-        var ecrIcon = new partyIcon({iconUrl: '/static/img/ecr_icon.png'});
-        var efdIcon = new partyIcon({iconUrl: '/static/img/efd_icon.png'});
-        var eppIcon = new partyIcon({iconUrl: '/static/img/epp_icon.png'});
-        var guenglIcon = new partyIcon({iconUrl: '/static/img/gue_ngl_icon.png'});
-        var greensIcon = new partyIcon({iconUrl: '/static/img/greens_icon.png'});
-        var sdIcon = new partyIcon({iconUrl: '/static/img/sd_icon.png'});
+        var aldeIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/alde.png'});
+        var eafIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/eaf.png'});
+        var ecrIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/ecr.png'});
+        var efdIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/efd.png'});
+        var eppIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/epp.png'});
+        var guenglIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/gue_ngl.png'});
+        var greensIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/greens.png'});
+        var sdIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/sd.png'});
 
         var iconObject = {
             "ALDE": aldeIcon,
