@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^hashtags/candidato/(?P<candidate_screen_name>\S+)/$', 'eu_elections_analytics.views.hashtags_by_candidate', name='hashtags_by_candidate'),
     #   Country
     url(r'^hashtags/pais/(?P<country_slug>\S+)/$', 'eu_elections_analytics.views.hashtags_by_country', name='hashtags_by_country'),
+    url(r'^hashtags/pais/$', 'eu_elections_analytics.views.hashtags_country_index', name='hashtags_country_index'),
     #     # Group
     url(r'^hashtags/grupo_parlamentario/(?P<group_slug>\S+)/$', 'eu_elections_analytics.views.hashtags_by_group', name='hashtags_by_group'),
     #   Evolution

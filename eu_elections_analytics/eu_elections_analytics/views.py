@@ -143,6 +143,37 @@ def interaction_communities(request):
 ####################################################################################################
 
 ####################################################################################################
+#####   View: hashtags_country_index()
+####################################################################################################
+
+def hashtags_country_index(request):
+    countries = []
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        cursor.execute("Select long_name, slug from countries")
+
+        for result in cursor:
+            countries.append({
+                'long_name': result[0],
+                'slug': result[1],
+            })
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
+        'countries': countries,
+    }
+
+    return render(request, "eu_elections_analytics/hashtags/country_index.html", return_dict)
+
+####################################################################################################
 #####   View: hashtags()
 ####################################################################################################
 

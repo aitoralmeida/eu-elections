@@ -326,3 +326,7 @@ g.country-axis > g.tick > text {
 .descriptions {
     text-align: justify;
 }
+
+.country-well {
+    padding: 1em;
+}
