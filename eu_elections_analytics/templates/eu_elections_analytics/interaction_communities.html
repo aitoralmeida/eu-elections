@@ -9,32 +9,60 @@
 
 {% block content %}
 
-    <div class="row sigma-parent">
+    <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Grafo de interacciones en Twitter</h4>
+                </div>
 
-        <div id="main-panel" class="col-md-3">
-            <h1 id="title"></h1>
-            <h2 id="titletext"></h2>
+                <div class="modal-body">
+                    <p>
+                        Lo primero, no te asustes. Lo que a primera vista parecen un montón de manchas de pintura unidas por líneas es un grafo de las interacciones de las cuentas de los partidos con otras cuentas de twitter. Navegando por este grafo (puedes utilizar el ratón para moverte por él), puedes encontrar muchísima información sobre el comportamiento en twitter de los partidos y sus seguidores. Lo primero, prueba a hacer zoom, bien utilizando los botones del lateral o la rueda del ratón. Si haces suficiente zoom verás como lo que parecían manchones son en realidad un montón de círculos de diferentes colores y tamaños (nosotros los llamamos nodos). Cada uno de estos círculos representa una cuenta de twitter. Su tamaño viene calculado por cuanto interacciona con otras cuentas. Cuantas más interacciones con más cuentas, más grande es el circulo. Verás que de cada circulo salen líneas (a estas las llamamos aristas). Estas líneas representan las interacciones entre los dos círculos que unen. Cuanta más gorda es una línea, más interacciones. Prueba a pinchar sobre un círculo. Verás que han desaparecido muchos otros. Ahora sólo estás viendo aquellas cuentas que se han relacionado con la que has pinchado (para volver a verlos todos pincha sobre el botón <strong>Ver grafo completo</strong> de la parte inferior). Por último, habrás notado que los círculos tienen diferentes colores y que todos los círculos del mismo color tienden a estar juntos. Esto es porque hemos utilizado un algoritmo para detectar cuales son las comunidades que se forman en twitter. Tómate un tiempo y juega con el gráfico, mira a ver con quién se relaciona el partido al que vas a votar (puedes usar el buscador si conoces su cuenta de twitter) o como se relacionan entre si los partidos de tu país.
+                    </p>
 
-            <div class="soften"></div>
+                    <p>
+                        Ahora, una explicación un poco más técnica para aquellos a los que les pueda interesar. Esto es un grafo no dirigido construido a partir de las menciones, re-tweets y favoritos. En el grafo está filtrado para reflejar solamente aquellas cuentas más representativas. Para ello hemos filtrado las aristas con un peso menor o igual que tres y los nodos con un degree (número de relaciones) menor o igual que uno. El tamaño de los nodos está calculado haciendo uso del eigenvector centrality y las comunidades por el método de Louvain.
+                    </p>
+                </div>
 
-            <p id="legend">
-                <strong>Legend</strong>
-                <br>
-                <br>
-                &emsp;<i class="fa fa-circle"></i>&emsp;<span class="node"></span>
-                <br>
-                &emsp;<i class="fa fa-minus"></i>&emsp;<span class="edge"></span>
-                <br>
-                &emsp;<i class="fa fa-tint"></i>&emsp;<span class="colours"></span>
-            </p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div id="zoom" class="col-md-1 centered">
+            <div class="z" rel="in"></div>
+            <div class="z" rel="out"></div>
+            <div class="z" rel="center"></div>
+
+            <div class="centered">
+                <button id="info-button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#info-modal">
+                    <i class="fa fa-info"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="sigma-parent col-md-10">
+            <div id="sigma-canvas"></div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="main-panel row">
+        <div class="col-md-3">
             <form class="form-horizontal" role="form">
                 <div id="search">
                     <div class="form-group">
-                        <label id="label" for="search-input" class="control-label">Search</label>
+                        <label id="label" for="search-input" class="control-label">Búsqueda</label>
 
                         <div id="search-input" class="input-group">
-                            <input type="text" class="form-control" name="search" placeholder="topic">
+                            <input type="text" class="form-control" name="search" placeholder="@nombre_de_usuario">
                             <span class="input-group-addon state"><i class='fa fa-search'></i></span>
                         </div>
                     </div>
@@ -42,27 +70,21 @@
                 </div>
             </form>
 
-            <div class="soften"></div>
+            <br>
 
-            <a id="full-network" href="{% url 'interaction_communities' %}">View full network</a>
-
-            <div id="attributepane" class="nodeattributes">
-                <div class="name"></div>
-                <div class="p">Connections:</div>
-                <div class="link">
-                    <ul></ul>
-                </div>
+            <div class="centered">
+                <a id="full-network" class="btn btn-info" href="{% url 'interaction_communities' %}">
+                    Ver grafo completo
+                </a>
             </div>
         </div>
 
-        <div class="col-md-8">
-            <div id="zoom">
-                <div class="z" rel="in"></div>
-                <div class="z" rel="out"></div>
-                <div class="z" rel="center"></div>
+        <div id="attributepane" class="nodeattributes col-md-8 col-md-offset-1">
+            <div class="name"></div>
+            <div class="p">Interacciona con:</div>
+            <div id="interaction-list" class="link">
+                <ul></ul>
             </div>
-
-            <div id="sigma-canvas"></div>
         </div>
     </div>
 
