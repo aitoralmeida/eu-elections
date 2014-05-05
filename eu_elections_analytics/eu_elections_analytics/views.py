@@ -572,4 +572,37 @@ def languages_by_candidate(request, candidate_screen_name):
 ####################################################################################################
 
 def languages_by_country(request, country_slug):
-    return render(request, "eu_elections_analytics/languages/by_country.html")
+    languages = []
+    country = None
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        cursor.execute("Select long_name from countries where slug = '%s'" % country_slug)
+        for result in cursor:
+            country = {
+                'long_name': result[0],
+            }
+
+        cursor.execute("Select text, sum(total) from language_country where country_id = '%s' group by text" % country['long_name'])
+
+        for result in cursor:
+            languages.append({
+                'text': result[0],
+                'total': result[1],
+            })
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
+        'country': country,
+        'languages': languages,
+        'number': len(languages),
+    }
+
+    return render(request, "eu_elections_analytics/languages/by_country.html", return_dict)
