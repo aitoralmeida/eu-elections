@@ -22,8 +22,6 @@ urlpatterns = patterns('',
     url(r'^hashtags/grupo_parlamentario/$', 'eu_elections_analytics.views.hashtags_group_index', name='hashtags_group_index'),
     #   Evolution
     url(r'^hashtags/evolucion/$', 'eu_elections_analytics.views.hashtag_evolution', name='hashtag_evolution'),
-    #   Index
-    url(r'^hashtags/$', 'eu_elections_analytics.views.hashtags', name='hashtags'),
 
 
     # LANGUAGES
