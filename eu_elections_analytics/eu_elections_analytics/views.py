@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
+from decimal import *
 
 import mysql.connector
 
@@ -15,6 +16,8 @@ config = {
     'database': 'eu_test2',
 }
 
+GROUPS = ['ALDE', 'EAF', 'ECR', 'EFD', 'EPP', 'GUE/NGL', 'Greens', 'S&D']
+
 
 ####################################################################################################
 #####   View: home()
@@ -23,19 +26,84 @@ config = {
 def home(request):
     groups = []
 
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
-    cursor.execute("Select initials, slug from groups")
+        for group in GROUPS:
+            group_data = {
+                'initials': '',
+                'slug': '',
+                'name': '',
+                'twitter_account': '',
+                'top_hashtag': '',
+                'top_hashtag_count': '',
+                'parties': [],
+                'discourse': '',
+                'languages': [],
+            }
 
-    for result in cursor:
-        groups.append({
-            'initials': result[0],
-            'slug': result[1]
-        })
+            cursor.execute("Select initials, slug, name from groups where initials = '%s'" % group)
+            for result in cursor:
+                group_data['initials'] = result[0]
+                group_data['slug'] = result[1]
+                group_data['name'] = result[2]
 
-    cursor.close()
-    cnx.close()
+            cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text order by total DESC limit 1" % group)
+            for result in cursor:
+                group_data['top_hashtag'] = result[0]
+                group_data['top_hashtag_count'] = result[1]
+
+            cursor.execute("Select screen_name from twitter_users where id = (select user_id from parties where group_id = '%s' and is_group_party = 1)" % group)
+            for result in cursor:
+                group_data['twitter_account'] = result[0]
+
+            cursor.execute("Select twitter_users.screen_name, parties.initials, parties.name from twitter_users, parties where twitter_users.id = parties.user_id and twitter_users.id in (select user_id from parties where group_id = '%s' and is_group_party = 0)" % group)
+            for result in cursor:
+                party_data = {
+                    'screen_name': result[0],
+                    'initials': result[1],
+                    'name': result[2]
+                }
+
+                group_data['parties'].append(party_data)
+
+            cursor.execute("Select eu_total, co_total from europe_group where group_id = '%s'" % group)
+            for result in cursor:
+                europe_mentions = result[0]
+                country_mentions = result[1]
+                total = europe_mentions + country_mentions
+
+                getcontext().prec = 3
+
+                discourse_data = {
+                    'european': (Decimal(europe_mentions) / Decimal(total)) * 100,
+                    'national': (Decimal(country_mentions) / Decimal(total)) * 100,
+                }
+
+                group_data['discourse'] = discourse_data
+
+            total_lang = 0
+            cursor.execute("Select sum(total) from language_group where group_id = '%s'" % group)
+            for result in cursor:
+                total_lang = result[0]
+
+            cursor.execute("Select lang, total from language_group where group_id = '%s' order by total desc limit 5" % group)
+            for result in cursor:
+                language = result[0]
+                percentage = (Decimal(result[1]) / Decimal(total_lang)) * 100
+                group_data['languages'].append({
+                    'language': language,
+                    'percentage': percentage,
+                })
+
+            groups.append(group_data)
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
 
     return_dict = {
         'groups': groups,
@@ -75,57 +143,105 @@ def interaction_communities(request):
 ####################################################################################################
 
 ####################################################################################################
-#####   View: hashtags()
+#####   View: hashtags_country_index()
 ####################################################################################################
 
-def hashtags(request):
-    candidates = []
+def hashtags_country_index(request):
     countries = []
-    groups = []
 
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
-    cursor.execute("Select initials, slug from groups")
+        cursor.execute("Select long_name, slug from countries")
 
-    for result in cursor:
-        groups.append({
-            'initials': result[0],
-            'slug': result[1],
-        })
+        for result in cursor:
+            countries.append({
+                'long_name': result[0],
+                'slug': result[1],
+            })
 
-    cursor.execute("Select long_name, slug from countries")
+        cursor.close()
+        cnx.close()
 
-    for result in cursor:
-        countries.append({
-            'long_name': result[0],
-            'slug': result[1],
-        })
-
-    cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
-
-    for result in cursor:
-        candidates.append({
-            'screen_name': result[0],
-        })
-
-    cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(subcandidate_id, CHAR(100)) FROM groups)")
-
-    for result in cursor:
-        candidates.append({
-            'screen_name': result[0],
-        })
-
-    cursor.close()
-    cnx.close()
+    except:
+        print "You are not in Deusto's network"
 
     return_dict = {
-        'candidates': candidates,
         'countries': countries,
+    }
+
+    return render(request, "eu_elections_analytics/hashtags/country_index.html", return_dict)
+
+
+####################################################################################################
+#####   View: hashtags_group_index()
+####################################################################################################
+
+def hashtags_group_index(request):
+    groups = []
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        cursor.execute("Select initials, slug from groups")
+
+        for result in cursor:
+            groups.append({
+                'initials': result[0],
+                'slug': result[1],
+            })
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
         'groups': groups,
     }
 
-    return render(request, "eu_elections_analytics/hashtags/index.html", return_dict)
+    return render(request, "eu_elections_analytics/hashtags/group_index.html", return_dict)
+
+
+####################################################################################################
+#####   View: hashtags_candidate_index()
+####################################################################################################
+
+def hashtags_candidate_index(request):
+    candidates = []
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
+
+        for result in cursor:
+            candidates.append({
+                'screen_name': result[0],
+            })
+
+        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(subcandidate_id, CHAR(100)) FROM groups)")
+
+        for result in cursor:
+            candidates.append({
+                'screen_name': result[0],
+            })
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
+        'candidates': candidates,
+    }
+
+    return render(request, "eu_elections_analytics/hashtags/candidate_index.html", return_dict)
 
 
 ####################################################################################################
@@ -136,26 +252,30 @@ def hashtags_by_group(request, group_slug):
     hashtags = []
     group = None
 
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
-    cursor.execute("Select initials, user_id from groups where slug = '%s'" % group_slug)
-    for result in cursor:
-        group = {
-            'initials': result[0],
-            'user_id': result[1],
-        }
+        cursor.execute("Select initials, user_id from groups where slug = '%s'" % group_slug)
+        for result in cursor:
+            group = {
+                'initials': result[0],
+                'user_id': result[1],
+            }
 
-    cursor.execute("Select text, total from hash_group where group_id = '%s'" % group['initials'])
+        cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text" % group['initials'])
 
-    for result in cursor:
-        hashtags.append({
-            'text': result[0],
-            'total': result[1],
-        })
+        for result in cursor:
+            hashtags.append({
+                'text': result[0],
+                'total': result[1],
+            })
 
-    cursor.close()
-    cnx.close()
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
 
     return_dict = {
         'group': group,
@@ -174,26 +294,30 @@ def hashtags_by_candidate(request, candidate_screen_name):
     hashtags = []
     candidate = None
 
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
-    cursor.execute("Select id, screen_name from twitter_users where screen_name = '%s'" % candidate_screen_name)
-    for result in cursor:
-        candidate = {
-            'id': result[0],
-            'screen_name': result[1],
-        }
+        cursor.execute("Select id, screen_name from twitter_users where screen_name = '%s'" % candidate_screen_name)
+        for result in cursor:
+            candidate = {
+                'id': result[0],
+                'screen_name': result[1],
+            }
 
-    cursor.execute("Select text, total from hash_candidate where candidate_id = '%s'" % candidate['id'])
+        cursor.execute("Select text, sum(total) from hash_candidate where candidate_id = '%s' group by text" % candidate['id'])
 
-    for result in cursor:
-        hashtags.append({
-            'text': result[0],
-            'total': result[1],
-        })
+        for result in cursor:
+            hashtags.append({
+                'text': result[0],
+                'total': result[1],
+            })
 
-    cursor.close()
-    cnx.close()
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
 
     return_dict = {
         'candidate': candidate,
@@ -211,25 +335,29 @@ def hashtags_by_country(request, country_slug):
     hashtags = []
     country = None
 
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
-    cursor.execute("Select long_name from countries where slug = '%s'" % country_slug)
-    for result in cursor:
-        country = {
-            'long_name': result[0],
-        }
+        cursor.execute("Select long_name from countries where slug = '%s'" % country_slug)
+        for result in cursor:
+            country = {
+                'long_name': result[0],
+            }
 
-    cursor.execute("Select text, total from hash_country where country_id = '%s'" % country['long_name'])
+        cursor.execute("Select text, sum(total) from hash_country where country_id = '%s' group by text" % country['long_name'])
 
-    for result in cursor:
-        hashtags.append({
-            'text': result[0],
-            'total': result[1],
-        })
+        for result in cursor:
+            hashtags.append({
+                'text': result[0],
+                'total': result[1],
+            })
 
-    cursor.close()
-    cnx.close()
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
 
     return_dict = {
         'country': country,
@@ -255,57 +383,105 @@ def hashtag_evolution(request):
 ####################################################################################################
 
 ####################################################################################################
-#####   View: languages()
+#####   View: languages_country_index()
 ####################################################################################################
 
-def languages(request):
-    candidates = []
+def languages_country_index(request):
     countries = []
-    groups = []
 
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
-    cursor.execute("Select initials, slug from groups")
+        cursor.execute("Select long_name, slug from countries")
 
-    for result in cursor:
-        groups.append({
-            'initials': result[0],
-            'slug': result[1],
-        })
+        for result in cursor:
+            countries.append({
+                'long_name': result[0],
+                'slug': result[1],
+            })
 
-    cursor.execute("Select long_name, slug from countries")
+        cursor.close()
+        cnx.close()
 
-    for result in cursor:
-        countries.append({
-            'long_name': result[0],
-            'slug': result[1],
-        })
-
-    cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
-
-    for result in cursor:
-        candidates.append({
-            'screen_name': result[0],
-        })
-
-    cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(subcandidate_id, CHAR(100)) FROM groups)")
-
-    for result in cursor:
-        candidates.append({
-            'screen_name': result[0],
-        })
-
-    cursor.close()
-    cnx.close()
+    except:
+        print "You are not in Deusto's network"
 
     return_dict = {
-        'candidates': candidates,
         'countries': countries,
+    }
+
+    return render(request, "eu_elections_analytics/languages/country_index.html", return_dict)
+
+
+####################################################################################################
+#####   View: languages_group_index()
+####################################################################################################
+
+def languages_group_index(request):
+    groups = []
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        cursor.execute("Select initials, slug from groups")
+
+        for result in cursor:
+            groups.append({
+                'initials': result[0],
+                'slug': result[1],
+            })
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
         'groups': groups,
     }
 
-    return render(request, "eu_elections_analytics/languages/index.html", return_dict)
+    return render(request, "eu_elections_analytics/languages/group_index.html", return_dict)
+
+
+####################################################################################################
+#####   View: languages_candidate_index()
+####################################################################################################
+
+def languages_candidate_index(request):
+    candidates = []
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
+
+        for result in cursor:
+            candidates.append({
+                'screen_name': result[0],
+            })
+
+        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(subcandidate_id, CHAR(100)) FROM groups)")
+
+        for result in cursor:
+            candidates.append({
+                'screen_name': result[0],
+            })
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
+        'candidates': candidates,
+    }
+
+    return render(request, "eu_elections_analytics/languages/candidate_index.html", return_dict)
 
 
 ####################################################################################################
@@ -316,26 +492,30 @@ def languages_by_group(request, group_slug):
     languages = []
     group = None
 
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
-    cursor.execute("Select initials, user_id from groups where slug = '%s'" % group_slug)
-    for result in cursor:
-        group = {
-            'initials': result[0],
-            'user_id': result[1],
-        }
+        cursor.execute("Select initials, user_id from groups where slug = '%s'" % group_slug)
+        for result in cursor:
+            group = {
+                'initials': result[0],
+                'user_id': result[1],
+            }
 
-    cursor.execute("Select lang, total from language_group where group_id = '%s'" % group['initials'])
+        cursor.execute("Select lang, total from language_group where group_id = '%s'" % group['initials'])
 
-    for result in cursor:
-        languages.append({
-            'lang': result[0],
-            'total': result[1],
-        })
+        for result in cursor:
+            languages.append({
+                'lang': result[0],
+                'total': result[1],
+            })
 
-    cursor.close()
-    cnx.close()
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
 
     return_dict = {
         'group': group,
@@ -354,26 +534,30 @@ def languages_by_candidate(request, candidate_screen_name):
     languages = []
     candidate = None
 
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
 
-    cursor.execute("Select id, screen_name from twitter_users where screen_name = '%s'" % candidate_screen_name)
-    for result in cursor:
-        candidate = {
-            'id': result[0],
-            'screen_name': result[1],
-        }
+        cursor.execute("Select id, screen_name from twitter_users where screen_name = '%s'" % candidate_screen_name)
+        for result in cursor:
+            candidate = {
+                'id': result[0],
+                'screen_name': result[1],
+            }
 
-    cursor.execute("Select lang, total from language_candidate where candidate_id = '%s'" % candidate['id'])
+        cursor.execute("Select lang, total from language_candidate where candidate_id = '%s'" % candidate['id'])
 
-    for result in cursor:
-        languages.append({
-            'lang': result[0],
-            'total': result[1],
-        })
+        for result in cursor:
+            languages.append({
+                'lang': result[0],
+                'total': result[1],
+            })
 
-    cursor.close()
-    cnx.close()
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
 
     return_dict = {
         'candidate': candidate,
@@ -388,4 +572,37 @@ def languages_by_candidate(request, candidate_screen_name):
 ####################################################################################################
 
 def languages_by_country(request, country_slug):
-    return render(request, "eu_elections_analytics/languages/by_country.html")
+    languages = []
+    country = None
+
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        cursor.execute("Select long_name from countries where slug = '%s'" % country_slug)
+        for result in cursor:
+            country = {
+                'long_name': result[0],
+            }
+
+        cursor.execute("Select text, sum(total) from language_country where country_id = '%s' group by text" % country['long_name'])
+
+        for result in cursor:
+            languages.append({
+                'text': result[0],
+                'total': result[1],
+            })
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
+        'country': country,
+        'languages': languages,
+        'number': len(languages),
+    }
+
+    return render(request, "eu_elections_analytics/languages/by_country.html", return_dict)

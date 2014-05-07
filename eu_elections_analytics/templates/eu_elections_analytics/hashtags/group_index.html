@@ -1,0 +1,26 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block content %}
+
+    <div class="row centered">
+        {% for group in groups %}
+            {% if forloop.counter0|divisibleby:4 %}{% endif %}
+            <div class="col-md-2 well country-well">
+                <a href="{% url 'hashtags_by_group' group.slug %}">
+                    {{ group.initials }}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+
+
+{% endblock %}

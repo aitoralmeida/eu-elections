@@ -12,7 +12,7 @@
 
 {% block content %}
 
-    <h1>{{ number }} language{{ number|pluralize }} for <strong>{{ group.initials }}</strong></h1>
+    <h1>{{ number }} idioma{{ number|pluralize }} utilizado{{ number|pluralize }} por <strong>{{ group.initials }}</strong></h1>
 
     <br>
 
@@ -140,7 +140,7 @@
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Number of tweets");
+            .text("Número de tweets");
 
         svg_bar.selectAll(".bar")
             .data(data)

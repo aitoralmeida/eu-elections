@@ -14,6 +14,11 @@ html, body {
     text-align: center;
 }
 
+#header-image {
+    width: 100%;
+    border-bottom: solid 5px #101e38;
+}
+
 #main-container {
     display: block;
     min-height: 450px;
@@ -51,7 +56,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 3em;
+    margin-bottom: 7.5em;
 }
 
 footer {
@@ -59,12 +64,25 @@ footer {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 3em;
-    background-color: #101e38;
+    height: 7.5em;
+    background-color: white;
+    border-top: solid 5px #101e38;
 }
 
 /* End sticky footer styles
 -------------------------------------------------- */
+
+#morelab-logo {
+    margin-top: 1em;
+}
+
+#deusto-barometro-logo {
+    margin-top: 1.5em;
+}
+
+#deusto-logo {
+    margin-top: 2em;
+}
 
 g.country-axis > g.tick > text {
     -webkit-transform: rotate(-90deg);
@@ -96,7 +114,7 @@ g.country-axis > g.tick > text {
 
 
 
-.sigma-parent > .col-md-8 {
+.sigma-parent {
     height: 600px;
     border: 3px ridge #ccc;
 }
@@ -139,8 +157,8 @@ g.country-axis > g.tick > text {
 }
 
 #zoom {
-    z-index:999;
-    position: absolute;
+    z-index: 10;
+    /*position: absolute;*/
     left: 10px;
     top: 10px;
     bottom: 25px;
@@ -165,6 +183,7 @@ g.country-axis > g.tick > text {
     float: left;
     margin-right: 4px;
     background-repeat: no-repeat;
+    margin: 0.5em;
 }
 
 #zoom .z[rel=center] {
@@ -208,7 +227,7 @@ g.country-axis > g.tick > text {
 }
 
 .navbar-wrapper {
-    margin-top: 20px;
+    margin-top: -25px;
     position: relative;
     top: 0;
     right: 0;
@@ -219,4 +238,131 @@ g.country-axis > g.tick > text {
 
 .navbar-wrapper .navbar {
     border-radius: 5px;
+}
+
+.btn-alde {
+    color: #fff;
+    background-color: #f7981d;
+    border-color: #de881a;
+}
+
+.btn-eaf {
+    color: #fff;
+    background-color: #858585;
+    border-color: #777;
+}
+
+.btn-ecr {
+    color: #fff;
+    background-color: #22205f;
+    border-color: #1e1c55;
+}
+
+.btn-efd {
+    color: #fff;
+    background-color: #973693;
+    border-color: #873084;
+}
+
+.btn-epp {
+    color: #fff;
+    background-color: #6598cb;
+    border-color: #5a88b6;
+}
+
+.btn-gue-ngl {
+    color: #fff;
+    background-color: #981b1e;
+    border-color: #88181b;
+}
+
+.btn-greens {
+    color: #fff;
+    background-color: #0b9147;
+    border-color: #09823f;
+}
+
+.btn-sd {
+    color: #fff;
+    background-color: #ef4d4d;
+    border-color: #d74545;
+}
+
+#map {
+    border: 3px solid #777;
+}
+
+
+.panel-alde > .panel-heading {
+    color: #000;
+    background-color: #f7981d;
+}
+
+.panel-eaf > .panel-heading {
+    color: #000;
+    background-color: #858585;
+}
+
+.panel-ecr > .panel-heading {
+    color: #000;
+    background-color: #22205f;
+}
+
+.panel-efd > .panel-heading {
+    color: #000;
+    background-color: #973693;
+}
+
+.panel-epp > .panel-heading {
+    color: #000;
+    background-color: #6598cb;
+}
+
+.panel-gue-ngl > .panel-heading {
+    color: #000;
+    background-color: #981b1e;
+}
+
+.panel-greens > .panel-heading {
+    color: #000;
+    background-color: #0b9147;
+}
+
+.panel-s-d > .panel-heading {
+    color: #000;
+    background-color: #ef4d4d;
+}
+
+.group-name {
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.descriptions {
+    text-align: justify;
+}
+
+.country-well {
+    margin: 1.5em;
+}
+
+#interaction-list {
+    height: 200px;
+    overflow-y: scroll;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#interaction-list > ul > li {
+    font-size: 1em;
+}
+
+.modal-body > p {
+    text-align: justify;
+}
+
+#info-button {
+    margin-top: 1.5em;
 }

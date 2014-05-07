@@ -4,7 +4,147 @@
 
 {% block content %}
 
+    <div class="row">
+        <div class="descriptions col-md-6">
+            <p>
+                Bienvenido a la página de datos de euro e-lecciones. Esta página es un apoyo al blog que puedes encontrar en DIRECIÓN DEL BLOG. En esta página haremos un seguimiento en tiempo real de la actividad de los partidos y grupos europeos en twitter durante toda la campaña. Aquí podrás explorar esta actividad y ver como es el comportamiento de los partidos. Para hacer más sencillo este proceso hemos dividido los datos en diferentes categorías.
+            </p>
 
+            <dl>
+                <dt>
+                    Hashtags de la campaña
+                </dt>
+
+                <dd>
+                    Podrás ver cuáles son los <a target="_blank" href="http://es.wikipedia.org/wiki/Hashtag">hashtags</a> más utilizados durante la campaña por cada grupo, por cada candidato y por cada país, así como su evolución cronológica. Esto te puede servirá para saber cuáles son las temáticas más tratadas en cada área.
+                </dd>
+
+                <br>
+
+                <dt>
+                    Idioma de los tweets
+                </dt>
+
+                <dd>
+                    Esta categoría es similar a la anterior, pero centrándonos en los idiomas utilizados en los tweets. Esto te servirá para hacerte una idea de la <em>europeidad</em> de cada campaña. ¿Hacen los grupos campaña para todo el ámbito europeo o se centran solo en el ámbito local?
+                </dd>
+
+                <br>
+
+                <dt>
+                    Mapeando los partidos
+                </dt>
+
+                <dd>
+                    Aquí podrás ver sobre un mapa a que país pertenece cada partido, el grupo del parlamento europeo al que pertenecen representado por su color y si pinchas sobre el icono, estadísticas del uso de twitter de cada partido. <b>METER DESCRIPCIÓN DEL DE DONUTS NO DONUTS SI SE PONE AL FINAL.</b>
+                </dd>
+
+                <br>
+
+                <dt>
+                    Interacciones en twitter
+                </dt>
+
+                <dd>
+                    Quizás la más intimidante a primera vista, pero la que más invita a jugar con ella. Aquí podrás encontrar un grafo interactivo en el que podrás ver las interacciones que tienen las cuentas de los partidos con otras cuentas de twitter.
+                </dd>
+            </dl>
+        </div>
+
+        <div class="panel-group col-md-6" id="accordion">
+        {% for group in groups %}
+            <div class="panel panel-default panel-{{ group.slug }}">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ group.slug }}">
+                            {{ group.initials }}
+                        </a>
+                    </h4>
+                </div>
+
+                <div id="collapse-{{ group.slug }}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="{{ STATIC_PREFIX }}img/logos/{{ group.slug }}.png" width="100" />
+                            </div>
+
+                            <div class="group-name col-md-9">
+                                {{ group.name }}
+                            </div>
+                        </div>
+
+                        <div class="soften-limited"></div>
+
+                        <p>
+                            <strong>Hashtag más usado:</strong>
+                            &emsp;
+                            <a target="_blank" href="https://twitter.com/hashtag/{{ group.top_hashtag }}">
+                                #{{ group.top_hashtag }}
+                            </a>
+                            &emsp;
+                            (utilizado {{ group.top_hashtag_count }} veces)
+                        </p>
+
+                        <p>
+                            <strong>Idiomas más empleados:</strong>&emsp;
+
+                            <table class="table table-striped table-condensed">
+                            {% for language in group.languages %}
+                                <tr class="row">
+                                    <td class="col-md-2 col-md-offset-4">
+                                        &emsp;<strong>{{ language.language }}</strong>
+                                    </td>
+
+                                    <td class="col-md-2">
+                                        {{ language.percentage }} %
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </table>
+                        </p>
+
+                        <p>
+                            <strong>Tipo de discurso:</strong>
+                            &emsp;<i class="fa fa-circle" style="color: #5bc0de;"></i>&emsp;Europeo&emsp;&emsp;<i class="fa fa-circle" style="color: #5cb85c;"></i>&emsp;Nacional
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" style="width: {{ group.discourse.european }}%">
+                                    {{ group.discourse.european }}%
+                                </div>
+
+                                <div class="progress-bar progress-bar-success" style="width: {{ group.discourse.national }}%">
+                                    {{ group.discourse.national }}%
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <strong>Partidos:</strong>
+                            <br>
+
+                            <table class="table table-striped table-condensed">
+                            {% for party in group.parties %}
+                                <tr>
+                                    <td>
+                                        <strong>{{ party.initials }}</strong>
+                                    </td>
+
+                                    <td>
+                                        <a target="_blank" href="https://twitter.com/{{ party.screen_name }}">
+                                            {{ party.name }}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div> <!-- end #accordion .panel-group -->
+    </div>
 
 {% endblock %}
 

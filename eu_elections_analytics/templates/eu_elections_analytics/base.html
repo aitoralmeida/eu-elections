@@ -27,6 +27,10 @@
     </head>
 
     <body>
+        <a href="{% url 'home' %}">
+            <img id="header-image" class="img-responsive" src="{{ STATIC_PREFIX }}img/header.jpg"/>
+        </a>
+
         <div class="navbar-wrapper">
             <div class="container">
                 <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -38,97 +42,68 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-
-                            <a class="navbar-brand" href="{% url 'home' %}">
-                                <img src="{{ STATIC_PREFIX }}img/ep_logo.png" width="50">
-                                euro e-lecciones
-                            </a>
                         </div>
 
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
                                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                                        Hashtags&emsp;<b class="caret"></b>
+                                        Hashtags de la campaña&emsp;<b class="caret"></b>
                                     </a>
 
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="{% url 'hashtags' %}">All (index)</a>
+                                            <a href="{% url 'hashtags_group_index' %}">Por grupo</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By country</a>
+                                            <a href="{% url 'hashtags_country_index' %}">Por país</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By candidate</a>
+                                            <a href="{% url 'hashtags_candidate_index' %}">Por candidato</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By group</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Top evolution</a>
+                                            <a href="#">Evolución de los más utilizados</a>
                                         </li>
                                     </ul>
                                 </li>
 
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        Languages&emsp;<b class="caret"></b>
+                                        Idioma de los tweets&emsp;<b class="caret"></b>
                                     </a>
 
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="{% url 'languages' %}">All (index)</a>
+                                            <a href="{% url 'languages_group_index' %}">Por grupo</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By country</a>
+                                            <a href="{% url 'languages_country_index' %}">Por país</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By candidate</a>
+                                            <a href="{% url 'languages_candidate_index' %}">Por candidato</a>
                                         </li>
 
                                         <li>
-                                            <a href="#">By group</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Top evolution</a>
+                                            <a href="#">Evolución de los más utilizados</a>
                                         </li>
                                     </ul>
                                 </li>
 
                                 <li>
                                     <a href="{% url 'geo_group_representation' %}">
-                                        Geo group representation
+                                        Mapeando los partidos
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="{% url 'group_representation_by_country' %}">
-                                        Group representation
+                                    <a href="{% url 'interaction_communities' %}">
+                                        Interacciones en twitter
                                     </a>
-                                </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        Interaction communities&emsp;<b class="caret"></b>
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#">Between parties</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{% url 'interaction_communities' %}">On twitter</a>
-                                        </li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -147,6 +122,25 @@
 
         <footer>
             <div class="container">
+                <div class="row">
+                    <div class="col-md-4 centered">
+                        <a target="_blank" href="http://www.morelab.deusto.es/">
+                            <img id="morelab-logo" src="{{ STATIC_PREFIX }}img/morelab.png"/>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 centered">
+                        <a target="_blank" href="http://barometrosocial.deusto.es/">
+                            <img id="deusto-barometro-logo" src="{{ STATIC_PREFIX }}img/deusto_barometro.png"/>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 centered">
+                        <a target="_blank" href="http://deusto.es">
+                            <img id="deusto-logo" src="{{ STATIC_PREFIX }}img/deusto.png"/>
+                        </a>
+                    </div>
+                </div>
             </div>
         </footer>
     </body>
