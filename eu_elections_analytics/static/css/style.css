@@ -240,6 +240,10 @@ g.country-axis > g.tick > text {
     border-radius: 5px;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
 .btn-alde {
     color: #fff;
     background-color: #f7981d;
