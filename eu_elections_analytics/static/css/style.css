@@ -292,25 +292,14 @@ g.country-axis > g.tick > text {
     border: 3px solid #777;
 }
 
+.panel-eacr > .panel-heading {
+    color: #000;
+    background-color: #409df4;
+}
 
 .panel-alde > .panel-heading {
     color: #000;
     background-color: #f7981d;
-}
-
-.panel-eaf > .panel-heading {
-    color: #000;
-    background-color: #858585;
-}
-
-.panel-ecr > .panel-heading {
-    color: #000;
-    background-color: #22205f;
-}
-
-.panel-efd > .panel-heading {
-    color: #000;
-    background-color: #973693;
 }
 
 .panel-epp > .panel-heading {
@@ -318,19 +307,24 @@ g.country-axis > g.tick > text {
     background-color: #6598cb;
 }
 
-.panel-gue-ngl > .panel-heading {
+.panel-greens-efa > .panel-heading {
     color: #000;
-    background-color: #981b1e;
+    background-color: #03b22e;
 }
 
-.panel-greens > .panel-heading {
+.panel-meld > .panel-heading {
     color: #000;
-    background-color: #0b9147;
+    background-color: #07ddfd;
 }
 
-.panel-s-d > .panel-heading {
+.panel-pel > .panel-heading {
     color: #000;
-    background-color: #ef4d4d;
+    background-color: #a31e0a;
+}
+
+.panel-pes > .panel-heading {
+    color: #000;
+    background-color: #e90303;
 }
 
 .group-name {
