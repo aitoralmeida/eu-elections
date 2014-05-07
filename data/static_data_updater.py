@@ -61,45 +61,87 @@ def load_locations():
     
 def get_party_ids():
     ids = {}
-    with open('twitter_ids.csv', 'r') as infile:
+    with open('export_twitter_accounts.csv', 'r') as infile:
         for line in infile:
             screen_name, twitter_id = line.split(',')
+            screen_name = screen_name.replace('@', '')
             ids[screen_name] = twitter_id
             
     return ids
+    
+def get_cities():
+    geo_cod = {}    
+    
+    with open('./locations_reverse_geocoding/locations.csv', 'r') as infile:
+        
+        for line in infile:
+            if not 'city' in line:
+                tokens = line.split(',')
+                city = tokens[0]
+                country = tokens[1]
+
+                geo_cod[country] = city
+    
+    return geo_cod
+    
     
 def load_parties():
     ids = get_party_ids()
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
-    with open('parties.csv', 'r') as infile:
+    
+    geo_cod = get_cities()
+    with open('export_party_info.csv', 'r') as infile:
         for line in infile:
-            #GUE/NGL,Bloco de esquerda,Left block,GPBloco,Lisbon, Portugal
-            if len(line.split(',')) == 6:
-                group, initials, name, screen_name, city, country = line.split(',')
-                is_group_party = 0
-            elif len(line.split(',')) == 5:
-                group, initials, name, screen_name, __ = line.split(',')
+            working_line = line.replace('\n', '')
+            #GUE/NGL,Bloco de esquerda, GPBloco,Lisbon, Portugal
+            print line
+            print len(working_line.split(','))
+            if len(working_line.split(',')) == 6:
+                group, name, screen_name, country, lat, lon = working_line.split(',')
+                name = name.strip().replace("'", "")
+                group = group.strip()
+                country = country.strip()
+                screen_name = screen_name.strip().replace('@', '')
+                lat = lat.strip()
+                lon = lon.strip()
+                try:
+                    is_group_party = 0
+                    city = geo_cod[country]
+                except:
+                    city = "none"
+                    is_group_party = 1
+                    lat = 0
+                    lon = 0
+                
+                
+            elif len(working_line.split(',')) == 3:
+                group, name, screen_name = working_line.split(',')
                 city = "none"
                 is_group_party = 1
             else:
+                print 'Unexpected number of tokens'
                 print line
+                break
             
-            if screen_name == '':
+            if screen_name == '' or screen_name == '"NO':
                 screen_name = "NO"
                 
-            if screen_name != "NO": 
+            if screen_name != '"NO"' and screen_name != 'NO': 
                 twitter_id = ids[screen_name]
             else:
                 twitter_id = 0
+                
 
-            slug = slugify(initials)
-            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id, slug) VALUES ('" + initials  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +", '" + slug + "');"
-            try:            
-             cursor.execute(query)
-            except:
-                print line
-                break
+            slug = slugify(name)
+            query = "INSERT INTO parties (initials, location, group_id, name, is_group_party, user_id, slug, lat, lon) VALUES ('" + slug  + "', '" + city + "', '" + group + "', '" + name + "', " + str(is_group_party) + ", " + str(twitter_id) +", '" + slug + "', " + str(lat)+ ", " + str(lon) + ");"
+            print query
+            cursor.execute(query)            
+#            try:            
+#             cursor.execute(query)
+#            except:
+#                print 'error'
+#                break
 
     cnx.commit()    
     cursor.close()
@@ -110,7 +152,7 @@ def load_groups():
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
     ids = get_party_ids()
-    with open('groups.csv', 'r') as infile:
+    with open('export_groups.csv', 'r') as infile:
         for line in infile:
             #GUE/NGL,European Left ,GUENGL,tsipras_eu,
             group, name, screename, candidate, subcandidate = line.split(',')
@@ -132,8 +174,11 @@ def load_groups():
                 
             slug = slugify(group)
             query = "INSERT INTO groups (initials, candidate_id, subcandidate_id, name, total_tweets, user_id, slug) VALUES ('" + group  + "', " + str(candidate_id) + ", " +  str(subcandidate_id) + ", '" + name + "', 0, " + str(user_id)  +", '" + slug + "');"
-            print query                     
-            cursor.execute(query)
+            print query   
+            try:                  
+                cursor.execute(query)
+            except mysql.connector.errors.IntegrityError:
+                print 'Duplicated key'
             
 
     cnx.commit()
@@ -143,7 +188,7 @@ def load_groups():
         
 
     
-load_groups()
+load_parties()
 
 print 'done'
         
