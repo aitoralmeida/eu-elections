@@ -1,1993 +1,1402 @@
 [
-   {
-      "name":"Die Grünen",
-      "city":"Vienna",
-      "country":"Austria",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":48.1999307,
-      "lng":16.3485744,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/The_Greens_%E2%80%93_The_Green_Alternative",
-      "headquarters":"Lindengasse 40, 1070 Vienna, Austria"
-   },
-   {
-      "name":"Ecolo",
-      "city":"Namur",
-      "country":"Belgium",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":50.4583111,
-      "lng":4.8419195,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Ecolo",
-      "headquarters":"Avenue de Marlagne 52, 5000 Namur, Belgium"
-   },
-   {
-      "name":"Groen",
-      "city":"Anderlecht",
-      "country":"Belgium",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":50.8394914,
-      "lng":4.3345297,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Groen_(political_party)",
-      "headquarters":"Sergeant De Bruynestraat 78, 1070 Anderlecht, Belgium"
-   },
-   {
-      "name":"NVA",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":50.8489769,
-      "lng":4.3637635,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/New_Flemish_Alliance",
-      "headquarters":"Rue Royale 47, 1000 Brussels, Belgium"
-   },
-   {
-      "name":"SF",
-      "city":"Copenhagen",
-      "country":"Denmark",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":55.6758333,
-      "lng":12.5788889,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Socialist_People's_Party_(Denmark)",
-      "headquarters":"Christiansborg Palace, 1218 Copenhagen, Denmark"
-   },
-   {
-      "name":"De Gröna",
-      "city":"Helsinki",
-      "country":"Finland",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":60.1634851,
-      "lng":24.9383471,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Green_League",
-      "headquarters":"Fredrikinkatu 33, 00120 Helsinki, Finland"
-   },
-   {
-      "name":"PNC",
-      "city":"Bastia",
-      "country":"France",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":42.6963833,
-      "lng":9.4468279,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Party_of_the_Corsican_Nation",
-      "headquarters":"5 Boulevard Hyacinthe de Montera, 20200 Bastia, France"
-   },
-   {
-      "name":"Die Grünen",
-      "city":"Berlin",
-      "country":"Germany",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":52.5288837,
-      "lng":13.3793171,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Alliance_%2790/The_Greens",
-      "headquarters":"Platz vor dem Neuen Tor 1, 10115 Berlin, Germany"
-   },
-   {
-      "name":"Oikologoi prasinoi",
-      "city":"Athens",
-      "country":"Greece",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":37.965563,
-      "lng":23.729356,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Oikologoi_Prasinoi",
-      "headquarters":"31, Kolokotronis St., 105 62 Athens"
-   },
-   {
-      "name":"Federazione dei Verdi",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":41.9056403,
-      "lng":12.4955343,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Federazione_dei_Verdi",
-      "headquarters":"Via Antonio Salandra, 6, 00187 Rome, Italy"
-   },
-   {
-      "name":"Dei gréng",
-      "city":"Luxembourg",
-      "country":"Luxembourg",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":49.604769,
-      "lng":6.1320934,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/The_Greens_(Luxembourg)",
-      "headquarters":"1 Rue du Fort Elisabeth, 1463 Luxemburg City, Luxembourg"
-   },
-   {
-      "name":"Equo",
-      "city":"Madrid",
-      "country":"Spain",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":40.4523802,
-      "lng":-3.68022,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Equo",
-      "headquarters":"Calle Jiloca, 4, 28016 Madrid, Spain"
-   },
-   {
-      "name":"ERC",
-      "city":"Barcelona",
-      "country":"Spain",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":41.3826332,
-      "lng":2.1513423,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Esquerra_Republicana_de_Catalunya",
-      "headquarters":"Carrer Calàbria, 166, 08015 Barcelona, Spain"
-   },
-   {
-      "name":"ICV",
-      "city":"Barcelona",
-      "country":"Spain",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":41.382234,
-      "lng":2.1779805,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Initiative_for_Catalonia_Greens",
-      "headquarters":"Carrer Ciutat, 7, 08002 Barcelona, Spain"
-   },
-   {
-      "name":"Eusko Alkartasuna",
-      "city":"San Sebastian",
-      "country":"Spain",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":43.3018139,
-      "lng":-2.0109963,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Eusko_Alkartasuna",
-      "headquarters":"Camino Portuetxe / Portuetxe Bidea, 23, 20008 San Sebastián, Gipuzkoa, Spain"
-   },
-   {
-      "name":"BNG",
-      "city":"Santiago de Compostela",
-      "country":"Spain",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":42.8872826,
-      "lng":-8.5324822,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Bloque_Nacionalista_Galego",
-      "headquarters":"Avenida Rodríguez de Viguri, 16, 15703 Santiago de Compostela, A Coruña, Spain"
-   },
-   {
-      "name":"Miljöpartiet de Gröna",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":59.3202472,
-      "lng":18.0677552,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Milj%C3%B6partiet_de_Gr%C3%B6na",
-      "headquarters":"Pustegränd 3, 118 20 Stockholm, Sweden"
-   },
-   {
-      "name":"Piratpartiet",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":59.32893,
-      "lng":18.06491,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Piratpartiet",
-      "headquarters":"Stockholm"
-   },
-   {
-      "name":"Green party of England and Wales",
-      "city":"London",
-      "country":"UK",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":51.5244343,
-      "lng":-0.0845572,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Green_Party_of_England_and_Wales",
-      "headquarters":"Development House, 56-64 Leonard Street, Shoreditch, London EC2A 4LT, UK"
-   },
-   {
-      "name":"Scottish National Party",
-      "city":"Edinburgh",
-      "country":"Scotland",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":55.920966,
-      "lng":-3.171598,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Scottish_National_Party",
-      "headquarters":"Gordon Lamb House 3 Jackson's Entry Edinburgh EH8 8PJ"
-   },
-   {
-      "name":"Plaid Cymru",
-      "city":"Cardiff",
-      "country":"Wales",
-      "group":"Greens",
-      "group_name":"The Greens / European Free Alliance",
-      "lat":55.950966,
-      "lng":-3.177598,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Plaid_Cymru",
-      "headquarters":"Tŷ Gwynfor, Marine Chambers, Anson Court, Atlantic Wharf Cardiff, Wales CF10 4AL"
-   },
-   {
-      "name":"AKEL",
-      "city":"Nicosia",
-      "country":"Cyprus",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":35.1614986,
-      "lng":33.3619454,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Progressive_Party_of_Working_People",
-      "headquarters":"Ezekia Papaioannou, Nicosia, Cyprus"
-   },
-   {
-      "name":"Bloco de esquerda",
-      "city":"Lisbon",
-      "country":"Portugal",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":38.7189719,
-      "lng":-9.1354135,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Bloco_de_Esquerda",
-      "headquarters":"Rua Palma 268, 1100-395 Lisbon, Portugal"
-   },
-   {
-      "name":"Die Linke",
-      "city":"Berlin",
-      "country":"Germany",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":52.5200727,
-      "lng":13.4137781,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Die_Linke",
-      "headquarters":"Alexanderplatz 28, 10178 Berlin, Germany"
-   },
-   {
-      "name":"Folkebevægelsen mod EU",
-      "city":"Copenhagen",
-      "country":"Denmark",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":55.677761,
-      "lng":12.587974,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/People%27s_Movement_against_the_EU",
-      "headquarters":"Tordenskjoldsgade 21, 1055 København K, Denmark"
-   },
-   {
-      "name":"Front de gauche",
-      "city":"Paris",
-      "country":"France",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":48.856614,
-      "lng":2.3522219,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Left_Front_(France)",
-      "headquarters":"Paris"
-   },
-   {
-      "name":"Saskanas centrs´",
-      "city":"Riga",
-      "country":"Latvia",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":56.9827599,
-      "lng":24.16939,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Harmony_Centre",
-      "headquarters":"Čiekurkalna 1. līnija, Vidzemes priekšpilsēta, Rīga, LV-1026, Latvia"
-   },
-   {
-      "name":"Hrvatski laburisti",
-      "city":"Zagreb",
-      "country":"Croatia",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":45.8124846,
-      "lng":15.962454,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Croatian_Labourists_%E2%80%93_Labour_Party",
-      "headquarters":"Ilica ulica 108, 10000, Zagreb, Croatia"
-   },
-   {
-      "name":"Izquierda Unida",
-      "city":"Madrid",
-      "country":"Spain",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":40.4560726,
-      "lng":-3.6457374,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/United_Left_(Spain)",
-      "headquarters":"Calle Olimpo, 35, 28043 Madrid, Spain"
-   },
-   {
-      "name":"KKE",
-      "city":"Athens",
-      "country":"Greece",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":38.0350546,
-      "lng":23.7471783,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/KKE",
-      "headquarters":"Leoforos Irakliou 145, Nea Ionia 142 31, Greece"
-   },
-   {
-      "name":"KSCM",
-      "city":"Prague",
-      "country":"Czech Republic",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":50.0829389,
-      "lng":14.4292597,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Communist_Party_of_Bohemia_and_Moravia",
-      "headquarters":"Politických vězňů 9, 110 00 Prague 1, Czech Republic"
-   },
-   {
-      "name":"PCP",
-      "city":"Lisbon",
-      "country":"Portugal",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":38.74521,
-      "lng":-9.1591585,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Portuguese_Communist_Party",
-      "headquarters":"Rua Soeiro Pereira Gomes 3, 1600-019 Lisbon, Portugal"
-   },
-   {
-      "name":"Sinn Féin",
-      "city":"Dublin",
-      "country":"Ireland",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":53.3526891,
-      "lng":-6.2641954,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Sinn_F%C3%A9in",
-      "headquarters":"44 Parnell Square West, Dublin, Ireland"
-   },
-   {
-      "name":"Socialist party",
-      "city":"Dublin",
-      "country":"Ireland",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":53.343464,
-      "lng":-6.2848344,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Socialist_Party_(Ireland)",
-      "headquarters":"141 Thomas Street, Dublin, Ireland"
-   },
-   {
-      "name":"Socialistische Partij",
-      "city":"Amersfoort",
-      "country":"Netherlands",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":52.1540126,
-      "lng":5.3805988,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Socialist_Party_(Netherlands)",
-      "headquarters":"Snouckaertlaan 70, 3811 MB Amersfoort, The Netherlands"
-   },
-   {
-      "name":"Syriza",
-      "city":"Athens",
-      "country":"Greece",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":37.9851702,
-      "lng":23.7360041,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Syriza",
-      "headquarters":"Valtetsiou 39, Athens 106 81, Greece"
-   },
-   {
-      "name":"Vänsterpartiet",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"GUE/NGL",
-      "group_name":"European Left",
-      "lat":59.3316431,
-      "lng":18.0479589,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/V%C3%A4nsterpartiet",
-      "headquarters":"Kungsgatan 84, 112 27 Stockholm, Sweden"
-   },
-   {
-      "name":"ÖVP",
-      "city":"Vienna",
-      "country":"Austria",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":48.2099605,
-      "lng":16.3564337,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/%C3%96VP",
-      "headquarters":"Lichtenfelsgasse 7, 1010 Vienna, Austria"
-   },
-   {
-      "name":"CD&V",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":50.8438361,
-      "lng":4.3764921,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Christen-Democratisch_en_Vlaams",
-      "headquarters":"Rue de la Loi 89, 1040 Brussels, Belgium"
-   },
-   {
-      "name":"CDH",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":50.8465201,
-      "lng":4.3727621,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Centre_D%C3%A9mocrate_Humaniste",
-      "headquarters":"Rue des Deux Églises, 1000 Brussels, Belgium"
-   },
-   {
-      "name":"CSP",
-      "city":"Eupen",
-      "country":"Belgium",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":50.6301332,
-      "lng":6.0419336,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Christian_Social_Party_(Belgium)",
-      "headquarters":"Kaperberg, 4700 Eupen, Belgium"
-   },
-   {
-      "name":"GERB",
-      "city":"Sofia",
-      "country":"Bulgaria",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":42.6847412,
-      "lng":23.3190056,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Citizens_for_European_Development_of_Bulgaria",
-      "headquarters":"National Culture Palace, bulevard Bulgaria 1, 1463 Sofia, Bulgaria"
-   },
-   {
-      "name":"UDF",
-      "city":"Sofia",
-      "country":"Bulgaria",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":42.6897747,
-      "lng":23.323158,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Union_of_Democratic_Forces_(Bulgaria)",
-      "headquarters":"ulitsa Georgi. S. Rakovski 134, 1000 Sofia, Bulgaria"
-   },
-   {
-      "name":"DSB",
-      "city":"Sofia",
-      "country":"Bulgaria",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":42.6867309,
-      "lng":23.3273678,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Democrats_for_a_Strong_Bulgaria",
-      "headquarters":"Vitosha Ski, 1142 Sofia, Bulgaria"
-   },
-   {
-      "name":"HDZ",
-      "city":"Zagreb",
-      "country":"Croatia",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":45.8106015,
-      "lng":15.9875514,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/HDZ",
-      "headquarters":"Trg žrtava fašizma 4, 10000, Zagreb, Croatia"
-   },
-   {
-      "name":"DISY",
-      "city":"Nicosia",
-      "country":"Cyprus",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":51.476406,
-      "lng":-3.166052,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Democratic_Rally",
-      "headquarters":"Πινδάρου 25Τ.Θ. 25305 1308 Λευκωσία"
-   },
-   {
-      "name":"KDU-CSL",
-      "city":"Prague",
-      "country":"Czech Republic",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":50.0750689,
-      "lng":14.4350772,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/KDU-CSL",
-      "headquarters":"Prague 2, Czech Republic"
-   },
-   {
-      "name":"TOP 09",
-      "city":"Prague",
-      "country":"Czech Republic",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":50.0834633,
-      "lng":14.4049046,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/TOP_09",
-      "headquarters":"Újezd 450/40, 118 00 Prague-Prague 1, Czech Republic"
-   },
-   {
-      "name":"Konservative",
-      "city":"Copenhagen",
-      "country":"Denmark",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":55.679914,
-      "lng":12.5890467,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Konservative",
-      "headquarters":"Nyhavn 4, 1051 København K, Denmark"
-   },
-   {
-      "name":"Isamaa ja res publica liit",
-      "city":"Tallinn",
-      "country":"Estonia",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":59.4347184,
-      "lng":24.7286521,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Isamaa_ja_Res_Publica_Liit",
-      "headquarters":"Paldiski maantee 13, 10137 Tallinn, Estonia"
-   },
-   {
-      "name":"Kokoomus",
-      "city":"Helsinki",
-      "country":"Finland",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":60.1675181,
-      "lng":24.9340397,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Kokoomus",
-      "headquarters":"Kansakoulukuja 3, 00100 Helsinki, Finland"
-   },
-   {
-      "name":"Kristillisdemokraatit",
-      "city":"Helsinki",
-      "country":"Finland",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":60.1927539,
-      "lng":24.936173,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Kristillisdemokraatit",
-      "headquarters":"Karjalankatu 2, 00520 Helsinki, Finland"
-   },
-   {
-      "name":"Union pour un Mouvement Populaire",
-      "city":"Paris",
-      "country":"France",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":48.8405244,
-      "lng":2.3031824,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Union_pour_un_Mouvement_Populaire",
-      "headquarters":"238 Rue de Vaugirard, 75015 Paris, France"
-   },
-   {
-      "name":"UDI",
-      "city":"Paris",
-      "country":"France",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":48.842023,
-      "lng":2.3071987,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Union_of_Democrats_and_Independents",
-      "headquarters":"22 Rue des Volontaires, 75015 Paris, France"
-   },
-   {
-      "name":"CDU",
-      "city":"Berlin",
-      "country":"Germany",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":52.50645,
-      "lng":13.35129,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)",
-      "headquarters":"Klingelhöferstraße 8, 10785 Berlin, Germany"
-   },
-   {
-      "name":"CSU",
-      "city":"Munich",
-      "country":"Germany",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":48.14997,
-      "lng":11.54877,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Christian_Social_Union_in_Bavaria",
-      "headquarters":"Nymphenburger Straße 64, 80335 Munich, Germany"
-   },
-   {
-      "name":"Néa Dimokratia",
-      "city":"Athens",
-      "country":"Greece",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":37.9448768,
-      "lng":23.7010453,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/New_Democracy_(Greece)",
-      "headquarters":"Leoforos Andrea Siggrou 340, Kallithea, Greece"
-   },
-   {
-      "name":"Fidesz",
-      "city":"Budapest",
-      "country":"Hungary",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":47.492968,
-      "lng":19.0652749,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Fidesz",
-      "headquarters":"1088 Budapest, Szentkirályi Street 18, Hungary"
-   },
-   {
-      "name":"KDNP",
-      "city":"Budapest",
-      "country":"Hungary",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":47.5067392,
-      "lng":19.0857893,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/KDNP",
-      "headquarters":"1071 Budapest, Dózsa György Way & István Street, Hungary"
-   },
-   {
-      "name":"Forza Italia",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":41.9042336,
-      "lng":12.4777226,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Forza_Italia_(2013)",
-      "headquarters":"Piazza di San Lorenzo in Lucina, 00186 Rome, Italy"
-   },
-   {
-      "name":"Nuovo centrodestra",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":41.9021142,
-      "lng":12.4859147,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/New_Centre-Right",
-      "headquarters":"Via in Arcione, 71, 00187 Rome, Italy"
-   },
-   {
-      "name":"Casini-UDC",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":41.9046092,
-      "lng":12.4838153,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Union_of_Christian_and_Centre_Democrats",
-      "headquarters":"Via dei Due Macelli, 66, 00187 Rome, Italy"
-   },
-   {
-      "name":"Fratelli d´Italia",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":41.9011561,
-      "lng":12.4776605,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Brothers_of_Italy",
-      "headquarters":"Via degli Uffici del Vicario, 21, 00186 Rome, Italy"
-   },
-   {
-      "name":"Popolari UDEUR",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":41.892905,
-      "lng":12.4753468,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/UDEUR_Populars",
-      "headquarters":"Via Arenula, 34, 00186 Rome, Italy"
-   },
-   {
-      "name":"Südtiroler Volkspartei",
-      "city":"Bolzano",
-      "country":"Italy",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":46.5004989,
-      "lng":11.3617944,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/S%C3%BCdtiroler_Volkspartei",
-      "headquarters":"Via Brennero, 7, 39100 Bolzano, Italy"
-   },
-   {
-      "name":"Futuro e Libertà",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":41.8723889,
-      "lng":12.4801802,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Futuro_e_Libert%C3%A0",
-      "headquarters":"Rome"
-   },
-   {
-      "name":"Popolari per l'Italia",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":41.8223889,
-      "lng":12.4851802,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Popolari_per_l%27Italia",
-      "headquarters":"Rome"
-   },
-   {
-      "name":"Vienotíba",
-      "city":"Riga",
-      "country":"Latvia",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":56.945359,
-      "lng":24.1146226,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Unity_(Latvian_political_party)",
-      "headquarters":"Riga"
-   },
-   {
-      "name":"TS-LKD",
-      "city":"Vilnius",
-      "country":"Lithuania",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":54.6839932,
-      "lng":25.2838057,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/TS-LKD",
-      "headquarters":"L. Stuokos-Gucevičiaus gatvė 11, Vilnius 01122, Lithuania"
-   },
-   {
-      "name":"CSV",
-      "city":"Luxembourg",
-      "country":"Luxembourg",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":49.6103966,
-      "lng":6.1329776,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Christian_Social_People%27s_Party",
-      "headquarters":"4 Rue de l'Eau, 1449 Luxemburg City, Luxembourg"
-   },
-   {
-      "name":"Nationalist party",
-      "city":"Valletta",
-      "country":"Malta",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":35.8989085,
-      "lng":14.5145528,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Nationalist_Party_(Malta)",
-      "headquarters":"Valletta, Malta"
-   },
-   {
-      "name":"CDA",
-      "city":"The Hague",
-      "country":"Netherlands",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":52.0721398,
-      "lng":4.3037388,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Christian_Democratic_Appeal",
-      "headquarters":"Buitenom 18, 2512 XA The Hague, The Netherlands"
-   },
-   {
-      "name":"Platforma Obywatelska",
-      "city":"Warsaw",
-      "country":"Poland",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":35.893056,
-      "lng":14.493611,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Platforma_Obywatelska",
-      "headquarters":"Władysław Anders st. 21, 00-159 Warsaw"
-   },
-   {
-      "name":"PSL",
-      "city":"Warsaw",
-      "country":"Poland",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":52.230126,
-      "lng":21.0197178,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Polish_People%27s_Party",
-      "headquarters":"Kopernika 36, 00-924 Warsaw, Poland"
-   },
-   {
-      "name":"PSD",
-      "city":"Lisbon",
-      "country":"Portugal",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":38.7083486,
-      "lng":-9.1641845,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Social_Democratic_Party_(Portugal)",
-      "headquarters":"Rua São Caetano 9, 1200-794 Lisbon, Portugal"
-   },
-   {
-      "name":"CDS",
-      "city":"Lisbon",
-      "country":"Portugal",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":38.7117235,
-      "lng":-9.1356438,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Democratic_and_Social_Center_/_People%27s_Party",
-      "headquarters":"Largo Adelino Amaro da Costa 5, 1100-324 Lisbon, Portugal"
-   },
-   {
-      "name":"Partidul Democrat-Liberal",
-      "city":"Bucharest",
-      "country":"Romania",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":44.4568623,
-      "lng":26.0885101,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Partidul_Democrat-Liberal",
-      "headquarters":"Aleea Modrogan, Bucharest, Romania"
-   },
-   {
-      "name":"RMDSz",
-      "city":"Bucharest",
-      "country":"Romania",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":46.761026,
-      "lng":23.5906619,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/RMDSZ",
-      "headquarters":"Strada Republicii 60, Cluj-Napoca 400000, Rumanía"
-   },
-   {
-      "name":"SDKÚ",
-      "city":"Bratislava",
-      "country":"Slovak Republic",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":48.1566166,
-      "lng":17.1641473,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/SDK%C3%9A",
-      "headquarters":"Ružinovská 2747/28, 821 04 Bratislava, Slovakia"
-   },
-   {
-      "name":"KDH",
-      "city":"Bratislava",
-      "country":"Slovak Republic",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":48.1519794,
-      "lng":17.1493584,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/KDH",
-      "headquarters":"Bajkalská 1496/25, 821 01 Bratislava, Slovakia"
-   },
-   {
-      "name":"Magyar Közösség Pártja",
-      "city":"Bratislava",
-      "country":"Slovak Republic",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":48.1578853,
-      "lng":17.1152102,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Party_of_the_Hungarian_Community",
-      "headquarters":"Čajakova 4048/8, 811 05 Bratislava, Slovakia"
-   },
-   {
-      "name":"SDS",
-      "city":"Ljubljana",
-      "country":"Slovenia",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":46.0629996,
-      "lng":14.5065871,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Slovenska_demokratska_stranka",
-      "headquarters":"Trstenjakova ulica 8, 1000 Ljubljana, Slovenia"
-   },
-   {
-      "name":"NSi",
-      "city":"Ljubljana",
-      "country":"Slovenia",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":46.0527089,
-      "lng":14.5014028,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/New_Slovenia",
-      "headquarters":"Cankarjeva cesta 11, 1000 Ljubljana, Slovenia"
-   },
-   {
-      "name":"Partido Popular",
-      "city":"Madrid",
-      "country":"Spain",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":40.4269892,
-      "lng":-3.6941374,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/People%27s_Party_%28Spain%29",
-      "headquarters":"Calle Génova, 13, 28004 Madrid, Spain"
-   },
-   {
-      "name":"Unió democràtica de Catalunya",
-      "city":"Barcelona",
-      "country":"Spain",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":41.3919518,
-      "lng":2.1837275,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Uni%C3%B3_Democr%C3%A0tica_de_Catalunya",
-      "headquarters":"Carrer Nàpols, 35, 08018 Barcelona, Spain"
-   },
-   {
-      "name":"Moderata",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":59.3240108,
-      "lng":18.0694187,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Moderate_Party",
-      "headquarters":"Stora Nygatan 30, 111 27 Stockholm, Sweden"
-   },
-   {
-      "name":"kristdemokraterna",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"EPP",
-      "group_name":"European People's Party",
-      "lat":59.3251805,
-      "lng":18.0666731,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Kristdemokraterna",
-      "headquarters":"Munkbron 1, 111 28 Stockholm, Sweden"
-   },
-   {
-      "name":"FPO",
-      "city":"Vienna",
-      "country":"Austria",
-      "group":"EAF",
-      "group_name":"European Alliance for Freedom",
-      "lat":48.200434,
-      "lng":16.3585304,
-      "wikipedia_site":"http://es.wikipedia.org/wiki/Partido_de_la_Libertad_de_Austria",
-      "headquarters":"Theobaldgasse 19, 1060 Vienna, Austria"
-   },
-   {
-      "name":"Vlaams Belang",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"EAF",
-      "group_name":"European Alliance for Freedom",
-      "lat":50.8488211,
-      "lng":4.369841,
-      "wikipedia_site":"http://es.wikipedia.org/wiki/Vlaams_Belang",
-      "headquarters":"Madouplein 8, 1210 Saint-Josse-ten-Noode, Belgium"
-   },
-   {
-      "name":"Front National",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"EAF",
-      "group_name":"European Alliance for Freedom",
-      "lat":50.4231992,
-      "lng":4.4492592,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/National_Front_(Belgium)",
-      "headquarters":"Rue Tourette 100, 6000 Charleroi, Belgium"
-   },
-   {
-      "name":"Bürger in wut",
-      "city":"Berlin",
-      "country":"Germany",
-      "group":"EAF",
-      "group_name":"European Alliance for Freedom",
-      "lat":52.52853,
-      "lng":13.39181,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Citizens_in_Rage",
-      "headquarters":"Torstraße 195, 10115 Berlin, Germany"
-   },
-   {
-      "name":"Sverigedemokraterna",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"EAF",
-      "group_name":"European Alliance for Freedom",
-      "lat":59.32893,
-      "lng":18.06491,
-      "wikipedia_site":"http://es.wikipedia.org/wiki/Dem%C3%B3cratas_de_Suecia",
-      "headquarters":"Stockholm, Sweden"
-   },
-   {
-      "name":"LDD",
-      "city":"Gent",
-      "country":"Belgium",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":51.0348452,
-      "lng":3.7357808,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Libertair,_Direct,_Democratisch",
-      "headquarters":"Bellevuestraat 5, 9050 Ghent, Belgium"
-   },
-   {
-      "name":"HSP",
-      "city":"Zagreb",
-      "country":"Croatia",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":45.8121319,
-      "lng":15.961135,
-      "wikipedia_site":"http://es.wikipedia.org/wiki/Partido_Croata_de_los_Derechos",
-      "headquarters":"Primorska ulica 5, 10000, Zagreb, Croatia"
-   },
-   {
-      "name":"ODS",
-      "city":"Prague",
-      "country":"Czech Republic",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":50.0516442,
-      "lng":14.4428083,
-      "wikipedia_site":"http://es.wikipedia.org/wiki/Partido_Democr%C3%A1tico_C%C3%ADvico",
-      "headquarters":"Doudlebská 1699/5, 140 00 Prague-Prague 4, Czech Republic"
-   },
-   {
-      "name":"MoMa",
-      "city":"Budapest",
-      "country":"Hungary",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":47.5338106,
-      "lng":19.0424732,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Modern_Hungary_Movement",
-      "headquarters":"1036 Budapest, Lajos Street 107, Hungary"
-   },
-   {
-      "name":"Conservatori e Social Riformatori",
-      "city":"Milan",
-      "country":"Italy",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":45.4656999,
-      "lng":9.2058786,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Conservatives_and_Social_Reformers",
-      "headquarters":"Via Vincenzo Bellini, 19, 20122 Milan, Italy"
-   },
-   {
-      "name":"TB/LNNK",
-      "city":"Riga",
-      "country":"Latvia",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":56.9519214,
-      "lng":24.1054151,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/For_Fatherland_and_Freedom/LNNK",
-      "headquarters":"Jēkaba iela 20/22, Centra rajons, Rīga, LV-1050, Latvia"
-   },
-   {
-      "name":"LLRA",
-      "city":"Vilnius",
-      "country":"Lithuania",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":54.6831899,
-      "lng":25.2893433,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Electoral_Action_of_Poles_in_Lithuania",
-      "headquarters":"Pilies Street 16, Vilnius 01123, Lithuania"
-   },
-   {
-      "name":"ChristenUnie",
-      "city":"Amersfoort",
-      "country":"Netherlands",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":52.1522866,
-      "lng":5.3754558,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/ChristianUnion",
-      "headquarters":"Johan van Oldenbarneveltlaan 46, 3818 HB Amersfoort, The Netherlands"
-   },
-   {
-      "name":"PiS",
-      "city":"Warsaw",
-      "country":"Poland",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":52.2240852,
-      "lng":20.9907091,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Law_and_Justice",
-      "headquarters":"Nowogrodzka 84, 02-018 Warsaw, Poland"
-   },
-   {
-      "name":"Polska Razem",
-      "city":"Warsaw",
-      "country":"Poland",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":52.2237308,
-      "lng":21.0225152,
-      "wikipedia_site":"http://pl.wikipedia.org/wiki/Polska_Razem",
-      "headquarters":"Piękna 3, Warsaw, Poland"
-   },
-   {
-      "name":"Conservative Party",
-      "city":"London",
-      "country":"UK",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":51.4923903,
-      "lng":-0.1254962,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Conservative_Party_(UK)",
-      "headquarters":"30 Millbank, Westminster, London SW1P 4QD, UK"
-   },
-   {
-      "name":"UUP",
-      "city":"Belfast",
-      "country":"Northern Ireland",
-      "group":"ECR",
-      "group_name":"European Conservatives and Reformists",
-      "lat":54.5954092,
-      "lng":-5.9023584,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Ulster_Unionist_Party",
-      "headquarters":"174 Albertbridge Road, Belfast, County Antrim BT5 4GS, UK"
-   },
-   {
-      "name":"SPÖ",
-      "city":"Vienna",
-      "country":"Austria",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":48.2110011,
-      "lng":16.3620546,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Social_Democratic_Party_of_Austria",
-      "headquarters":"Löwelstraße 18, 1010 Vienna, Austria"
-   },
-   {
-      "name":"Parti Socialiste",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":50.8430076,
-      "lng":4.3531766,
-      "wikipedia_site":"http://fr.wikipedia.org/wiki/Parti_socialiste_(Belgique)",
-      "headquarters":"Boulevard de l'Empereur, 1000 Brussels, Belgium"
-   },
-   {
-      "name":"Spa",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":50.8464393,
-      "lng":4.3544155,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Socialistische_Partij_Anders",
-      "headquarters":"Grasmarkt 105, 1000 Brussels, Belgium"
-   },
-   {
-      "name":"Bulgarian socialist party",
-      "city":"Sofia",
-      "country":"Bulgaria",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":42.6963507,
-      "lng":23.3182715,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Bulgarian_Socialist_Party",
-      "headquarters":"ulitsa Positano 20, 1000 Sofia, Bulgaria"
-   },
-   {
-      "name":"Socijaldemokratska partija Hrvatske",
-      "city":"Zagreb",
-      "country":"Croatia",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":45.813122,
-      "lng":15.984668,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Social_Democratic_Party_of_Croatia",
-      "headquarters":"Trg Drage Iblera 9, 10000, Zagreb, Croatia"
-   },
-   {
-      "name":"EDEK",
-      "city":"Nicosia",
-      "country":"Cyprus",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":35.072336,
-      "lng":33.383854,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Movement_for_Social_Democracy",
-      "headquarters":""
-   },
-   {
-      "name":"Dimokratikó Kómma",
-      "city":"Nicosia",
-      "country":"Cyprus",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":35.078336,
-      "lng":33.389854,
-      "wikipedia_site":"http://no.wikipedia.org/wiki/Dimokratik%C3%B3_K%C3%B3mma",
-      "headquarters":""
-   },
-   {
-      "name":"CSSD",
-      "city":"Prague",
-      "country":"Czech Republic",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":50.0875018,
-      "lng":14.4314703,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Czech_Social_Democratic_Party",
-      "headquarters":"Hybernská 1033/7, 110 00 Prague-Prague 1, Czech Republic"
-   },
-   {
-      "name":"Socialdemokraterne",
-      "city":"Frederiksberg",
-      "country":"Denmark",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":55.6781176,
-      "lng":12.555098,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Social_Democrats_(Denmark)",
-      "headquarters":"Danasvej 7, 1910 Frederiksberg, Denmark"
-   },
-   {
-      "name":"SDE",
-      "city":"Tallinn",
-      "country":"Estonia",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":59.438621,
-      "lng":24.7630931,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Social_Democratic_Party_(Estonia)",
-      "headquarters":"Ahtri 10a, 10151 Tallinn, Estonia"
-   },
-   {
-      "name":"SDP",
-      "city":"Helsinki",
-      "country":"Finland",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":60.1781545,
-      "lng":24.9467268,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Social_Democratic_Party_of_Finland",
-      "headquarters":"Saariniemenkatu 6, 00530 Helsinki, Finland"
-   },
-   {
-      "name":"Parti Socialiste",
-      "city":"Paris",
-      "country":"France",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":48.859738,
-      "lng":2.323019,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Socialist_Party_%28France%29",
-      "headquarters":"10, rue de Solférino 75333 Paris Cedex 07"
-   },
-   {
-      "name":"SPD",
-      "city":"Berlin",
-      "country":"Germany",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":52.499676,
-      "lng":13.388502,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/SPD",
-      "headquarters":"Willy-Brandt-Haus D-10911 Berlin"
-   },
-   {
-      "name":"PASOK",
-      "city":"Athens",
-      "country":"Greece",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":37.971513,
-      "lng":23.701104,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/PASOK",
-      "headquarters":"Athens"
-   },
-   {
-      "name":"DIMAR",
-      "city":"Athens",
-      "country":"Greece",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":37.971513,
-      "lng":23.701104,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/DIMAR",
-      "headquarters":"Plateia Viktorias 5, 10 434 Athens"
-   },
-   {
-      "name":"MSZP",
-      "city":"Budapest",
-      "country":"Hungary",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":47.50604,
-      "lng":19.060434,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/MSZP",
-      "headquarters":"1066 Budapest, VI. Jókai utca 6."
-   },
-   {
-      "name":"Labour",
-      "city":"Dublin",
-      "country":"Ireland",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":53.337308,
-      "lng":-6.254491,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Labour_Party_%28Ireland%29",
-      "headquarters":"17 Ely Place, Dublin 2, Ireland"
-   },
-   {
-      "name":"Partito democratico",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":41.908068,
-      "lng":12.453269,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Partito_Democratico",
-      "headquarters":"Via S. Andrea delle Fratte 16 00186 Rome"
-   },
-   {
-      "name":"Sinistra democratica",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":41.903068,
-      "lng":12.483269,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Sinistra_Democratica",
-      "headquarters":"Via Palermo, 12 00184 Rome"
-   },
-   {
-      "name":"LSDP",
-      "city":"Vilnius",
-      "country":"Lithuania",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":54.684551,
-      "lng":25.289691,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/LSDP",
-      "headquarters":"1 B. Radvilaitės g., Vilnius"
-   },
-   {
-      "name":"LSAP",
-      "city":"Luxembourg",
-      "country":"Luxembourg",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":49.593068,
-      "lng":6.12008,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/LSAP",
-      "headquarters":"68, rue de Gasperich Luxembourg"
-   },
-   {
-      "name":"Labour party",
-      "city":"Hamrun",
-      "country":"Malta",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":35.886963,
-      "lng":14.493686,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Labour_Party_%28Malta%29",
-      "headquarters":"Mile End Street, Ħamrun"
-   },
-   {
-      "name":"Partij van de Arbeid",
-      "city":"Amsterdam",
-      "country":"Netherlands",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":52.3776884,
-      "lng":4.8902435,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Partij_van_de_Arbeid",
-      "headquarters":"Herengracht 54, 1015 BN Amsterdam, The Netherlands"
-   },
-   {
-      "name":"Socjaldemokracja Polska",
-      "city":"Warsaw",
-      "country":"Poland",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":52.2213575,
-      "lng":21.018806,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Socjaldemokracja_Polska",
-      "headquarters":"Mokotowska 29, Warsaw, Poland"
-   },
-   {
-      "name":"Partido Socialista",
-      "city":"Lisbon",
-      "country":"Portugal",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":38.720386,
-      "lng":-9.154913,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Socialist_Party_%28Portugal%29",
-      "headquarters":"Largo do Rato 2, 1269-143 Lisbon"
-   },
-   {
-      "name":"PSD",
-      "city":"Bucharest",
-      "country":"Romania",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":44.461128,
-      "lng":26.081225,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Social_Democratic_Party_%28Romania%29",
-      "headquarters":"Şos. Kiseleff nr. 10 Bucharest"
-   },
-   {
-      "name":"Smer",
-      "city":"Bratislava",
-      "country":"Slovak Republic",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":48.145892,
-      "lng":17.107137,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Smer",
-      "headquarters":"Bratislava"
-   },
-   {
-      "name":"SD",
-      "city":"Ljubljana",
-      "country":"Slovenia",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":46.056451,
-      "lng":14.50807,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Social_Democrats_%28Slovenia%29",
-      "headquarters":"Ljubljana"
-   },
-   {
-      "name":"PSOE",
-      "city":"Madrid",
-      "country":"Spain",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":40.428484,
-      "lng":-3.719404,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/PSOE",
-      "headquarters":"Calle de Ferraz, 70 28008 Madrid"
-   },
-   {
-      "name":"SSA",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":59.339247,
-      "lng":18.060363,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Swedish_Social_Democratic_Party",
-      "headquarters":"Sveavägen 68, Stockholm"
-   },
-   {
-      "name":"Labour party",
-      "city":"London",
-      "country":"UK",
-      "group":"S&D",
-      "group_name":"Socialists & Democrats",
-      "lat":51.498468,
-      "lng":-0.135898,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Labour_Party_%28UK%29",
-      "headquarters":"One Brewer's Green, London"
-   },
-   {
-      "name":"Dansk Folkeparti",
-      "city":"Copenhagen",
-      "country":"Denmark",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":55.6758333,
-      "lng":12.5788889,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Dansk_Folkeparti",
-      "headquarters":"Christiansborg Palace, 1218 Copenhagen, Denmark"
-   },
-   {
-      "name":"Peruss",
-      "city":"Helsinki",
-      "country":"Finland",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":60.1644925,
-      "lng":24.9435853,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Perussuomalaiset",
-      "headquarters":"Yrjönkatu 8-10, 00120 Helsinki, Finland"
-   },
-   {
-      "name":"Mouvement pour France",
-      "city":"Paris",
-      "country":"France",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":48.8564913,
-      "lng":2.3085292,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Movement_for_France",
-      "headquarters":"16 Bis Avenue de la Motte-Picquet, 75007 Paris, France"
-   },
-   {
-      "name":"LAOS",
-      "city":"Athens",
-      "country":"Greece",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":37.9656307,
-      "lng":23.7289027,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Popular_Orthodox_Rally",
-      "headquarters":"52, Kallirois Avenue, 117 45 Athens"
-   },
-   {
-      "name":"Lega Nord",
-      "city":"Milan",
-      "country":"Italy",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":45.5178687,
-      "lng":9.1775318,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Lega_Nord",
-      "headquarters":"Via Carlo Bellerio, 41, 20161 Milan, Italy"
-   },
-   {
-      "name":"Io amo l'Italia",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":41.8723889,
-      "lng":12.4801802,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/I_Love_Italy",
-      "headquarters":""
-   },
-   {
-      "name":"Tvarka ir teisingumas",
-      "city":"Vilnius",
-      "country":"Lithuania",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":54.686533,
-      "lng":25.282014,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Tvarka_ir_teisingumas",
-      "headquarters":"Totorių gatvė 1, Vilnius 01103, Lithuania"
-   },
-   {
-      "name":"SGP",
-      "city":"Gouda",
-      "country":"Netherlands",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":52.0215164,
-      "lng":4.6902599,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Reformed_Political_Party",
-      "headquarters":"Burgemeester van Reenensingel 101, 2803 PA Gouda, The Netherlands"
-   },
-   {
-      "name":"Solidarna Polska",
-      "city":"Warsaw",
-      "country":"Poland",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":52.223703,
-      "lng":21.0229063,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/United_Poland",
-      "headquarters":"Piękna 1B, Warsaw, Poland"
-   },
-   {
-      "name":"SNR",
-      "city":"Bratislava",
-      "country":"Slovak Republic",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":48.1458923,
-      "lng":17.1071373,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Slovak_National_Party",
-      "headquarters":"Bratislava"
-   },
-   {
-      "name":"UKIP",
-      "city":"Devon",
-      "country":"England",
-      "group":"EFD",
-      "group_name":"Europe for Freedom and Democracy",
-      "lat":50.528905,
-      "lng":-3.60836,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/UKIP",
-      "headquarters":"Newton Abbot, Devon TQ12, UK"
-   },
-   {
-      "name":"NEOS",
-      "city":"Vienna",
-      "country":"Austria",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":48.185317,
-      "lng":16.478462,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/NEOS",
-      "headquarters":"Vienna"
-   },
-   {
-      "name":"Open VLD",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":50.8503199,
-      "lng":4.3485771,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Open_VLD",
-      "headquarters":"Melsensstraat 34, 1000 Brussels, Belgium"
-   },
-   {
-      "name":"Mouvement Réformateur",
-      "city":"Brussels",
-      "country":"Belgium",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":50.8339596,
-      "lng":4.3515619,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Mouvement_R%C3%A9formateur",
-      "headquarters":"Avenue de la Toison d'Or 84, 1060 Brussels, Belgium"
-   },
-   {
-      "name":"Nacionalno dviženie za stabilnost i văzhod",
-      "city":"Sofia",
-      "country":"Bulgaria",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":42.6979807,
-      "lng":23.3342443,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/National_movement_for_stability_and_progress",
-      "headquarters":"ulitsa Vrabcha 23, 1000 Sofia, Bulgaria"
-   },
-   {
-      "name":"DPS",
-      "city":"Sofia",
-      "country":"Bulgaria",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":42.6085352,
-      "lng":23.6014097,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Movement_for_Rights_and_Freedoms",
-      "headquarters":"Street Aleksandar Stamboliyski, 2110 Novi khan, Bulgaria"
-   },
-   {
-      "name":"Venstre",
-      "city":"Holte",
-      "country":"Denmark",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":55.812546,
-      "lng":12.494735,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Venstre_%28Denmark%29",
-      "headquarters":"Søllerødvej 30, 2840 Holte, Denmark"
-   },
-   {
-      "name":"Radikale B",
-      "city":"Copenhagen",
-      "country":"Denmark",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":55.6758333,
-      "lng":12.5788889,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Danish_Social_Liberal_Party",
-      "headquarters":"Christiansborg Palace, 1218 Copenhagen, Denmark"
-   },
-   {
-      "name":"Eesti keskerakond",
-      "city":"Tallinn",
-      "country":"Estonia",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":59.4378303,
-      "lng":24.7412927,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Eesti_Keskerakond",
-      "headquarters":"Toom-Rüütli 5, 10130 Tallinn, Estonia"
-   },
-   {
-      "name":"Eesti reformierakond",
-      "city":"Tallinn",
-      "country":"Estonia",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":59.4296415,
-      "lng":24.7417508,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Eesti_Reformierakond",
-      "headquarters":"Tõnismägi 9, 10119 Tallinn, Estonia"
-   },
-   {
-      "name":"Suomen Keskusta",
-      "city":"Helsinki",
-      "country":"Finland",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":60.1764772,
-      "lng":24.9257952,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Suomen_Keskusta",
-      "headquarters":"Apollonkatu 11 a, 00100 Helsinki, Finland"
-   },
-   {
-      "name":"SFP",
-      "city":"Helsinki",
-      "country":"Finland",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":60.1690525,
-      "lng":24.936651,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Swedish_People%27s_Party_of_Finland",
-      "headquarters":"Simonsgatan 8, 00100 Helsinki, Finland"
-   },
-   {
-      "name":"Mouvement Democrate",
-      "city":"Paris",
-      "country":"France",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":48.8610979,
-      "lng":2.3076692,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Mouvement_Democrate",
-      "headquarters":"133Bis Rue de l'Université, 75007 Paris, France"
-   },
-   {
-      "name":"CAP21",
-      "city":"Paris",
-      "country":"France",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":48.87719,
-      "lng":2.3100047,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Citizenship,_Action,_Participation_for_the_21st_Century",
-      "headquarters":"40 Rue de Monceau, 75008 Paris, France"
-   },
-   {
-      "name":"Freie demokratische partei",
-      "city":"Berlin",
-      "country":"Germany",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":52.5236997,
-      "lng":13.3856291,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Freie_Demokratische_Partei",
-      "headquarters":"Reinhardtstraße 14, 10117 Berlin, Germany"
-   },
-   {
-      "name":"Drassi",
-      "city":"Athens",
-      "country":"Greece",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":37.983917,
-      "lng":23.7293599,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Drassi",
-      "headquarters":"98Α, Vasilissis Sofias Avenue, 11528, Athens"
-   },
-   {
-      "name":"MLP",
-      "city":"Hamrun",
-      "country":"Malta",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":35.8869634,
-      "lng":14.4936856,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Malta_Labour_Party",
-      "headquarters":"Triq Mile End, Hamrun, Malta"
-   },
-   {
-      "name":"Fianna Fail",
-      "city":"Dublin",
-      "country":"Ireland",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":53.3393627,
-      "lng":-6.2451967,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Fianna_Fail",
-      "headquarters":"66 Mount Street Lower, Dublin 2, Ireland"
-   },
-   {
-      "name":"Democrazia è Libèrta",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":41.9030712,
-      "lng":12.4832713,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Democracy_is_Freedom_%E2%80%93_The_Daisy",
-      "headquarters":"Via di Sant'Andrea delle Fratte, 16, 00187 Rome, Italy"
-   },
-   {
-      "name":"Italia dei Valori",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":41.9009976,
-      "lng":12.4816402,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Italia_dei_Valori",
-      "headquarters":"Via di Santa Maria in Via, 12, 00187 Rome, Italy"
-   },
-   {
-      "name":"Alleanza per Italia",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":41.9030712,
-      "lng":12.4832713,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Alliance_for_Italy",
-      "headquarters":"Via di Sant'Andrea delle Fratte, 16, 00187 Rome, Italy"
-   },
-   {
-      "name":"Radicali italiani",
-      "city":"Rome",
-      "country":"Italy",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":41.8971815,
-      "lng":12.476333,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Radicali_Italiani",
-      "headquarters":"Via di Torre Argentina, 76, 00186 Rome, Italy"
-   },
-   {
-      "name":"LPP/LC",
-      "city":"Riga",
-      "country":"Latvia",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":46.056451,
-      "lng":14.50807,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/LPP/LC",
-      "headquarters":"Riga"
-   },
-   {
-      "name":"Darbo partija",
-      "city":"Vilnius",
-      "country":"Lithuania",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":54.689765,
-      "lng":25.266889,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Darbo_partija",
-      "headquarters":"Ankštoji gatvė 3, Vilnius 01109, Lithuania"
-   },
-   {
-      "name":"Liberalu sajudis",
-      "city":"Vilnius",
-      "country":"Lithuania",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":54.689263,
-      "lng":25.2684399,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Liberal_Movement_%28Lithuania%29",
-      "headquarters":"J. Tumo-Vaižganto gatvė 1, Vilnius 01108, Lithuania"
-   },
-   {
-      "name":"Demokratesch partei",
-      "city":"Luxembourg",
-      "country":"Luxembourg",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":49.6089777,
-      "lng":6.1335062,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Demokratesch_Partei",
-      "headquarters":"9 Rue du St. Esprit, 1475 Luxemburg City, Luxembourg"
-   },
-   {
-      "name":"VVD",
-      "city":"The Hague",
-      "country":"Netherlands",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":52.0913422,
-      "lng":4.3059732,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/VVD",
-      "headquarters":"Laan Copes van Cattenburch 52, 2585 GB The Hague, The Netherlands"
-   },
-   {
-      "name":"D66",
-      "city":"The Hague",
-      "country":"Netherlands",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":52.0817533,
-      "lng":4.3130767,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Democrats_66",
-      "headquarters":"Hoge Nieuwstraat 30, 2514 EL The Hague, The Netherlands"
-   },
-   {
-      "name":"PNL",
-      "city":"Bucharest",
-      "country":"Romania",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":44.4679767,
-      "lng":26.0875983,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/National_Liberal_Party_%28Romania%29",
-      "headquarters":"Bulevardul Aviatorilor 86, Bucharest 011866, Romania"
-   },
-   {
-      "name":"S",
-      "city":"Bratislava",
-      "country":"Slovak Republic",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":48.1458923,
-      "lng":17.1071373,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/People%27s_Party_%E2%80%93_Movement_for_a_Democratic_Slovakia",
-      "headquarters":"Bratislava"
-   },
-   {
-      "name":"LDS",
-      "city":"Ljubljana",
-      "country":"Slovenia",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":46.0564509,
-      "lng":14.5080702,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Liberal_Democracy_of_Slovenia",
-      "headquarters":"Ljubljana"
-   },
-   {
-      "name":"CDC",
-      "city":"Barcelona",
-      "country":"Spain",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":41.3974738,
-      "lng":2.1604115,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Democratic_Convergence_of_Catalonia",
-      "headquarters":"Carrer Còrsega, 331, 08037 Barcelona, Spain"
-   },
-   {
-      "name":"PNV-EAJ",
-      "city":"Bilbao",
-      "country":"Spain",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":43.2631804,
-      "lng":-2.9276465,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Basque_Nationalist_Party",
-      "headquarters":"Ibáñez de Bilbao Kalea, 16, 48001 Bilbao, Biscay, Spain"
-   },
-   {
-      "name":"Folkpartliet liberalerna",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":59.3253721,
-      "lng":18.0673047,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Liberal_People%27s_Party_%28Sweden%29",
-      "headquarters":"Stora Nygatan 2A, 103 16 Stockholm, Sweden"
-   },
-   {
-      "name":"Centerpartiet",
-      "city":"Stockholm",
-      "country":"Sweden",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":59.325255,
-      "lng":18.0674818,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Centerpartiet",
-      "headquarters":"Stora Nygatan 4, 111 27 Stockholm, Sweden"
-   },
-   {
-      "name":"Liberal democrats",
-      "city":"London",
-      "country":"UK",
-      "group":"ALDE",
-      "group_name":"Alliance of Liberals and Democrats of Europe",
-      "lat":51.501106,
-      "lng":-0.1284734,
-      "wikipedia_site":"http://en.wikipedia.org/wiki/Liberal_democrats",
-      "headquarters":"8-10 Great George Street, Westminster, London SW1P, UK"
-   }
+    {
+        "group": "PEL", 
+        "name": "AKEL", 
+        "country": "Cyprus", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/AKEL", 
+        "lat": "35.1614986", 
+        "lng": "33.3619454"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Bloco de Esquerda", 
+        "country": "Portugal", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Bloco_de_Esquerda", 
+        "lat": "38.7189719", 
+        "lng": "-9.1354135"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "DIE LINKE", 
+        "country": "Germany", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/DIE_LINKE", 
+        "lat": "52.5200727", 
+        "lng": "13.4137781"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Folkebev\u00e6gelsen mod EU", 
+        "country": "Denmark", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Folkebev%C3%A6gelsen_mod_EU", 
+        "lat": "55.677761", 
+        "lng": "12.587974"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Front de gauche", 
+        "country": "France", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Front_de_Gauche", 
+        "lat": "48.856614", 
+        "lng": "2.3522219"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "HC (SPL)", 
+        "country": "Latvia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Socialist_Party_of_Latvia", 
+        "lat": "56.9827599", 
+        "lng": "24.16939"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Hrvatski laburisti - Stranka rada", 
+        "country": "Croatia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Croatian_Labourists_%E2%80%93_Labour_Party", 
+        "lat": "45.8124846", 
+        "lng": "15.962454"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Izquierda Unida", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/United_Left_%28Spain%29", 
+        "lat": "40.4560726", 
+        "lng": "-3.6457374"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Kommunistiko Komma Elladas", 
+        "country": "Greece", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Kommunistiko_Komma_Elladas", 
+        "lat": "38.0350546", 
+        "lng": "23.7471783"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Komunistick\u00e1 strana \u010cech a Moravy", 
+        "country": "Czech Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Komunistick%C3%A1_strana_%C4%8Cech_a_Moravy", 
+        "lat": "50.0829389", 
+        "lng": "14.4292597"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Partido Comunista Portugu\u00eas", 
+        "country": "Portugal", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Partido_Comunista_Portugu%C3%AAs", 
+        "lat": "38.74521", 
+        "lng": "-9.1591585"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Sinn F\u00e9in", 
+        "country": "Ireland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Sinn_F%C3%A9in", 
+        "lat": "53.3526891", 
+        "lng": "-6.2641954"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Socialist Party", 
+        "country": "Ireland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Socialist_Party_%28Ireland%29", 
+        "lat": "53.343464", 
+        "lng": "-6.2848344"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "Socialistische Partij", 
+        "country": "Netherlands", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Socialist_Party_%28Netherlands%29", 
+        "lat": "52.1540126", 
+        "lng": "5.3805988"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "SYRIZA", 
+        "country": "Greece", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/SYRIZA", 
+        "lat": "37.9851702", 
+        "lng": "23.7360041"
+    }, 
+    {
+        "group": "PEL", 
+        "name": "V\u00e4nsterpartiet", 
+        "country": "Sweden", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/V%C3%A4nsterpartiet", 
+        "lat": "59.3316431", 
+        "lng": "18.0479589"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Arbetarepartiet- Social- demokraterna", 
+        "country": "Swedem", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Swedish_Social_Democratic_Party", 
+        "lat": "59.339252", 
+        "lng": "18.060365"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Bulgarian Socialist party", 
+        "country": "Bulgaria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Bulgarian_Socialist_Party", 
+        "lat": "42.6963507", 
+        "lng": "23.3182715"
+    }, 
+    {
+        "group": "PES", 
+        "name": "\u010cesk\u00e1 strana soci\u00e1ln\u011b demokratick\u00e1 ", 
+        "country": "Czech Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/%C4%8Cesk%C3%A1_strana_soci%C3%A1ln%C4%9B_demokratick%C3%A1", 
+        "lat": "50.0875018", 
+        "lng": "14.4314703"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Dimokratiko Komma", 
+        "country": "Cyprus", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Dimokratiko_Komma", 
+        "lat": "35.078336", 
+        "lng": "33.389854"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Harmony Party", 
+        "country": "Latvia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Social_Democratic_Party_%22Harmony%22", 
+        "lat": "56.951294", 
+        "lng": "24.106713"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Labour Party (Ireland)", 
+        "country": "Ireland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Labour_Party_%28Ireland%29", 
+        "lat": "53.337308", 
+        "lng": "-6.254491"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Labour Party", 
+        "country": "UK", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Labour_party_uk", 
+        "lat": "51.498468", 
+        "lng": "-0.135898"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Lietuvos socialdemokrat\u0173 partija ", 
+        "country": "Lithuania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Lietuvos_Socialdemokrat%C5%B3_Partija", 
+        "lat": "54.684551", 
+        "lng": "25.289691"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Magyar Szocialista P\u00e1rt", 
+        "country": "Hungary", 
+        "wikipedia_site": "en.wikipedia.org/wiki/Magyar_Szocialista_P\u00e1rt", 
+        "lat": "47.50604", 
+        "lng": "19.060434"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Movement of Social Democrats EDEK (Kinima Sosialdimokrato", 
+        "country": "Cyprus", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/EDEK", 
+        "lat": "35.072336", 
+        "lng": "33.383854"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Panellinio Socialistiko Kinima", 
+        "country": "Greece", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Panellinio_Sosialistiko_Kinima", 
+        "lat": "37.971513", 
+        "lng": "23.701104"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Parti ouvrier socialiste luxembourgeoi", 
+        "country": "Luxembourg", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Luxembourg_Socialist_Workers%27_Party", 
+        "lat": "49.593068", 
+        "lng": "6.12008"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Parti Socialiste", 
+        "country": "France", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Socialist_Party_%28France%29", 
+        "lat": "48.859738", 
+        "lng": "2.323019"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Parti socialiste (Belgium)", 
+        "country": "Belgium", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Parti_socialiste_%28Belgium%29", 
+        "lat": "42.6963507", 
+        "lng": "23.3182715"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Partido Socialista Obrero Espa\u00f1ol", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Partido_Socialista_Obrero_Espa%C3%B1ol", 
+        "lat": "40.428484", 
+        "lng": "-3.719404"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Partidul Social Democrat - PSD", 
+        "country": "Romania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Social_Democratic_Party_%28Romania%29", 
+        "lat": "44.461128", 
+        "lng": "26.081225"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Partij van de Arbeid", 
+        "country": "Netherlands", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Partij_van_de_Arbeid", 
+        "lat": "52.3776884", 
+        "lng": "4.8902435"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Partit dels Socialistes de Catalunya (PSC-PSOE)", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Partit_dels_Socialistes_de_Catalunya", 
+        "lat": "41.384424", 
+        "lng": "2.139791"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Partit Laburista", 
+        "country": "Malta", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Partit_Laburista", 
+        "lat": "35.886963", 
+        "lng": "14.493686"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Partito Democratico", 
+        "country": "Italy", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Partito_Democratico", 
+        "lat": "41.908068", 
+        "lng": "12.453269"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Samostalna demokratska srpska stranka", 
+        "country": "Poland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Social_Democracy_of_Poland", 
+        "lat": "45.351361", 
+        "lng": "18.996357"
+    }, 
+    {
+        "group": "PES", 
+        "name": "SMER-Soci\u00e1lna demokracia", 
+        "country": "Slovak Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Direction_%E2%80%93_Social_Democracy", 
+        "lat": "48.145892", 
+        "lng": "17.107137"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Socialdemokratiet", 
+        "country": "Denmark", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Socialdemokratiet", 
+        "lat": "55.6781176", 
+        "lng": "12.555098"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Socialni demokrati", 
+        "country": "Slovenia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Socialni_demokrati", 
+        "lat": "46.056451", 
+        "lng": "14.50807"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Socijaldemokratska partija Hrvatske", 
+        "country": "Croatia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Socijaldemokratska_partija_Hrvatske", 
+        "lat": "45.813122", 
+        "lng": "15.984668"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Sojusz Lewicy Demokratycznej - Unia Pracy", 
+        "country": "Poland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Sojusz_Lewicy_Demokratycznej_-_Unia_Pracy", 
+        "lat": "52.23282", 
+        "lng": "21.011276"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Sotsiaaldemokraatlik Erakond", 
+        "country": "Estonia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Sotsiaaldemokraatlik_Erakond", 
+        "lat": "59.438621", 
+        "lng": "24.7630931"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Sozialdemokratische Partei Deutschlands", 
+        "country": "Germany", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Sozialdemokratische_Partei_Deutschlands", 
+        "lat": "52.499676", 
+        "lng": "13.388502"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Sozialdemokratische Partei \u00d6sterreichs", 
+        "country": "Austria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Sozialdemokratische_Partei_%C3%96sterreichs", 
+        "lat": "48.2110011", 
+        "lng": "16.3620546"
+    }, 
+    {
+        "group": "PES", 
+        "name": "Suomen Sosialidemokraattinen Puolue/Finlands Socialdemokratiska Parti", 
+        "country": "Finland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Social_Democratic_Party_of_Finland", 
+        "lat": "60.1781545", 
+        "lng": "24.9467268"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Open Vlaamse Liberalen en Democraten", 
+        "country": "Belgium", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Open_Vlaamse_Liberalen_en_Democraten", 
+        "lat": "50.8503199", 
+        "lng": "4.3485771"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Mouvement R\u00e9formateur", 
+        "country": "Belgium", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Mouvement_R%C3%A9formateur", 
+        "lat": "50.8339596", 
+        "lng": "4.3515619"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Movement for Rights and Freedoms", 
+        "country": "Bulgaria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Movement_for_Rights_and_Freedoms", 
+        "lat": "42.6085352", 
+        "lng": "23.6014097"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "National Movement for Stability and Progress", 
+        "country": "Bulgaria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/National_Movement_for_Stability_and_Progress", 
+        "lat": "42.6979807", 
+        "lng": "23.3342443"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Eesti Reformierakond", 
+        "country": "Estonia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Eesti_Reformierakond", 
+        "lat": "59.4296415", 
+        "lng": "24.7417508"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Suomen Keskusta", 
+        "country": "Finland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Suomen_Keskusta", 
+        "lat": "60.1764772", 
+        "lng": "24.9257952"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Svenska folkpartiet", 
+        "country": "Finland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Svenska_Folkpartiet", 
+        "lat": "60.1690525", 
+        "lng": "24.936651"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Mouvement D\u00e9mocrate", 
+        "country": "France", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Mouvement_D%C3%A9mocrate", 
+        "lat": "48.8610979", 
+        "lng": "2.3076692"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Citoyennet\u00e9 Action Participation pour le 21\u00e8me si\u00e8cle", 
+        "country": "France", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Citoyennet%C3%A9_Action_Participation_pour_le_21%C3%A8me_si%C3%A8cle", 
+        "lat": "48.87719", 
+        "lng": "2.3100047"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Freie Demokratische Partei", 
+        "country": "Germany", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Freie_Demokratische_Partei", 
+        "lat": "52.5236997", 
+        "lng": "13.3856291"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Drassi", 
+        "country": "Greece", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Drassi", 
+        "lat": "37.983917", 
+        "lng": "23.7293599"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Fianna F\u00e1il Party", 
+        "country": "Ireland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Fianna_F%C3%A1il", 
+        "lat": "53.3393627", 
+        "lng": "-6.2451967"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Italia dei Valori - Lista Di Pietro", 
+        "country": "Italy", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Italia_dei_Valori_-_Lista_Di_Pietro", 
+        "lat": "41.9009976", 
+        "lng": "12.4816402"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Lietuvos Respublikos liberal\u0173 s\u0105j\u016bdis", 
+        "country": "Lithuania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Lietuvos_Respublikos_Liberal%C5%B3_s%C4%85j%C5%ABdis", 
+        "lat": "54.689263", 
+        "lng": "25.2684399"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Darbo partija", 
+        "country": "Lithuania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Darbo_partija", 
+        "lat": "54.689765", 
+        "lng": "25.266889"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Parti d\u00e9mocratique", 
+        "country": "Luxembourg", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Democratic_Party_%28Luxembourg%29", 
+        "lat": "49.6089777", 
+        "lng": "6.1335062"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Democraten 66", 
+        "country": "Netherlands", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Democraten_66", 
+        "lat": "52.0817533", 
+        "lng": "4.3130767"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Volkspartij voor Vrijheid en Democratie", 
+        "country": "Netherlands", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Volkspartij_voor_Vrijheid_en_Democratie", 
+        "lat": "52.0913422", 
+        "lng": "4.3059732"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Partidul Na\u0163ional Liberal", 
+        "country": "Romania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/National_Liberal_Party_%28Romania%29", 
+        "lat": "44.4679767", 
+        "lng": "26.0875983"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "\u013dudov\u00e1 strana - Hnutie za demokratick\u00e9 Slovensko", 
+        "country": "Slovak Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/%C4%BDudov%C3%A1_strana_-_Hnutie_za_demokratick%C3%A9_Slovensko", 
+        "lat": "48.1458923", 
+        "lng": "17.1071373"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Liberalna Demokracija Slovenije", 
+        "country": "Slovenia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Liberalna_demokracija_Slovenije", 
+        "lat": "46.0564509", 
+        "lng": "14.5080702"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "ZARES-Nova Politika", 
+        "country": "Slovenia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Zares", 
+        "lat": "46.056048", 
+        "lng": "14.507905"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Partido Nacionalista Vasco - Euzko Alderdi Jeltzalea", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Partido_Nacionalista_Vasco", 
+        "lat": "43.2631804", 
+        "lng": "-2.9276465"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Converg\u00e8ncia Democr\u00e0tica de Catalunya", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Converg%C3%A8ncia_Democr%C3%A0tica_de_Catalunya", 
+        "lat": "41.3974738", 
+        "lng": "2.1604115"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Centerpartiet", 
+        "country": "Sweden", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Centerpartiet", 
+        "lat": "59.325255", 
+        "lng": "18.0674818"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Folkpartiet liberalerna", 
+        "country": "Sweden", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Folkpartiet_liberalerna", 
+        "lat": "59.3253721", 
+        "lng": "18.0673047"
+    }, 
+    {
+        "group": "ALDE", 
+        "name": "Liberal Democrats Party", 
+        "country": "United Kingdom", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Liberal_Democrats", 
+        "lat": "51.501106", 
+        "lng": "-0.1284734"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "The Greens \u2013 The Green Alternative", 
+        "country": "Austria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/The_Greens_%E2%80%93_The_Green_Alternative", 
+        "lat": "48.1999307", 
+        "lng": "16.3485744"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Ecolo", 
+        "country": "Belgium", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Ecolo", 
+        "lat": "50.4583111", 
+        "lng": "4.8419195"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Green", 
+        "country": "Belgium", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Groen_%28political_party%29", 
+        "lat": "50.8394914", 
+        "lng": "4.3345297"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "New Flemish Alliance", 
+        "country": "Belgium", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/New_Flemish_Alliance", 
+        "lat": "50.8489769", 
+        "lng": "4.3637635"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Socialist People's Party", 
+        "country": "Denmark", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Socialist_People%27s_Party_%28Denmark%29", 
+        "lat": "55.6758333", 
+        "lng": "12.5788889"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Green League", 
+        "country": "Finland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Green_League", 
+        "lat": "60.1634851", 
+        "lng": "24.9383471"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Europe Ecology \u2013 The Greens", 
+        "country": "France", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Europe_Ecology_%E2%80%93_The_Greens", 
+        "lat": "48.8828864", 
+        "lng": "2.3668774"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Party of the Corsican Nation", 
+        "country": "France", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Party_of_the_Corsican_Nation", 
+        "lat": "42.6963833", 
+        "lng": "9.4468279"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Alliance '90/The Greens", 
+        "country": "Germany", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Alliance_%2790/The_Greens", 
+        "lat": "52.5288837", 
+        "lng": "13.3793171"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Ecologist Greens", 
+        "country": "Greece", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Ecologist_Greens", 
+        "lat": "37.965563", 
+        "lng": "23.729356"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Federation of the Greens", 
+        "country": "Italy", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Federation_of_the_Greens", 
+        "lat": "41.9056403", 
+        "lng": "12.4955343"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "For Human Rights in United Latvia", 
+        "country": "Latvia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/For_Human_Rights_in_United_Latvia", 
+        "lat": "56.9573106", 
+        "lng": "24.128491"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "The Greens", 
+        "country": "Luxembourg", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/The_Greens_%28Luxembourg%29", 
+        "lat": "49.604769", 
+        "lng": "6.1320934"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "GreenLeft", 
+        "country": "Netherlands", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/GreenLeft", 
+        "lat": "52.086064", 
+        "lng": "5.122584"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Equo", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Equo", 
+        "lat": "40.4523802", 
+        "lng": "-3.68022"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Esquerra Republicana de Catalunya", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Esquerra_Republicana_de_Catalunya", 
+        "lat": "41.3826332", 
+        "lng": "2.1513423"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Iniciativa per Catalunya Verds", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Iniciativa_per_Catalunya_Verds", 
+        "lat": "41.382234", 
+        "lng": "2.1779805"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Eusko Alkartasuna", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Eusko_Alkartasuna", 
+        "lat": "43.3018139", 
+        "lng": "-2.0109963"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "BNG", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Bloque_Nacionalista_Galego", 
+        "lat": "42.8872826", 
+        "lng": "-8.5324822"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Green Party", 
+        "country": "Sweden", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Green_Party_%28Sweden%29", 
+        "lat": "59.3202472", 
+        "lng": "18.0677552"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Pirate Party", 
+        "country": "Sweden", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Pirate_Party_%28Sweden%29", 
+        "lat": "59.32893", 
+        "lng": "18.06491"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Green Party of England and Wales", 
+        "country": "United Kingdom", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Green_Party_of_England_and_Wales", 
+        "lat": "51.5244343", 
+        "lng": "-0.0845572"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Scottish National Party", 
+        "country": "United Kingdom", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Plaid_Cymru_%E2%80%93_Party_of_Wales", 
+        "lat": "55.920966", 
+        "lng": "-3.171598"
+    }, 
+    {
+        "group": "Greens/EFA", 
+        "name": "Plaid Cymru \u2013 Party of Wales", 
+        "country": "United Kingdom", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Scottish_National_Party", 
+        "lat": "55.950966", 
+        "lng": "-3.177598"
+    }, 
+    {
+        "group": "NI - SPAIN", 
+        "name": "Converg\u00e8ncia i Uni\u00f3", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Convergence_and_Union", 
+        "lat": "41.3974738", 
+        "lng": "2.1604115"
+    }, 
+    {
+        "group": "NI - SPAIN", 
+        "name": "Coalici\u00f3n Canaria", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Canarian_Coalition", 
+        "lat": "28.1075151", 
+        "lng": "-15.4191638"
+    }, 
+    {
+        "group": "NI - SPAIN", 
+        "name": "Aralar", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Aralar_Party", 
+        "lat": "42.8166272", 
+        "lng": "-1.6485363"
+    }, 
+    {
+        "group": "NI - SPAIN", 
+        "name": "Bildu", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Bildu", 
+        "lat": "43.3119413", 
+        "lng": "-1.9821103"
+    }, 
+    {
+        "group": "NI - SPAIN", 
+        "name": "Confederacion Pirata", 
+        "country": "Spain", 
+        "wikipedia_site": "http://es.wikipedia.org/wiki/Partido_Pirata_%28Espa%C3%B1a%29", 
+        "lat": "40.3156807", 
+        "lng": "-3.8743016"
+    }, 
+    {
+        "group": "NI - SPAIN", 
+        "name": "Compromis", 
+        "country": "Spain", 
+        "wikipedia_site": "http://es.wikipedia.org/wiki/Compromis", 
+        "lat": "39.4077853", 
+        "lng": "-0.3615113"
+    }, 
+    {
+        "group": "NI - SPAIN", 
+        "name": "Chunta Aragonesista", 
+        "country": "Spain", 
+        "wikipedia_site": "http://es.wikipedia.org/wiki/Chunta_Aragonesista", 
+        "lat": "41.6516912", 
+        "lng": "-0.8949809"
+    }, 
+    {
+        "group": "NI - SPAIN", 
+        "name": "Podemos", 
+        "country": "Spain", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Podemos_%28Spanish_political_party%29", 
+        "lat": "40.4124013", 
+        "lng": "-3.6983522"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Social democratic party", 
+        "country": "Portugal", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Social_Democratic_Party_%28Portugal%29", 
+        "lat": "38.7083486", 
+        "lng": "-9.1641845"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Democratic and social centre", 
+        "country": "Portugal", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Democratic_and_Social_Center_-_People%27s_Party", 
+        "lat": "38.7117235", 
+        "lng": "-9.1356438"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Austrian People's Party (\u00d6VP)", 
+        "country": "Austria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Austrian_People%27s_Party", 
+        "lat": "48.2099605", 
+        "lng": "16.3564337"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Democratic and Flemish (CD&V)", 
+        "country": "Belgium", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christen-Democratisch_en_Vlaams", 
+        "lat": "50.8438361", 
+        "lng": "4.3764921"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Humanist Democratic Centre (cdH)", 
+        "country": "Belgium", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Centre_d%C3%A9mocrate_humaniste", 
+        "lat": "50.8465201", 
+        "lng": "4.3727621"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Citizens for European Development of Bulgaria (GERB)", 
+        "country": "Bulgaria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Citizens_for_European_Development_of_Bulgaria", 
+        "lat": "42.6847412", 
+        "lng": "23.3190056"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Democrats for a Strong Bulgaria", 
+        "country": "Bulgaria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Democrats_for_a_Strong_Bulgaria", 
+        "lat": "42.6867309", 
+        "lng": "23.3273678"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Union of the Democratic Forces", 
+        "country": "Bulgaria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Union_of_Democratic_Forces_(Bulgaria)", 
+        "lat": "42.6897747", 
+        "lng": "23.323158"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Democratic Party", 
+        "country": "Bulgaria", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Democratic_Party_(Bulgaria)", 
+        "lat": "42.6988109", 
+        "lng": "23.3376802"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Croatian Democratic Union (HDZ)", 
+        "country": "Croatia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Croatian_Democratic_Union", 
+        "lat": "45.8106015", 
+        "lng": "15.9875514"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Croatian Peasant Party (HSS)", 
+        "country": "Croatia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Croatian_Peasant_Party", 
+        "lat": "45.8226733", 
+        "lng": "16.029477"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Democratic Rally (DISY)", 
+        "country": "Cyprus", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Democratic_Rally", 
+        "lat": "51.476406", 
+        "lng": "-3.166052"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "TOP 09", 
+        "country": "Czech Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/TOP_09", 
+        "lat": "50.0834633", 
+        "lng": "14.4049046"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian and Democratic Union \u2013 Czechoslovak People's Party (KDU\u2013\u010cSL)", 
+        "country": "Czech Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_and_Democratic_Union_%E2%80%93_Czechoslovak_People%27s_Party", 
+        "lat": "50.0750689", 
+        "lng": "14.4350772"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Conservative People's Party", 
+        "country": "Denmark", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Conservative_People%27s_Party_%28Denmark%29", 
+        "lat": "55.679914", 
+        "lng": "12.5890467"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Democrats", 
+        "country": "Denmark", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Democrats_(Denmark)", 
+        "lat": "55.6777216", 
+        "lng": "12.5332658"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Pro Patria and Res Publica Union (IRL)", 
+        "country": "Estonia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Pro_Patria_and_Res_Publica_Union", 
+        "lat": "59.4347184", 
+        "lng": "24.7286521"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Kansallinen Kokoomus | KOK", 
+        "country": "Finland", 
+        "wikipedia_site": "http://fi.wikipedia.org/wiki/Kansallinen_Kokoomus", 
+        "lat": "60.1675181", 
+        "lng": "24.9340397"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Kristillisdemokraatit | KD", 
+        "country": "Finland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Democrats_%28Finland%29", 
+        "lat": "60.1927539", 
+        "lng": "24.936173"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Union for a Popular Movement (UMP)", 
+        "country": "France", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Union_for_a_Popular_Movement", 
+        "lat": "48.8405244", 
+        "lng": "2.3031824"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Democratic Union (CDU)", 
+        "country": "Germany", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29", 
+        "lat": "52.50645", 
+        "lng": "13.35129"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Social Union of Bavaria (CSU)", 
+        "country": "Germany", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Social_Union_in_Bavaria", 
+        "lat": "48.14997", 
+        "lng": "11.54877"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "New Democracy", 
+        "country": "Greece", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/New_Democracy_%28Greece%29", 
+        "lat": "37.9448768", 
+        "lng": "23.7010453"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Fidesz \u2013 Hungarian Civic Union", 
+        "country": "Hungary", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Fidesz", 
+        "lat": "47.492968", 
+        "lng": "19.0652749"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Democratic People's Party", 
+        "country": "Hungary", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Democratic_People%27s_Party_%28Hungary%29", 
+        "lat": "47.5067392", 
+        "lng": "19.0857893"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Fine Gael", 
+        "country": "Ireland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Fine_Gael", 
+        "lat": "53.337539", 
+        "lng": "-6.2463674"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Union of the Centre (UDC)", 
+        "country": "Italy", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Union_of_Christian_and_Centre_Democrats", 
+        "lat": "41.9046092", 
+        "lng": "12.4838153"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Il Popolo della Libert\u00e0 | PdL", 
+        "country": "Italy", 
+        "wikipedia_site": "http://it.wikipedia.org/wiki/Il_Popolo_della_Libert%C3%A0", 
+        "lat": "41.8723889", 
+        "lng": "12.4801802"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Unione dei Democratici per l'Europa - Popolari per il ", 
+        "country": "Italy", 
+        "wikipedia_site": "http://it.wikipedia.org/wiki/Popolari_UDEUR", 
+        "lat": "41.8223889", 
+        "lng": "12.4851802"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "S\u00fcdtiroler Volkspartei | SVP", 
+        "country": "Italy", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/South_Tyrolean_People%27s_Party", 
+        "lat": "46.5004989", 
+        "lng": "11.3617944"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Unity", 
+        "country": "Latvia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Unity_(Latvian_political_party)", 
+        "lat": "56.945359", 
+        "lng": "24.1146226"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Homeland Union \u2013 Lithuanian Christian Democrats (TS-LKD)", 
+        "country": "Lithuania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Homeland_Union", 
+        "lat": "54.6839932", 
+        "lng": "25.2838057"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Chr\u00ebschtlech Sozial Vollekspartei | CSV", 
+        "country": "Luxembourg", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Social_People's_Party", 
+        "lat": "49.6103966", 
+        "lng": "6.1329776"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Nationalist Party", 
+        "country": "Malta", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Nationalist_Party_%28Malta%29", 
+        "lat": "35.8989085", 
+        "lng": "14.5145528"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Democratic Appeal (CDA)", 
+        "country": "Netherlands", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Democratic_Appeal", 
+        "lat": "52.0721398", 
+        "lng": "4.3037388"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Civic Platform (PO)", 
+        "country": "Poland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Civic_Platform", 
+        "lat": "35.893056", 
+        "lng": "14.493611"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Polish People's Party (PSL)", 
+        "country": "Poland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Polish_People%27s_Party", 
+        "lat": "52.230126", 
+        "lng": "21.0197178"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Democratic Liberal Party (PD-L)", 
+        "country": "Romania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Liberal_Democratic_Party_(Romania)", 
+        "lat": "44.4568623", 
+        "lng": "26.0885101"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Democratic National Peasants' Party (PN\u0162-CD)", 
+        "country": "Romania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Democratic_National_Peasants'_Party", 
+        "lat": "46.761026", 
+        "lng": "23.5906619"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Democratic Union of Hungarians in Romania (UDMR)", 
+        "country": "Romania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Democratic_Union_of_Hungarians_in_Romania", 
+        "lat": "46.7734374", 
+        "lng": "23.59572"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Democratic Movement (KDH)", 
+        "country": "Slovak Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Democratic_Movement", 
+        "lat": "48.1519794", 
+        "lng": "17.1493584"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Slovak Democratic and Christian Union \u2013 Democratic Party (SDK\u00da-DS)", 
+        "country": "Slovak Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Slovak_Democratic_and_Christian_Union_%E2%80%93_Democratic_Party", 
+        "lat": "48.1566166", 
+        "lng": "17.1641473"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Most-Hid", 
+        "country": "Slovak Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Most%E2%80%93H%C3%ADd", 
+        "lat": "48.5039876", 
+        "lng": "17.8643667"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Party of the Hungarian Coalition (MKP)", 
+        "country": "Slovak Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Party_of_the_Hungarian_Community", 
+        "lat": "48.1578853", 
+        "lng": "17.1152102"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Slovenian Democratic Party (SDS)", 
+        "country": "Slovenia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Slovenian_Democratic_Party", 
+        "lat": "46.0629996", 
+        "lng": "14.5065871"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Slovenian People's Party (SLS)", 
+        "country": "Slovenia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Slovenian_People's_Party", 
+        "lat": "46.0421873", 
+        "lng": "14.501715"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "New Slovenia (NSi)", 
+        "country": "Slovenia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/New_Slovenia", 
+        "lat": "46.0527089", 
+        "lng": "14.5014028"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "People's Party (PP)", 
+        "country": "Spain", 
+        "wikipedia_site": "http://es.wikipedia.org/wiki/Partido_Popular", 
+        "lat": "40.4269892", 
+        "lng": "-3.6941374"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Democratic Union of Catalonia (UDC)", 
+        "country": "Spain", 
+        "wikipedia_site": "http://es.wikipedia.org/wiki/Uni%C3%B3_Democr%C3%A0tica_de_Catalunya", 
+        "lat": "41.3919518", 
+        "lng": "2.1837275"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Moderate Party", 
+        "country": "Sweden", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Moderate_Party", 
+        "lat": "59.3240108", 
+        "lng": "18.0694187"
+    }, 
+    {
+        "group": "EPP", 
+        "name": "Christian Democrats", 
+        "country": "Sweden", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Christian_Democrats_(Sweden)", 
+        "lat": "59.3251805", 
+        "lng": "18.0666731"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Civic Democratic Party", 
+        "country": "Czech Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Civic_Democratic_Party_(Czech_Republic)", 
+        "lat": "50.0516442", 
+        "lng": "14.4428083"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Conservatives and Social Reformers", 
+        "country": "Italy", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Conservatives_and_Social_Reformers", 
+        "lat": "45.4656999", 
+        "lng": "9.2058786"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "TB/LNNK", 
+        "country": "Latvia", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/For_Fatherland_and_Freedom/LNNK", 
+        "lat": "56.9519214", 
+        "lng": "24.1054151"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Electoral Action of Poles in Lithuania", 
+        "country": "Lithuania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Electoral_Action_of_Poles_in_Lithuania", 
+        "lat": "54.6831899", 
+        "lng": "25.2893433"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Alternative Democratic Reform Party", 
+        "country": "Luxembourg", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Alternative_Democratic_Reform_Party", 
+        "lat": "49.61238", 
+        "lng": "6.133316"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Law and Justice", 
+        "country": "Poland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Law_and_Justice", 
+        "lat": "52.2240852", 
+        "lng": "20.9907091"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Poland Comes First", 
+        "country": "Poland", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Poland_Comes_First", 
+        "lat": "52.2237308", 
+        "lng": "21.0225152"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "New Republic", 
+        "country": "Romania", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/New_Republic_(Romania)", 
+        "lat": "44.442268", 
+        "lng": "26.0704"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Civic Conservative Party", 
+        "country": "Slovak Republic", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Civic_Conservative_Party", 
+        "lat": "48.148453", 
+        "lng": "17.104513"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Conservative Party", 
+        "country": "United Kingdom", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Conservative_Party_(UK)", 
+        "lat": "51.4923903", 
+        "lng": "-0.1254962"
+    }, 
+    {
+        "group": "AECR", 
+        "name": "Ulster Unionist Party", 
+        "country": "United Kingdom", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Ulster_Unionist_Party", 
+        "lat": "54.5954092", 
+        "lng": "-5.9023584"
+    }, 
+    {
+        "group": "MELD", 
+        "name": "Europe for Freedom and Democracy ", 
+        "country": "", 
+        "wikipedia_site": "", 
+        "lat": "", 
+        "lng": ""
+    }, 
+    {
+        "group": "MELD", 
+        "name": "Danish People\u2019s Party (Dansk Folkeparti)", 
+        "country": "Denmark", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Danish_People's_Party", 
+        "lat": "55.6758333", 
+        "lng": "12.5788889"
+    }, 
+    {
+        "group": "MELD", 
+        "name": "True Finns (Perussuomalaiset)", 
+        "country": "Finland:", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Finns_Party", 
+        "lat": "60.1644925", 
+        "lng": "24.9435853"
+    }, 
+    {
+        "group": "MELD", 
+        "name": "Movement for France (Mouvement pour la France)", 
+        "country": "France", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Movement_for_France", 
+        "lat": "48.8564913", 
+        "lng": "2.3085292"
+    }, 
+    {
+        "group": "MELD", 
+        "name": "Popular Orthodox Rally (\u039b\u03b1\u03ca\u03ba\u03cc\u03c2 \u039f\u03c1\u03b8\u03cc\u03b4\u03bf\u03be\u03bf\u03c2 \u03a3\u03c5\u03bd\u03b1\u03b3\u03b5\u03c1\u03bc\u03cc\u03c2)", 
+        "country": "Greece", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/Popular_Orthodox_Rally", 
+        "lat": "37.9656307", 
+        "lng": "23.7289027"
+    }, 
+    {
+        "group": "MELD", 
+        "name": "Lega Nord", 
+        "country": "Italy", 
+        "wikipedia_site": "http://es.wikipedia.org/wiki/Liga_Norte", 
+        "lat": "45.5178687", 
+        "lng": "9.1775318"
+    }, 
+    {
+        "group": "MELD", 
+        "name": " Io amo l\u2019Italia", 
+        "country": "Italy", 
+        "wikipedia_site": "http://en.wikipedia.org/wiki/I_Love_Italy", 
+        "lat": "41.8723889", 
+        "lng": "12.4801802"
+    }, 
+    {
+        "group": "MELD", 
+        "name": "Solidarna Polska", 
+        "country": "Poland", 
+        "wikipedia_site": "http://pl.wikipedia.org/wiki/Solidarna_Polska", 
+        "lat": "52.223703", 
+        "lng": "21.0229063"
+    }
 ]
