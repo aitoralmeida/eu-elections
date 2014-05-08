@@ -59,32 +59,26 @@ def home(request):
                 group_data['twitter_account'] = result[0]
 
             #cursor.execute("Select twitter_users.screen_name, parties.initials, parties.name from twitter_users, parties where twitter_users.id = parties.user_id and twitter_users.id in (select user_id from parties where group_id = '%s' and is_group_party = 0)" % group)
-            
-			cursor.execute("SELECT initials, name, user_id FROM parties WHERE group_id = '%s'" % group)
-			
-			for result in cursor:
-				party_initials = result[0]
-				party_name = result[1]
-				party_id = result[2]
-				party_data = {
-							'id': party_id,
-							'initials': party_initials,
-							'name': party_name
-						}
-				group_data['parties'].append(party_data)
-		
-			for party in group_data['parties']:        
-				if party['id'] == 0:
-					party_screen_name = 'No_TWITTER_ACCOUNT'
-				else: 
-					query = "SELECT screen_name FROM twitter_users WHERE id = '%s'" % party['id']
-					cursor.execute(query)
-					for result in cursor:
-						print result
-						party_screen_name = result[0]
-						
-					party['screen_name'] = party_screen_name
-				
+
+            cursor.execute("SELECT initials, name, user_id FROM parties WHERE group_id = '%s' and is_group_party = 0" % group)
+            for result in cursor:
+                party_initials = result[0]
+                party_name = result[1]
+                party_id = result[2]
+                party_data = {
+                    'id': party_id,
+                    'initials': party_initials,
+                    'name': party_name,
+                }
+                group_data['parties'].append(party_data)
+
+            for party in group_data['parties']:
+                if party['id'] == 0:
+                    party['screen_name'] = None
+                else:
+                    cursor.execute("SELECT screen_name FROM twitter_users WHERE id = '%s'" % party['id'])
+                    for result in cursor:
+                        party['screen_name'] = result[0]
 
             cursor.execute("Select eu_total, co_total from europe_group where group_id = '%s'" % group)
             for result in cursor:

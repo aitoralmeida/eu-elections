@@ -127,13 +127,17 @@
                             {% for party in group.parties %}
                                 <tr>
                                     <td>
-                                        <strong>{{ party.initials }}</strong>
+                                        <strong>{{ party.name }}</strong>
                                     </td>
 
                                     <td>
-                                        <a target="_blank" href="https://twitter.com/{{ party.screen_name }}">
-                                            {{ party.name }}
-                                        </a>
+                                        {% if party.screen_name %}
+                                            <a target="_blank" href="https://twitter.com/{{ party.screen_name }}">
+                                                @{{ party.screen_name }}
+                                            </a>
+                                        {% else %}
+                                            <p class="text-muted">Sin cuenta de Twitter</p>
+                                        {% endif %}
                                     </td>
                                 </tr>
                             {% endfor %}
