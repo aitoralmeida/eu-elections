@@ -401,3 +401,42 @@ blockquote.pel {
 blockquote.pes {
     border-left: 5px solid #e90303;
 }
+
+.candidate {
+    text-align: center;
+}
+
+.candidate img {
+    width: 50%;
+}
+
+.candidate h1 {
+    margin: 1em 0 0.5em;
+    font-size: 1.25em;
+}
+
+.candidate h2 {
+    margin: 0;
+    font-size: 1em;
+    color: #777;
+}
+
+#alexis_tsipras {
+    border: 10px solid #a31e0a;
+}
+
+#guy_verhofstadt {
+    border: 10px solid #f7981d;
+}
+
+#jean_claude_juncker {
+    border: 10px solid #6598cb;
+}
+
+#jose_bove {
+    border: 10px solid #03b22e;
+}
+
+#martin_schulz {
+    border: 10px solid #e90303;
+}

@@ -199,37 +199,7 @@ def hashtags_group_index(request):
 ####################################################################################################
 
 def hashtags_candidate_index(request):
-    candidates = []
-
-    try:
-        cnx = mysql.connector.connect(**config)
-        cursor = cnx.cursor()
-
-        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
-
-        for result in cursor:
-            candidates.append({
-                'screen_name': result[0],
-            })
-
-        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(subcandidate_id, CHAR(100)) FROM groups)")
-
-        for result in cursor:
-            candidates.append({
-                'screen_name': result[0],
-            })
-
-        cursor.close()
-        cnx.close()
-
-    except:
-        print "You are not in Deusto's network"
-
-    return_dict = {
-        'candidates': candidates,
-    }
-
-    return render(request, "eu_elections_analytics/hashtags/candidate_index.html", return_dict)
+    return render(request, "eu_elections_analytics/hashtags/candidate_index.html")
 
 
 ####################################################################################################
@@ -415,37 +385,7 @@ def languages_group_index(request):
 ####################################################################################################
 
 def languages_candidate_index(request):
-    candidates = []
-
-    try:
-        cnx = mysql.connector.connect(**config)
-        cursor = cnx.cursor()
-
-        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
-
-        for result in cursor:
-            candidates.append({
-                'screen_name': result[0],
-            })
-
-        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(subcandidate_id, CHAR(100)) FROM groups)")
-
-        for result in cursor:
-            candidates.append({
-                'screen_name': result[0],
-            })
-
-        cursor.close()
-        cnx.close()
-
-    except:
-        print "You are not in Deusto's network"
-
-    return_dict = {
-        'candidates': candidates,
-    }
-
-    return render(request, "eu_elections_analytics/languages/candidate_index.html", return_dict)
+    return render(request, "eu_elections_analytics/languages/candidate_index.html")
 
 
 ####################################################################################################
