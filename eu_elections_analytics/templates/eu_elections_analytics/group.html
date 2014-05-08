@@ -1,0 +1,103 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-3">
+            <img src="{{ STATIC_PREFIX }}img/logos/{{ group.slug }}.png" width="100" />
+        </div>
+
+        <div class="group-name col-md-9">
+            {{ group.name }}
+            <br>
+            <a target="_blank" href="https://twitter.com/{{ group.screen_name }}">
+                @{{ group.screen_name }}
+            </a>
+        </div>
+    </div>
+
+    <div class="soften-limited"></div>
+
+    <div class="row">
+        <div class="col-md-4">
+
+            <p>
+                <strong>Hashtag más usado:</strong>
+                &emsp;
+                <a target="_blank" href="https://twitter.com/hashtag/{{ group.top_hashtag }}">
+                    #{{ group.top_hashtag }}
+                </a>
+                &emsp;
+                (utilizado {{ group.top_hashtag_count }} veces)
+            </p>
+
+            <p>
+                <strong>Idiomas más empleados:</strong>&emsp;
+
+                <table class="table table-striped table-condensed">
+                {% for language in group.languages %}
+                    <tr class="row">
+                        <td class="col-md-2 col-md-offset-4">
+                            &emsp;<strong>{{ language.language }}</strong>
+                        </td>
+
+                        <td class="col-md-2">
+                            {{ language.percentage }} %
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </p>
+
+            <p>
+                <strong>Menciones:</strong>
+                &emsp;<i class="fa fa-circle" style="color: #5bc0de;"></i>&emsp;Europa&emsp;&emsp;<i class="fa fa-circle" style="color: #5cb85c;"></i>&emsp;Nación
+                <br>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info" style="width: {{ group.discourse.european }}%">
+                        {{ group.discourse.european }}%
+                    </div>
+
+                    <div class="progress-bar progress-bar-success" style="width: {{ group.discourse.national }}%">
+                        {{ group.discourse.national }}%
+                    </div>
+                </div>
+            </p>
+        </div>
+
+        <div class="col-md-8">
+            <p>
+                <strong>Partidos:</strong>
+                <br>
+
+                <table class="table table-striped table-condensed">
+                {% for party in group.parties %}
+                    <tr>
+                        <td>
+                            <strong>{{ party.name }}</strong>
+                        </td>
+
+                        <td>
+                            {% if party.screen_name %}
+                                <a target="_blank" href="https://twitter.com/{{ party.screen_name }}">
+                                    @{{ party.screen_name }}
+                                </a>
+                            {% else %}
+                                <p class="text-muted">Sin cuenta de Twitter</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+{% endblock %}
