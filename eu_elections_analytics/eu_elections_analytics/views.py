@@ -68,17 +68,17 @@ def home(request):
                 party_data = {
                     'id': party_id,
                     'initials': party_initials,
-                    'name': party_name
+                    'name': party_name,
                 }
                 group_data['parties'].append(party_data)
 
             for party in group_data['parties']:
                 if party['id'] == 0:
-                    party['name'] = '-'
+                    party['screen_name'] = None
                 else:
                     cursor.execute("SELECT screen_name FROM twitter_users WHERE id = '%s'" % party['id'])
                     for result in cursor:
-                        party['name'] = result[0]
+                        party['screen_name'] = result[0]
 
             cursor.execute("Select eu_total, co_total from europe_group where group_id = '%s'" % group)
             for result in cursor:
