@@ -1,4 +1,5 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
+import debug_toolbar
 
 urlpatterns = patterns('',
     url(r'^$', 'eu_elections_analytics.views.home', name='home'),
@@ -33,4 +34,6 @@ urlpatterns = patterns('',
     url(r'^idiomas/grupo_parlamentario/$', 'eu_elections_analytics.views.languages_group_index', name='languages_group_index'),
     #   Evolution
     # url(r'^idiomas/evolucion/$', 'eu_elections_analytics.views.languages_evolution', name='languages_evolution'),
+
+    url(r'^__debug__/', include(debug_toolbar.urls)),
 )
