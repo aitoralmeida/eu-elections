@@ -143,7 +143,7 @@ def view_group(request, group_slug):
             'parties': [],
             'discourse': '',
             'languages': [],
-            'screen_name': '',
+            'screen_name': None,
         }
 
         cursor.execute("Select initials, name from groups where slug = '%s'" % group_slug)

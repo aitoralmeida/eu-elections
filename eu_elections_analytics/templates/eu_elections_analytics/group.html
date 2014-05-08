@@ -6,16 +6,22 @@
 
     <div class="row">
         <div class="col-md-3">
-            <img src="{{ STATIC_PREFIX }}img/logos/{{ group.slug }}.png" width="100" />
+            <img src="{{ STATIC_PREFIX }}img/logos/{{ group.slug }}.png" width="125" />
         </div>
 
         <div class="group-name col-md-9">
             <blockquote class="{{ group.slug }}">
-                {{ group.name }}
-                <br>
-                <a target="_blank" href="https://twitter.com/{{ group.screen_name }}">
-                    @{{ group.screen_name }}
-                </a>
+                <p>
+                    {{ group.name }}
+                </p>
+
+                {% if group.screen_name %}
+                    <footer>
+                        <a target="_blank" href="https://twitter.com/{{ group.screen_name }}">
+                            @{{ group.screen_name }}
+                        </a>
+                    <footer>
+                {% endif %}
             </blockquote>
         </div>
     </div>
@@ -75,7 +81,7 @@
             </p>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-6 col-md-offset-2">
             <p>
                 <strong>Partidos políticos:</strong>
 
