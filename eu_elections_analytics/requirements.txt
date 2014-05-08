@@ -1,5 +1,4 @@
 Django==1.6.2
 Unipath==1.0
-django-debug-toolbar==1.2
 mysql-connector-python==1.1.6
 sqlparse==0.1.11
