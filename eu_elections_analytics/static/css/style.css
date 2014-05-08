@@ -244,28 +244,16 @@ g.country-axis > g.tick > text {
     color: white;
 }
 
+.btn-aecr {
+    color: #fff;
+    background-color: #409df4;
+    border-color: #398ddb;
+}
+
 .btn-alde {
     color: #fff;
     background-color: #f7981d;
     border-color: #de881a;
-}
-
-.btn-eaf {
-    color: #fff;
-    background-color: #858585;
-    border-color: #777;
-}
-
-.btn-ecr {
-    color: #fff;
-    background-color: #22205f;
-    border-color: #1e1c55;
-}
-
-.btn-efd {
-    color: #fff;
-    background-color: #973693;
-    border-color: #873084;
 }
 
 .btn-epp {
@@ -274,22 +262,28 @@ g.country-axis > g.tick > text {
     border-color: #5a88b6;
 }
 
-.btn-gue-ngl {
+.btn-greensefa {
     color: #fff;
-    background-color: #981b1e;
-    border-color: #88181b;
+    background-color: #03b22e;
+    border-color: #02a029;
 }
 
-.btn-greens {
+.btn-meld {
     color: #fff;
-    background-color: #0b9147;
-    border-color: #09823f;
+    background-color: #07ddfd;
+    border-color: #06c6e3;
 }
 
-.btn-sd {
+.btn-pel {
     color: #fff;
-    background-color: #ef4d4d;
-    border-color: #d74545;
+    background-color: #a31e0a;
+    border-color: #921b09;
+}
+
+.btn-pes {
+    color: #fff;
+    background-color: #e90303;
+    border-color: #d10202;
 }
 
 #map {
