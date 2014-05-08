@@ -603,7 +603,7 @@ def languages_by_country(request, country_slug):
                 'long_name': result[0],
             }
 
-        cursor.execute("Select lang, sum(total) from language_country where country_name= '%s' group by lang" % country['long_name'])
+        cursor.execute("Select lang, total from language_country where country_name= '%s' group by lang" % country['long_name'])
 
         for result in cursor:
             languages.append({
