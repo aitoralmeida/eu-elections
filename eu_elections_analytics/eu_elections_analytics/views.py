@@ -598,7 +598,7 @@ def languages_by_country(request, country_slug):
 
         for result in cursor:
             languages.append({
-                'text': result[0],
+                'lang': result[0],
                 'total': result[1],
             })
 
