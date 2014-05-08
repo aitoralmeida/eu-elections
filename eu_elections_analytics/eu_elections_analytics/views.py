@@ -16,7 +16,7 @@ config = {
     'database': 'eu_test2',
 }
 
-GROUPS = ['ALDE', 'EAF', 'ECR', 'EFD', 'EPP', 'GUE/NGL', 'Greens', 'S&D']
+GROUPS = ['AECR', 'ALDE', 'EPP', 'Greens/EFA', 'MELD', 'PEL', 'PES']
 
 
 ####################################################################################################

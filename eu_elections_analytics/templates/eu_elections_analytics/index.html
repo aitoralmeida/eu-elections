@@ -7,7 +7,7 @@
     <div class="row">
         <div class="descriptions col-md-6">
             <p>
-                Bienvenido a la página de datos de euro e-lecciones. Esta página es un apoyo al blog que puedes encontrar en <a href="http://euroelecciones.infolibre.es">http://euroelecciones.infolibre.es</a>. En esta página haremos un seguimiento en tiempo real de la actividad de los partidos y grupos europeos en twitter durante toda la campaña.  Dado que en el blog analizaremos los programas de los partidos europeos, el análisis de esta página se centrará en aquellos partidos estatales ligados a un partido europeo. Aun así, hemos añadido al seguimiento también a los partidos españoles más representativos que no están adscritos a ningún partido europeo. Aquí podrás explorar esta actividad y ver como es el comportamiento de los partidos. Para hacer más sencillo este proceso hemos dividido los datos en diferentes categorías.
+                En esta página podrás explorar en tiempo real la actividad de los partidos y grupos europeos en twitter durante toda la campaña. Para hacer más sencillo este proceso hemos dividido los datos en diferentes categorías.
             </p>
 
             <dl>
@@ -16,27 +16,27 @@
                 </dt>
 
                 <dd>
-                    Podrás ver cuáles son los <a target="_blank" href="http://es.wikipedia.org/wiki/Hashtag">hashtags</a> más utilizados durante la campaña por cada grupo, por cada candidato y por cada país, así como su evolución cronológica. Esto te puede servirá para saber cuáles son las temáticas más tratadas en cada área.
+                    Podrás ver cuáles son los <a target="_blank" href="http://es.wikipedia.org/wiki/Hashtag">hashtags</a> más utilizados por cada <a href="{% url 'hashtags_group_index' %}">grupo</a>, por cada <a href="{% url 'hashtags_candidate_index' %}">candidato</a> y por cada <a href="{% url 'hashtags_country_index' %}">país</a>, así como su evolución cronológica. Así podrás saber cuáles son las temáticas más tratadas en cada área.
                 </dd>
 
                 <br>
 
                 <dt>
-                    Idioma de los tweets
+                    Idioma de los tuits
                 </dt>
 
                 <dd>
-                    Esta categoría es similar a la anterior, pero centrándonos en los idiomas utilizados en los tweets. Esto te servirá para hacerte una idea de la <em>europeidad</em> de cada campaña. ¿Hacen los grupos campaña para todo el ámbito europeo o se centran solo en el ámbito local?
+                    Aquí hacemos un análisis de los idiomas utilizados por los <a href="{% url 'languages_group_index' %}">grupos</a>, <a href="{% url 'languages_country_index' %}">países</a> y <a href="{% url 'languages_candidate_index' %}">candidatos</a> en los tuits. Esto te servirá para hacerte una idea de hasta qué punto es europea o nacional la campaña electoral.
                 </dd>
 
                 <br>
 
                 <dt>
-                    Mapeando los partidos
+                    Partidos en el mapa
                 </dt>
 
                 <dd>
-                    Aquí podrás ver sobre un mapa a que país pertenece cada partido, el grupo del parlamento europeo al que pertenecen representado por su color y si pinchas sobre el icono, estadísticas del uso de twitter de cada partido.
+                    Aquí podrás ver sobre un <a href="{% url 'geo_group_representation' %}">mapa</a> a qué país pertenece cada partido, el grupo del parlamento europeo al que pertenecen representado por su color y, si pinchas sobre el icono, estadísticas del uso de twitter de cada partido.
                 </dd>
 
                 <br>
@@ -46,7 +46,7 @@
                 </dt>
 
                 <dd>
-                    Quizás la más intimidante a primera vista, pero la que más invita a jugar con ella. Aquí podrás encontrar un grafo interactivo en el que podrás ver las interacciones que tienen las cuentas de los partidos con otras cuentas de twitter.
+                    Quizás la más intimidante a primera vista, pero la que más invita a jugar con ella. Aquí encontrarás un <a href="{% url 'interaction_communities' %}">gráfico</a> que refleja las interacciones que tienen las cuentas de los partidos con otras cuentas de twitter. No te olvides de leer las instrucciones para sacar partido al juego.
                 </dd>
             </dl>
         </div>
@@ -105,7 +105,7 @@
                         </p>
 
                         <p>
-                            <strong>Tipo de discurso:</strong>
+                            <strong>Menciones:</strong>
                             &emsp;<i class="fa fa-circle" style="color: #5bc0de;"></i>&emsp;Europeo&emsp;&emsp;<i class="fa fa-circle" style="color: #5cb85c;"></i>&emsp;Nacional
                             <br>
                             <div class="progress">
