@@ -143,6 +143,7 @@ def view_group(request, group_slug):
             'parties': [],
             'discourse': '',
             'languages': [],
+            'screen_name': '',
         }
 
         cursor.execute("Select initials, name from groups where slug = '%s'" % group_slug)
@@ -210,6 +211,10 @@ def view_group(request, group_slug):
                 'language': language,
                 'percentage': percentage,
             })
+
+        cursor.execute("Select screen_name from twitter_users where id = (Select user_id from parties where is_group_party = 1 and group_id = '%s')" % group['initials'])
+        for result in cursor:
+            group['screen_name'] = result[0]
 
         cursor.close()
         cnx.close()

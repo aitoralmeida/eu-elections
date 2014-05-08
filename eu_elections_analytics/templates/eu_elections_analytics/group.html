@@ -5,19 +5,19 @@
 {% block content %}
 
     <div class="row">
-        <blockquote class="{{ group.slug }}">
-            <div class="col-md-3">
-                <img src="{{ STATIC_PREFIX }}img/logos/{{ group.slug }}.png" width="100" />
-            </div>
+        <div class="col-md-3">
+            <img src="{{ STATIC_PREFIX }}img/logos/{{ group.slug }}.png" width="100" />
+        </div>
 
-            <div class="group-name col-md-9">
+        <div class="group-name col-md-9">
+            <blockquote class="{{ group.slug }}">
                 {{ group.name }}
                 <br>
                 <a target="_blank" href="https://twitter.com/{{ group.screen_name }}">
                     @{{ group.screen_name }}
                 </a>
-            </div>
-        </blockquote>
+            </blockquote>
+        </div>
     </div>
 
     <div class="soften"></div>
