@@ -82,7 +82,7 @@ def home(request):
                         print result
                         party_screen_name = result[0]
 
-                    party['screen_name'] = party_screen_name
+                    party['name'] = party_screen_name
 
             cursor.execute("Select eu_total, co_total from europe_group where group_id = '%s'" % group)
             for result in cursor:
