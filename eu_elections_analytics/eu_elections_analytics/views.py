@@ -191,31 +191,7 @@ def hashtags_country_index(request):
 ####################################################################################################
 
 def hashtags_group_index(request):
-    groups = []
-
-    try:
-        cnx = mysql.connector.connect(**config)
-        cursor = cnx.cursor()
-
-        cursor.execute("Select initials, slug from groups")
-
-        for result in cursor:
-            groups.append({
-                'initials': result[0],
-                'slug': result[1],
-            })
-
-        cursor.close()
-        cnx.close()
-
-    except:
-        print "You are not in Deusto's network"
-
-    return_dict = {
-        'groups': groups,
-    }
-
-    return render(request, "eu_elections_analytics/hashtags/group_index.html", return_dict)
+    return render(request, "eu_elections_analytics/hashtags/group_index.html")
 
 
 ####################################################################################################
@@ -431,31 +407,7 @@ def languages_country_index(request):
 ####################################################################################################
 
 def languages_group_index(request):
-    groups = []
-
-    try:
-        cnx = mysql.connector.connect(**config)
-        cursor = cnx.cursor()
-
-        cursor.execute("Select initials, slug from groups")
-
-        for result in cursor:
-            groups.append({
-                'initials': result[0],
-                'slug': result[1],
-            })
-
-        cursor.close()
-        cnx.close()
-
-    except:
-        print "You are not in Deusto's network"
-
-    return_dict = {
-        'groups': groups,
-    }
-
-    return render(request, "eu_elections_analytics/languages/group_index.html", return_dict)
+    return render(request, "eu_elections_analytics/languages/group_index.html")
 
 
 ####################################################################################################

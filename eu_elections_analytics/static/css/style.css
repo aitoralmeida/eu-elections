@@ -373,3 +373,31 @@ p.text-muted {
     background-color: white;
     color: black;
 }
+
+blockquote.eacr {
+    border-left: 5px solid #409df4;
+}
+
+blockquote.alde {
+    border-left: 5px solid #f7981d;
+}
+
+blockquote.epp {
+    border-left: 5px solid #6598cb;
+}
+
+blockquote.greens-efa {
+    border-left: 5px solid #03b22e;
+}
+
+blockquote.meld {
+    border-left: 5px solid #07ddfd;
+}
+
+blockquote.pel {
+    border-left: 5px solid #a31e0a;
+}
+
+blockquote.pes {
+    border-left: 5px solid #e90303;
+}
