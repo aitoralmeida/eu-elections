@@ -20,33 +20,36 @@
 
     <div class="center">
         <span type="button" class="btn btn-aecr" onclick="toogleLayerGroupVisibility(this, 'aecr');">
-            AECR&emsp;<span class="badge">13</span>
+            AECR&emsp;<span class="badge count-span">13</span>
         </span>
 
         <span type="button" class="btn btn-alde" onclick="toogleLayerGroupVisibility(this, 'alde');">
-            ALDE&emsp;<span class="badge">29</span>
+            ALDE&emsp;<span class="badge count-span">29</span>
         </span>
 
         <span type="button" class="btn btn-epp" onclick="toogleLayerGroupVisibility(this, 'epp');">
-            EPP&emsp;<span class="badge">52</span>
+            EPP&emsp;<span class="badge count-span">52</span>
         </span>
 
         <span type="button" class="btn btn-greensefa" onclick="toogleLayerGroupVisibility(this, 'greensefa');">
-            Greens/EFA&emsp;<span class="badge">25</span>
+            Greens/EFA&emsp;<span class="badge count-span">25</span>
         </span>
 
         <span type="button" class="btn btn-meld" onclick="toogleLayerGroupVisibility(this, 'meld');">
-            MELD&emsp;<span class="badge">13</span>
+            MELD&emsp;<span class="badge count-span">13</span>
         </span>
 
         <span type="button" class="btn btn-pel" onclick="toogleLayerGroupVisibility(this, 'pel');">
-            PEL&emsp;<span class="badge">17</span>
+            PEL&emsp;<span class="badge count-span">17</span>
         </span>
 
         <span type="button" class="btn btn-pes" onclick="toogleLayerGroupVisibility(this, 'pes');">
-            PES&emsp;<span class="badge">31</span>
+            PES&emsp;<span class="badge count-span">31</span>
         </span>
 
+        <span type="button" class="btn btn-ni-spain" onclick="toogleLayerGroupVisibility(this, 'ni-spain');">
+            No inscritos en España&emsp;<span class="badge count-span">9</span>
+        </span>
     </div>
 
     <br>
@@ -73,6 +76,7 @@
         var meldIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/meld.png'});
         var pelIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/pel.png'});
         var pesIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/pes.png'});
+        var nispainIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/ni-spain.png'});
 
         var iconObject = {
             "AECR": aecrIcon,
@@ -81,7 +85,8 @@
             "Greens/EFA": greensefaIcon,
             "MELD": meldIcon,
             "PEL": pelIcon,
-            "PES": pesIcon
+            "PES": pesIcon,
+            "NI - SPAIN": nispainIcon
         };
 
         var map = L.map('map').setView([48.779209, 9.1772152], 4);
@@ -99,6 +104,7 @@
         var meld = [];
         var pel = [];
         var pes = [];
+        var nispain = [];
 
         var parties_json;
         $.getJSON("{{ STATIC_PREFIX }}data/all_parties_data.json", function(json) {
@@ -107,7 +113,7 @@
             for (var party_index in parties_json) {
                 var party = parties_json[party_index];
 
-                var popupContent = "<h5>" + party.name + " (" + party.group + ")</h5>" + party.wikipedia_site + "<br>" + party.city + " (" + party.country + ") <br>(" + party.lat + ", " + party.lng +")";
+                var popupContent = "<h5>" + party.name + "&emsp;(<a href=\"{% url 'view_group' '" + party.group + "'%}\">" + party.group + "</a>)</h5>";
                 var marker = L.marker([party.lat, party.lng], {icon: iconObject[party.group]}).bindPopup(popupContent);
 
                 if (party.group == "AECR") {
@@ -130,6 +136,9 @@
                 }
                 else if (party.group == "PES") {
                     pes.push(marker);
+                }
+                else if (party.group == "NI - SPAIN") {
+                    nispain.push(marker);
                 }
             };
 
@@ -154,6 +163,8 @@
             pes_layergroup = L.layerGroup(pes);
             pes_layergroup.addTo(map);
 
+            nispain_layergroup = L.layerGroup(nispain);
+            nispain_layergroup.addTo(map);
         });
 
 
@@ -189,6 +200,10 @@
             else if (layer_group_name == 'pes') {
                 layer_group = pes_layergroup;
                 btn_class = 'btn-pes';
+            }
+            else if (layer_group_name == 'nispain') {
+                layer_group = nispain_layergroup;
+                btn_class = 'btn-ni-spain';
             }
 
             // Toogle visibility

@@ -286,6 +286,12 @@ g.country-axis > g.tick > text {
     border-color: #d10202;
 }
 
+.btn-ni-spain {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
 #map {
     border: 3px solid #777;
 }
@@ -363,7 +369,7 @@ p.text-muted {
     margin: 0;
 }
 
-.more-span {
+.more-span, .count-span {
     background-color: white;
     color: black;
 }
