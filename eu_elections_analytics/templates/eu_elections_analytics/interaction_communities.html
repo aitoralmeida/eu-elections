@@ -9,6 +9,18 @@
 
 {% block content %}
 
+    <div>
+        <div class="row">
+            <a id="full-network" class="btn btn-info col-md-3" href="{% url 'interaction_communities' %}">
+                Ver grafo completo
+            </a>
+
+            <span class="col-md-3 col-md-offset-6"><strong>Última actualización:</strong>&emsp;9 mayo, 2014</span>
+        </div>
+    </div>
+
+    <br>
+
     <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -19,7 +31,7 @@
 
                 <div class="modal-body">
                     <p>
-                        Lo primero, no te asustes. Lo que a primera vista parecen un montón de manchas de pintura unidas por líneas es un grafo de las interacciones de las cuentas de los partidos con otras cuentas de twitter. Navegando por este grafo (puedes utilizar el ratón para moverte por él), puedes encontrar muchísima información sobre el comportamiento en twitter de los partidos y sus seguidores. Lo primero, prueba a hacer zoom, bien utilizando los botones del lateral o la rueda del ratón. Si haces suficiente zoom verás como lo que parecían manchones son en realidad un montón de círculos de diferentes colores y tamaños (nosotros los llamamos nodos). Cada uno de estos círculos representa una cuenta de twitter. Su tamaño viene calculado por cuanto interacciona con otras cuentas. Cuantas más interacciones con más cuentas, más grande es el circulo. Verás que de cada circulo salen líneas (a estas las llamamos aristas). Estas líneas representan las interacciones entre los dos círculos que unen. Cuanta más gorda es una línea, más interacciones. Prueba a pinchar sobre un círculo. Verás que han desaparecido muchos otros. Ahora sólo estás viendo aquellas cuentas que se han relacionado con la que has pinchado (para volver a verlos todos pincha sobre el botón <strong>Ver grafo completo</strong> de la parte inferior). Por último, habrás notado que los círculos tienen diferentes colores y que todos los círculos del mismo color tienden a estar juntos. Esto es porque hemos utilizado un algoritmo para detectar cuales son las comunidades que se forman en twitter. Tómate un tiempo y juega con el gráfico, mira a ver con quién se relaciona el partido al que vas a votar (puedes usar el buscador si conoces su cuenta de twitter) o como se relacionan entre si los partidos de tu país.
+                        Lo primero, no te asustes. Lo que a primera vista parecen un montón de manchas de pintura unidas por líneas es un grafo de las interacciones de las cuentas de los partidos con otras cuentas de twitter. Navegando por este grafo (puedes utilizar el ratón para moverte por él), puedes encontrar muchísima información sobre el comportamiento en twitter de los partidos y sus seguidores. Lo primero, prueba a hacer zoom, bien utilizando los botones del lateral o la rueda del ratón. Si haces suficiente zoom verás como lo que parecían manchones son en realidad un montón de círculos de diferentes colores y tamaños (nosotros los llamamos nodos). Cada uno de estos círculos representa una cuenta de twitter. Su tamaño viene calculado por cuanto interacciona con otras cuentas. Cuantas más interacciones con más cuentas, más grande es el circulo. Verás que de cada circulo salen líneas (a estas las llamamos aristas). Estas líneas representan las interacciones entre los dos círculos que unen. Cuanta más gorda es una línea, más interacciones. Prueba a pinchar sobre un círculo. Verás que han desaparecido muchos otros. Ahora sólo estás viendo aquellas cuentas que se han relacionado con la que has pinchado (para volver a verlos todos pincha sobre el botón <strong>Ver grafo completo</strong>). Por último, habrás notado que los círculos tienen diferentes colores y que todos los círculos del mismo color tienden a estar juntos. Esto es porque hemos utilizado un algoritmo para detectar cuales son las comunidades que se forman en twitter. Tómate un tiempo y juega con el gráfico, mira a ver con quién se relaciona el partido al que vas a votar o como se relacionan entre si los partidos de tu país.
                     </p>
 
                     <p>
@@ -51,29 +63,7 @@
     <br>
 
     <div id="main-panel row">
-        <div class="col-md-3">
-            <form class="form-horizontal" role="form">
-                <div id="search">
-                    <div class="form-group">
-                        <label id="label" for="search-input" class="control-label">Búsqueda</label>
 
-                        <div id="search-input" class="input-group">
-                            <input type="text" class="form-control" name="search" placeholder="@nombre_de_usuario">
-                            <span class="input-group-addon state"><i class='fa fa-search'></i></span>
-                        </div>
-                    </div>
-                    <div class="results"></div>
-                </div>
-            </form>
-
-            <br>
-
-            <div class="centered">
-                <a id="full-network" class="btn btn-info" href="{% url 'interaction_communities' %}">
-                    Ver grafo completo
-                </a>
-            </div>
-        </div>
 
         <div id="attributepane" class="nodeattributes col-md-8 col-md-offset-1">
             <div class="name"></div>
