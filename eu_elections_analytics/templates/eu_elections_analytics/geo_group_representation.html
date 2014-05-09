@@ -89,6 +89,17 @@
             "NI - SPAIN": nispainIcon
         };
 
+        var slugObject = {
+            "AECR": 'aecr',
+            "ALDE": 'alde',
+            "EPP": 'epp',
+            "Greens/EFA": 'greens-efa',
+            "MELD": 'meld',
+            "PEL": 'pel',
+            "PES": 'pes',
+            "NI - SPAIN": 'ni-spain'
+        };
+
         var map = L.map('map').setView([48.779209, 9.1772152], 4);
 
         var osm_tile = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -114,7 +125,7 @@
                 var party = parties_json[party_index];
 
                 var url = "{% url 'view_group' 'party.group' %}";
-                url = url.replace('party.group', party.group);
+                url = url.replace('party.group', slugObject[party.group]);
 
                 var popupContent = "<h5>" + party.name + "&emsp;(<a href='" + url + "'>" + party.group + "</a>)</h5>";
                 var marker = L.marker([party.lat, party.lng], {icon: iconObject[party.group]}).bindPopup(popupContent);
