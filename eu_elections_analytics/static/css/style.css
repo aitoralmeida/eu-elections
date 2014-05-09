@@ -453,3 +453,17 @@ blockquote.ni-spain {
 #martin_schulz {
     border: 10px solid #e90303;
 }
+
+.people {
+    display: block;
+    margin-bottom: 1.5em;
+}
+
+.people img {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+}
+
+.people p {
+    text-align: justify;
+}
