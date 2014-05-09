@@ -43,7 +43,7 @@
     <br>
 
     <div class="row">
-        <div class="col-md-4 col-md-offset-2 candidate">
+        <div class="col-md-4 candidate">
             <a href="{% url 'languages_by_candidate' 'josebove' %}">
                 <img id="jose_bove" src="{{ STATIC_PREFIX }}img/candidates/jose_bove.jpeg" class="img-circle" alt="José Bové">
             </a>
@@ -52,6 +52,17 @@
                 <h1>José Bové</h1>
             </a>
             <h2>Candidato por <a href="{% url 'view_group' 'greens-efa' %}">Greens/EFA</a></h2>
+        </div>
+
+        <div class="col-md-4 candidate">
+            <a href="{% url 'languages_by_candidate' 'SkaKeller' %}">
+                <img id="ska_keller" src="{{ STATIC_PREFIX }}img/candidates/ska_keller.png" class="img-circle" alt="Ska Keller">
+            </a>
+
+            <a target="_blank" href="https://twitter.com/SkaKeller">
+                <h1>Ska Keller</h1>
+            </a>
+            <h2>Candidata por <a href="{% url 'view_group' 'greens-efa' %}">Greens/EFA</a></h2>
         </div>
 
         <div class="col-md-4 candidate">
