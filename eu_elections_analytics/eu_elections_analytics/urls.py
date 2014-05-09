@@ -3,7 +3,7 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns('',
     url(r'^$', 'eu_elections_analytics.views.home', name='home'),
 
-    url(r'^group_representation_by_country/$', 'eu_elections_analytics.views.group_representation_by_country', name='group_representation_by_country'),
+    url(r'^grupo_parlamentario/(?P<group_slug>\S+)/$', 'eu_elections_analytics.views.view_group', name='view_group'),
     url(r'^partidos_en_el_mapa/$', 'eu_elections_analytics.views.geo_group_representation', name='geo_group_representation'),
     url(r'^interacciones_en_twitter/$', 'eu_elections_analytics.views.interaction_communities', name='interaction_communities'),
 

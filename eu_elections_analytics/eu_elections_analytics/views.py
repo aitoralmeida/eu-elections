@@ -125,6 +125,111 @@ def home(request):
 
 
 ####################################################################################################
+#####   View: view_group()
+####################################################################################################
+
+def view_group(request, group_slug):
+    try:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+
+        group = {
+            'initials': '',
+            'slug': '',
+            'name': '',
+            'twitter_account': '',
+            'top_hashtag': '',
+            'top_hashtag_count': '',
+            'parties': [],
+            'discourse': '',
+            'languages': [],
+            'screen_name': None,
+        }
+
+        cursor.execute("Select initials, name from groups where slug = '%s'" % group_slug)
+        for result in cursor:
+            group['initials'] = result[0]
+            group['slug'] = group_slug
+            group['name'] = result[1]
+
+        cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text order by total DESC limit 1" % group['initials'])
+        for result in cursor:
+            group['top_hashtag'] = result[0]
+            group['top_hashtag_count'] = result[1]
+
+        cursor.execute("Select screen_name from twitter_users where id = (select user_id from parties where group_id = '%s' and is_group_party = 1)" % group['initials'])
+        for result in cursor:
+            group['twitter_account'] = result[0]
+
+        #cursor.execute("Select twitter_users.screen_name, parties.initials, parties.name from twitter_users, parties where twitter_users.id = parties.user_id and twitter_users.id in (select user_id from parties where group_id = '%s' and is_group_party = 0)" % group)
+
+        cursor.execute("SELECT initials, name, user_id FROM parties WHERE group_id = '%s' and is_group_party = 0" % group['initials'])
+        for result in cursor:
+            party_initials = result[0]
+            party_name = result[1]
+            party_id = result[2]
+            party_data = {
+                'id': party_id,
+                'initials': party_initials,
+                'name': party_name,
+            }
+            group['parties'].append(party_data)
+
+        for party in group['parties']:
+            if party['id'] == 0:
+                party['screen_name'] = None
+            else:
+                cursor.execute("SELECT screen_name FROM twitter_users WHERE id = '%s'" % party['id'])
+                for result in cursor:
+                    party['screen_name'] = result[0]
+
+        cursor.execute("Select eu_total, co_total from europe_group where group_id = '%s'" % group['initials'])
+        for result in cursor:
+            europe_mentions = result[0]
+            country_mentions = result[1]
+            total = europe_mentions + country_mentions
+
+            getcontext().prec = 3
+
+            discourse_data = {
+                'european': (Decimal(europe_mentions) / Decimal(total)) * 100,
+                'national': (Decimal(country_mentions) / Decimal(total)) * 100,
+            }
+
+            group['discourse'] = discourse_data
+
+        total_lang = 0
+        cursor.execute("Select sum(total) from language_group where group_id = '%s'" % group['initials'])
+        for result in cursor:
+            total_lang = result[0]
+
+        cursor.execute("Select lang, total from language_group where group_id = '%s' order by total desc limit 5" % group['initials'])
+        for result in cursor:
+            language = result[0]
+            percentage = (Decimal(result[1]) / Decimal(total_lang)) * 100
+            group['languages'].append({
+                'language': language,
+                'percentage': percentage,
+            })
+
+        cursor.execute("Select screen_name from twitter_users where id = (Select user_id from parties where is_group_party = 1 and group_id = '%s')" % group['initials'])
+        for result in cursor:
+            group['screen_name'] = result[0]
+
+        cursor.close()
+        cnx.close()
+
+    except:
+        print "You are not in Deusto's network"
+
+    return_dict = {
+        'group': group,
+    }
+
+    return render(request, "eu_elections_analytics/group.html", return_dict)
+
+
+####################################################################################################
 #####   View: group_representation_by_country()
 ####################################################################################################
 
@@ -191,31 +296,7 @@ def hashtags_country_index(request):
 ####################################################################################################
 
 def hashtags_group_index(request):
-    groups = []
-
-    try:
-        cnx = mysql.connector.connect(**config)
-        cursor = cnx.cursor()
-
-        cursor.execute("Select initials, slug from groups")
-
-        for result in cursor:
-            groups.append({
-                'initials': result[0],
-                'slug': result[1],
-            })
-
-        cursor.close()
-        cnx.close()
-
-    except:
-        print "You are not in Deusto's network"
-
-    return_dict = {
-        'groups': groups,
-    }
-
-    return render(request, "eu_elections_analytics/hashtags/group_index.html", return_dict)
+    return render(request, "eu_elections_analytics/hashtags/group_index.html")
 
 
 ####################################################################################################
@@ -223,37 +304,7 @@ def hashtags_group_index(request):
 ####################################################################################################
 
 def hashtags_candidate_index(request):
-    candidates = []
-
-    try:
-        cnx = mysql.connector.connect(**config)
-        cursor = cnx.cursor()
-
-        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
-
-        for result in cursor:
-            candidates.append({
-                'screen_name': result[0],
-            })
-
-        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(subcandidate_id, CHAR(100)) FROM groups)")
-
-        for result in cursor:
-            candidates.append({
-                'screen_name': result[0],
-            })
-
-        cursor.close()
-        cnx.close()
-
-    except:
-        print "You are not in Deusto's network"
-
-    return_dict = {
-        'candidates': candidates,
-    }
-
-    return render(request, "eu_elections_analytics/hashtags/candidate_index.html", return_dict)
+    return render(request, "eu_elections_analytics/hashtags/candidate_index.html")
 
 
 ####################################################################################################
@@ -431,31 +482,7 @@ def languages_country_index(request):
 ####################################################################################################
 
 def languages_group_index(request):
-    groups = []
-
-    try:
-        cnx = mysql.connector.connect(**config)
-        cursor = cnx.cursor()
-
-        cursor.execute("Select initials, slug from groups")
-
-        for result in cursor:
-            groups.append({
-                'initials': result[0],
-                'slug': result[1],
-            })
-
-        cursor.close()
-        cnx.close()
-
-    except:
-        print "You are not in Deusto's network"
-
-    return_dict = {
-        'groups': groups,
-    }
-
-    return render(request, "eu_elections_analytics/languages/group_index.html", return_dict)
+    return render(request, "eu_elections_analytics/languages/group_index.html")
 
 
 ####################################################################################################
@@ -463,37 +490,7 @@ def languages_group_index(request):
 ####################################################################################################
 
 def languages_candidate_index(request):
-    candidates = []
-
-    try:
-        cnx = mysql.connector.connect(**config)
-        cursor = cnx.cursor()
-
-        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(candidate_id, CHAR(100)) FROM groups)")
-
-        for result in cursor:
-            candidates.append({
-                'screen_name': result[0],
-            })
-
-        cursor.execute("SELECT screen_name FROM twitter_users WHERE id IN (SELECT CONVERT(subcandidate_id, CHAR(100)) FROM groups)")
-
-        for result in cursor:
-            candidates.append({
-                'screen_name': result[0],
-            })
-
-        cursor.close()
-        cnx.close()
-
-    except:
-        print "You are not in Deusto's network"
-
-    return_dict = {
-        'candidates': candidates,
-    }
-
-    return render(request, "eu_elections_analytics/languages/candidate_index.html", return_dict)
+    return render(request, "eu_elections_analytics/languages/candidate_index.html")
 
 
 ####################################################################################################
@@ -601,7 +598,7 @@ def languages_by_country(request, country_slug):
 
         for result in cursor:
             languages.append({
-                'text': result[0],
+                'lang': result[0],
                 'total': result[1],
             })
 

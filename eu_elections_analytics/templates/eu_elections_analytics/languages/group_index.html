@@ -4,23 +4,82 @@
 
 {% block content %}
 
-    <div class="row centered">
-        {% for group in groups %}
-            {% if forloop.counter0|divisibleby:4 %}{% endif %}
-            <div class="col-md-2 well country-well">
-                <a href="{% url 'languages_by_group' group.slug %}">
-                    {{ group.initials }}
-                </a>
-            </div>
-        {% endfor %}
+    <div class="row">
+        <div class="col-md-6">
+            <blockquote class="aecr">
+                <p>
+                    <a href="{% url 'languages_by_group' 'aecr' %}">
+                        European Conservatives and reformists (AECR)
+                    </a>
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="col-md-6">
+            <blockquote class="alde">
+                <p>
+                    <a href="{% url 'languages_by_group' 'alde' %}">
+                        Alliance of liberals and democrats of Europe (ALDE)
+                    </a>
+                </p>
+            </blockquote>
+        </div>
     </div>
 
-{% endblock %}
+    <div class="row">
+        <div class="col-md-6">
+            <blockquote class="epp">
+                <p>
+                    <a href="{% url 'languages_by_group' 'epp' %}">
+                        European People´s Party (EPP)
+                    </a>
+                </p>
+            </blockquote>
+        </div>
 
+        <div class="col-md-6">
+            <blockquote class="greens-efa">
+                <p>
+                    <a href="{% url 'languages_by_group' 'greens-efa' %}">
+                        The Greens / European Free (Greens/EFA)
+                    </a>
+                </p>
+            </blockquote>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <blockquote class="meld">
+                <p>
+                    <a href="{% url 'languages_by_group' 'meld' %}">
+                        Europe for Freedom and Democracy (MELD)
+                    </a>
+                </p>
+            </blockquote>
+        </div>
 
-{% block scripts %}
+        <div class="col-md-6">
+            <blockquote class="pel">
+                <p>
+                    <a href="{% url 'languages_by_group' 'pel' %}">
+                        European Left (PEL)
+                    </a>
+                </p>
+            </blockquote>
+        </div>
+    </div>
 
-
+    <div class="row">
+        <div class="col-md-6">
+            <blockquote class="pes">
+                <p>
+                    <a href="{% url 'languages_by_group' 'pes' %}">
+                        Socialists & Democrats (PES)
+                    </a>
+                </p>
+            </blockquote>
+        </div>
+    </div>
 
 {% endblock %}

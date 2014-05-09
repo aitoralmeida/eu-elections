@@ -4,16 +4,80 @@
 
 {% block content %}
 
-    <div class="row centered">
-        {% for candidates in candidates %}
-            {% if forloop.counter0|divisibleby:4 %}{% endif %}
-            <div class="col-md-2 well country-well">
-                <a href="{% url 'hashtags_by_candidate' candidates.screen_name %}">
-                    {{ candidates.screen_name }}
-                </a>
-            </div>
-        {% endfor %}
+    <div class="row">
+        <div class="col-md-4 candidate">
+            <a href="{% url 'hashtags_by_candidate' 'tsipras_eu' %}">
+                <img id="alexis_tsipras" src="{{ STATIC_PREFIX }}img/candidates/alexis_tsipras.jpeg" class="img-circle" alt="Alexis Tsipras">
+            </a>
+
+            <a target="_blank" href="https://twitter.com/tsipras_eu">
+                <h1>Alexis Tsipras</h1>
+            </a>
+            <h2>Candidato por <a href="{% url 'view_group' 'pel' %}">PEL</a></h2>
+        </div>
+
+        <div class="col-md-4 candidate">
+            <a href="{% url 'hashtags_by_candidate' 'GuyVerhofstadt' %}">
+                <img id="guy_verhofstadt" src="{{ STATIC_PREFIX }}img/candidates/guy_verhofstadt.jpeg" class="img-circle" alt="Guy Verhofstadt">
+            </a>
+
+            <a target="_blank" href="https://twitter.com/GuyVerhofstadt">
+                <h1>Guy Verhofstadt</h1>
+            </a>
+            <h2>Candidato por <a href="{% url 'view_group' 'alde' %}">ALDE</a></h2>
+        </div>
+
+        <div class="col-md-4 candidate">
+            <a href="{% url 'hashtags_by_candidate' 'JunckerEU' %}">
+                <img id="jean_claude_juncker" src="{{ STATIC_PREFIX }}img/candidates/jean_claude_juncker.jpeg" class="img-circle" alt="Jean-Claude Juncker">
+            </a>
+
+            <a target="_blank" href="https://twitter.com/JunckerEU">
+                <h1>Jean-Claude Juncker</h1>
+            </a>
+            <h2>Candidato por <a href="{% url 'view_group' 'epp' %}">EPP</a></h2>
+        </div>
     </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-4 candidate">
+            <a href="{% url 'hashtags_by_candidate' 'josebove' %}">
+                <img id="jose_bove" src="{{ STATIC_PREFIX }}img/candidates/jose_bove.jpeg" class="img-circle" alt="José Bové">
+            </a>
+
+            <a target="_blank" href="https://twitter.com/josebove">
+                <h1>José Bové</h1>
+            </a>
+            <h2>Candidato por <a href="{% url 'view_group' 'greens-efa' %}">Greens/EFA</a></h2>
+        </div>
+
+        <div class="col-md-4 candidate">
+            <a href="{% url 'hashtags_by_candidate' 'SkaKeller' %}">
+                <img id="ska_keller" src="{{ STATIC_PREFIX }}img/candidates/ska_keller.png" class="img-circle" alt="Ska Keller">
+            </a>
+
+            <a target="_blank" href="https://twitter.com/SkaKeller">
+                <h1>Ska Keller</h1>
+            </a>
+            <h2>Candidata por <a href="{% url 'view_group' 'greens-efa' %}">Greens/EFA</a></h2>
+        </div>
+
+        <div class="col-md-4 candidate">
+            <a href="{% url 'hashtags_by_candidate' 'MartinSchulz' %}">
+                <img id="martin_schulz" src="{{ STATIC_PREFIX }}img/candidates/martin_schulz.jpeg" class="img-circle" alt="Martin Schulz">
+            </a>
+
+            <a target="_blank" href="https://twitter.com/MartinSchulz">
+                <h1>Martin Schulz</h1>
+            </a>
+            <h2>Candidato por <a href="{% url 'view_group' 'pes' %}">PES</a></h2>
+        </div>
+    </div>
+
+    <br>
 
 {% endblock %}
 

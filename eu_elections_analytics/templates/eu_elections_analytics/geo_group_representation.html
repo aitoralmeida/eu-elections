@@ -5,7 +5,6 @@
 {% block header_css %}
 
     <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/leaflet.css">
-    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/leaflet.awesome-markers.css">
 
     <style>
         #map {
@@ -20,34 +19,37 @@
 {% block content %}
 
     <div class="center">
-        <span id="AECR-button" type="button" class="btn btn-AECR" onclick="toogleLayerGroupVisibility(this, 'AECR');">
-            AECR&emsp;<span class="badge">13</span>
+        <span type="button" class="btn btn-aecr" onclick="toogleLayerGroupVisibility(this, 'aecr');">
+            AECR&emsp;<span class="badge count-span">13</span>
         </span>
 
-        <span id="ALDE-button" type="button" class="btn btn-ALDE" onclick="toogleLayerGroupVisibility(this, 'ALDE');">
-            ALDE&emsp;<span class="badge">29</span>
+        <span type="button" class="btn btn-alde" onclick="toogleLayerGroupVisibility(this, 'alde');">
+            ALDE&emsp;<span class="badge count-span">29</span>
         </span>
 
-        <span id="EPP-button" type="button" class="btn btn-EPP" onclick="toogleLayerGroupVisibility(this, 'EPP');">
-            EPP&emsp;<span class="badge">52</span>
+        <span type="button" class="btn btn-epp" onclick="toogleLayerGroupVisibility(this, 'epp');">
+            EPP&emsp;<span class="badge count-span">52</span>
         </span>
 
-        <span id="Greens-EFA-button" type="button" class="btn btn-Greens-EFA" onclick="toogleLayerGroupVisibility(this, 'Greens/EFA');">
-            Greens/EFA&emsp;<span class="badge">25</span>
+        <span type="button" class="btn btn-greensefa" onclick="toogleLayerGroupVisibility(this, 'greensefa');">
+            Greens/EFA&emsp;<span class="badge count-span">25</span>
         </span>
 
-        <span id="MELD-button" type="button" class="btn btn-MELD" onclick="toogleLayerGroupVisibility(this, 'MELD');">
-            MELD&emsp;<span class="badge">13</span>
+        <span type="button" class="btn btn-meld" onclick="toogleLayerGroupVisibility(this, 'meld');">
+            MELD&emsp;<span class="badge count-span">13</span>
         </span>
 
-        <span id="PEL-button" type="button" class="btn PEL-ngl" onclick="toogleLayerGroupVisibility(this, 'PEL');">
-            PEL&emsp;<span class="badge">17</span>
+        <span type="button" class="btn btn-pel" onclick="toogleLayerGroupVisibility(this, 'pel');">
+            PEL&emsp;<span class="badge count-span">17</span>
         </span>
 
-        <span id="PES-button" type="button" class="btn PES-greens" onclick="toogleLayerGroupVisibility(this, 'PES');">
-            PES&emsp;<span class="badge">31</span>
+        <span type="button" class="btn btn-pes" onclick="toogleLayerGroupVisibility(this, 'pes');">
+            PES&emsp;<span class="badge count-span">31</span>
         </span>
 
+        <span type="button" class="btn btn-ni-spain" onclick="toogleLayerGroupVisibility(this, 'ni-spain');">
+            No inscritos en España&emsp;<span class="badge count-span">9</span>
+        </span>
     </div>
 
     <br>
@@ -63,49 +65,30 @@
 {% block scripts %}
 
     <script src="{{ STATIC_PREFIX }}js/leaflet.js"></script>
-    <script src="{{ STATIC_PREFIX }}js/leaflet.awesome-markers.min.js"></script>
 
     <script>
-        // var group_colors = [
-        //     "#f7981d",  // ALDE
-        //     "#858585",  // EAF
-        //     "#22205f",  // ECR
-        //     "#973693",  // EFD
-        //     "#6598cb",  // EPP
-        //     "#981b1e",  // GUE/NGL
-        //     "#0b9147",  // Greens
-        //     "#ef4d4d"   // S&D
-        // ];
+        var partyIcon = L.Icon.extend({options: {iconSize: [30, 48]}});
 
-        var partyIcon = L.Icon.extend({
-            options: {
-                shadowUrl: '/static/img/shadow.png',
-                iconSize: [30, 48],
-                shadowSize: [35, 16],
-            }
-        });
-
+        var aecrIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/aecr.png'});
         var aldeIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/alde.png'});
-        var eafIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/eaf.png'});
-        var ecrIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/ecr.png'});
-        var efdIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/efd.png'});
         var eppIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/epp.png'});
-        var guenglIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/gue_ngl.png'});
-        var greensIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/greens.png'});
-        var sdIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/sd.png'});
+        var greensefaIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/greens-efa.png'});
+        var meldIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/meld.png'});
+        var pelIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/pel.png'});
+        var pesIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/pes.png'});
+        var nispainIcon = new partyIcon({iconUrl: '{{ STATIC_PREFIX }}img/icons/ni-spain.png'});
 
         var iconObject = {
+            "AECR": aecrIcon,
             "ALDE": aldeIcon,
-            "EAF": eafIcon,
-            "ECR": ecrIcon,
-            "EFD": efdIcon,
             "EPP": eppIcon,
-            "GUE/NGL": guenglIcon,
-            "Greens": greensIcon,
-            "S&D": sdIcon
+            "Greens/EFA": greensefaIcon,
+            "MELD": meldIcon,
+            "PEL": pelIcon,
+            "PES": pesIcon,
+            "NI - SPAIN": nispainIcon
         };
 
-        // var map = L.map('map').setView([51.5, -0.1], 5);
         var map = L.map('map').setView([48.779209, 9.1772152], 4);
 
         var osm_tile = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -114,16 +97,14 @@
 
         L.tileLayer(osm_tile, {maxZoom: 18}).addTo(map);
 
+        var aecr = [];
         var alde = [];
-        var eaf = [];
-        var ecr = [];
-        var efd = [];
         var epp = [];
-        var gue_ngl = [];
-        var greens = [];
-        var sd = [];
-
-        var alde_layergroup;
+        var greensefa = [];
+        var meld = [];
+        var pel = [];
+        var pes = [];
+        var nispain = [];
 
         var parties_json;
         $.getJSON("{{ STATIC_PREFIX }}data/all_parties_data.json", function(json) {
@@ -132,58 +113,61 @@
             for (var party_index in parties_json) {
                 var party = parties_json[party_index];
 
-                var popupContent = "<h5>" + party.name + " (" + party.group + ")</h5>" + party.wikipedia_site + "<br>" + party.city + " (" + party.country + ") <br>(" + party.lat + ", " + party.lng +")";
+                var url = "{% url 'view_group' 'party.group' %}";
+                url = url.replace('party.group', party.group);
+
+                var popupContent = "<h5>" + party.name + "&emsp;(<a href='" + url + "'>" + party.group + "</a>)</h5>";
                 var marker = L.marker([party.lat, party.lng], {icon: iconObject[party.group]}).bindPopup(popupContent);
 
-                if (party.group == "ALDE") {
+                if (party.group == "AECR") {
+                    aecr.push(marker);
+                }
+                else if (party.group == "ALDE") {
                     alde.push(marker);
-                }
-                else if (party.group == "EAF") {
-                    eaf.push(marker);
-                }
-                else if (party.group == "ECR") {
-                    ecr.push(marker);
-                }
-                else if (party.group == "EFD") {
-                    efd.push(marker);
                 }
                 else if (party.group == "EPP") {
                     epp.push(marker);
                 }
-                else if (party.group == "GUE/NGL") {
-                    gue_ngl.push(marker);
+                else if (party.group == "Greens/EFA") {
+                    greensefa.push(marker);
                 }
-                else if (party.group == "Greens") {
-                    greens.push(marker);
+                else if (party.group == "MELD") {
+                    meld.push(marker);
                 }
-                else if (party.group == "S&D") {
-                    sd.push(marker);
+                else if (party.group == "PEL") {
+                    pel.push(marker);
+                }
+                else if (party.group == "PES") {
+                    pes.push(marker);
+                }
+                else if (party.group == "NI - SPAIN") {
+                    nispain.push(marker);
                 }
             };
+
+            aecr_layergroup = L.layerGroup(aecr);
+            aecr_layergroup.addTo(map);
 
             alde_layergroup = L.layerGroup(alde);
             alde_layergroup.addTo(map);
 
-            eaf_layergroup = L.layerGroup(eaf);
-            eaf_layergroup.addTo(map);
-
-            ecr_layergroup = L.layerGroup(ecr);
-            ecr_layergroup.addTo(map);
-
-            efd_layergroup = L.layerGroup(efd);
-            efd_layergroup.addTo(map);
-
             epp_layergroup = L.layerGroup(epp);
             epp_layergroup.addTo(map);
 
-            gue_ngl_layergroup = L.layerGroup(gue_ngl);
-            gue_ngl_layergroup.addTo(map);
+            greensefa_layergroup = L.layerGroup(greensefa);
+            greensefa_layergroup.addTo(map);
 
-            greens_layergroup = L.layerGroup(greens);
-            greens_layergroup.addTo(map);
+            meld_layergroup = L.layerGroup(meld);
+            meld_layergroup.addTo(map);
 
-            sd_layergroup = L.layerGroup(sd);
-            sd_layergroup.addTo(map);
+            pel_layergroup = L.layerGroup(pel);
+            pel_layergroup.addTo(map);
+
+            pes_layergroup = L.layerGroup(pes);
+            pes_layergroup.addTo(map);
+
+            nispain_layergroup = L.layerGroup(nispain);
+            nispain_layergroup.addTo(map);
         });
 
 
@@ -192,37 +176,37 @@
             var layer_group;
             var btn_class;
 
-            if (layer_group_name == 'alde') {
+            if (layer_group_name == 'aecr') {
+                layer_group = aecr_layergroup;
+                btn_class = 'btn-aecr';
+            }
+            else if (layer_group_name == 'alde') {
                 layer_group = alde_layergroup;
                 btn_class = 'btn-alde';
-            }
-            else if (layer_group_name == 'eaf') {
-                layer_group = eaf_layergroup;
-                btn_class = 'btn-eaf';
-            }
-            else if (layer_group_name == 'ecr') {
-                layer_group = ecr_layergroup;
-                btn_class = 'btn-ecr';
-            }
-            else if (layer_group_name == 'efd') {
-                layer_group = efd_layergroup;
-                btn_class = 'btn-efd';
             }
             else if (layer_group_name == 'epp') {
                 layer_group = epp_layergroup;
                 btn_class = 'btn-epp';
             }
-            else if (layer_group_name == 'gue-ngl') {
-                layer_group = gue_ngl_layergroup;
-                btn_class = 'btn-gue-ngl';
+            else if (layer_group_name == 'greensefa') {
+                layer_group = greensefa;
+                btn_class = 'btn-greensefa';
             }
-            else if (layer_group_name == 'greens') {
-                layer_group = greens_layergroup;
-                btn_class = 'btn-greens';
+            else if (layer_group_name == 'meld') {
+                layer_group = meld_layergroup;
+                btn_class = 'btn-meld';
             }
-            else if (layer_group_name == 'sd') {
-                layer_group = sd_layergroup;
-                btn_class = 'btn-sd';
+            else if (layer_group_name == 'pel') {
+                layer_group = pel_layergroup;
+                btn_class = 'btn-pel';
+            }
+            else if (layer_group_name == 'pes') {
+                layer_group = pes_layergroup;
+                btn_class = 'btn-pes';
+            }
+            else if (layer_group_name == 'nispain') {
+                layer_group = nispain_layergroup;
+                btn_class = 'btn-ni-spain';
             }
 
             // Toogle visibility
@@ -238,33 +222,6 @@
                 button.addClass("btn btn-default");
             }
         }
-
-
-
-        // L.layerGroup(alde).addTo(map);
-
-        // $.getJSON("{{ STATIC_PREFIX }}data/group_parties.json", function(json) {
-        //     for (var group_array_index in json) {
-        //         var group_array = json[group_array_index];
-
-        //         for (var party_index in group_array) {
-        //             var party = group_array[party_index];
-
-        //             var max = 0.05;
-        //             var min = -0.05;
-
-        //             var lat = parseFloat(party['data']['lat']) + Math.floor(Math.random()*(max-min+1)+min);
-        //             var lng = parseFloat(party['data']['lon']) + Math.floor(Math.random()*(max-min+1)+min);
-
-        //             var party_name = party['party'];
-        //             var group_name = party['data']['group'];
-
-        //             var popupContent = "<h5>" + party_name + " (" + group_name + ")</h5>";
-
-        //             L.marker([lat, lng], {icon: iconObject[group_name]}).bindPopup(popupContent).addTo(map);
-        //         }
-        //     }
-        // });
     </script>
 
 {% endblock %}
