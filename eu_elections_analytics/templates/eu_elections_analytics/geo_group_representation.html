@@ -113,7 +113,10 @@
             for (var party_index in parties_json) {
                 var party = parties_json[party_index];
 
-                var popupContent = "<h5>" + party.name + "&emsp;(<a href=\"{% url 'view_group' '" + party.group + "'%}\">" + party.group + "</a>)</h5>";
+                var url = "{% url 'view_group' 'party.group' %}";
+                url = url.replace('party.group', party.group);
+
+                var popupContent = "<h5>" + party.name + "&emsp;(<a href='" + url + "'>" + party.group + "</a>)</h5>";
                 var marker = L.marker([party.lat, party.lng], {icon: iconObject[party.group]}).bindPopup(popupContent);
 
                 if (party.group == "AECR") {
