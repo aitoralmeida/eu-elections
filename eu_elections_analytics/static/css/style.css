@@ -402,6 +402,10 @@ blockquote.pes {
     border-left: 10px solid #e90303;
 }
 
+blockquote.ni-spain {
+    border-left: 10px solid #000;
+}
+
 .candidate {
     text-align: center;
 }
