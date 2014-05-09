@@ -2,17 +2,9 @@
 
 
 
-{% block header_css %}
-
-    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/jqcloud.css">
-
-{% endblock %}
-
-
-
 {% block content %}
 
-    <div id="chart" style="width: 900px; height: 500px;"></div>
+    <div id="chart" style="width: 1100px; height: 500px;"></div>
 
 {% endblock %}
 
@@ -27,17 +19,13 @@
         google.setOnLoadCallback(drawChart);
 
         function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Day', '#queremosvotar', '#DPGValls', '#Europa'],
-                ['07 abr', 16, 44, 3],
-                ['08 abr', 651, 146, 541],
-                ['09 abr', 94, 84, 163],
-                ['10 abr', 54, 134, 643]
-            ]);
+            var data = google.visualization.arrayToDataTable({{ result|safe }});
 
             var options = {
-                title: 'Top Hashtags',
-                curveType: 'function'
+                title: 'Top hashtags',
+                // curveType: 'function',
+                curveType: 'none',
+                pointSize: 5
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('chart'));

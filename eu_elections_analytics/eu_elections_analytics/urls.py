@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^hashtags/grupo_parlamentario/(?P<group_slug>\S+)/$', 'eu_elections_analytics.views.hashtags_by_group', name='hashtags_by_group'),
     url(r'^hashtags/grupo_parlamentario/$', 'eu_elections_analytics.views.hashtags_group_index', name='hashtags_group_index'),
     #   Evolution
-    url(r'^hashtags/evolucion/$', 'eu_elections_analytics.views.hashtag_evolution', name='hashtag_evolution'),
+    url(r'^hashtags/evolucion/$', 'eu_elections_analytics.views.hashtags_evolution', name='hashtags_evolution'),
 
 
     # LANGUAGES
@@ -32,5 +32,5 @@ urlpatterns = patterns('',
     url(r'^idiomas/grupo_parlamentario/(?P<group_slug>\S+)/$', 'eu_elections_analytics.views.languages_by_group', name='languages_by_group'),
     url(r'^idiomas/grupo_parlamentario/$', 'eu_elections_analytics.views.languages_group_index', name='languages_group_index'),
     #   Evolution
-    # url(r'^idiomas/evolucion/$', 'eu_elections_analytics.views.languages_evolution', name='languages_evolution'),
+    url(r'^idiomas/evolucion/$', 'eu_elections_analytics.views.languages_evolution', name='languages_evolution'),
 )

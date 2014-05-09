@@ -1,0 +1,36 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block content %}
+
+    <div id="chart" style="width: 1100px; height: 500px;"></div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+    <script src="{{ STATIC_PREFIX }}js/gcharts.min.js"></script>
+
+    <script>
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable({{ result|safe }});
+
+            var options = {
+                title: 'Top idiomas',
+                // curveType: 'function',
+                curveType: 'none',
+                pointSize: 5
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+{% endblock %}
