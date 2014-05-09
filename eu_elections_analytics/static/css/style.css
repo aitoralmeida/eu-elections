@@ -341,7 +341,16 @@ g.country-axis > g.tick > text {
 }
 
 .country-well {
-    margin: 1.5em;
+    margin-bottom: 2.5em;
+}
+
+.country-well img {
+    border: 1px solid black;
+}
+
+.country-well a {
+    margin-left: 1.25em;
+    font-size: 1.25em;
 }
 
 #interaction-list {

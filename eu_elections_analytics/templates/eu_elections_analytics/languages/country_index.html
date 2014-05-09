@@ -9,10 +9,11 @@
     <br>
     <br>
 
-    <div class="row centered">
+    <div class="row">
         {% for country in countries %}
             {% if forloop.counter0|divisibleby:4 %}{% endif %}
-            <div class="col-md-2 well country-well">
+            <div class="col-md-3 country-well">
+                <img src="{{ STATIC_PREFIX }}img/flags/{{country.slug}}.png" width="100" height="66">
                 <a href="{% url 'languages_by_country' country.slug %}">
                     {{ country.long_name }}
                 </a>

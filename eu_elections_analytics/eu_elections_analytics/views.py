@@ -340,6 +340,8 @@ def hashtags_by_group(request, group_slug):
     except:
         print "You are not in Deusto's network"
 
+    group['slug'] = group_slug
+
     return_dict = {
         'group': group,
         'hashtags': hashtags,
@@ -568,6 +570,8 @@ def languages_by_group(request, group_slug):
 
     except:
         print "You are not in Deusto's network"
+
+    group['slug'] = group_slug
 
     return_dict = {
         'group': group,
