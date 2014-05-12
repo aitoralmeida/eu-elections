@@ -238,6 +238,96 @@ def view_group(request, group_slug):
 
 
 ####################################################################################################
+#####   View: mentions_es()
+####################################################################################################
+
+def mentions_es(request):
+    groups = []
+
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+
+    for group_initials in GROUPS:
+        group = {}
+
+        cursor.execute("Select name, slug from groups where initials = '%s'" % group_initials)
+        for result in cursor:
+            group['initials'] = group_initials
+            group['name'] = result[0]
+            group['slug'] = result[1]
+
+        cursor.execute("Select eu_total, co_total from europe_group where group_id = '%s'" % group_initials)
+        for result in cursor:
+            europe_mentions = result[0]
+            country_mentions = result[1]
+            total = europe_mentions + country_mentions
+
+            getcontext().prec = 3
+
+            european_discourse = (Decimal(europe_mentions) / Decimal(total)) * 100
+            national_discourse = (Decimal(country_mentions) / Decimal(total)) * 100
+
+            group['european_discourse'] = european_discourse
+            group['national_discourse'] = national_discourse
+
+            group['european_discourse_bar'] = round(european_discourse, 1)
+            group['national_discourse_bar'] = round(national_discourse, 1)
+
+        groups.append(group)
+
+    return_dict = {
+        'groups': groups,
+    }
+
+    return render(request, "eu_elections_analytics/mentions_es.html", return_dict)
+
+
+####################################################################################################
+#####   View: mentions_en()
+####################################################################################################
+
+def mentions_en(request):
+    groups = []
+
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+
+    for group_initials in GROUPS:
+        group = {}
+
+        cursor.execute("Select name, slug from groups where initials = '%s'" % group_initials)
+        for result in cursor:
+            group['initials'] = group_initials
+            group['name'] = result[0]
+            group['slug'] = result[1]
+
+        cursor.execute("Select eu_total, co_total from europe_group where group_id = '%s'" % group_initials)
+        for result in cursor:
+            europe_mentions = result[0]
+            country_mentions = result[1]
+            total = europe_mentions + country_mentions
+
+            getcontext().prec = 3
+
+            european_discourse = (Decimal(europe_mentions) / Decimal(total)) * 100
+            national_discourse = (Decimal(country_mentions) / Decimal(total)) * 100
+
+            group['european_discourse'] = european_discourse
+            group['national_discourse'] = national_discourse
+
+            group['european_discourse_bar'] = round(european_discourse, 1)
+            group['national_discourse_bar'] = round(national_discourse, 1)
+
+        groups.append(group)
+
+    return_dict = {
+        'groups': groups,
+    }
+
+    return render(request, "eu_elections_analytics/mentions_en.html", return_dict)
+
+
+####################################################################################################
 #####   View: group_representation_by_country()
 ####################################################################################################
 

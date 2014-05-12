@@ -1,0 +1,43 @@
+{% extends "eu_elections_analytics/base.html" %}
+
+
+
+{% block content %}
+
+    <h2>Porcentaje de menciones a <span class="europe">Europa</span> frente a la <span class="nation">Nación</span> en los tuits</h2>
+
+    <br>
+    <br>
+
+    {% for group in groups %}
+        <div class="row">
+            <div class="col-md-6">
+                <blockquote class="{{ group.slug }}">
+                    <p>
+                        <a href="{% url 'view_group' group.slug %}">
+                            {{ group.name }}&emsp;({{ group.initials }})
+                        </a>
+                    </p>
+                </blockquote>
+            </div>
+
+            <div class="col-md-6">
+                <div class="progress progress-centered">
+                    <div class="progress-bar progress-bar-info" style="width: {{ group.european_discourse_bar }}%">
+                        {{ group.european_discourse }}%
+                    </div>
+
+                    <div class="progress-bar progress-bar-success" style="width: {{ group.national_discourse_bar }}%">
+                        {{ group.national_discourse }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+{% block scripts %}
+{% endblock %}
