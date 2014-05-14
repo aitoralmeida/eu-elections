@@ -3,6 +3,7 @@
 
 from django.shortcuts import render
 from decimal import *
+from operator import itemgetter
 
 import mysql.connector
 
@@ -275,6 +276,8 @@ def mentions_es(request):
 
         groups.append(group)
 
+    groups = sorted(groups, key=itemgetter('european_discourse'))
+
     return_dict = {
         'groups': groups,
     }
@@ -319,6 +322,8 @@ def mentions_en(request):
             group['national_discourse_bar'] = round(national_discourse, 1)
 
         groups.append(group)
+
+    groups = sorted(groups, key=itemgetter('european_discourse'))
 
     return_dict = {
         'groups': groups,
