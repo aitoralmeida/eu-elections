@@ -31,9 +31,11 @@
 
     <script>
         var page_width = $("#main-container").width();
-        var col_3_width = (page_width / 12) * 3;
-        var col_9_width = (page_width / 12) * 9;
-        var col_height = 400;
+
+        var col_3_width = $(".col-md-3").width();
+        var col_9_width = $(".col-md-9").width();
+
+        var col_height = col_9_width / 1.618;   // Golden proportion
 
         var color = d3.scale.category20c();
 
@@ -78,12 +80,6 @@
             .attr("d", arc)
             .style("fill", function(d) { return color(d.data.total); });
 
-        // g_pie.append("text")
-        //     .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
-        //     .attr("dy", ".35em")
-        //     .style("text-anchor", "middle")
-        //     .text(function(d) { return d.data.lang; });
-
         /*
         *   Bar chart set-up
         */
@@ -109,7 +105,7 @@
             .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        x.domain(data.map(function(d) { return d.lang; }));
+        x.domain(data.sort(function(a, b) { return b.total - a.total; }).map(function(d) { return d.lang; }));
         y.domain([0, d3.max(data, function(d) { return Math.ceil((d.total) / 100) * 100; })]);
 
         svg_bar.append("g")
@@ -136,8 +132,9 @@
             .attr("class", "y axis")
             .call(yAxis)
             .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 6)
+            .attr("y", -20)
+            .attr("x", margin.left *2)
+            .attr("font-weight", "bold")
             .attr("dy", ".71em")
             .style("text-anchor", "end")
             .text("Número de tuits");
