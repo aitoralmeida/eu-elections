@@ -8,6 +8,9 @@ urlpatterns = patterns('',
     url(r'^interacciones_en_twitter/$', 'eu_elections_analytics.views.interaction_communities', name='interaction_communities'),
     url(r'^quienes_somos/$', 'eu_elections_analytics.views.about_us', name='about_us'),
 
+    url(r'^menciones/$', 'eu_elections_analytics.views.mentions_es', name='mentions_es'),
+    url(r'^mentions/$', 'eu_elections_analytics.views.mentions_en', name='mentions_en'),
+
     # HASHTAGS
     #   Candidates
     url(r'^hashtags/candidato/(?P<candidate_screen_name>\S+)/$', 'eu_elections_analytics.views.hashtags_by_candidate', name='hashtags_by_candidate'),

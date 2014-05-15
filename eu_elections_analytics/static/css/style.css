@@ -417,6 +417,7 @@ blockquote.ni-spain {
 
 .candidate {
     text-align: center;
+    margin-bottom: 2em;
 }
 
 .candidate img {
@@ -466,4 +467,18 @@ blockquote.ni-spain {
 
 .people p {
     text-align: justify;
+}
+
+.progress-centered {
+    margin-top: 0.9em;
+}
+
+.europe {
+    color: #5bc0de;
+    font-weight: bold;
+}
+
+.nation {
+    color: #5cb85c;
+    font-weight: bold;
 }
