@@ -562,16 +562,16 @@ def hashtags_evolution(request):
         cursor.execute("Select day, text, sum(total) from hash_group GROUP BY text ORDER BY sum(total)")
         nodes = cursor.fetchall()
 
-        for node in nodes[len(nodes)-5:]:
-            result[0].append('#'+str(node[1]))
+        for node in nodes[len(nodes) - 5:]:
+            result[0].append('#' + str(node[1]))
             tot = 1
 
             for day in day_list:
-                cursor.execute("Select day,text,sum(total) from hash_group WHERE text='%s'AND day = '%s' GROUP BY day" % (node[1], str(day)))
+                cursor.execute("Select day, text, sum(total) from hash_group WHERE text='%s'AND day = '%s' GROUP BY day" % (node[1], str(day)))
                 node_t = cursor.fetchall()
 
                 if len(node_t) > 0:
-                    result[tot].append(node_t[0][2])
+                    result[tot].append(int(node_t[0][2]))
                 else:
                     result[tot].append(0)
 
