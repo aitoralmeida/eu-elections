@@ -5,6 +5,8 @@ from django.shortcuts import render
 from decimal import *
 from operator import itemgetter
 
+from collections import OrderedDict
+
 import mysql.connector
 
 
@@ -513,7 +515,7 @@ def hashtags_by_country(request, country_slug):
                 'long_name': result[0],
             }
 
-        cursor.execute("Select text, sum(total) from hash_country where country_id = '%s' group by text" % country['long_name'])
+        cursor.execute("Select text, sum(total) from hash_country where country_id = '%s' group by text order by sum(total) desc limit 100" % country['long_name'])
 
         for result in cursor:
             hashtags.append({
