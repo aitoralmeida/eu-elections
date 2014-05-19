@@ -431,7 +431,7 @@ def hashtags_by_group(request, group_slug):
                 'user_id': result[1],
             }
 
-        cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text" % group['initials'])
+        cursor.execute("Select text, sum(total) from hash_group where group_id = '%s' group by text  order by sum(total) desc limit 100" % group['initials'])
 
         for result in cursor:
             hashtags.append({

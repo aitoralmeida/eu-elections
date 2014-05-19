@@ -12,7 +12,7 @@
 
 {% block content %}
 
-    <h1>{{ number }} hashtag{{ number|pluralize }} usados por el grupo parlamentario <a href="{% url 'view_group' group.slug %}"><strong>{{ group.initials }}</strong></a></h1>
+    <h1>Mostrando los {{ number }} hashtag{{ number|pluralize }} más usados por el grupo parlamentario <a href="{% url 'view_group' group.slug %}"><strong>{{ group.initials }}</strong></a></h1>
 
     <div class="centered">
         <!-- Dimensions of the tag cloud container element must be explicitly specified -->
