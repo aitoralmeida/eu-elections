@@ -78,7 +78,7 @@ def get_total_tweets_by_date_country():
     day_names = set()
 
     for i, party in enumerate(cache.parties):
-        print '%i of %i' % (i, len(cache.parties))
+#        print '%i of %i' % (i, len(cache.parties))
         try:
             if cache.parties[party]['group_id'] == 'NI - SPAIN':
                 continue
@@ -135,7 +135,7 @@ def get_total_tweets_by_date_group():
     day_names = set()
 
     for i, party in enumerate(cache.parties):
-        print '%i of %i' % (i, len(cache.parties))
+#        print '%i of %i' % (i, len(cache.parties))
         try:
             if cache.parties[party]['group_id'] == 'NI - SPAIN':
                 continue
@@ -175,8 +175,8 @@ def get_total_tweets_by_date_group():
                 days[day].append(0)           
            
            
-    print days
-    print groups   
+#    print days
+#    print groups   
 
     frame = DataFrame(days, index = groups)
     
@@ -282,8 +282,8 @@ def get_party_relations():
     cursor.close()        
     cnx.close()
     
-    print len(G.nodes())
-    print len(G.edges())
+#    print len(G.nodes())
+#    print len(G.edges())
     
     nx.write_gexf(G, open('./sna/party_relations.gexf', 'w'))  
     return G
@@ -322,7 +322,7 @@ def get_countries_activity():
     country_data = {}
     
     for i, party in enumerate(cache.parties):
-        print '%i of %i' % (i, len(cache.parties))
+#        print '%i of %i' % (i, len(cache.parties))
         if cache.parties[party]['group_id'] == 'NI - SPAIN':
                 continue
         try:
@@ -392,7 +392,64 @@ def load_eurobarometer():
             }
     return country_data
     
+def get_num_tweets():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    cursor.execute("SELECT COUNT(*) FROM tweets")
+    total = 0
+    for r in cursor:
+        total = r[0]
+    
+    
+    cursor.close()        
+    cnx.close()
+    return total
+    
+    
+def get_num_party_country_group_tweets():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    total_parties_tweets = 0
+    tweets_country = {}
+    tweets_group = {}
+    
+    for party in cache.parties:
 
+        if cache.parties[party]['group_id'] == 'NI - SPAIN':
+            continue
+            
+        try:
+            country = cache.locations[cache.parties[party]['location']]    
+        except: 
+            country = 'none'
+            
+        group = cache.parties[party]['group_id']
+        
+        cursor.execute("select count(*) FROM tweets WHERE user_id = '%s'" % cache.parties[party]['user_id'])
+        total = 0
+        for r in cursor:
+            total = r[0]
+            
+        if tweets_country.has_key(country):
+            tweets_country[country] += total
+        else:
+            tweets_country[country] = total
+            
+        if tweets_group.has_key(group):
+            tweets_group[group] += total
+        else:
+            tweets_group[group] = total
+            
+        total_parties_tweets+= total
+            
+    cursor.close()        
+    cnx.close()
+    
+    tweets_country = DataFrame(tweets_country, index= ['total_tweets'])
+    tweets_group = DataFrame(tweets_group, index= ['total_tweets'])
+    
+    return total_parties_tweets, tweets_country, tweets_group
+    
 
 def get_country_metrics():
     sna = get_countries_sna()
@@ -472,8 +529,8 @@ def get_country_metrics():
              'tweet_per_party' : tweet_per_party
     }
     
-    print data
-    print countries
+#    print data
+#    print countries
     data_frame = DataFrame(data, index = countries)
             
     sna_metrics = { 'degrees': degrees,
@@ -527,9 +584,11 @@ def get_metrics_correlations(metrics):
 
                         
 def get_summary_statistics(frame):    
-    print '\n-Tweets:' 
+    print '\n-Total tweets per country sorted:' 
     print frame.sort_index(by='total_tweets', ascending=False)['total_tweets']
-    print '\n-Total tweets:'
+    print '\n-Avg tweets by party per country sorted:' 
+    print frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party']
+    print '\n-Total tweets from countries:'
     print frame.sum()['total_tweets']
     print '\n-Max Countries:'
     print frame.idxmax()
@@ -543,8 +602,27 @@ def get_summary_statistics(frame):
     print frame.std()
 
 
-print ("\n*************ANALYZE COUNTRY METRICS*************************")
-        
+##run once before running the other methods
+#get_party_relations()
+#print 'done'
+
+print "\nSTARTING..."
+
+print "\n*************DATASET STATISTICS*************"
+
+print 'Counting total tweets...'
+total_tweets = get_num_tweets()
+print 'Counting tweets per group...'
+total_parties_tweets, tweets_country, tweets_group = get_num_party_country_group_tweets()
+
+print '-Total tweets:', total_tweets
+print '\n-Total tweets by parties: ', total_parties_tweets
+print '\n-Tweets per group: '
+print tweets_group.ix[0]
+
+print "\n\n\n*************ANALYZE COUNTRY METRICS*************"
+
+print 'Calculating country metrics...'       
 data_frame, metrics = get_country_metrics()
 
 #Tweets per party group by country graph
@@ -559,8 +637,8 @@ print '\n****METRIC CORRELATIONS****'
 get_metrics_correlations(metrics)
 
 
-print ("\n\n\n*************ANALYZE TIMELINE BY COUNTRY************************")
-
+print "\n\n\n*************ANALYZE TIMELINE BY COUNTRY*************"
+print 'Creating timeline...'
 t_country_day = get_total_tweets_by_date_country()
 tweet_metrics = []
 for c in t_country_day.T:
@@ -571,8 +649,8 @@ print '\n****COUNTRY PER DAY TWEETS CORRELATIONS****'
 get_metrics_correlations(tweet_metrics) 
 
 
-print ("\n\n\n*************ANALYZE TIMELINE BY GROUP************************")
-
+print "\n\n\n*************ANALYZE TIMELINE BY GROUP*************"
+print 'Creating timeline...'
 t_group_day = get_total_tweets_by_date_group()
 tweet_metrics = []
 for c in t_group_day.T:
@@ -589,4 +667,4 @@ fig = ax.get_figure()
 fig.savefig('tweet_per_day_bygroup.png')
 
 
-print 'done'
+print '\n\n\n*****DONE*****'
