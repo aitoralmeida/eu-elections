@@ -382,7 +382,7 @@ def get_countries_party_num():
     
 def load_eurobarometer():
     country_data = {}
-    with open('eurobarometer.csv', 'rb') as csvfile:
+    with open('./static_info/eurobarometer.csv', 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='|')
         for row in reader:
             country_data[row[1]] = {    'voice': row[2],
