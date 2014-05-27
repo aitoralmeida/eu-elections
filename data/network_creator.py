@@ -125,8 +125,9 @@ def build_interaction():
     
     print 'Nodes:', len(G.nodes())
     print 'Edges:', len(G.edges())
+    nx.write_gexf(G, './sna/interactions-nonfiltered-%s-%s.gexf' % (datetime.datetime.now().month, datetime.datetime.now().day))    
     
-    filter_weight(G, weight_limit = 3, degree_limit = 1)
+    filter_weight(G, weight_limit = 4, degree_limit = 0)
     
     print 'Nodes:', len(G.nodes())
     print 'Edges:', len(G.edges())
@@ -197,6 +198,7 @@ def filter_weight(G, weight_limit = 3, degree_limit = 1):
                 G.remove_node(node)
                 removed.append(node)
             
+print 'starting...'
 build_interaction() 
 print 'done'      
                 

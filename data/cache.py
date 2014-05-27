@@ -110,6 +110,8 @@ def _create_parties_cache():
         
         p_ids[user_id] = slug
         
+
+        
     cnx.close()
     
     json.dump(ps, open('./cache/parties.json', 'w'))
@@ -167,7 +169,8 @@ def regenerate_cache():
     _create_parties_cache()
     _create_ids_cache()
     
-regenerate_cache()
+#regenerate_cache()
+#print 'done'
 
 #******************CACHE VARIABLES*******************************    
     
@@ -176,8 +179,4 @@ groups = _load_groups_cache()
 parties = _load_parties_cache()
 parties_ids = _load_parties_ids_cache()
 twitter_ids = _load_ids_cache()
-print
-print
-print 'LALALALALALLALALALALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
-print parties_ids
 
