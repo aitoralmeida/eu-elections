@@ -123,7 +123,64 @@ def get_total_tweets_by_date_country():
 
     frame = DataFrame(days, index = countries)
     
-    return frame           
+    return frame    
+
+
+def get_total_tweets_by_date_group():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    
+    tweets_group_day = {}
+    groups = set()   
+    day_names = set()
+
+    for i, party in enumerate(cache.parties):
+        print '%i of %i' % (i, len(cache.parties))
+        try:
+            if cache.parties[party]['group_id'] == 'NI - SPAIN':
+                continue
+            
+            group = cache.parties[party]['group_id']
+            groups.add(group)
+            if not tweets_group_day.has_key(group):
+                tweets_group_day[group] = {}
+        except:
+             continue
+
+        cursor.execute("SELECT created_at, count(*) FROM tweets WHERE user_id='%s' GROUP BY created_at" % cache.parties[party]['user_id']) 
+          
+        for result in  cursor:
+            day = result[0]
+            day_names.add(str(day))
+            total = result[1]
+            if tweets_group_day[group].has_key(str(day)):
+                tweets_group_day[group][str(day)] += total
+            else: 
+                tweets_group_day[group][str(day)] = total
+   
+            
+    groups = list(groups)
+    groups.sort()
+    day_names = list(day_names)
+    day_names.sort()
+    days = {}
+    for group in groups:   
+        for day in day_names:
+            if not days.has_key(day):
+                days[day] = []
+               
+            try:
+                days[day].append(tweets_group_day[group][day])
+            except:
+                days[day].append(0)           
+           
+           
+    print days
+    print groups   
+
+    frame = DataFrame(days, index = groups)
+    
+    return frame             
              
    
     
@@ -490,7 +547,7 @@ print ("\n*************ANALYZE COUNTRY METRICS*************************")
         
 data_frame, metrics = get_country_metrics()
 
-#Tweets per party group by countruy graph
+#Tweets per party group by country graph
 ax = data_frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party'].plot(kind='bar')
 ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
 fig = ax.get_figure()
@@ -513,6 +570,23 @@ for c in t_country_day.T:
 print '\n****COUNTRY PER DAY TWEETS CORRELATIONS****'
 get_metrics_correlations(tweet_metrics) 
 
+
+print ("\n\n\n*************ANALYZE TIMELINE BY GROUP************************")
+
+t_group_day = get_total_tweets_by_date_group()
+tweet_metrics = []
+for c in t_group_day.T:
+    tweet_metrics.append( {c:list(t_group_day.T[c])} )
+    
+    
+print '\n****GROUP PER DAY TWEETS CORRELATIONS****'
+get_metrics_correlations(tweet_metrics) 
+
+#Tweets per party group by country graph
+ax = t_group_day.T.plot()
+ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
+fig = ax.get_figure()
+fig.savefig('tweet_per_day_bygroup.png')
 
 
 print 'done'
