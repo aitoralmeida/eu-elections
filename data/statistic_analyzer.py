@@ -359,7 +359,7 @@ def get_sna(path):
     for c in closeness:
         sna_data[c]['closeness'] = closeness[c]
         
-    eigenvector = nx.eigenvector_centrality(G)
+    eigenvector = nx.eigenvector_centrality_numpy(G)
     for c in eigenvector:
         sna_data[c]['eigenvector'] = eigenvector[c]
         
@@ -457,6 +457,14 @@ def load_eurobarometer():
                                         'economic': row[4],
                                         'citizen': row[5]      
             }
+    return country_data
+    
+def load_turnout():
+    country_data = {}
+    with open('./static_info/turnout.csv', 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        for row in reader:
+            country_data[row[1]] = {'turnout': row[2]}
     return country_data
     
 def load_homophily():
@@ -613,11 +621,12 @@ def get_group_metrics():
     return data_frame, metrics
 
 def get_country_metrics():
-    sna = get_sna('./sna/party_relations.gexf')
+    sna = get_sna('./sna/country_relations.gexf')
     discourse = get_countries_discourse()
     eurobarometer = load_eurobarometer()
     activity = get_countries_activity()
     num_parties = get_countries_party_num()
+    turnout_data = load_turnout()
     
     
     countries = []
@@ -635,6 +644,7 @@ def get_country_metrics():
     future_europe = []
     economic_union = []
     be_citizen = []
+    turnout = []
     
     for country in sna:
         countries.append(country)
@@ -671,6 +681,11 @@ def get_country_metrics():
         except:
             print 'Error', country
             
+        try:
+            turnout.append(float(turnout_data[country]['turnout'])/100)
+        except:
+            print 'Error', country
+            
     tweet_per_party = list(np.array(total_tweets)*1.0/np.array(country_parties))
     
     data = { 'degrees': degrees,
@@ -687,7 +702,8 @@ def get_country_metrics():
              'discourse_country_per': discourse_country_per,
              'discourse_country_uses': discourse_country_uses,
              'country_parties' : country_parties,
-             'tweet_per_party' : tweet_per_party
+             'tweet_per_party' : tweet_per_party,
+             'turnout' : turnout
     }
     
 #    print data
@@ -715,7 +731,9 @@ def get_country_metrics():
                          'discourse_country_uses': discourse_country_uses
     }
     
-    metrics = [sna_metrics, eurobarometer_metrics, discourse_metrics]
+    turnout_metrics = {'turnout' : turnout}
+    
+    metrics = [turnout_metrics, sna_metrics, eurobarometer_metrics, discourse_metrics]
     
     return data_frame, metrics
     
