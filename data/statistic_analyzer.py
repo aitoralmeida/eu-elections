@@ -244,6 +244,55 @@ def get_country_relations():
     nx.write_gexf(G, open('./sna/country_relations.gexf', 'w'))   
     return G
     
+def get_group_relations():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    G = nx.Graph()
+
+    for party1 in cache.parties:
+        try:
+            if cache.parties[party1]['group_id'] == 'NI - SPAIN':
+                continue
+            
+            group1 = cache.parties[party1]['group_id']
+            if not G.has_node(group1):
+                G.add_node(group1)
+        except:
+            continue
+        
+
+                
+        for party2 in cache.parties:
+            if cache.parties[party2]['group_id'] == 'NI - SPAIN':
+                continue
+            
+            if party1 != party2:     
+                try:
+                    group2 = cache.parties[party2]['group_id']
+                    if not G.has_node(group2):
+                        G.add_node(group2)
+                except:
+                    continue
+                cursor.execute("SELECT sum(weight) FROM interactions WHERE user_id='%s' AND target_id='%s'" % (cache.parties[party1]['user_id'], cache.parties[party2]['user_id']))
+                weight = 0                
+                for result in cursor:
+                    try:
+                        weight = int(result[0])
+                    except:
+                        pass
+                if weight != 0:
+                    if G.has_edge(group1, group2):
+                        G.edge[group1][group2]['weight'] += weight
+                    else:
+                        G.add_edge(group1, group2, weight = weight)
+                                    
+    cursor.close()        
+    cnx.close()
+    
+
+    nx.write_gexf(G, open('./sna/group_relations.gexf', 'w'))   
+    return G
+    
 def get_party_relations(): 
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -288,32 +337,33 @@ def get_party_relations():
     nx.write_gexf(G, open('./sna/party_relations.gexf', 'w'))  
     return G
     
-def get_countries_sna():
-    country_data = {}
+    
+def get_sna(path):
+    sna_data = {}
     print 'Building relations graph'
-    G = nx.read_gexf('./sna/country_relations.gexf')
+    G = nx.read_gexf(path)
         
     print 'Calculating centralities'
     degrees = G.degree()
     for c in degrees:
-        country_data[c] = { 'degree':degrees[c],
+        sna_data[c] = { 'degree':degrees[c],
                             'betweenness':0,
                             'closeness':0,
                             'eigenvector':0}
         
     betweenness = nx.betweenness_centrality(G)
     for c in betweenness:
-        country_data[c]['betweenness'] = betweenness[c]
+        sna_data[c]['betweenness'] = betweenness[c]
         
     closeness = nx.closeness_centrality(G)
     for c in closeness:
-        country_data[c]['closeness'] = closeness[c]
+        sna_data[c]['closeness'] = closeness[c]
         
     eigenvector = nx.eigenvector_centrality(G)
     for c in eigenvector:
-        country_data[c]['eigenvector'] = eigenvector[c]
+        sna_data[c]['eigenvector'] = eigenvector[c]
         
-    return country_data
+    return sna_data
 
 def get_countries_activity():
     print 'Recovering countries twitter activity'
@@ -362,6 +412,23 @@ def get_countries_discourse():
                                         
     return country_data
     
+def get_groups_discourse():
+    print 'Recovering discourse info'
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    cursor.execute('SELECT group_id, eu_total, co_total FROM europe_group')
+    group_data = {}
+    
+    for r in cursor:
+        group = r[0]
+        europe = r[1]
+        country = r[2]
+                
+        group_data[group] = { 'europe':europe,
+                                'country':country}
+                                        
+    return group_data
+    
 def get_countries_party_num():
     country_data = {}
     for party in cache.parties:
@@ -392,6 +459,20 @@ def load_eurobarometer():
             }
     return country_data
     
+def load_homophily():
+    #calculated by Juan
+    party_homophily = { 'PEL': 83.59,
+                        'PES': 96.14,
+                        'ALDE': 90.43,
+                        'Greens/EFA': 71.35,
+                        'EPP': 96.55,
+                        'AECR': 65.00,
+                        'MELD': 93.75,
+    
+    }
+    
+    return party_homophily
+    
 def get_num_tweets():
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -405,54 +486,134 @@ def get_num_tweets():
     cnx.close()
     return total
     
-    
-def get_num_party_country_group_tweets():
+def get_groups_activity():
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
-    total_parties_tweets = 0
-    tweets_country = {}
     tweets_group = {}
+    parties_group = {}
+
     
     for party in cache.parties:
 
         if cache.parties[party]['group_id'] == 'NI - SPAIN':
             continue
-            
-        try:
-            country = cache.locations[cache.parties[party]['location']]    
-        except: 
-            country = 'none'
-            
+                        
         group = cache.parties[party]['group_id']
         
         cursor.execute("select count(*) FROM tweets WHERE user_id = '%s'" % cache.parties[party]['user_id'])
         total = 0
         for r in cursor:
             total = r[0]
-            
-        if tweets_country.has_key(country):
-            tweets_country[country] += total
-        else:
-            tweets_country[country] = total
+
             
         if tweets_group.has_key(group):
             tweets_group[group] += total
         else:
             tweets_group[group] = total
             
-        total_parties_tweets+= total
+        if parties_group.has_key(group):
+            parties_group[group] += 1
+        else:
+            parties_group[group] = 1
+
             
     cursor.close()        
     cnx.close()
     
-    tweets_country = DataFrame(tweets_country, index= ['total_tweets'])
-    tweets_group = DataFrame(tweets_group, index= ['total_tweets'])
+        
+    return tweets_group, parties_group
     
-    return total_parties_tweets, tweets_country, tweets_group
     
+def get_group_metrics():
+    sna = get_sna('./sna/group_relations.gexf')
+    tweets_group, parties_group = get_groups_activity()
+    discourse = get_groups_discourse()
+    group_homophily = load_homophily()
+    
+    groups = []
+    total_tweets = []
+    total_parties = []
+    tweet_per_party = []
+    degrees = []
+    betweenness = []
+    closeness = []
+    eigenvector = []
+    homophily = []
+    discourse_europe_per = []
+    discourse_europe_uses = []
+    discourse_country_per = []
+    discourse_country_uses = []
+    
+    for group in tweets_group:
+        
+        
+        groups.append(group)
+        total_tweets.append(tweets_group[group])
+        total_parties.append(parties_group[group])
+        degrees.append(sna[group]['degree'])
+        betweenness.append(sna[group]['betweenness'])
+        closeness.append(sna[group]['closeness'])
+        eigenvector.append(sna[group]['eigenvector'])
+        homophily.append(group_homophily[group])
+        
+        try:
+            europe_use = float(discourse[group]['europe'])
+            country_use = float(discourse[group]['country'])
+            tweets_num = tweets_group[group]
+            
+            discourse_europe_per.append(europe_use/tweets_num)
+            discourse_europe_uses.append(europe_use/(europe_use + country_use))
+            discourse_country_per.append(country_use/tweets_num)
+            discourse_country_uses.append(country_use/(europe_use + country_use))
+        
+        except:
+            discourse_europe_per.append(0)
+            discourse_europe_uses.append(0)
+            discourse_country_per.append(0)
+            discourse_country_uses.append(0)
+        
+        
+    tweet_per_party = list(np.array(total_tweets) * 1.0/np.array(total_parties))
+    
+    data = { 'total_tweets' : total_tweets,
+             'total_parties' : total_parties,
+             'tweet_per_party': tweet_per_party ,
+             'degrees' : degrees, 
+             'betweenness': betweenness,
+             'closeness': closeness,
+             'eigenvector': eigenvector,
+             'homophily': homophily,
+             'discourse_europe_per': discourse_europe_per,
+             'discourse_europe_uses': discourse_europe_uses,
+             'discourse_country_per': discourse_country_per,
+             'discourse_country_uses': discourse_country_uses
+    }    
+    
+    data_frame = DataFrame(data, index = groups)
+    
+    sna_metrics = { 'degrees': degrees,
+                    'betweenness': betweenness,
+                    'closeness': closeness,
+                    'eigenvector': eigenvector,
+                    'total_tweets': total_tweets,
+                    'total_parties' : total_parties,
+                    'tweet_per_party': tweet_per_party                    
+    }
+    
+    homophily_metrics = {'homophily':homophily}
+    
+    discourse_metrics = { 'discourse_europe_per': discourse_europe_per,
+                          'discourse_europe_uses': discourse_europe_uses,
+                          'discourse_country_per': discourse_country_per,
+                          'discourse_country_uses': discourse_country_uses        
+    }
+    
+    metrics = [homophily_metrics, sna_metrics, discourse_metrics]
+    
+    return data_frame, metrics
 
 def get_country_metrics():
-    sna = get_countries_sna()
+    sna = get_sna('./sna/party_relations.gexf')
     discourse = get_countries_discourse()
     eurobarometer = load_eurobarometer()
     activity = get_countries_activity()
@@ -510,7 +671,7 @@ def get_country_metrics():
         except:
             print 'Error', country
             
-    tweet_per_party = list(np.array(total_tweets)/np.array(country_parties))
+    tweet_per_party = list(np.array(total_tweets)*1.0/np.array(country_parties))
     
     data = { 'degrees': degrees,
              'betweenness': betweenness,
@@ -539,7 +700,7 @@ def get_country_metrics():
                     'eigenvector': eigenvector,
                     'total_tweets': total_tweets,
                     'country_parties' : country_parties,
-                    'tweet-per-party': tweet_per_party
+                    'tweet_per_party': tweet_per_party
     }
     
     eurobarometer_metrics = { 'voice_positive': voice_positive,
@@ -584,15 +745,15 @@ def get_metrics_correlations(metrics):
 
                         
 def get_summary_statistics(frame):    
-    print '\n-Total tweets per country sorted:' 
-    print frame.sort_index(by='total_tweets', ascending=False)['total_tweets']
-    print '\n-Avg tweets by party per country sorted:' 
-    print frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party']
-    print '\n-Total tweets from countries:'
+    print '\n-Total tweets:'
     print frame.sum()['total_tweets']
-    print '\n-Max Countries:'
+    print '\n-Total tweets sorted:' 
+    print frame.sort_index(by='total_tweets', ascending=False)['total_tweets']
+    print '\n-Avg tweets by party sorted:' 
+    print frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party']
+    print '\n-Max:'
     print frame.idxmax()
-    print '\n-Min  Countries:'
+    print '\n-Min :'
     print frame.idxmin()
     print '\n-Mean:'
     print frame.mean()
@@ -604,6 +765,7 @@ def get_summary_statistics(frame):
 
 ##run once before running the other methods
 #get_party_relations()
+#get_group_relations()
 #print 'done'
 
 print "\nSTARTING..."
@@ -612,13 +774,16 @@ print "\n*************DATASET STATISTICS*************"
 
 print 'Counting total tweets...'
 total_tweets = get_num_tweets()
-print 'Counting tweets per group...'
-total_parties_tweets, tweets_country, tweets_group = get_num_party_country_group_tweets()
-
 print '-Total tweets:', total_tweets
-print '\n-Total tweets by parties: ', total_parties_tweets
-print '\n-Tweets per group: '
-print tweets_group.ix[0]
+
+
+
+
+#***********************COUNTRIES*********************************
+#***********************COUNTRIES*********************************
+#***********************COUNTRIES*********************************
+#***********************COUNTRIES*********************************
+
 
 print "\n\n\n*************ANALYZE COUNTRY METRICS*************"
 
@@ -649,6 +814,25 @@ print '\n****COUNTRY PER DAY TWEETS CORRELATIONS****'
 get_metrics_correlations(tweet_metrics) 
 
 
+
+
+#***********************GROUPS*********************************
+#***********************GROUPS*********************************
+#***********************GROUPS*********************************
+#***********************GROUPS*********************************
+
+
+print "\n\n\n*************ANALYZE GROUP METRICS*************"
+print 'Calculating group metrics...'
+frame, metrics = get_group_metrics()
+
+print '\n****SUMMARY STATISTICS****'
+get_summary_statistics(frame)
+
+print '\n****METRIC CORRELATIONS****'
+get_metrics_correlations(metrics)
+
+
 print "\n\n\n*************ANALYZE TIMELINE BY GROUP*************"
 print 'Creating timeline...'
 t_group_day = get_total_tweets_by_date_group()
@@ -660,7 +844,7 @@ for c in t_group_day.T:
 print '\n****GROUP PER DAY TWEETS CORRELATIONS****'
 get_metrics_correlations(tweet_metrics) 
 
-#Tweets per party group by country graph
+#Graph of the timeline of the tweets per group
 ax = t_group_day.T.plot()
 ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
 fig = ax.get_figure()
