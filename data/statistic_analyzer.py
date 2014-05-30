@@ -467,6 +467,14 @@ def load_turnout():
             country_data[row[1]] = {'turnout': row[2]}
     return country_data
     
+def load_mep_group():
+    group_data = {}
+    with open('./static_info/mep_group.csv', 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        for row in reader:
+            group_data[row[0]] = {'meps': int(row[1])}
+    return group_data
+    
 def load_homophily():
     #calculated by Juan
     party_homophily = { 'PEL': 83.59,
@@ -537,6 +545,7 @@ def get_group_metrics():
     tweets_group, parties_group = get_groups_activity()
     discourse = get_groups_discourse()
     group_homophily = load_homophily()
+    mep_data = load_mep_group()
     
     groups = []
     total_tweets = []
@@ -551,6 +560,7 @@ def get_group_metrics():
     discourse_europe_uses = []
     discourse_country_per = []
     discourse_country_uses = []
+    meps = []
     
     for group in tweets_group:
         
@@ -563,6 +573,7 @@ def get_group_metrics():
         closeness.append(sna[group]['closeness'])
         eigenvector.append(sna[group]['eigenvector'])
         homophily.append(group_homophily[group])
+        meps.append(mep_data[group]['meps'])
         
         try:
             europe_use = float(discourse[group]['europe'])
@@ -594,7 +605,8 @@ def get_group_metrics():
              'discourse_europe_per': discourse_europe_per,
              'discourse_europe_uses': discourse_europe_uses,
              'discourse_country_per': discourse_country_per,
-             'discourse_country_uses': discourse_country_uses
+             'discourse_country_uses': discourse_country_uses,
+             'meps' : meps
     }    
     
     data_frame = DataFrame(data, index = groups)
@@ -616,7 +628,9 @@ def get_group_metrics():
                           'discourse_country_uses': discourse_country_uses        
     }
     
-    metrics = [homophily_metrics, sna_metrics, discourse_metrics]
+    results_metrics = {'meps' : meps}
+    
+    metrics = [results_metrics, homophily_metrics, sna_metrics, discourse_metrics]
     
     return data_frame, metrics
 
@@ -733,7 +747,7 @@ def get_country_metrics():
     
     turnout_metrics = {'turnout' : turnout}
     
-    metrics = [turnout_metrics, sna_metrics, eurobarometer_metrics, discourse_metrics]
+    metrics = [sna_metrics, discourse_metrics, turnout_metrics, eurobarometer_metrics]
     
     return data_frame, metrics
     
@@ -797,47 +811,47 @@ print '-Total tweets:', total_tweets
 
 
 
-#***********************COUNTRIES*********************************
-#***********************COUNTRIES*********************************
-#***********************COUNTRIES*********************************
-#***********************COUNTRIES*********************************
-
-
-print "\n\n\n*************ANALYZE COUNTRY METRICS*************"
-
-print 'Calculating country metrics...'       
-data_frame, metrics = get_country_metrics()
-
-#Tweets per party group by country graph
-ax = data_frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party'].plot(kind='bar')
-ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
-fig = ax.get_figure()
-fig.savefig('tweet_per_party_by_country.png')
-
-print '\n****SUMMARY STATISTICS****'
-get_summary_statistics(data_frame)
-print '\n****METRIC CORRELATIONS****'
-get_metrics_correlations(metrics)
-
-
-print "\n\n\n*************ANALYZE TIMELINE BY COUNTRY*************"
-print 'Creating timeline...'
-t_country_day = get_total_tweets_by_date_country()
-tweet_metrics = []
-for c in t_country_day.T:
-    tweet_metrics.append( {c:list(t_country_day.T[c])} )
-    
-    
-print '\n****COUNTRY PER DAY TWEETS CORRELATIONS****'
-get_metrics_correlations(tweet_metrics) 
-
-
-
-
-#***********************GROUPS*********************************
-#***********************GROUPS*********************************
-#***********************GROUPS*********************************
-#***********************GROUPS*********************************
+##***********************COUNTRIES*********************************
+##***********************COUNTRIES*********************************
+##***********************COUNTRIES*********************************
+##***********************COUNTRIES*********************************
+#
+#
+#print "\n\n\n*************ANALYZE COUNTRY METRICS*************"
+#
+#print 'Calculating country metrics...'       
+#data_frame, metrics = get_country_metrics()
+#
+##Tweets per party group by country graph
+#ax = data_frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party'].plot(kind='bar')
+#ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
+#fig = ax.get_figure()
+#fig.savefig('tweet_per_party_by_country.png')
+#
+#print '\n****SUMMARY STATISTICS****'
+#get_summary_statistics(data_frame)
+#print '\n****METRIC CORRELATIONS****'
+#get_metrics_correlations(metrics)
+#
+#
+#print "\n\n\n*************ANALYZE TIMELINE BY COUNTRY*************"
+#print 'Creating timeline...'
+#t_country_day = get_total_tweets_by_date_country()
+#tweet_metrics = []
+#for c in t_country_day.T:
+#    tweet_metrics.append( {c:list(t_country_day.T[c])} )
+#    
+#    
+#print '\n****COUNTRY PER DAY TWEETS CORRELATIONS****'
+#get_metrics_correlations(tweet_metrics) 
+#
+#
+#
+#
+##***********************GROUPS*********************************
+##***********************GROUPS*********************************
+##***********************GROUPS*********************************
+##***********************GROUPS*********************************
 
 
 print "\n\n\n*************ANALYZE GROUP METRICS*************"
@@ -849,24 +863,24 @@ get_summary_statistics(frame)
 
 print '\n****METRIC CORRELATIONS****'
 get_metrics_correlations(metrics)
-
-
-print "\n\n\n*************ANALYZE TIMELINE BY GROUP*************"
-print 'Creating timeline...'
-t_group_day = get_total_tweets_by_date_group()
-tweet_metrics = []
-for c in t_group_day.T:
-    tweet_metrics.append( {c:list(t_group_day.T[c])} )
-    
-    
-print '\n****GROUP PER DAY TWEETS CORRELATIONS****'
-get_metrics_correlations(tweet_metrics) 
-
-#Graph of the timeline of the tweets per group
-ax = t_group_day.T.plot()
-ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
-fig = ax.get_figure()
-fig.savefig('tweet_per_day_bygroup.png')
+#
+#
+#print "\n\n\n*************ANALYZE TIMELINE BY GROUP*************"
+#print 'Creating timeline...'
+#t_group_day = get_total_tweets_by_date_group()
+#tweet_metrics = []
+#for c in t_group_day.T:
+#    tweet_metrics.append( {c:list(t_group_day.T[c])} )
+#    
+#    
+#print '\n****GROUP PER DAY TWEETS CORRELATIONS****'
+#get_metrics_correlations(tweet_metrics) 
+#
+##Graph of the timeline of the tweets per group
+#ax = t_group_day.T.plot()
+#ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
+#fig = ax.get_figure()
+#fig.savefig('tweet_per_day_bygroup.png')
 
 
 print '\n\n\n*****DONE*****'
