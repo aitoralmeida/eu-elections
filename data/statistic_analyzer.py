@@ -189,6 +189,8 @@ def get_sna(path):
     sna_data = {}
     print 'Building relations graph'
     G = nx.read_gexf(path)
+    print 'Nodes:', len(G.nodes())
+    print 'Edges:', len(G.edges())
         
     print 'Calculating centralities:'
     print '    -degrees'
@@ -642,8 +644,10 @@ def load_homophily():
 def get_party_metrics():
     #only parties
     #sna = get_sna('./sna/party_relations.gexf')
-    #complete network
-    sna = get_sna('./sna/interactions-nonfiltered-5-27.gexf')
+    #complete network, its quite big and takes some time
+    #sna = get_sna('./sna/interactions-nonfiltered-5-27.gexf')
+    #only relevant relations
+    sna = get_sna('./sna/interactions-5-27.gexf')
     activity_data = get_party_activity()
     percen_data = load_percen_party()
     
