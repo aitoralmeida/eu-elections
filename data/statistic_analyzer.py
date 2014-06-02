@@ -475,6 +475,20 @@ def load_mep_group():
             group_data[row[0]] = {'meps': int(row[1])}
     return group_data
     
+def load_percen_country():
+    country_data = {}
+    with open('./static_info/results_percen_party_country.csv', 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        for row in reader:
+            country = row[3]
+            percen = float(row[4].replace(',','.'))
+            if country_data.has_key(country):
+                country_data[country] += percen
+            else:
+                country_data[country] = percen
+                
+    return country_data
+    
 def load_homophily():
     #calculated by Juan
     party_homophily = { 'PEL': 83.59,
@@ -641,7 +655,7 @@ def get_country_metrics():
     activity = get_countries_activity()
     num_parties = get_countries_party_num()
     turnout_data = load_turnout()
-    
+    percen_data = load_percen_country()   
     
     countries = []
     country_parties = []     
@@ -659,6 +673,7 @@ def get_country_metrics():
     economic_union = []
     be_citizen = []
     turnout = []
+    percen_vote_captured = []
     
     for country in sna:
         countries.append(country)
@@ -700,6 +715,11 @@ def get_country_metrics():
         except:
             print 'Error', country
             
+        try:
+            percen_vote_captured.append(percen_data[country])
+        except:
+            print 'Error', country
+            
     tweet_per_party = list(np.array(total_tweets)*1.0/np.array(country_parties))
     
     data = { 'degrees': degrees,
@@ -717,7 +737,8 @@ def get_country_metrics():
              'discourse_country_uses': discourse_country_uses,
              'country_parties' : country_parties,
              'tweet_per_party' : tweet_per_party,
-             'turnout' : turnout
+             'turnout' : turnout,
+             'percen_vote_captured' : percen_vote_captured
     }
     
 #    print data
@@ -747,7 +768,9 @@ def get_country_metrics():
     
     turnout_metrics = {'turnout' : turnout}
     
-    metrics = [sna_metrics, discourse_metrics, turnout_metrics, eurobarometer_metrics]
+    result_metrics = {'percen_vote_captured' : percen_vote_captured}
+    
+    metrics = [sna_metrics, discourse_metrics, turnout_metrics, eurobarometer_metrics, result_metrics]
     
     return data_frame, metrics
     
@@ -817,23 +840,26 @@ print '-Total tweets:', total_tweets
 ##***********************COUNTRIES*********************************
 #
 #
-#print "\n\n\n*************ANALYZE COUNTRY METRICS*************"
-#
-#print 'Calculating country metrics...'       
-#data_frame, metrics = get_country_metrics()
-#
-##Tweets per party group by country graph
-#ax = data_frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party'].plot(kind='bar')
-#ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
-#fig = ax.get_figure()
-#fig.savefig('tweet_per_party_by_country.png')
-#
-#print '\n****SUMMARY STATISTICS****'
-#get_summary_statistics(data_frame)
-#print '\n****METRIC CORRELATIONS****'
-#get_metrics_correlations(metrics)
-#
-#
+print "\n\n\n*************ANALYZE COUNTRY METRICS*************"
+
+print 'Calculating country metrics...'       
+data_frame, metrics = get_country_metrics()
+
+#Tweets per party group by country graph
+ax = data_frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party'].plot(kind='bar')
+ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
+fig = ax.get_figure()
+fig.savefig('tweet_per_party_by_country.png')
+
+print '\n****SUMMARY STATISTICS****'
+print '\n-Captured vote:'
+print data_frame['percen_vote_captured']
+get_summary_statistics(data_frame)
+
+print '\n****METRIC CORRELATIONS****'
+get_metrics_correlations(metrics)
+
+
 #print "\n\n\n*************ANALYZE TIMELINE BY COUNTRY*************"
 #print 'Creating timeline...'
 #t_country_day = get_total_tweets_by_date_country()
@@ -852,17 +878,17 @@ print '-Total tweets:', total_tweets
 ##***********************GROUPS*********************************
 ##***********************GROUPS*********************************
 ##***********************GROUPS*********************************
-
-
-print "\n\n\n*************ANALYZE GROUP METRICS*************"
-print 'Calculating group metrics...'
-frame, metrics = get_group_metrics()
-
-print '\n****SUMMARY STATISTICS****'
-get_summary_statistics(frame)
-
-print '\n****METRIC CORRELATIONS****'
-get_metrics_correlations(metrics)
+#
+#
+#print "\n\n\n*************ANALYZE GROUP METRICS*************"
+#print 'Calculating group metrics...'
+#frame, metrics = get_group_metrics()
+#
+#print '\n****SUMMARY STATISTICS****'
+#get_summary_statistics(frame)
+#
+#print '\n****METRIC CORRELATIONS****'
+#get_metrics_correlations(metrics)
 #
 #
 #print "\n\n\n*************ANALYZE TIMELINE BY GROUP*************"
