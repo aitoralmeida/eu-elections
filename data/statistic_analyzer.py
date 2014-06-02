@@ -190,22 +190,26 @@ def get_sna(path):
     print 'Building relations graph'
     G = nx.read_gexf(path)
         
-    print 'Calculating centralities'
-    degrees = G.degree()
+    print 'Calculating centralities:'
+    print '    -degrees'
+    degrees = G.degree()    
     for c in degrees:
         sna_data[c] = { 'degree':degrees[c],
                             'betweenness':0,
                             'closeness':0,
                             'eigenvector':0}
         
+    print '    -betweenness'
     betweenness = nx.betweenness_centrality(G)
     for c in betweenness:
         sna_data[c]['betweenness'] = betweenness[c]
         
+    print '    -closeness'
     closeness = nx.closeness_centrality(G)
     for c in closeness:
         sna_data[c]['closeness'] = closeness[c]
         
+    print '    -eigenvector'
     eigenvector = nx.eigenvector_centrality_numpy(G)
     for c in eigenvector:
         sna_data[c]['eigenvector'] = eigenvector[c]
@@ -271,7 +275,10 @@ def get_party_activity():
     party_data = {}
     
     for party in cache.parties:
-        screen_name = cache.twitter_ids[cache.parties[party]['user_id']]
+        try:
+            screen_name = cache.twitter_ids[cache.parties[party]['user_id']]
+        except:
+            continue
 
         if cache.parties[party]['group_id'] == 'NI - SPAIN':
             continue
@@ -633,7 +640,10 @@ def load_homophily():
 
     
 def get_party_metrics():
-    sna = get_sna('./sna/party_relations.gexf')
+    #only parties
+    #sna = get_sna('./sna/party_relations.gexf')
+    #complete network
+    sna = get_sna('./sna/interactions-nonfiltered-5-27.gexf')
     activity_data = get_party_activity()
     percen_data = load_percen_party()
     
@@ -647,17 +657,31 @@ def get_party_metrics():
     
     for party in activity_data:
         
+        try: 
+            degrees.append(sna[party]['degree'])
+        except:
+            degrees.append(0)
+        try: 
+            betweenness.append(sna[party]['betweenness'])
+        except:
+            betweenness.append(0)
+        try: 
+            closeness.append(sna[party]['closeness'])
+        except:
+            closeness.append(0)
+        try: 
+            eigenvector.append(sna[party]['eigenvector'])
+        except:
+            eigenvector.append(0)
+        
+        
         parties.append(party)        
         total_tweets.append(activity_data[party])
-        degrees.append(sna[party]['degree'])
-        betweenness.append(sna[party]['betweenness'])
-        closeness.append(sna[party]['closeness'])
-        eigenvector.append(sna[party]['eigenvector'])
         
         try:
             percen_votes.append(percen_data[party])
         except:
-            percen_votes.append[0]
+            percen_votes.append(0)
         
         
     
@@ -782,7 +806,7 @@ def get_group_metrics():
     
     return data_frame, metrics
 
-def get_country_metrics():
+def get_country_metrics(): 
     sna = get_sna('./sna/country_relations.gexf')
     discourse = get_countries_discourse()
     eurobarometer = load_eurobarometer()
@@ -979,8 +1003,6 @@ print 'Calculating party metrics...'
 data_frame, metrics = get_party_metrics()
 
 print '\n****SUMMARY STATISTICS****'
-print '\n-Captured vote:'
-print data_frame['percen_vote_captured']
 get_summary_statistics(data_frame)
 
 print '\n****METRIC CORRELATIONS****'
