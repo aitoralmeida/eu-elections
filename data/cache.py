@@ -138,6 +138,7 @@ def _create_ids_cache():
     print 'CACHING TWITTER IDS'
     print
     ids = {}
+    ids_rev = {}
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()    
     query = "SELECT id, screen_name FROM twitter_users"
@@ -149,10 +150,12 @@ def _create_ids_cache():
        
         
         ids[twitter_id] = screen_name
+        ids_rev[screen_name] = twitter_id
         
     cnx.close()
     
     json.dump(ids, open('./cache/ids.json', 'w'))
+    json.dump(ids_rev, open('./cache/ids_rev.json', 'w'))
     
 def _load_ids_cache():
     try:
@@ -161,6 +164,14 @@ def _load_ids_cache():
         print 'Error loading groups'
         
     return res     
+    
+def _load_ids_rev_cache():
+    try:
+        res =json.load(open('./cache/ids_rev.json', 'r'))
+    except:
+        print 'Error loading groups'
+        
+    return res    
     
     
 def regenerate_cache():
@@ -179,4 +190,5 @@ groups = _load_groups_cache()
 parties = _load_parties_cache()
 parties_ids = _load_parties_ids_cache()
 twitter_ids = _load_ids_cache()
+twitter_ids_rev = _load_ids_rev_cache()
 
