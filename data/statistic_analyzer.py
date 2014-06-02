@@ -22,168 +22,10 @@ config = {
     'database': 'eu_test2',
 }
 
-def get_candidate_data():
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+#**************************Build social network graphs****************************
+#**************************Build social network graphs****************************
+#**************************Build social network graphs****************************
 
-    
-    candidates = ['JunckerEU', 'tsipras_eu', 'GuyVerhofstadt', 'josebove', 'SkaKeller', 'MartinSchulz']
-    for candidate in candidates:
-        
-        print '*******************************************'
-        print candidate
-        c_id = ''
-        query = "SELECT id from twitter_users WHERE screen_name='%s';" % (candidate)
-        cursor.execute(query)
-        for result in cursor:
-            c_id = result[0]
-        print c_id
-        
-        print
-        print 'LANGUAGES'
-        query = "SELECT lang, total FROM language_candidate WHERE candidate_id='%s' ORDER BY total DESC;" % (c_id)
-        cursor.execute(query)
-        for result in cursor:
-            print result[0], result[1]
-        
-        print
-        print 'MENTIONS'
-        query = "SELECT eu_total, co_total FROM europe_candidate WHERE candidate_id='%s';" % (c_id)
-        cursor.execute(query)
-        for result in cursor:
-            print 'Europe', result[0], 'Country', result[1]
-         
-        print
-        print 'HASHTAGS'
-        query = "SELECT text, SUM(total) FROM hash_candidate WHERE candidate_id='%s' GROUP BY text ORDER BY sum(total) DESC;" % (c_id)
-        cursor.execute(query)
-        i = 0
-        for result in cursor:
-            if i < 6:
-                print result[0], result[1]
-                i +=1
-        print
-        print 
-            
-
-    cursor.close()        
-    cnx.close()
-    
-def get_total_tweets_by_date_country():
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
-    
-    tweets_country_day = {}
-    countries = set()   
-    day_names = set()
-
-    for i, party in enumerate(cache.parties):
-#        print '%i of %i' % (i, len(cache.parties))
-        try:
-            if cache.parties[party]['group_id'] == 'NI - SPAIN':
-                continue
-            
-            country = cache.locations[cache.parties[party]['location']]
-            countries.add(country)
-            if not tweets_country_day.has_key(country):
-                tweets_country_day[country] = {}
-        except:
-            continue
-
-        cursor.execute("SELECT created_at, count(*) FROM tweets WHERE user_id='%s' GROUP BY created_at" % cache.parties[party]['user_id']) 
-          
-        for result in  cursor:
-            day = result[0]
-            day_names.add(str(day))
-            total = result[1]
-            if tweets_country_day[country].has_key(str(day)):
-                tweets_country_day[country][str(day)] += total
-            else: 
-                tweets_country_day[country][str(day)] = total
-   
-            
-    countries = list(countries)
-    countries.sort()
-    day_names = list(day_names)
-    day_names.sort()
-    days = {}
-    for country in countries:   
-        for day in day_names:
-            if not days.has_key(day):
-                days[day] = []
-               
-            try:
-                days[day].append(tweets_country_day[country][day])
-            except:
-                days[day].append(0)           
-           
-           
-#    print days
-#    print countries   
-
-    frame = DataFrame(days, index = countries)
-    
-    return frame    
-
-
-def get_total_tweets_by_date_group():
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
-    
-    tweets_group_day = {}
-    groups = set()   
-    day_names = set()
-
-    for i, party in enumerate(cache.parties):
-#        print '%i of %i' % (i, len(cache.parties))
-        try:
-            if cache.parties[party]['group_id'] == 'NI - SPAIN':
-                continue
-            
-            group = cache.parties[party]['group_id']
-            groups.add(group)
-            if not tweets_group_day.has_key(group):
-                tweets_group_day[group] = {}
-        except:
-             continue
-
-        cursor.execute("SELECT created_at, count(*) FROM tweets WHERE user_id='%s' GROUP BY created_at" % cache.parties[party]['user_id']) 
-          
-        for result in  cursor:
-            day = result[0]
-            day_names.add(str(day))
-            total = result[1]
-            if tweets_group_day[group].has_key(str(day)):
-                tweets_group_day[group][str(day)] += total
-            else: 
-                tweets_group_day[group][str(day)] = total
-   
-            
-    groups = list(groups)
-    groups.sort()
-    day_names = list(day_names)
-    day_names.sort()
-    days = {}
-    for group in groups:   
-        for day in day_names:
-            if not days.has_key(day):
-                days[day] = []
-               
-            try:
-                days[day].append(tweets_group_day[group][day])
-            except:
-                days[day].append(0)           
-           
-           
-#    print days
-#    print groups   
-
-    frame = DataFrame(days, index = groups)
-    
-    return frame             
-             
-   
-    
 def get_country_relations():
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -337,7 +179,12 @@ def get_party_relations():
     nx.write_gexf(G, open('./sna/party_relations.gexf', 'w'))  
     return G
     
-    
+
+#******************************************SNA**************************************
+#******************************************SNA**************************************
+#******************************************SNA**************************************
+#******************************************SNA**************************************
+
 def get_sna(path):
     sna_data = {}
     print 'Building relations graph'
@@ -364,15 +211,133 @@ def get_sna(path):
         sna_data[c]['eigenvector'] = eigenvector[c]
         
     return sna_data
+    
 
+#def get_candidate_data():
+#    cnx = mysql.connector.connect(**config)
+#    cursor = cnx.cursor()
+#
+#    
+#    candidates = ['JunckerEU', 'tsipras_eu', 'GuyVerhofstadt', 'josebove', 'SkaKeller', 'MartinSchulz']
+#    for candidate in candidates:
+#        
+#        print '*******************************************'
+#        print candidate
+#        c_id = ''
+#        query = "SELECT id from twitter_users WHERE screen_name='%s';" % (candidate)
+#        cursor.execute(query)
+#        for result in cursor:
+#            c_id = result[0]
+#        print c_id
+#        
+#        print
+#        print 'LANGUAGES'
+#        query = "SELECT lang, total FROM language_candidate WHERE candidate_id='%s' ORDER BY total DESC;" % (c_id)
+#        cursor.execute(query)
+#        for result in cursor:
+#            print result[0], result[1]
+#        
+#        print
+#        print 'MENTIONS'
+#        query = "SELECT eu_total, co_total FROM europe_candidate WHERE candidate_id='%s';" % (c_id)
+#        cursor.execute(query)
+#        for result in cursor:
+#            print 'Europe', result[0], 'Country', result[1]
+#         
+#        print
+#        print 'HASHTAGS'
+#        query = "SELECT text, SUM(total) FROM hash_candidate WHERE candidate_id='%s' GROUP BY text ORDER BY sum(total) DESC;" % (c_id)
+#        cursor.execute(query)
+#        i = 0
+#        for result in cursor:
+#            if i < 6:
+#                print result[0], result[1]
+#                i +=1
+#        print
+#        print 
+#            
+#
+#    cursor.close()        
+#    cnx.close()
+
+#******************************************ACTIVITY**************************************
+#******************************************ACTIVITY**************************************
+#******************************************ACTIVITY**************************************
+#******************************************ACTIVITY**************************************
+    
+def get_party_activity():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    party_data = {}
+    
+    for party in cache.parties:
+        screen_name = cache.twitter_ids[cache.parties[party]['user_id']]
+
+        if cache.parties[party]['group_id'] == 'NI - SPAIN':
+            continue
+                                
+        cursor.execute("select count(*) FROM tweets WHERE user_id = '%s'" % cache.parties[party]['user_id'])
+        total = 0
+        for r in cursor:
+            total = r[0]
+            
+        if party_data.has_key(screen_name):
+            party_data[screen_name] += total
+        else:
+            party_data[screen_name] = total
+
+
+            
+    cursor.close()        
+    cnx.close()
+    
+        
+    return party_data
+    
+def get_groups_activity():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    tweets_group = {}
+    parties_group = {}
+
+    
+    for party in cache.parties:
+
+        if cache.parties[party]['group_id'] == 'NI - SPAIN':
+            continue
+                        
+        group = cache.parties[party]['group_id']
+        
+        cursor.execute("select count(*) FROM tweets WHERE user_id = '%s'" % cache.parties[party]['user_id'])
+        total = 0
+        for r in cursor:
+            total = r[0]
+
+            
+        if tweets_group.has_key(group):
+            tweets_group[group] += total
+        else:
+            tweets_group[group] = total
+            
+        if parties_group.has_key(group):
+            parties_group[group] += 1
+        else:
+            parties_group[group] = 1
+
+            
+    cursor.close()        
+    cnx.close()
+    
+        
+    return tweets_group, parties_group
+    
 def get_countries_activity():
     print 'Recovering countries twitter activity'
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
     country_data = {}
     
-    for i, party in enumerate(cache.parties):
-#        print '%i of %i' % (i, len(cache.parties))
+    for party in cache.parties:
         if cache.parties[party]['group_id'] == 'NI - SPAIN':
                 continue
         try:
@@ -394,7 +359,12 @@ def get_countries_activity():
     
     return country_data
     
-  
+    
+#******************************************DISCOURSE**************************************
+#******************************************DISCOURSE**************************************
+#******************************************DISCOURSE**************************************
+#******************************************DISCOURSE**************************************
+    
 def get_countries_discourse():
     print 'Recovering discourse info'
     cnx = mysql.connector.connect(**config)
@@ -429,6 +399,122 @@ def get_groups_discourse():
                                         
     return group_data
     
+    
+def get_total_tweets_by_date_country():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    
+    tweets_country_day = {}
+    countries = set()   
+    day_names = set()
+
+    for i, party in enumerate(cache.parties):
+#        print '%i of %i' % (i, len(cache.parties))
+        try:
+            if cache.parties[party]['group_id'] == 'NI - SPAIN':
+                continue
+            
+            country = cache.locations[cache.parties[party]['location']]
+            countries.add(country)
+            if not tweets_country_day.has_key(country):
+                tweets_country_day[country] = {}
+        except:
+            continue
+
+        cursor.execute("SELECT created_at, count(*) FROM tweets WHERE user_id='%s' GROUP BY created_at" % cache.parties[party]['user_id']) 
+          
+        for result in  cursor:
+            day = result[0]
+            day_names.add(str(day))
+            total = result[1]
+            if tweets_country_day[country].has_key(str(day)):
+                tweets_country_day[country][str(day)] += total
+            else: 
+                tweets_country_day[country][str(day)] = total
+   
+            
+    countries = list(countries)
+    countries.sort()
+    day_names = list(day_names)
+    day_names.sort()
+    days = {}
+    for country in countries:   
+        for day in day_names:
+            if not days.has_key(day):
+                days[day] = []
+               
+            try:
+                days[day].append(tweets_country_day[country][day])
+            except:
+                days[day].append(0)           
+           
+           
+#    print days
+#    print countries   
+
+    frame = DataFrame(days, index = countries)
+    
+    return frame    
+
+
+def get_total_tweets_by_date_group():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    
+    tweets_group_day = {}
+    groups = set()   
+    day_names = set()
+
+    for i, party in enumerate(cache.parties):
+#        print '%i of %i' % (i, len(cache.parties))
+        try:
+            if cache.parties[party]['group_id'] == 'NI - SPAIN':
+                continue
+            
+            group = cache.parties[party]['group_id']
+            groups.add(group)
+            if not tweets_group_day.has_key(group):
+                tweets_group_day[group] = {}
+        except:
+             continue
+
+        cursor.execute("SELECT created_at, count(*) FROM tweets WHERE user_id='%s' GROUP BY created_at" % cache.parties[party]['user_id']) 
+          
+        for result in  cursor:
+            day = result[0]
+            day_names.add(str(day))
+            total = result[1]
+            if tweets_group_day[group].has_key(str(day)):
+                tweets_group_day[group][str(day)] += total
+            else: 
+                tweets_group_day[group][str(day)] = total
+   
+            
+    groups = list(groups)
+    groups.sort()
+    day_names = list(day_names)
+    day_names.sort()
+    days = {}
+    for group in groups:   
+        for day in day_names:
+            if not days.has_key(day):
+                days[day] = []
+               
+            try:
+                days[day].append(tweets_group_day[group][day])
+            except:
+                days[day].append(0)           
+           
+           
+#    print days
+#    print groups   
+
+    frame = DataFrame(days, index = groups)
+    
+    return frame             
+        
+
+    
 def get_countries_party_num():
     country_data = {}
     for party in cache.parties:
@@ -445,6 +531,24 @@ def get_countries_party_num():
 
         
     return country_data
+    
+def get_num_tweets():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    cursor.execute("SELECT COUNT(*) FROM tweets")
+    total = 0
+    for r in cursor:
+        total = r[0]
+    
+    
+    cursor.close()        
+    cnx.close()
+    return total
+    
+#******************************************STATIC DATA**************************************
+#******************************************STATIC DATA**************************************
+#******************************************STATIC DATA**************************************
+#******************************************STATIC DATA**************************************
     
     
 def load_eurobarometer():
@@ -489,6 +593,24 @@ def load_percen_country():
                 
     return country_data
     
+def load_percen_party():
+    party_data = {}
+    with open('./static_info/results_percen_party_country.csv', 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        for row in reader:
+            percen = float(row[4].replace(',','.'))
+            screen_name = row[2]
+            #twitter_id = cache.twitter_ids_rev[screen_name]
+            #slug = cache.parties_ids[twitter_id]
+            
+            
+            if party_data.has_key(screen_name):
+                party_data[screen_name] += percen
+            else:
+                party_data[screen_name] = percen
+                
+    return party_data
+    
 def load_homophily():
     #calculated by Juan
     party_homophily = { 'PEL': 83.59,
@@ -503,55 +625,67 @@ def load_homophily():
     
     return party_homophily
     
-def get_num_tweets():
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
-    cursor.execute("SELECT COUNT(*) FROM tweets")
-    total = 0
-    for r in cursor:
-        total = r[0]
-    
-    
-    cursor.close()        
-    cnx.close()
-    return total
-    
-def get_groups_activity():
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
-    tweets_group = {}
-    parties_group = {}
+
+#******************************************METRICS**************************************
+#******************************************METRICS**************************************
+#******************************************METRICS**************************************
+#******************************************METRICS**************************************   
 
     
-    for party in cache.parties:
-
-        if cache.parties[party]['group_id'] == 'NI - SPAIN':
-            continue
-                        
-        group = cache.parties[party]['group_id']
+def get_party_metrics():
+    sna = get_sna('./sna/party_relations.gexf')
+    activity_data = get_party_activity()
+    percen_data = load_percen_party()
+    
+    total_tweets = []
+    degrees = []
+    betweenness = []
+    closeness = []
+    eigenvector = []
+    percen_votes = []
+    parties = []
+    
+    for party in activity_data:
         
-        cursor.execute("select count(*) FROM tweets WHERE user_id = '%s'" % cache.parties[party]['user_id'])
-        total = 0
-        for r in cursor:
-            total = r[0]
-
-            
-        if tweets_group.has_key(group):
-            tweets_group[group] += total
-        else:
-            tweets_group[group] = total
-            
-        if parties_group.has_key(group):
-            parties_group[group] += 1
-        else:
-            parties_group[group] = 1
-
-            
-    cursor.close()        
-    cnx.close()
-    
+        parties.append(party)        
+        total_tweets.append(activity_data[party])
+        degrees.append(sna[party]['degree'])
+        betweenness.append(sna[party]['betweenness'])
+        closeness.append(sna[party]['closeness'])
+        eigenvector.append(sna[party]['eigenvector'])
         
-    return tweets_group, parties_group
+        try:
+            percen_votes.append(percen_data[party])
+        except:
+            percen_votes.append[0]
+        
+        
+    
+    data = { 'total_tweets' : total_tweets,
+             'degrees' : degrees, 
+             'betweenness': betweenness,
+             'closeness': closeness,
+             'eigenvector': eigenvector,
+             'percen_votes': percen_votes
+
+    }    
+    
+    data_frame = DataFrame(data, index = parties)
+    
+    sna_metrics = { 'degrees': degrees,
+                    'betweenness': betweenness,
+                    'closeness': closeness,
+                    'eigenvector': eigenvector,
+                    'total_tweets': total_tweets                  
+    }
+    
+
+    
+    results_metrics = {'percen_votes' : percen_votes}
+    
+    metrics = [results_metrics, sna_metrics]
+    
+    return data_frame, metrics
     
     
 def get_group_metrics():
@@ -804,8 +938,11 @@ def get_summary_statistics(frame):
     print frame.sum()['total_tweets']
     print '\n-Total tweets sorted:' 
     print frame.sort_index(by='total_tweets', ascending=False)['total_tweets']
-    print '\n-Avg tweets by party sorted:' 
-    print frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party']
+    try:
+        print '\n-Avg tweets by party sorted:' 
+        print frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party']
+    except:
+        print 'No applicable data'
     print '\n-Max:'
     print frame.idxmax()
     print '\n-Min :'
@@ -821,6 +958,7 @@ def get_summary_statistics(frame):
 ##run once before running the other methods
 #get_party_relations()
 #get_group_relations()
+#get_country_relations()
 #print 'done'
 
 print "\nSTARTING..."
@@ -832,24 +970,13 @@ total_tweets = get_num_tweets()
 print '-Total tweets:', total_tweets
 
 
+#***********************PARTIES*********************************
+#***********************PARTIES*********************************
+#***********************PARTIES*********************************
+#***********************PARTIES*********************************
 
-
-##***********************COUNTRIES*********************************
-##***********************COUNTRIES*********************************
-##***********************COUNTRIES*********************************
-##***********************COUNTRIES*********************************
-#
-#
-print "\n\n\n*************ANALYZE COUNTRY METRICS*************"
-
-print 'Calculating country metrics...'       
-data_frame, metrics = get_country_metrics()
-
-#Tweets per party group by country graph
-ax = data_frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party'].plot(kind='bar')
-ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
-fig = ax.get_figure()
-fig.savefig('tweet_per_party_by_country.png')
+print 'Calculating party metrics...'       
+data_frame, metrics = get_party_metrics()
 
 print '\n****SUMMARY STATISTICS****'
 print '\n-Captured vote:'
@@ -860,6 +987,32 @@ print '\n****METRIC CORRELATIONS****'
 get_metrics_correlations(metrics)
 
 
+##***********************COUNTRIES*********************************
+##***********************COUNTRIES*********************************
+##***********************COUNTRIES*********************************
+##***********************COUNTRIES*********************************
+#
+#
+#print "\n\n\n*************ANALYZE COUNTRY METRICS*************"
+#
+#print 'Calculating country metrics...'       
+#data_frame, metrics = get_country_metrics()
+#
+##Tweets per party group by country graph
+#ax = data_frame.sort_index(by='tweet_per_party', ascending=False)['tweet_per_party'].plot(kind='bar')
+#ax.set_xticklabels([x.get_text() for x in ax.get_xticklabels()], fontsize=6, rotation=60)
+#fig = ax.get_figure()
+#fig.savefig('tweet_per_party_by_country.png')
+#
+#print '\n****SUMMARY STATISTICS****'
+#print '\n-Captured vote:'
+#print data_frame['percen_vote_captured']
+#get_summary_statistics(data_frame)
+#
+#print '\n****METRIC CORRELATIONS****'
+#get_metrics_correlations(metrics)
+#
+#
 #print "\n\n\n*************ANALYZE TIMELINE BY COUNTRY*************"
 #print 'Creating timeline...'
 #t_country_day = get_total_tweets_by_date_country()
